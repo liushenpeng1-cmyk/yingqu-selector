@@ -2317,9 +2317,16 @@ export function matchPrograms(
   langTest: "IELTS" | "TOEFL",
   targetCategory: string,
   currentCategory: string,
+  targetSubMajorId?: string,
 ): ProgramMatchResult[] {
+  // Match by category OR by subMajorId — because the same subject
+  // can be categorized differently at different schools
+  // (e.g., Economics is "business" in our majors but "social-science" at Manchester)
   const schoolPrograms = programs.filter(
-    p => p.schoolId === schoolId && p.category === targetCategory
+    p => p.schoolId === schoolId && (
+      p.category === targetCategory ||
+      (targetSubMajorId && p.subMajorId === targetSubMajorId)
+    )
   );
 
   return schoolPrograms.map(program => {
