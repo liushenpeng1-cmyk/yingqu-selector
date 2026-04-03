@@ -2292,3 +2292,84 @@ export function getProgramsBySchool(schoolId: string): Program[] {
 export function getProgramsByCategory(schoolId: string, category: string): Program[] {
   return programs.filter(p => p.schoolId === schoolId && p.category === category);
 }
+
+// Schools that have program-level data
+export const schoolsWithPrograms = new Set(
+  [...new Set(programs.map(p => p.schoolId))]
+);
+
+export type ProgramMatchLevel = "high" | "medium" | "low";
+
+export type ProgramMatchResult = {
+  program: Program;
+  level: ProgramMatchLevel;
+  gpaStatus: { passed: boolean; required: number; gap: number };
+  langStatus: { passed: boolean; required: number; gap: number };
+  crossMajorOk: boolean;
+  crossMajorNote: string;
+};
+
+export function matchPrograms(
+  schoolId: string,
+  userTier: string,
+  gpa: number,
+  langScore: number,
+  langTest: "IELTS" | "TOEFL",
+  targetCategory: string,
+  currentCategory: string,
+): ProgramMatchResult[] {
+  const schoolPrograms = programs.filter(
+    p => p.schoolId === schoolId && p.category === targetCategory
+  );
+
+  return schoolPrograms.map(program => {
+    const isPreferred = ["985", "211", "双一流"].includes(userTier);
+    const requiredGpa = isPreferred ? program.gpaRequirements.preferred : program.gpaRequirements.other;
+    const requiredLang = langTest === "TOEFL" ? program.toeflOverall : program.ieltsOverall;
+
+    const gpaGap = Math.round((requiredGpa - gpa) * 10) / 10;
+    const langGap = langTest === "TOEFL"
+      ? Math.round(requiredLang - langScore)
+      : Math.round((requiredLang - langScore) * 10) / 10;
+
+    const gpaPassed = gpa >= requiredGpa;
+    const langPassed = langScore >= requiredLang;
+
+    const gpaClose = gpaGap > 0 && gpaGap <= (program.gpaScale === "gpa4" ? 0.3 : 5);
+    const langClose = langGap > 0 && langGap <= (langTest === "TOEFL" ? 5 : 0.5);
+
+    // Cross-major check
+    let crossMajorOk = true;
+    let crossMajorNote = "";
+    if (program.requiresRelatedDegree && program.acceptedBackgrounds) {
+      const currentCatName = currentCategory;
+      if (!program.acceptedBackgrounds.includes(currentCatName)) {
+        crossMajorOk = false;
+        crossMajorNote = `需要 ${program.acceptedBackgrounds.join("/")} 背景`;
+      }
+    } else if (!program.requiresRelatedDegree) {
+      crossMajorNote = "不限本科背景";
+    }
+
+    let level: ProgramMatchLevel;
+    if (gpaPassed && langPassed) {
+      level = "high";
+    } else if ((gpaPassed && langClose) || (gpaClose && langPassed)) {
+      level = "medium";
+    } else {
+      level = "low";
+    }
+
+    return {
+      program,
+      level,
+      gpaStatus: { passed: gpaPassed, required: requiredGpa, gap: gpaGap },
+      langStatus: { passed: langPassed, required: requiredLang, gap: langGap },
+      crossMajorOk,
+      crossMajorNote,
+    };
+  }).sort((a, b) => {
+    const order = { high: 0, medium: 1, low: 2 };
+    return order[a.level] - order[b.level];
+  });
+}
