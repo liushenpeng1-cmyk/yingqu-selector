@@ -24,16 +24,22 @@ export default function Home() {
   const [langScore, setLangScore] = useState("");
   const [currentCategoryId, setCurrentCategoryId] = useState("business");
   const [targetSubMajorId, setTargetSubMajorId] = useState("management");
+  const [majorQuery, setMajorQuery] = useState("");
+  const [showMajorDropdown, setShowMajorDropdown] = useState(false);
+  const [bgQuery, setBgQuery] = useState("");
+  const [showBgDropdown, setShowBgDropdown] = useState(false);
   const [regions, setRegions] = useState<Set<Region>>(new Set(["UK", "AU", "HK", "SG", "CA", "US"]));
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const majorDropdownRef = useRef<HTMLDivElement>(null);
+  const bgDropdownRef = useRef<HTMLDivElement>(null);
 
   const suggestions = findUniversity(schoolQuery);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setShowDropdown(false);
-      }
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) setShowDropdown(false);
+      if (majorDropdownRef.current && !majorDropdownRef.current.contains(e.target as Node)) setShowMajorDropdown(false);
+      if (bgDropdownRef.current && !bgDropdownRef.current.contains(e.target as Node)) setShowBgDropdown(false);
     }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
@@ -44,6 +50,22 @@ export default function Home() {
   const rawGpa = parseFloat(gpa) || 0;
 
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
+  const selectedTargetLabel = targetSubMajor ? `${targetSubMajor.name} (${targetSubMajor.nameEn})` : "";
+  const selectedBgLabel = majorCats.find(c => c.id === currentCategoryId)?.name || "";
+
+  // Filter sub-majors by search query
+  const filteredSubMajors = majorQuery.length > 0
+    ? allSubMajors.filter(s =>
+        s.name.includes(majorQuery) ||
+        s.nameEn.toLowerCase().includes(majorQuery.toLowerCase()) ||
+        s.categoryName.includes(majorQuery)
+      ).slice(0, 10)
+    : allSubMajors.slice(0, 10);
+
+  // Filter categories by search
+  const filteredBgCats = bgQuery.length > 0
+    ? majorCats.filter(c => c.name.includes(bgQuery))
+    : majorCats;
   const targetCategoryId = targetSubMajor?.categoryId || "business";
   const targetCategoryName = categoryIdToName[targetCategoryId] || "商科";
   const currentCategoryName = categoryIdToName[currentCategoryId] || "商科";
@@ -214,26 +236,57 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Majors */}
-              <div>
+              {/* 本科专业 — searchable */}
+              <div ref={bgDropdownRef} className="relative">
                 <label className="block text-sm text-white/50 mb-2">本科专业方向 <span className="text-[#e8be64] text-xs">●</span></label>
-                <select value={currentCategoryId} onChange={(e) => setCurrentCategoryId(e.target.value)}
-                  className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3.5 text-[#f0ede6] outline-none focus:border-[#e8be64] transition-all appearance-none cursor-pointer">
-                  {majorCats.map((cat) => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
-                </select>
+                <input type="text" value={showBgDropdown ? bgQuery : selectedBgLabel}
+                  onChange={(e) => { setBgQuery(e.target.value); setShowBgDropdown(true); }}
+                  onFocus={() => { setBgQuery(""); setShowBgDropdown(true); }}
+                  placeholder="搜索或选择，例：商科"
+                  className={`w-full bg-[#181920] border rounded-xl px-4 py-3.5 text-[#f0ede6] placeholder:text-white/20 outline-none transition-all ${
+                    !showBgDropdown && selectedBgLabel ? "border-[#e8be64]/40 bg-[#e8be64]/5" : "border-white/[0.06] focus:border-[#e8be64]"
+                  }`} />
+                {showBgDropdown && (
+                  <div className="absolute z-20 top-full left-0 right-0 mt-1 bg-[#1a1b24] border border-white/10 rounded-xl overflow-hidden shadow-2xl max-h-60 overflow-y-auto">
+                    {filteredBgCats.map((cat) => (
+                      <button key={cat.id} onClick={() => { setCurrentCategoryId(cat.id); setBgQuery(""); setShowBgDropdown(false); }}
+                        className={`w-full px-4 py-3 text-left hover:bg-white/5 transition-colors ${
+                          currentCategoryId === cat.id ? "bg-[#e8be64]/10 text-[#e8be64]" : "text-[#f0ede6]"
+                        }`}>{cat.name}</button>
+                    ))}
+                  </div>
+                )}
               </div>
-              <div>
+
+              {/* 申请专业 — searchable */}
+              <div ref={majorDropdownRef} className="relative">
                 <label className="block text-sm text-white/50 mb-2">申请具体专业 <span className="text-[#e8be64] text-xs">●</span></label>
-                <select value={targetSubMajorId} onChange={(e) => setTargetSubMajorId(e.target.value)}
-                  className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3.5 text-[#f0ede6] outline-none focus:border-[#e8be64] transition-all appearance-none cursor-pointer">
-                  {majorCats.map((cat) => (
-                    <optgroup key={cat.id} label={cat.name}>
-                      {cat.subMajors.map((sub) => (
-                        <option key={sub.id} value={sub.id}>{sub.name} ({sub.nameEn})</option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
+                <input type="text" value={showMajorDropdown ? majorQuery : selectedTargetLabel}
+                  onChange={(e) => { setMajorQuery(e.target.value); setShowMajorDropdown(true); }}
+                  onFocus={() => { setMajorQuery(""); setShowMajorDropdown(true); }}
+                  placeholder="搜索专业，例：金融、Finance、TESOL"
+                  className={`w-full bg-[#181920] border rounded-xl px-4 py-3.5 text-[#f0ede6] placeholder:text-white/20 outline-none transition-all ${
+                    !showMajorDropdown && selectedTargetLabel ? "border-[#e8be64]/40 bg-[#e8be64]/5" : "border-white/[0.06] focus:border-[#e8be64]"
+                  }`} />
+                {showMajorDropdown && (
+                  <div className="absolute z-20 top-full left-0 right-0 mt-1 bg-[#1a1b24] border border-white/10 rounded-xl overflow-hidden shadow-2xl max-h-72 overflow-y-auto">
+                    {filteredSubMajors.map((sub) => (
+                      <button key={sub.id} onClick={() => { setTargetSubMajorId(sub.id); setMajorQuery(""); setShowMajorDropdown(false); }}
+                        className={`w-full px-4 py-3 text-left hover:bg-white/5 transition-colors flex items-center justify-between ${
+                          targetSubMajorId === sub.id ? "bg-[#e8be64]/10" : ""
+                        }`}>
+                        <div>
+                          <span className={targetSubMajorId === sub.id ? "text-[#e8be64]" : "text-[#f0ede6]"}>{sub.name}</span>
+                          <span className="text-white/25 ml-2 text-sm">{sub.nameEn}</span>
+                        </div>
+                        <span className="text-xs text-white/20 bg-white/5 px-2 py-0.5 rounded">{sub.categoryName}</span>
+                      </button>
+                    ))}
+                    {filteredSubMajors.length === 0 && (
+                      <div className="px-4 py-3 text-sm text-white/30">未找到匹配专业</div>
+                    )}
+                  </div>
+                )}
               </div>
 
               {isCrossMajor && crossMajorCheck && (
