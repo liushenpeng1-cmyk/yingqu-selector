@@ -368,7 +368,7 @@ export default function Home() {
           <div className="text-center mb-6 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#e8be64]/30 bg-[#e8be64]/10 text-[#e8be64] text-xs sm:text-sm mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#e8be64] animate-pulse" />
-              覆盖 18 所学校 · 198 个具体项目
+              覆盖 26 所学校 · 240 个具体项目
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-3 sm:mb-4">
               你的成绩<br />
