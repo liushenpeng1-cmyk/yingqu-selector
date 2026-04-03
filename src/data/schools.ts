@@ -31,6 +31,7 @@ export type School = {
   country: Region;
   qsRank: number;
   ieltsMin: number;
+  toeflMin: number;
   // GPA requirements — for US/CA schools using 4.0 scale, these are 4.0-scale numbers
   // For UK/AU/HK/SG, these are percentage numbers (百分制)
   gpaRequirements: GpaByTier;
@@ -57,8 +58,11 @@ export type LanguageCourseSuggestion = {
 
 export function getLanguageCourseSuggestion(
   school: School,
-  ieltsGap: number
+  langGap: number,
+  langTest: "IELTS" | "TOEFL"
 ): LanguageCourseSuggestion | null {
+  // Normalize gap to IELTS scale for language course logic
+  const ieltsGap = langTest === "TOEFL" ? langGap / 10 : langGap;
   if (ieltsGap <= 0) return null;
 
   // Only UK and AU commonly offer pre-sessional courses
@@ -110,7 +114,7 @@ export const schools: School[] = [
     nameEn: "University College London",
     country: "UK",
     qsRank: 9,
-    ieltsMin: 7.0,
+    ieltsMin: 7.0, toeflMin: 94,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 85, other: 90 },
     applicationFee: "£80",
@@ -126,7 +130,7 @@ export const schools: School[] = [
     nameEn: "University of Edinburgh",
     country: "UK",
     qsRank: 27,
-    ieltsMin: 7.0,
+    ieltsMin: 7.0, toeflMin: 94,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 80, other: 85  },
     listPolicy: "tiered",
@@ -141,7 +145,7 @@ export const schools: School[] = [
     nameEn: "University of Manchester",
     country: "UK",
     qsRank: 34,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 80, other: 80  },
     listPolicy: "open",
@@ -157,7 +161,7 @@ export const schools: School[] = [
     nameEn: "King's College London",
     country: "UK",
     qsRank: 40,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 80, other: 85  },
     listPolicy: "tiered",
@@ -172,7 +176,7 @@ export const schools: School[] = [
     nameEn: "University of Bristol",
     country: "UK",
     qsRank: 54,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 78, other: 85  },
     listPolicy: "tiered",
@@ -187,7 +191,7 @@ export const schools: School[] = [
     nameEn: "University of Warwick",
     country: "UK",
     qsRank: 69,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 80, other: 85  },
     listPolicy: "tiered",
@@ -201,7 +205,7 @@ export const schools: School[] = [
     nameEn: "University of Leeds",
     country: "UK",
     qsRank: 75,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "tiered",
@@ -215,7 +219,7 @@ export const schools: School[] = [
     nameEn: "University of Glasgow",
     country: "UK",
     qsRank: 78,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "tiered",
@@ -229,7 +233,7 @@ export const schools: School[] = [
     nameEn: "University of Birmingham",
     country: "UK",
     qsRank: 84,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "open",
@@ -243,7 +247,7 @@ export const schools: School[] = [
     nameEn: "University of Sheffield",
     country: "UK",
     qsRank: 105,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 78  },
     listPolicy: "open",
@@ -258,7 +262,7 @@ export const schools: School[] = [
     nameEn: "University of Melbourne",
     country: "AU",
     qsRank: 14,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 83, other: 90 },
     applicationFee: "A$150",
@@ -274,7 +278,7 @@ export const schools: School[] = [
     nameEn: "University of Sydney",
     country: "AU",
     qsRank: 19,
-    ieltsMin: 7.0,
+    ieltsMin: 7.0, toeflMin: 94,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 87  },
     listPolicy: "tiered",
@@ -289,7 +293,7 @@ export const schools: School[] = [
     nameEn: "UNSW Sydney",
     country: "AU",
     qsRank: 24,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 88 },
     applicationFee: "A$150",
@@ -305,7 +309,7 @@ export const schools: School[] = [
     nameEn: "Australian National University",
     country: "AU",
     qsRank: 30,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "tiered",
@@ -320,7 +324,7 @@ export const schools: School[] = [
     nameEn: "Monash University",
     country: "AU",
     qsRank: 37,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "tiered",
@@ -335,7 +339,7 @@ export const schools: School[] = [
     nameEn: "University of Queensland",
     country: "AU",
     qsRank: 40,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "tiered",
@@ -350,7 +354,7 @@ export const schools: School[] = [
     nameEn: "University of Adelaide",
     country: "AU",
     qsRank: 82,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 80  },
     listPolicy: "open",
@@ -365,7 +369,7 @@ export const schools: School[] = [
     nameEn: "RMIT University",
     country: "AU",
     qsRank: 123,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 68, other: 73  },
     listPolicy: "open",
@@ -380,7 +384,7 @@ export const schools: School[] = [
     nameEn: "Macquarie University",
     country: "AU",
     qsRank: 130,
-    ieltsMin: 6.5,
+    ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 65, other: 73  },
     listPolicy: "open",
@@ -395,7 +399,7 @@ export const schools: School[] = [
     nameEn: "Deakin University",
     country: "AU",
     qsRank: 185,
-    ieltsMin: 6.0,
+    ieltsMin: 6.0, toeflMin: 60,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 63, other: 70  },
     listPolicy: "open",
@@ -407,7 +411,7 @@ export const schools: School[] = [
   // ═══════════════ NEW UK (QS top 300, not yet verified) ═══════════════
   {
     id: "imperial", name: "帝国理工学院", nameEn: "Imperial College London", country: "UK", qsRank: 2,
-    ieltsMin: 7.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 90 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 90 },
     applicationFee: "£80", listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "理学"],
     notes: "⚠️ 数据待确认。工科/理科为主，商学院极其竞争",
@@ -415,7 +419,7 @@ export const schools: School[] = [
   },
   {
     id: "oxford", name: "牛津大学", nameEn: "University of Oxford", country: "UK", qsRank: 3,
-    ieltsMin: 7.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 87, other: 90 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 87, other: 90 },
     applicationFee: "£75", listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。竞争极其激烈，GPA 仅为最低门槛",
@@ -423,7 +427,7 @@ export const schools: School[] = [
   },
   {
     id: "cambridge", name: "剑桥大学", nameEn: "University of Cambridge", country: "UK", qsRank: 5,
-    ieltsMin: 7.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 87, other: 90 },
+    ieltsMin: 7.5, toeflMin: 102, gpaScale: "percentage" as const, gpaRequirements: { preferred: 87, other: 90 },
     applicationFee: "£85", listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。要求极高，建议 90%+",
@@ -431,7 +435,7 @@ export const schools: School[] = [
   },
   {
     id: "lse", name: "伦敦政治经济学院", nameEn: "London School of Economics", country: "UK", qsRank: 50,
-    ieltsMin: 7.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 90 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 90 },
     applicationFee: "£80", listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "传媒", "法律", "社科"],
     notes: "⚠️ 数据待确认。偏社科/商科，竞争极强",
@@ -439,154 +443,154 @@ export const schools: School[] = [
   },
   {
     id: "southampton", name: "南安普顿大学", nameEn: "University of Southampton", country: "UK", qsRank: 80,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.southampton.ac.uk/uni-life/international/your-country/china.page",
   },
   {
     id: "durham", name: "杜伦大学", nameEn: "Durham University", country: "UK", qsRank: 89,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。商学院有独立 List",
     source: "https://www.durham.ac.uk/international/country-information/asia/china/",
   },
   {
     id: "standrews", name: "圣安德鲁斯大学", nameEn: "University of St Andrews", country: "UK", qsRank: 104,
-    ieltsMin: 7.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "传媒", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.st-andrews.ac.uk/subjects/entry-requirements/",
   },
   {
     id: "nottingham", name: "诺丁汉大学", nameEn: "University of Nottingham", country: "UK", qsRank: 108,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。对双非相对友好",
     source: "https://www.nottingham.ac.uk/studywithus/international-applicants/country-specific-information/china.aspx",
   },
   {
     id: "qmul", name: "伦敦玛丽女王大学", nameEn: "Queen Mary University of London", country: "UK", qsRank: 120,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.qmul.ac.uk/international-students/countries/china/",
   },
   {
     id: "newcastle", name: "纽卡斯尔大学", nameEn: "Newcastle University", country: "UK", qsRank: 129,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。对双非友好",
     source: "https://www.ncl.ac.uk/international/country/china/",
   },
   {
     id: "lancaster", name: "兰卡斯特大学", nameEn: "Lancaster University", country: "UK", qsRank: 141,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.lancaster.ac.uk/study/international-students/your-country/china/",
   },
   {
     id: "bath", name: "巴斯大学", nameEn: "University of Bath", country: "UK", qsRank: 150,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 83  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 83  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     notes: "⚠️ 数据待确认。商科竞争强",
     source: "https://www.bath.ac.uk/study/pg/apply/international/",
   },
   {
     id: "liverpool", name: "利物浦大学", nameEn: "University of Liverpool", country: "UK", qsRank: 165,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。对双非友好",
     source: "https://www.liverpool.ac.uk/study/international/countries/china/",
   },
   {
     id: "exeter", name: "埃克塞特大学", nameEn: "University of Exeter", country: "UK", qsRank: 169,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.exeter.ac.uk/study/international/your-country/china/",
   },
   {
     id: "reading", name: "雷丁大学", nameEn: "University of Reading", country: "UK", qsRank: 172,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.reading.ac.uk/international/countries/china/",
   },
   {
     id: "york", name: "约克大学", nameEn: "University of York", country: "UK", qsRank: 184,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.york.ac.uk/study/international/your-country/china/",
   },
   {
     id: "cardiff", name: "卡迪夫大学", nameEn: "Cardiff University", country: "UK", qsRank: 186,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.cardiff.ac.uk/international/your-country/china",
   },
   {
     id: "queens-belfast", name: "贝尔法斯特女王大学", nameEn: "Queen's University Belfast", country: "UK", qsRank: 206,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。门槛较低，对双非友好",
     source: "https://www.qub.ac.uk/International/international-students/your-country/china/",
   },
   {
     id: "loughborough", name: "拉夫堡大学", nameEn: "Loughborough University", country: "UK", qsRank: 224,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认。体育和设计专业强",
     source: "https://www.lboro.ac.uk/international/your-country/china/",
   },
   {
     id: "aberdeen", name: "阿伯丁大学", nameEn: "University of Aberdeen", country: "UK", qsRank: 236,
-    ieltsMin: 6.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。门槛较低",
     source: "https://www.abdn.ac.uk/study/international/country-information-289.php",
   },
   {
     id: "sussex", name: "萨塞克斯大学", nameEn: "University of Sussex", country: "UK", qsRank: 246,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.sussex.ac.uk/study/international-students/your-country/china",
   },
   {
     id: "heriot-watt", name: "赫瑞瓦特大学", nameEn: "Heriot-Watt University", country: "UK", qsRank: 256,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "理学"],
     notes: "⚠️ 数据待确认。精算和石油工程强",
     source: "https://www.hw.ac.uk/study/international/country/china.htm",
   },
   {
     id: "strathclyde", name: "思克莱德大学", nameEn: "University of Strathclyde", country: "UK", qsRank: 281,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     notes: "⚠️ 数据待确认。商学院三重认证",
     source: "https://www.strath.ac.uk/studywithus/internationalstudents/yourcountry/china/",
   },
   {
     id: "leicester", name: "莱斯特大学", nameEn: "University of Leicester", country: "UK", qsRank: 285,
-    ieltsMin: 6.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://le.ac.uk/international/countries/china",
   },
   {
     id: "surrey", name: "萨里大学", nameEn: "University of Surrey", country: "UK", qsRank: 285,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "理学", "社科"],
     notes: "⚠️ 数据待确认。酒店管理强",
     source: "https://www.surrey.ac.uk/international/country/china",
   },
   {
     id: "swansea", name: "斯旺西大学", nameEn: "Swansea University", country: "UK", qsRank: 298,
-    ieltsMin: 6.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "理学", "社科"],
     notes: "⚠️ 数据待确认。门槛较低",
     source: "https://www.swansea.ac.uk/international/students/your-country/china/",
@@ -594,63 +598,63 @@ export const schools: School[] = [
   // ═══════════════ NEW AU (QS top 300, not yet verified) ═══════════════
   {
     id: "western-australia", name: "西澳大学", nameEn: "University of Western Australia", country: "AU", qsRank: 77,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 78  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 78  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。八大之一",
     source: "https://www.uwa.edu.au/study/how-to-apply/international-students/entry-requirements",
   },
   {
     id: "uts", name: "悉尼科技大学", nameEn: "University of Technology Sydney", country: "AU", qsRank: 88,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 72, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 72, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认。IT 和传媒强",
     source: "https://www.uts.edu.au/study/international/essential-information/entry-requirements",
   },
   {
     id: "wollongong", name: "伍伦贡大学", nameEn: "University of Wollongong", country: "AU", qsRank: 167,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.uow.edu.au/study/international/apply/",
   },
   {
     id: "curtin", name: "科廷大学", nameEn: "Curtin University", country: "AU", qsRank: 174,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "理学", "社科"],
     notes: "⚠️ 数据待确认。矿业和石油工程强",
     source: "https://www.curtin.edu.au/study/international-students/",
   },
   {
     id: "newcastle-au", name: "纽卡斯尔大学(澳)", nameEn: "University of Newcastle (AU)", country: "AU", qsRank: 179,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.newcastle.edu.au/international/study-with-us",
   },
   {
     id: "qut", name: "昆士兰科技大学", nameEn: "Queensland University of Technology", country: "AU", qsRank: 189,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认。传媒和创意产业强",
     source: "https://www.qut.edu.au/study/international/applying",
   },
   {
     id: "la-trobe", name: "乐卓博大学", nameEn: "La Trobe University", country: "AU", qsRank: 217,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 65, other: 70  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 65, other: 70  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.latrobe.edu.au/international/how-to-apply",
   },
   {
     id: "griffith", name: "格里菲斯大学", nameEn: "Griffith University", country: "AU", qsRank: 243,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 65, other: 70  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 65, other: 70  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。酒店管理和旅游强",
     source: "https://www.griffith.edu.au/international/apply",
   },
   {
     id: "tasmania", name: "塔斯马尼亚大学", nameEn: "University of Tasmania", country: "AU", qsRank: 293,
-    ieltsMin: 6.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 63, other: 68  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 63, other: 68  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。门槛较低，偏远地区加分",
     source: "https://www.utas.edu.au/international/study",
@@ -658,7 +662,7 @@ export const schools: School[] = [
   // ═══════════════ HK 香港 ═══════════════
   {
     id: "hku", name: "香港大学", nameEn: "University of Hong Kong", country: "HK", qsRank: 17,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88 },
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88 },
     applicationFee: "HK$600", listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。商科/法律竞争极强，面试常见",
@@ -666,35 +670,35 @@ export const schools: School[] = [
   },
   {
     id: "cuhk", name: "香港中文大学", nameEn: "Chinese University of Hong Kong", country: "HK", qsRank: 36,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 82, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 82, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.gs.cuhk.edu.hk/admissions/programme/",
   },
   {
     id: "hkust", name: "香港科技大学", nameEn: "Hong Kong University of Science and Technology", country: "HK", qsRank: 47,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     notes: "⚠️ 数据待确认。理工和商科极强",
     source: "https://pg.ust.hk/prospective-students/admissions/general-requirements",
   },
   {
     id: "cityu-hk", name: "香港城市大学", nameEn: "City University of Hong Kong", country: "HK", qsRank: 62,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。对双非相对友好",
     source: "https://www.cityu.edu.hk/pg/taught-postgraduate-programmes",
   },
   {
     id: "polyu", name: "香港理工大学", nameEn: "Hong Kong Polytechnic University", country: "HK", qsRank: 57,
-    ieltsMin: 6.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认。酒店管理和设计全球顶尖",
     source: "https://www.polyu.edu.hk/study/pg/taught-postgraduate",
   },
   {
     id: "hkbu", name: "香港浸会大学", nameEn: "Hong Kong Baptist University", country: "HK", qsRank: 252,
-    ieltsMin: 6.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "传媒", "教育", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认。传媒专业强",
     source: "https://gs.hkbu.edu.hk/admission/taught-postgraduate-programmes",
@@ -702,7 +706,7 @@ export const schools: School[] = [
   // ═══════════════ SG 新加坡 ═══════════════
   {
     id: "nus", name: "新加坡国立大学", nameEn: "National University of Singapore", country: "SG", qsRank: 8,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "法律", "理学", "社科"],
     extraRequirements: "部分专业需 GRE/GMAT",
     notes: "⚠️ 数据待确认。亚洲顶尖，竞争极强",
@@ -710,7 +714,7 @@ export const schools: School[] = [
   },
   {
     id: "ntu-sg", name: "南洋理工大学", nameEn: "Nanyang Technological University", country: "SG", qsRank: 15,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     extraRequirements: "工科部分需 GRE",
     notes: "⚠️ 数据待确认。工科和传媒极强",
@@ -718,7 +722,7 @@ export const schools: School[] = [
   },
   {
     id: "smu", name: "新加坡管理大学", nameEn: "Singapore Management University", country: "SG", qsRank: 162,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "法律", "社科"],
     extraRequirements: "商科需 GMAT/GRE",
     notes: "⚠️ 数据待确认。商科和金融专精",
@@ -727,35 +731,35 @@ export const schools: School[] = [
   // ═══════════════ CA 加拿大 ═══════════════
   {
     id: "toronto", name: "多伦多大学", nameEn: "University of Toronto", country: "CA", qsRank: 25,
-    ieltsMin: 7.0, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。加拿大第一，要求 B+ 以上",
     source: "https://www.sgs.utoronto.ca/admissions/",
   },
   {
     id: "mcgill", name: "麦吉尔大学", nameEn: "McGill University", country: "CA", qsRank: 29,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。要求 CGPA 3.0/4.0+",
     source: "https://www.mcgill.ca/gradapplicants/how-apply",
   },
   {
     id: "ubc", name: "不列颠哥伦比亚大学", nameEn: "University of British Columbia", country: "CA", qsRank: 38,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。要求 B+ 以上（76%+）",
     source: "https://www.grad.ubc.ca/prospective-students/application-admission",
   },
   {
     id: "alberta", name: "阿尔伯塔大学", nameEn: "University of Alberta", country: "CA", qsRank: 96,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
     source: "https://www.ualberta.ca/en/graduate-studies/prospective-students/international-admissions-protocol.html",
   },
   {
     id: "waterloo", name: "滑铁卢大学", nameEn: "University of Waterloo", country: "CA", qsRank: 112,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "理学"],
     extraRequirements: "CS 和工程极其竞争",
     notes: "⚠️ 数据待确认。CS 和工程全球顶尖",
@@ -763,35 +767,35 @@ export const schools: School[] = [
   },
   {
     id: "western", name: "西安大略大学", nameEn: "Western University", country: "CA", qsRank: 114,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。Ivey 商学院极强",
     source: "https://grad.uwo.ca/admissions/index.html",
   },
   {
     id: "montreal", name: "蒙特利尔大学", nameEn: "Université de Montréal", country: "CA", qsRank: 159,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。法语授课为主，部分英语项目",
     source: "https://admission.umontreal.ca/en/",
   },
   {
     id: "ottawa", name: "渥太华大学", nameEn: "University of Ottawa", country: "CA", qsRank: 189,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。英法双语大学",
     source: "https://www.uottawa.ca/graduate-studies/programs-admission",
   },
   {
     id: "queens-ca", name: "女王大学", nameEn: "Queen's University", country: "CA", qsRank: 197,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。Smith 商学院知名",
     source: "https://www.queensu.ca/sgs/prospective-students/applying",
   },
   {
     id: "mcmaster", name: "麦克马斯特大学", nameEn: "McMaster University", country: "CA", qsRank: 176,
-    ieltsMin: 6.5, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。工程和健康科学强",
     source: "https://gs.mcmaster.ca/admissions/",
@@ -799,7 +803,7 @@ export const schools: School[] = [
   // ═══════════════ US 美国 (QS top 100) ═══════════════
   {
     id: "mit", name: "麻省理工学院", nameEn: "MIT", country: "US", qsRank: 1,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8 },
     applicationFee: "$90", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "理学"],
     extraRequirements: "GRE（部分）, 强科研背景",
@@ -808,7 +812,7 @@ export const schools: School[] = [
   },
   {
     id: "harvard", name: "哈佛大学", nameEn: "Harvard University", country: "US", qsRank: 4,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8 },
     applicationFee: "$105", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE/GMAT（按项目）",
@@ -817,7 +821,7 @@ export const schools: School[] = [
   },
   {
     id: "stanford", name: "斯坦福大学", nameEn: "Stanford University", country: "US", qsRank: 6,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.7, other: 3.7 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.7, other: 3.7 },
     applicationFee: "$125", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE（部分项目取消）",
@@ -826,7 +830,7 @@ export const schools: School[] = [
   },
   {
     id: "caltech", name: "加州理工学院", nameEn: "Caltech", country: "US", qsRank: 10,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["计算机", "工程", "理学"],
     extraRequirements: "GRE（推荐）",
     notes: "⚠️ 数据待确认。纯理工，规模极小",
@@ -834,7 +838,7 @@ export const schools: School[] = [
   },
   {
     id: "upenn", name: "宾夕法尼亚大学", nameEn: "University of Pennsylvania", country: "US", qsRank: 11,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.6, other: 3.6  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.6, other: 3.6  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE/GMAT（按项目）",
     notes: "⚠️ 数据待确认。沃顿商学院",
@@ -842,7 +846,7 @@ export const schools: School[] = [
   },
   {
     id: "columbia", name: "哥伦比亚大学", nameEn: "Columbia University", country: "US", qsRank: 23,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5 },
     applicationFee: "$120", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科", "艺术设计"],
     extraRequirements: "GRE（部分项目）",
@@ -851,7 +855,7 @@ export const schools: School[] = [
   },
   {
     id: "cornell", name: "康奈尔大学", nameEn: "Cornell University", country: "US", qsRank: 16,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE（部分）",
     notes: "⚠️ 数据待确认",
@@ -859,7 +863,7 @@ export const schools: School[] = [
   },
   {
     id: "uchicago", name: "芝加哥大学", nameEn: "University of Chicago", country: "US", qsRank: 21,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.6, other: 3.6  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.6, other: 3.6  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE（部分项目要求）",
     notes: "⚠️ 数据待确认。Booth 商学院",
@@ -867,7 +871,7 @@ export const schools: School[] = [
   },
   {
     id: "jhu", name: "约翰霍普金斯大学", nameEn: "Johns Hopkins University", country: "US", qsRank: 28,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     extraRequirements: "GRE（按项目）",
     notes: "⚠️ 数据待确认。公共卫生和工程强",
@@ -875,7 +879,7 @@ export const schools: School[] = [
   },
   {
     id: "nyu", name: "纽约大学", nameEn: "New York University", country: "US", qsRank: 38,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.3 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.3 },
     applicationFee: "$115", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "艺术设计", "理学", "社科"],
     extraRequirements: "GRE/GMAT（按项目）",
@@ -884,7 +888,7 @@ export const schools: School[] = [
   },
   {
     id: "ucla", name: "加州大学洛杉矶分校", nameEn: "UCLA", country: "US", qsRank: 42,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5 },
     applicationFee: "$155", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE（部分项目）",
@@ -893,7 +897,7 @@ export const schools: School[] = [
   },
   {
     id: "ucberkeley", name: "加州大学伯克利分校", nameEn: "UC Berkeley", country: "US", qsRank: 12,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5 },
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5 },
     applicationFee: "$155", listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE（按项目），CS 极其竞争",
@@ -902,7 +906,7 @@ export const schools: School[] = [
   },
   {
     id: "umich", name: "密歇根大学", nameEn: "University of Michigan", country: "US", qsRank: 33,
-    ieltsMin: 6.5, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     extraRequirements: "GRE（部分项目）",
     notes: "⚠️ 数据待确认。Ross 商学院",
@@ -910,7 +914,7 @@ export const schools: School[] = [
   },
   {
     id: "cmu", name: "卡内基梅隆大学", nameEn: "Carnegie Mellon University", country: "US", qsRank: 52,
-    ieltsMin: 7.0, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.5  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "艺术设计", "理学"],
     extraRequirements: "GRE（SCS 要求 CS GRE Subject）",
     notes: "⚠️ 数据待确认。CS 全球顶尖",
@@ -918,7 +922,7 @@ export const schools: School[] = [
   },
   {
     id: "uiuc", name: "伊利诺伊大学厄巴纳-香槟", nameEn: "UIUC", country: "US", qsRank: 64,
-    ieltsMin: 6.5, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.2, other: 3.2  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.2, other: 3.2  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     extraRequirements: "GRE（工程和 CS）",
     notes: "⚠️ 数据待确认。工程和 CS 极强",
@@ -926,7 +930,7 @@ export const schools: School[] = [
   },
   {
     id: "gatech", name: "佐治亚理工学院", nameEn: "Georgia Tech", country: "US", qsRank: 85,
-    ieltsMin: 6.5, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.3  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.3  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "理学"],
     extraRequirements: "GRE",
     notes: "⚠️ 数据待确认。工程和 CS 性价比极高",
@@ -934,7 +938,7 @@ export const schools: School[] = [
   },
   {
     id: "purdue", name: "普渡大学", nameEn: "Purdue University", country: "US", qsRank: 99,
-    ieltsMin: 6.5, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.2, other: 3.2  }, listPolicy: "open", preferredTiers: [],
+    ieltsMin: 6.5, toeflMin: 79, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.2, other: 3.2  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "教育", "理学"],
     extraRequirements: "GRE（工程）",
     notes: "⚠️ 数据待确认。工程强校",
@@ -945,6 +949,34 @@ export const schools: School[] = [
 export const majorCategories = [
   "商科", "计算机", "工程", "传媒", "教育", "法律", "艺术设计", "理学", "社科",
 ] as const;
+
+// Convert TOEFL to IELTS equivalent (ETS official mapping)
+export function toeflToIelts(toefl: number): number {
+  if (toefl >= 114) return 9.0;
+  if (toefl >= 110) return 8.5;
+  if (toefl >= 102) return 8.0;
+  if (toefl >= 94) return 7.5;
+  if (toefl >= 79) return 7.0;
+  if (toefl >= 60) return 6.5;
+  if (toefl >= 46) return 6.0;
+  if (toefl >= 35) return 5.5;
+  if (toefl >= 32) return 5.0;
+  return 4.5;
+}
+
+// Convert IELTS to TOEFL equivalent
+export function ieltsToToefl(ielts: number): number {
+  if (ielts >= 9.0) return 118;
+  if (ielts >= 8.5) return 113;
+  if (ielts >= 8.0) return 110;
+  if (ielts >= 7.5) return 102;
+  if (ielts >= 7.0) return 94;
+  if (ielts >= 6.5) return 79;
+  if (ielts >= 6.0) return 60;
+  if (ielts >= 5.5) return 46;
+  if (ielts >= 5.0) return 35;
+  return 32;
+}
 
 // Convert Chinese percentage GPA (百分制) to US 4.0 scale (approximate)
 export function percentageToGpa4(pct: number): number {
@@ -961,7 +993,8 @@ export function matchSchool(
   school: School,
   userTier: string,
   gpa: number,
-  ielts: number,
+  langScore: number,
+  langTest: "IELTS" | "TOEFL",
   major: string
 ): { level: MatchLevel; reasons: string[] } {
   const reasons: string[] = [];
@@ -979,7 +1012,10 @@ export function matchSchool(
   // User always inputs percentage (百分制), but US schools use 4.0
   const userGpaForComparison = school.gpaScale === "gpa4" ? percentageToGpa4(gpa) : gpa;
   const gpaGap = Math.round((requiredGpa - userGpaForComparison) * 10) / 10;
-  const ieltsGap = Math.round((school.ieltsMin - ielts) * 10) / 10;
+  const requiredLang = langTest === "TOEFL" ? school.toeflMin : school.ieltsMin;
+  const langGap = langTest === "TOEFL"
+    ? Math.round(requiredLang - langScore)
+    : Math.round((requiredLang - langScore) * 10) / 10;
 
   // For strict list policy, exclude 双非 entirely
   if (school.listPolicy === "strict" && userTier === "双非") {
@@ -1002,11 +1038,11 @@ export function matchSchool(
     }
   }
 
-  // IELTS check
-  if (ielts >= school.ieltsMin) {
-    reasons.push(`IELTS ${school.ieltsMin}+ ✓`);
+  // Language check
+  if (langScore >= requiredLang) {
+    reasons.push(`${langTest} ${requiredLang}+ ✓`);
   } else {
-    reasons.push(`IELTS ${school.ieltsMin}+ (你: ${ielts}, 差${ieltsGap})`);
+    reasons.push(`${langTest} ${requiredLang}+ (你: ${langScore}, 差${langGap})`);
   }
 
   // List/tier status
@@ -1020,14 +1056,15 @@ export function matchSchool(
 
   // Determine match level
   const gpaPassed = userGpaForComparison >= requiredGpa;
-  const ieltsPassed = ielts >= school.ieltsMin;
+  const langPassed = langScore >= requiredLang;
   const gpaCloseThreshold = school.gpaScale === "gpa4" ? 0.3 : 5;
   const gpaClose = gpaGap > 0 && gpaGap <= gpaCloseThreshold;
-  const ieltsClose = ieltsGap > 0 && ieltsGap <= 0.5;
+  const langCloseThreshold = langTest === "TOEFL" ? 5 : 0.5;
+  const langClose = langGap > 0 && langGap <= langCloseThreshold;
 
-  if (gpaPassed && ieltsPassed) {
+  if (gpaPassed && langPassed) {
     return { level: "high", reasons };
-  } else if ((gpaPassed && ieltsClose) || (gpaClose && ieltsPassed)) {
+  } else if ((gpaPassed && langClose) || (gpaClose && langPassed)) {
     return { level: "medium", reasons };
   } else {
     return { level: "low", reasons };

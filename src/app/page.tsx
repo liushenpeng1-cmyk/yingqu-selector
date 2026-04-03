@@ -20,7 +20,8 @@ export default function Home() {
   const [selectedSchool, setSelectedSchool] = useState<ChinaUniversity | null>(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [gpa, setGpa] = useState("");
-  const [ielts, setIelts] = useState("");
+  const [langTest, setLangTest] = useState<"IELTS" | "TOEFL">("IELTS");
+  const [langScore, setLangScore] = useState("");
   const [currentCategoryId, setCurrentCategoryId] = useState("business");
   const [targetSubMajorId, setTargetSubMajorId] = useState("management");
   const [regions, setRegions] = useState<Set<Region>>(new Set(["UK", "AU", "HK", "SG", "CA", "US"]));
@@ -41,6 +42,8 @@ export default function Home() {
 
   const tier = selectedSchool?.tier;
 
+  const rawLangScore = parseFloat(langScore) || 0;
+
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
   const targetCategoryId = targetSubMajor?.categoryId || "business";
   const targetCategoryName = categoryIdToName[targetCategoryId] || "商科";
@@ -53,7 +56,7 @@ export default function Home() {
         .filter((s) => regions.size === 0 || regions.has(s.country))
         .map((school) => ({
           school,
-          ...matchSchool(school, tier, parseFloat(gpa) || 0, parseFloat(ielts) || 0, targetCategoryName),
+          ...matchSchool(school, tier, parseFloat(gpa) || 0, rawLangScore, langTest, targetCategoryName),
         }))
         .sort((a, b) => {
           const order: Record<MatchLevel, number> = { high: 0, medium: 1, low: 2, excluded: 3 };
@@ -68,7 +71,7 @@ export default function Home() {
     excluded: results.filter((r) => r.level === "excluded").length,
   };
 
-  const canSubmit = selectedSchool && gpa && ielts && parseFloat(gpa) > 0 && parseFloat(ielts) > 0;
+  const canSubmit = selectedSchool && gpa && langScore && parseFloat(gpa) > 0 && rawLangScore > 0;
 
   function handleSelectSchool(uni: ChinaUniversity) {
     setSelectedSchool(uni);
@@ -195,32 +198,50 @@ export default function Home() {
                 )}
               </div>
 
-              {/* GPA + IELTS */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm text-white/50 mb-2">
-                    GPA（百分制） <span className="text-[#e8be64] text-xs">●</span>
-                  </label>
-                  <input
-                    type="number"
-                    value={gpa}
-                    onChange={(e) => setGpa(e.target.value)}
-                    placeholder="例：85"
-                    className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3.5 text-[#f0ede6] placeholder:text-white/20 focus:border-[#e8be64] focus:ring-1 focus:ring-[#e8be64]/20 outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-white/50 mb-2">
-                    IELTS 总分 <span className="text-[#e8be64] text-xs">●</span>
-                  </label>
-                  <input
-                    type="number"
-                    step="0.5"
-                    value={ielts}
-                    onChange={(e) => setIelts(e.target.value)}
-                    placeholder="例：6.5"
-                    className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3.5 text-[#f0ede6] placeholder:text-white/20 focus:border-[#e8be64] focus:ring-1 focus:ring-[#e8be64]/20 outline-none transition-all"
-                  />
+              {/* GPA */}
+              <div>
+                <label className="block text-sm text-white/50 mb-2">
+                  GPA（百分制） <span className="text-[#e8be64] text-xs">●</span>
+                </label>
+                <input
+                  type="number"
+                  value={gpa}
+                  onChange={(e) => setGpa(e.target.value)}
+                  placeholder="例：85"
+                  className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3.5 text-[#f0ede6] placeholder:text-white/20 focus:border-[#e8be64] focus:ring-1 focus:ring-[#e8be64]/20 outline-none transition-all"
+                />
+              </div>
+
+              {/* Language Score */}
+              <div>
+                <label className="block text-sm text-white/50 mb-2">
+                  语言成绩 <span className="text-[#e8be64] text-xs">●</span>
+                </label>
+                <div className="flex gap-3 items-start">
+                  <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden shrink-0">
+                    {(["IELTS", "TOEFL"] as const).map((t) => (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => { setLangTest(t); setLangScore(""); }}
+                        className={`px-4 py-3.5 text-sm font-medium transition-all ${
+                          langTest === t ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"
+                        }`}
+                      >
+                        {t}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="flex-1">
+                    <input
+                      type="number"
+                      step={langTest === "IELTS" ? "0.5" : "1"}
+                      value={langScore}
+                      onChange={(e) => setLangScore(e.target.value)}
+                      placeholder={langTest === "IELTS" ? "例：6.5" : "例：90"}
+                      className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3.5 text-[#f0ede6] placeholder:text-white/20 focus:border-[#e8be64] focus:ring-1 focus:ring-[#e8be64]/20 outline-none transition-all"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -335,7 +356,7 @@ export default function Home() {
               <div className="flex-1 min-w-[200px]">
                 <h3 className="font-semibold">{selectedSchool.name}</h3>
                 <p className="text-sm text-white/40">
-                  {getTierLabel(selectedSchool.tier)} · GPA {gpa} · IELTS {ielts} · {targetSubMajor?.name || targetCategoryName}{isCrossMajor ? ` (本科: ${currentCategoryName})` : ""}
+                  {getTierLabel(selectedSchool.tier)} · GPA {gpa} · {langTest} {langScore} · {targetSubMajor?.name || targetCategoryName}{isCrossMajor ? ` (本科: ${currentCategoryName})` : ""}
                 </p>
               </div>
               <button
@@ -425,9 +446,10 @@ export default function Home() {
 
                   {/* Language course suggestion */}
                   {level !== "excluded" && (() => {
-                    const ieltsGap = school.ieltsMin - (parseFloat(ielts) || 0);
-                    const suggestion = getLanguageCourseSuggestion(school, ieltsGap);
-                    if (!suggestion || ieltsGap <= 0) return null;
+                    const requiredLang = langTest === "TOEFL" ? school.toeflMin : school.ieltsMin;
+                    const langGap = requiredLang - rawLangScore;
+                    const suggestion = getLanguageCourseSuggestion(school, langGap, langTest);
+                    if (!suggestion || langGap <= 0) return null;
                     return (
                       <div className="mt-3 px-3 py-2.5 rounded-lg bg-purple-400/8 border border-purple-400/15 text-xs leading-relaxed">
                         <div className="text-purple-300 font-medium mb-1">🎓 语言班选项</div>
@@ -461,21 +483,28 @@ export default function Home() {
                   )}
 
                   {/* Footer */}
-                  <div className="mt-3 pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                    <span className="text-xs text-white/20">
-                      QS #{school.qsRank} · {regionLabels[school.country]}
-                      {school.applicationFee && ` · 申请费 ${school.applicationFee}`}
-                    </span>
-                    {school.source && (
-                      <a
-                        href={school.source}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-[#e8be64]/60 hover:text-[#e8be64] transition-colors"
-                      >
-                        查看官网要求 →
-                      </a>
+                  <div className="mt-3 pt-3 border-t border-white/[0.06]">
+                    {level === "high" && (
+                      <div className="text-xs text-white/25 mb-2">
+                        ⚡ 以上为学校最低录取标准，热门专业（商科、CS 等）通常要求更高，请以具体项目为准
+                      </div>
                     )}
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-white/20">
+                        QS #{school.qsRank} · {regionLabels[school.country]}
+                        {school.applicationFee && ` · 申请费 ${school.applicationFee}`}
+                      </span>
+                      {school.source && (
+                        <a
+                          href={school.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-[#e8be64]/60 hover:text-[#e8be64] transition-colors"
+                        >
+                          查看官网要求 →
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               );
