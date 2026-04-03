@@ -2668,6 +2668,9 @@ export const schoolsWithPrograms = new Set(
   [...new Set(programs.map(p => p.schoolId))]
 );
 
+export const totalSchoolCount = schoolsWithPrograms.size;
+export const totalProgramCount = programs.length;
+
 export type ProgramMatchLevel = "high" | "medium" | "low";
 
 export type ProgramMatchResult = {

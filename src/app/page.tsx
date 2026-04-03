@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { schools, regionLabels, type Region } from "@/data/schools";
 import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china-universities";
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
-import { matchPrograms, schoolsWithPrograms, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
+import { matchPrograms, schoolsWithPrograms, totalSchoolCount, totalProgramCount, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
 
 const levelConfig: Record<ProgramMatchLevel | "excluded", { label: string; color: string; bg: string; border: string }> = {
   high: { label: "很有可能", color: "text-green-400", bg: "bg-green-400/10", border: "border-l-green-400" },
@@ -368,7 +368,7 @@ export default function Home() {
           <div className="text-center mb-6 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#e8be64]/30 bg-[#e8be64]/10 text-[#e8be64] text-xs sm:text-sm mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#e8be64] animate-pulse" />
-              覆盖 26 所学校 · 240 个具体项目
+              覆盖 {totalSchoolCount} 所学校 · {totalProgramCount} 个具体项目
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-3 sm:mb-4">
               你的成绩<br />
