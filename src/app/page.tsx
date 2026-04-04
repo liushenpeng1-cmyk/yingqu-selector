@@ -614,7 +614,7 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI Lecture Notes PDF</h3>
                   <p className="text-xs text-white/40 mt-0.5">英区大发明家第一个发明 — 留学生专属笔记 App，录音秒变笔记，AI 整理课堂重点</p>
-                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换至任意外区即可搜索 · 下载教程见抖音/小红书主页置顶</p>
+                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换至任意外区即可搜索 · 使用教程见抖音/小红书主页置顶</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
@@ -740,7 +740,7 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI Lecture Notes PDF</h3>
                   <p className="text-xs text-white/40 mt-0.5">英区大发明家第一个发明 — 留学生专属笔记 App，录音秒变笔记，AI 整理课堂重点</p>
-                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换至任意外区即可搜索 · 下载教程见抖音/小红书主页置顶</p>
+                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换至任意外区即可搜索 · 使用教程见抖音/小红书主页置顶</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
