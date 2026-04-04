@@ -602,7 +602,7 @@ export default function Home() {
             <div className="bg-[#181920] border border-white/[0.06] rounded-2xl p-5 sm:p-6 text-center">
               <h3 className="text-sm font-semibold text-white/70 mb-1">加入择校交流群</h3>
               <p className="text-xs text-white/30 mb-4">和其他同学交流申请经验、分享选校心得</p>
-              <img src="/wechat-group.jpg" alt="微信群二维码" className="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-xl" />
+              <img src="/wechat-group.jpg" alt="微信群二维码" className="w-48 sm:w-56 mx-auto rounded-xl" />
               <p className="text-[11px] text-white/20 mt-3">微信扫码加入「英区大发明家择校器」交流群</p>
             </div>
 
@@ -730,7 +730,7 @@ export default function Home() {
             <div className="bg-[#181920] border border-white/[0.06] rounded-2xl p-5 sm:p-6 text-center">
               <h3 className="text-sm font-semibold text-white/70 mb-1">加入择校交流群</h3>
               <p className="text-xs text-white/30 mb-4">和其他同学交流申请经验、分享选校心得</p>
-              <img src="/wechat-group.jpg" alt="微信群二维码" className="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-xl" />
+              <img src="/wechat-group.jpg" alt="微信群二维码" className="w-48 sm:w-56 mx-auto rounded-xl" />
               <p className="text-[11px] text-white/20 mt-3">微信扫码加入「英区大发明家择校器」交流群</p>
             </div>
             <a href="https://apps.apple.com/gb/app/bbnotes-ai-lecture-notes-pdf/id6758214249" target="_blank" rel="noopener noreferrer"
