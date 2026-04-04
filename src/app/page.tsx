@@ -595,6 +595,30 @@ export default function Home() {
             </div>
           </div>
           <p className="text-center text-white/20 text-xs sm:text-sm mt-6 sm:mt-8">数据来源：各校官网公开录取标准</p>
+
+          {/* WeChat Group + BBnotes Ad */}
+          <div className="mt-8 sm:mt-12 space-y-4">
+            {/* WeChat Group */}
+            <div className="bg-[#181920] border border-white/[0.06] rounded-2xl p-5 sm:p-6 text-center">
+              <h3 className="text-sm font-semibold text-white/70 mb-1">加入择校交流群</h3>
+              <p className="text-xs text-white/30 mb-4">和其他同学交流申请经验、分享选校心得</p>
+              <img src="/wechat-group.jpg" alt="微信群二维码" className="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-xl" />
+              <p className="text-[11px] text-white/20 mt-3">微信扫码加入「英区大发明家择校器」交流群</p>
+            </div>
+
+            {/* BBnotes Ad */}
+            <a href="https://apps.apple.com/gb/app/bbnotes-ai-lecture-notes-pdf/id6758214249" target="_blank" rel="noopener noreferrer"
+              className="block bg-gradient-to-r from-[#e8be64]/10 to-[#e8be64]/5 border border-[#e8be64]/20 rounded-2xl p-5 sm:p-6 hover:border-[#e8be64]/40 transition-all group">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#e8be64]/20 flex items-center justify-center text-2xl shrink-0">📝</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI 智能笔记</h3>
+                  <p className="text-xs text-white/40 mt-0.5">录音秒变笔记，AI 整理课堂重点，留学生必备学习神器</p>
+                </div>
+                <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
+              </div>
+            </a>
+          </div>
         </main>
       )}
 
@@ -699,6 +723,27 @@ export default function Home() {
           <p className="text-center text-white/15 text-xs mt-6 sm:mt-8 max-w-xl mx-auto leading-relaxed px-2">
             数据基于各校官网公开录取标准，按专业级别匹配。同一专业在不同学校可能归属不同学院。具体要求以各校官网为准。
           </p>
+
+          {/* WeChat Group + BBnotes Ad */}
+          <div className="mt-6 sm:mt-8 space-y-4">
+            <div className="bg-[#181920] border border-white/[0.06] rounded-2xl p-5 sm:p-6 text-center">
+              <h3 className="text-sm font-semibold text-white/70 mb-1">加入择校交流群</h3>
+              <p className="text-xs text-white/30 mb-4">和其他同学交流申请经验、分享选校心得</p>
+              <img src="/wechat-group.jpg" alt="微信群二维码" className="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-xl" />
+              <p className="text-[11px] text-white/20 mt-3">微信扫码加入「英区大发明家择校器」交流群</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/bbnotes-ai-lecture-notes-pdf/id6758214249" target="_blank" rel="noopener noreferrer"
+              className="block bg-gradient-to-r from-[#e8be64]/10 to-[#e8be64]/5 border border-[#e8be64]/20 rounded-2xl p-5 sm:p-6 hover:border-[#e8be64]/40 transition-all group">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#e8be64]/20 flex items-center justify-center text-2xl shrink-0">📝</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI 智能笔记</h3>
+                  <p className="text-xs text-white/40 mt-0.5">录音秒变笔记，AI 整理课堂重点，留学生必备学习神器</p>
+                </div>
+                <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
+              </div>
+            </a>
+          </div>
 
           {/* Back to top button */}
           <button
