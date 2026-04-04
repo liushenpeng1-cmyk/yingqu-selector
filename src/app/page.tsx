@@ -614,20 +614,7 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI Lecture Notes PDF</h3>
                   <p className="text-xs text-white/40 mt-0.5">英区大发明家第一个发明 — 留学生专属笔记 App，录音秒变笔记，AI 整理课堂重点</p>
-                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换港区/英区/美区即可搜索</p>
-                  <details className="mt-3 text-left">
-                    <summary className="text-[11px] text-white/30 cursor-pointer hover:text-white/50 transition-colors">如何切换 App Store 地区？点击查看教程 ▾</summary>
-                    <div className="mt-2 text-[11px] text-white/35 leading-relaxed space-y-1.5 bg-white/[0.03] rounded-lg p-3">
-                      <p className="text-white/50 font-medium">方法：切换 Apple ID 地区（无需新账号）</p>
-                      <p>1. 打开「设置」→ 点击顶部你的名字 → 「媒体与购买项目」</p>
-                      <p>2. 点击「查看账户」→「国家/地区」→「更改国家或地区」</p>
-                      <p>3. 选择任意非大陆地区（推荐：香港 / 英国 / 美国）</p>
-                      <p>4. 同意条款 → 付款方式选「无」→ 随便填一个当地地址</p>
-                      <p>5. 打开 App Store 搜索「BBnotes」即可下载</p>
-                      <p>6. 下载完后可以用同样步骤切回中国大陆</p>
-                      <p className="text-[#e8be64]/40 pt-1">💡 切区不影响已下载的 App，也不影响 iCloud 数据</p>
-                    </div>
-                  </details>
+                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换至任意外区即可搜索 · 下载教程见抖音/小红书主页置顶</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
@@ -753,20 +740,7 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI Lecture Notes PDF</h3>
                   <p className="text-xs text-white/40 mt-0.5">英区大发明家第一个发明 — 留学生专属笔记 App，录音秒变笔记，AI 整理课堂重点</p>
-                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换港区/英区/美区即可搜索</p>
-                  <details className="mt-3 text-left">
-                    <summary className="text-[11px] text-white/30 cursor-pointer hover:text-white/50 transition-colors">如何切换 App Store 地区？点击查看教程 ▾</summary>
-                    <div className="mt-2 text-[11px] text-white/35 leading-relaxed space-y-1.5 bg-white/[0.03] rounded-lg p-3">
-                      <p className="text-white/50 font-medium">方法：切换 Apple ID 地区（无需新账号）</p>
-                      <p>1. 打开「设置」→ 点击顶部你的名字 → 「媒体与购买项目」</p>
-                      <p>2. 点击「查看账户」→「国家/地区」→「更改国家或地区」</p>
-                      <p>3. 选择任意非大陆地区（推荐：香港 / 英国 / 美国）</p>
-                      <p>4. 同意条款 → 付款方式选「无」→ 随便填一个当地地址</p>
-                      <p>5. 打开 App Store 搜索「BBnotes」即可下载</p>
-                      <p>6. 下载完后可以用同样步骤切回中国大陆</p>
-                      <p className="text-[#e8be64]/40 pt-1">💡 切区不影响已下载的 App，也不影响 iCloud 数据</p>
-                    </div>
-                  </details>
+                  <p className="text-[11px] text-[#e8be64]/50 mt-1">非大陆 App Store 可下载 · 切换至任意外区即可搜索 · 下载教程见抖音/小红书主页置顶</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
