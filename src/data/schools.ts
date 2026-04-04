@@ -4,7 +4,7 @@ export type GpaByTier = {
   other: number;     // 双非 / not on list
 };
 
-export type Region = "UK" | "AU" | "HK" | "SG" | "US" | "CA";
+export type Region = "UK" | "AU" | "HK" | "SG" | "US" | "CA" | "JP" | "KR" | "DE" | "CH" | "NL" | "FR";
 
 export const regionLabels: Record<Region, string> = {
   UK: "🇬🇧 英国",
@@ -13,6 +13,12 @@ export const regionLabels: Record<Region, string> = {
   SG: "🇸🇬 新加坡",
   US: "🇺🇸 美国",
   CA: "🇨🇦 加拿大",
+  JP: "🇯🇵 日本",
+  KR: "🇰🇷 韩国",
+  DE: "🇩🇪 德国",
+  CH: "🇨🇭 瑞士",
+  NL: "🇳🇱 荷兰",
+  FR: "🇫🇷 法国",
 };
 
 export const regionInfo: Record<Region, { gpaSystem: string; keyFactors: string }> = {
@@ -22,6 +28,12 @@ export const regionInfo: Record<Region, { gpaSystem: string; keyFactors: string 
   SG: { gpaSystem: "百分制/4.0", keyFactors: "GPA + IELTS/TOEFL + GRE(部分)" },
   US: { gpaSystem: "4.0 制", keyFactors: "GPA + TOEFL/IELTS + GRE/GMAT" },
   CA: { gpaSystem: "百分制/4.0", keyFactors: "GPA + IELTS/TOEFL" },
+  JP: { gpaSystem: "百分制/4.0", keyFactors: "GPA + JLPT/TOEFL + 研究计划书" },
+  KR: { gpaSystem: "百分制/4.0", keyFactors: "GPA + TOPIK/IELTS + 面试" },
+  DE: { gpaSystem: "百分制", keyFactors: "GPA + 德语/英语 + APS审核" },
+  CH: { gpaSystem: "百分制", keyFactors: "GPA + IELTS/TOEFL + GRE(部分)" },
+  NL: { gpaSystem: "百分制", keyFactors: "GPA + IELTS/TOEFL" },
+  FR: { gpaSystem: "百分制", keyFactors: "GPA + 法语/英语 + 面试(部分)" },
 };
 
 export type School = {
@@ -67,7 +79,7 @@ export function getLanguageCourseSuggestion(
 
   // Only UK and AU commonly offer pre-sessional courses
   // HK/SG/US/CA generally don't have this pathway
-  if (school.country === "US" || school.country === "CA") {
+  if (school.country === "US" || school.country === "CA" || school.country === "JP" || school.country === "KR" || school.country === "DE" || school.country === "CH" || school.country === "NL" || school.country === "FR") {
     return null;
   }
 
@@ -1051,6 +1063,122 @@ export const schools: School[] = [
     extraRequirements: "GRE（部分项目要求）",
     notes: "工程和商科强势，Smeal 商学院认可度高。主校区 University Park",
     source: "https://gradschool.psu.edu/admissions/",
+  },
+  // ═══════════════ CH (瑞士) ═══════════════
+  {
+    id: "eth-zurich", name: "苏黎世联邦理工学院", nameEn: "ETH Zurich", country: "CH", qsRank: 7,
+    ieltsMin: 7.0, toeflMin: 100, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学"],
+    notes: "欧陆第一理工校，工程和自然科学全球顶尖。学费极低（约 CHF 730/学期）",
+    source: "https://ethz.ch/en/studies/master.html",
+  },
+  {
+    id: "epfl", name: "洛桑联邦理工学院", nameEn: "EPFL", country: "CH", qsRank: 18,
+    ieltsMin: 7.0, toeflMin: 100, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学"],
+    notes: "瑞士法语区顶尖理工校，AI 和生物工程强。学费极低（约 CHF 780/学期）",
+    source: "https://www.epfl.ch/education/master/",
+  },
+  // ═══════════════ JP (日本) ═══════════════
+  {
+    id: "u-tokyo", name: "东京大学", nameEn: "University of Tokyo", country: "JP", qsRank: 32,
+    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
+    extraRequirements: "部分项目需要日语 N1，英文授课项目(PEAK/GSP)免日语",
+    notes: "亚洲顶尖，英文授课项目竞争激烈。研究型为主，需提前联系导师",
+    source: "https://www.u-tokyo.ac.jp/en/prospective-students/graduate_course.html",
+  },
+  {
+    id: "kyoto-u", name: "京都大学", nameEn: "Kyoto University", country: "JP", qsRank: 50,
+    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学", "社科"],
+    extraRequirements: "部分项目需要日语，英文授课项目可免",
+    notes: "日本第二名校，学术自由氛围浓。理工科强势",
+    source: "https://www.kyoto-u.ac.jp/en/education-campus/graduate-school",
+  },
+  // ═══════════════ KR (韩国) ═══════════════
+  {
+    id: "snu", name: "首尔国立大学", nameEn: "Seoul National University", country: "KR", qsRank: 31,
+    ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
+    extraRequirements: "韩语 TOPIK 4 级或英语成绩",
+    notes: "韩国第一学府，学费低廉，奖学金丰富。中国留学生较多",
+    source: "https://en.snu.ac.kr/apply/graduate",
+  },
+  {
+    id: "kaist", name: "韩国科学技术院", nameEn: "KAIST", country: "KR", qsRank: 39,
+    ieltsMin: 6.5, toeflMin: 83, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学", "商科"],
+    notes: "韩国顶尖理工校，全英文授课，全额奖学金覆盖率高",
+    source: "https://admission.kaist.ac.kr/graduate/",
+  },
+  {
+    id: "yonsei", name: "延世大学", nameEn: "Yonsei University", country: "KR", qsRank: 50,
+    ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "计算机", "工程", "传媒", "社科"],
+    extraRequirements: "韩语 TOPIK 4 级或英语成绩",
+    notes: "SKY 名校之一，商科和传媒强势。首尔市中心校区",
+    source: "https://www.yonsei.ac.kr/en_sc/admission/graduate.jsp",
+  },
+  // ═══════════════ DE (德国) ═══════════════
+  {
+    id: "tum", name: "慕尼黑工业大学", nameEn: "Technical University of Munich", country: "DE", qsRank: 28,
+    ieltsMin: 6.5, toeflMin: 88, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学", "商科"],
+    extraRequirements: "需要 APS 审核证书",
+    notes: "德国第一理工校，学费免费（仅收学期注册费约 €150）。工程和 CS 全球顶尖",
+    source: "https://www.tum.de/en/studies/application/",
+  },
+  {
+    id: "lmu", name: "慕尼黑大学", nameEn: "Ludwig Maximilian University of Munich", country: "DE", qsRank: 50,
+    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "理学", "社科", "法律"],
+    extraRequirements: "需要 APS 审核证书",
+    notes: "德国综合排名第一，人文社科强。学费免费",
+    source: "https://www.lmu.de/en/study/all-degrees-and-programs/",
+  },
+  // ═══════════════ NL (荷兰) ═══════════════
+  {
+    id: "tu-delft", name: "代尔夫特理工大学", nameEn: "Delft University of Technology", country: "NL", qsRank: 47,
+    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学"],
+    notes: "欧洲顶尖理工校，建筑和工程全球领先。学费约 €18,750/年",
+    source: "https://www.tudelft.nl/en/education/programmes/masters",
+  },
+  {
+    id: "uva", name: "阿姆斯特丹大学", nameEn: "University of Amsterdam", country: "NL", qsRank: 53,
+    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "计算机", "传媒", "社科", "理学"],
+    notes: "传媒和商科欧洲顶尖。位于阿姆斯特丹市中心",
+    source: "https://www.uva.nl/en/education/master-s/master-s-programmes/master-s-programmes.html",
+  },
+  // ═══════════════ FR (法国) ═══════════════
+  {
+    id: "psl", name: "巴黎文理研究大学", nameEn: "Paris Sciences et Lettres University", country: "FR", qsRank: 24,
+    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "理学", "社科", "艺术设计"],
+    notes: "法国第一，联合体大学（含巴黎高师、巴黎九大等）。部分项目法语授课",
+    source: "https://psl.eu/en/education",
+  },
+  {
+    id: "paris-saclay", name: "巴黎萨克雷大学", nameEn: "Université Paris-Saclay", country: "FR", qsRank: 68,
+    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
+    listPolicy: "open", preferredTiers: [],
+    majorCategories: ["计算机", "工程", "理学", "商科"],
+    notes: "法国理工科强校，数学和物理全球领先。部分项目有英文授课选项",
+    source: "https://www.universite-paris-saclay.fr/en/education/masters-programmes",
   },
 ];
 
