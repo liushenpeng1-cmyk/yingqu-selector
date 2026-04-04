@@ -235,7 +235,7 @@ export default function Home() {
   const [showMajorDropdown, setShowMajorDropdown] = useState(false);
   const [bgQuery, setBgQuery] = useState("");
   const [showBgDropdown, setShowBgDropdown] = useState(false);
-  const [regions, setRegions] = useState<Set<Region>>(new Set(["UK", "AU", "HK", "SG", "CA", "US"]));
+  const [regions, setRegions] = useState<Set<Region>>(new Set());
   const [showBackToTop, setShowBackToTop] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const majorDropdownRef = useRef<HTMLDivElement>(null);
@@ -327,7 +327,7 @@ export default function Home() {
 
   const totalPrograms = schoolResults.reduce((sum, s) => sum + s.programs.length, 0);
 
-  const canSubmit = selectedSchool && gpa && langScore && parseFloat(gpa) > 0 && rawLangScore > 0;
+  const canSubmit = selectedSchool && gpa && langScore && parseFloat(gpa) > 0 && rawLangScore > 0 && regions.size > 0;
 
   function handleSelectSchool(uni: ChinaUniversity) {
     setSelectedSchool(uni);
@@ -566,7 +566,7 @@ export default function Home() {
 
               {/* Region — horizontal scroll on mobile */}
               <div>
-                <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">目标地区（可多选）</label>
+                <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">目标地区（可多选） <span className="text-[#e8be64] text-xs">●</span></label>
                 <div className="flex sm:flex-wrap gap-2 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-hide">
                   {(Object.entries(regionLabels) as [Region, string][]).map(([key, label]) => {
                     const selected = regions.has(key);
