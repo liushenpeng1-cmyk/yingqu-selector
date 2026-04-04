@@ -160,7 +160,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "Band B。接受所有学科背景，为非商科毕业生设计",
     tuitionFee: "£35,900",
-    source: "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2025&id=284",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/277-management",
     verified: false,
   },
   {
@@ -248,7 +248,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "Band C。接受所有学科背景",
     tuitionFee: "£28,800",
-    source: "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2025&id=900",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/128-teaching-english-to-speakers-of-other-languages-tesol",
     verified: false,
   },
   {
@@ -259,7 +259,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学"],
     notes: "Band B。注意：经济学在 School of Economics（社科），不在商学院",
     tuitionFee: "£33,000",
-    source: "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2025&id=21",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/272-economics-economics-econometrics-economics-finance",
     verified: false,
   },
   {
@@ -270,7 +270,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "Band C。需法学学位",
     tuitionFee: "£28,800",
-    source: "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2025&id=401",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/167-law",
     verified: false,
   },
   {
@@ -281,7 +281,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     notes: "Band C。含多个方向（结构、信号处理、电子等）",
     tuitionFee: "£33,000",
-    source: "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2025&id=620",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-subjects/engineering",
     verified: false,
   },
   // ═══════════════ Glasgow ═══════════════
@@ -906,7 +906,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学", "工程"],
     notes: "KBS 项目，双非通常不接受。需量化学科背景",
     tuitionFee: "£39,552",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/finance-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/banking-and-finance-msc",
     verified: false,
   },
   {
@@ -917,7 +917,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "KBS 项目，双非通常不接受。转专业友好",
     tuitionFee: "£35,952",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/management-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/international-management-msc",
     verified: false,
   },
   {
@@ -928,7 +928,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "KBS 项目，双非通常不接受",
     tuitionFee: "£35,952",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/marketing-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/international-marketing-msc",
     verified: false,
   },
   {
@@ -939,7 +939,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "KBS 项目，双非通常不接受。不限背景",
     tuitionFee: "£35,952",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/accounting-accountability-financial-management-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/accounting-accountability-and-financial-management-msc",
     verified: false,
   },
   {
@@ -950,7 +950,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "工程"],
     notes: "非 KBS，双非可申（85%）。需量化/编程背景",
     tuitionFee: "£36,432",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/data-science-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/data-science-msc",
     verified: false,
   },
   {
@@ -961,7 +961,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机"],
     notes: "非 KBS，双非可申。需 CS 或相关背景",
     tuitionFee: "£36,432",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/computer-science-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/advanced-computing-msc",
     verified: false,
   },
   {
@@ -972,7 +972,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"],
     notes: "非 KBS，双非可申。需 CS/数学/工程背景",
     tuitionFee: "£36,432",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/artificial-intelligence-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/artificial-intelligence-msc",
     verified: false,
   },
   {
@@ -983,7 +983,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "Band A 语言要求（IELTS 7.0）。跨学科项目，接受任何背景",
     tuitionFee: "£26,352",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/digital-culture-society-ma",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/digital-culture-and-society-ma",
     verified: false,
   },
   {
@@ -995,7 +995,7 @@ export const programs: Program[] = [
     extraRequirements: "通常需 1-2 年英语教学经验",
     notes: "Band A（IELTS 7.0）。双非可申。中国申请者极多",
     tuitionFee: "£27,312",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/tesol-ma",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/teaching-english-to-speakers-of-other-languages-tesol-ma",
     verified: false,
   },
   {
@@ -1006,7 +1006,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "Band A（IELTS 7.0）。KCL 战争研究系全球顶尖。不限背景",
     tuitionFee: "£27,312",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/international-relations-ma",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/international-relations-ma",
     verified: false,
   },
   {
@@ -1017,7 +1017,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "Band A（IELTS 7.0）。英格兰最古老法学院之一。需法学学位",
     tuitionFee: "£30,672",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/law-llm",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/master-of-laws-llm",
     verified: false,
   },
   {
@@ -1028,7 +1028,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     notes: "Band B（IELTS 6.5）。需工程/物理/数学背景",
     tuitionFee: "£32,112",
-    source: "https://www.kcl.ac.uk/study-legacy/postgraduate-taught/courses/engineering-with-business-management-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/engineering-with-management-msc",
     verified: false,
   },
   // ═══════════════ UNSW ═══════════════
@@ -1098,7 +1098,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "工程"],
     notes: "需 CS/软件工程背景 + 编程和数学基础",
     tuitionFee: "澳元 A$49,680/年",
-    source: "https://www.unsw.edu.au/study/postgraduate/master-of-artificial-intelligence",
+    source: "https://www.unsw.edu.au/study/postgraduate/master-of-information-technology",
     verified: false,
   },
   {
@@ -1131,7 +1131,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景，教学经验优先但非必须",
     tuitionFee: "澳元 A$37,200/年",
-    source: "https://www.unsw.edu.au/study/postgraduate/master-of-education-tesol",
+    source: "https://www.unsw.edu.au/study/postgraduate/master-of-education",
     verified: false,
   },
   // ═══════════════ Sydney ═══════════════
@@ -1211,7 +1211,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     notes: "12+ 方向。需 4 年工程本科",
     tuitionFee: "澳元 A$52,500/年",
-    source: "https://www.sydney.edu.au/courses/courses/pc/master-of-engineering.html",
+    source: "https://www.sydney.edu.au/engineering/study/postgraduate-courses.html",
     verified: false,
   },
   {
@@ -2048,7 +2048,7 @@ export const programs: Program[] = [
     extraRequirements: "需 2 年教学经验",
     notes: "不限学科背景，但需教学经验",
     tuitionFee: "£22,000",
-    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/teaching-english-to-speakers-of-other-languages-ma",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/teaching-english-to-speakers-of-other-languages-tesol-ma",
     verified: false,
   },
   {
@@ -2070,7 +2070,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "IELTS 7.0（高于其他项目）。读写需 6.5。需法学学位",
     tuitionFee: "£24,300",
-    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/law-llm",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/master-of-laws-llm",
     verified: false,
   },
   {
@@ -2092,7 +2092,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "£28,600",
     notes: "需工程背景。学费相对低（£28,600），性价比高",
-    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/civil-engineering-msc",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/civil-engineering-and-management-msc",
     verified: false,
   },
   {
@@ -2310,7 +2310,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。TOEFL 87（高于 ANU 的 80 和 Monash 的 79）",
     tuitionFee: "澳元 A$48,064/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-commerce-5277",
+    source: "https://study.uq.edu.au/study-options/programs/master-commerce-5584",
     verified: false,
   },
   {
@@ -2321,7 +2321,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景",
     tuitionFee: "澳元 A$48,064/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-business-5562",
+    source: "https://study.uq.edu.au/study-options/programs/master-business-5583",
     verified: false,
   },
   {
@@ -2354,7 +2354,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     notes: "需工程本科",
     tuitionFee: "澳元 A$58,056/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-engineering-5530",
+    source: "https://study.uq.edu.au/study-options/programs/master-engineering-science-management-5530",
     verified: false,
   },
   {
@@ -2365,7 +2365,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "GPA 要求低于其他项目（211=70%, 非211=75%）。不限背景",
     tuitionFee: "澳元 A$38,304/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-education-5596",
+    source: "https://study.uq.edu.au/study-options/programs/master-educational-studies-5596",
     verified: false,
   },
   // ═══════════════ HKU ═══════════════
@@ -2378,7 +2378,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 90,
     requiresRelatedDegree: false, extraRequirements: "GMAT 强烈推荐（平均 700+）。可能需面试",
     notes: "亚洲顶尖金融硕士。学费 HK$396,000",
-    tuitionFee: "港币 HK$396,000", source: "https://mfin.fbe.hku.hk/", verified: false,
+    tuitionFee: "港币 HK$396,000", source: "https://masters.hkubs.hku.hk/articles/masteroffinance", verified: false,
   },
   {
     id: "hku-ba", schoolId: "hku", name: "商业分析", nameEn: "MSc Business Analytics",
@@ -2387,7 +2387,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 90,
     requiresRelatedDegree: false, extraRequirements: "GMAT/GRE 推荐。可能需面试",
     notes: "不限背景，量化/编程能力加分", tuitionFee: "港币 HK$330,000",
-    source: "https://msba.fbe.hku.hk/", verified: false,
+    source: "https://masters.hkubs.hku.hk/articles/masterofscienceinbusinessanalytics", verified: false,
   },
   {
     id: "hku-marketing", schoolId: "hku", name: "市场营销", nameEn: "MSc Marketing",
@@ -2395,7 +2395,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 83, other: 87 }, gpaScale: "percentage",
     ieltsOverall: 6.5, toeflOverall: 80,
     requiresRelatedDegree: false, notes: "不限背景", tuitionFee: "港币 HK$270,000",
-    source: "https://mktg.fbe.hku.hk/", verified: false,
+    source: "https://masters.hkubs.hku.hk/articles/masterofscienceinmarketing", verified: false,
   },
   {
     id: "hku-cs", schoolId: "hku", name: "计算机科学", nameEn: "MSc Computer Science",
@@ -2413,7 +2413,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.0, toeflOverall: 80,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "工程"],
     notes: "港大工学院新开 AI 项目。需 CS/理学/工程背景，学费 HK$24 万",
-    tuitionFee: "港币 HK$240,000", source: "https://engg.hku.hk/programmes/master/artificial-intelligence", verified: false,
+    tuitionFee: "港币 HK$240,000", source: "https://www.mscai.hku.hk/", verified: false,
   },
   {
     id: "hku-tesol", schoolId: "hku", name: "TESOL", nameEn: "MA TESOL",
@@ -2438,7 +2438,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 85, other: 88 }, gpaScale: "percentage",
     ieltsOverall: 7.0, toeflOverall: 90, requiresRelatedDegree: false,
     extraRequirements: "GRE 推荐", notes: "需量化背景", tuitionFee: "港币 HK$264,000",
-    source: "https://mec.fbe.hku.hk/", verified: false,
+    source: "https://masters.hkubs.hku.hk/articles/masterofeconomics", verified: false,
   },
   // ═══════════════ CUHK ═══════════════
   {
@@ -2448,7 +2448,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 79, requiresRelatedDegree: false,
     extraRequirements: "GMAT/GRE 必须（平均 GMAT 680+）。需面试", tuitionFee: "港币 HK$360,000",
     notes: "GMAT 必须（均分 680+），需面试。转专业友好但量化能力要求高。学费港校最贵之一",
-    source: "https://mscfinance.bschool.cuhk.edu.hk/", verified: false,
+    source: "https://masters.bschool.cuhk.edu.hk/programmes/mscfin/", verified: false,
   },
   {
     id: "cuhk-management", schoolId: "cuhk", name: "管理学", nameEn: "MSc Management",
@@ -2456,7 +2456,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
     ieltsOverall: 6.5, toeflOverall: 79, requiresRelatedDegree: false,
     notes: "转专业友好，不限背景。中大商学院三重认证",
-    tuitionFee: "港币 HK$270,000", source: "https://mscmanagement.bschool.cuhk.edu.hk/", verified: false,
+    tuitionFee: "港币 HK$270,000", source: "https://masters.bschool.cuhk.edu.hk/programmes/mim/", verified: false,
   },
   {
     id: "cuhk-marketing", schoolId: "cuhk", name: "市场营销", nameEn: "MSc Marketing",
@@ -2465,7 +2465,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 79, requiresRelatedDegree: false,
     extraRequirements: "GMAT/GRE 可能需要。需面试", tuitionFee: "港币 HK$280,000",
     notes: "转专业友好。GMAT/GRE 可能需要，需面试",
-    source: "https://mscmarketing.bschool.cuhk.edu.hk/", verified: false,
+    source: "https://masters.bschool.cuhk.edu.hk/programmes/mscmkt/", verified: false,
   },
   {
     id: "cuhk-cs", schoolId: "cuhk", name: "计算机科学", nameEn: "MSc Computer Science",
@@ -2474,7 +2474,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 79,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "工程"],
     notes: "竞争激烈，内地申请量大", tuitionFee: "港币 HK$210,000",
-    source: "https://www.cse.cuhk.edu.hk/programmes/msc-in-computer-science/", verified: false,
+    source: "https://msc.cse.cuhk.edu.hk/", verified: false,
   },
   {
     id: "cuhk-tesol", schoolId: "cuhk", name: "TESOL", nameEn: "MA TESOL",
@@ -2491,7 +2491,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 92,
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "强烈偏好 985/211 法学院", tuitionFee: "港币 HK$172,000",
-    source: "https://www.law.cuhk.edu.hk/en/study/llm.php", verified: false,
+    source: "https://www.law.cuhk.edu.hk/app/study-with-us/", verified: false,
   },
   {
     id: "cuhk-economics", schoolId: "cuhk", name: "经济学", nameEn: "MSc Economics",
@@ -2499,7 +2499,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 83, other: 87 }, gpaScale: "percentage",
     ieltsOverall: 6.5, toeflOverall: 79, requiresRelatedDegree: false,
     extraRequirements: "GRE 推荐", notes: "需量化背景", tuitionFee: "港币 HK$210,000",
-    source: "https://www.econ.cuhk.edu.hk/econ/en-gb/content/msc-economics", verified: false,
+    source: "https://admission.econ.cuhk.edu.hk/pg/master-economics/", verified: false,
   },
   // ═══════════════ HKUST ═══════════════
   {
@@ -2509,7 +2509,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 80, requiresRelatedDegree: false,
     extraRequirements: "GMAT/GRE 必须（平均 GMAT 700+）。需面试",
     notes: "亚洲顶尖，FT 排名。双非极难（需 90+）", tuitionFee: "港币 HK$420,000",
-    source: "https://msfin.hkust.edu.hk/", verified: false,
+    source: "https://mfin.hkust.edu.hk/", verified: false,
   },
   {
     id: "hkust-management", schoolId: "hkust", name: "管理学", nameEn: "MSc Management",
@@ -2518,7 +2518,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 80, requiresRelatedDegree: false,
     extraRequirements: "GMAT/GRE 可能需要。需面试。CEMS MIM 双学位可选",
     notes: "转专业友好。CEMS MIM 双学位可选（全球顶尖管理硕士联盟），需面试",
-    tuitionFee: "港币 HK$270,000", source: "https://msmt.hkust.edu.hk/", verified: false,
+    tuitionFee: "港币 HK$270,000", source: "https://mimt.hkust.edu.hk/", verified: false,
   },
   {
     id: "hkust-marketing", schoolId: "hkust", name: "市场营销", nameEn: "MSc Marketing",
@@ -2527,7 +2527,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 80, requiresRelatedDegree: false,
     extraRequirements: "GMAT/GRE 可能需要。需面试",
     notes: "侧重数字营销和分析", tuitionFee: "港币 HK$280,000",
-    source: "https://msmkt.hkust.edu.hk/", verified: false,
+    source: "https://mscmark.hkust.edu.hk/", verified: false,
   },
   {
     id: "hkust-it", schoolId: "hkust", name: "信息技术", nameEn: "MSc Information Technology",
@@ -3221,7 +3221,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学", "工程"],
     extraRequirements: "GMAT 强烈推荐（700+ 有竞争力）",
     notes: "极其竞争。双非几乎不录", tuitionFee: "£42,984",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Finance", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-finance-full-time", verified: false,
   },
   {
     id: "lse-management", schoolId: "lse", name: "管理学", nameEn: "MSc Management",
@@ -3230,7 +3230,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 100,
     requiresRelatedDegree: false,
     notes: "转专业项目（商科本科不可申）。工作经验 <2 年", tuitionFee: "£37,536",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Management", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/masters-in-management", verified: false,
   },
   {
     id: "lse-marketing", schoolId: "lse", name: "市场营销", nameEn: "MSc Marketing",
@@ -3239,7 +3239,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 100,
     requiresRelatedDegree: false, tuitionFee: "£37,536",
     notes: "转专业友好，不限背景。LSE 商科竞争激烈，双非需高 GPA",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Marketing", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-marketing", verified: false,
   },
   {
     id: "lse-accounting-finance", schoolId: "lse", name: "会计与金融", nameEn: "MSc Accounting and Finance",
@@ -3249,7 +3249,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学"],
     extraRequirements: "GMAT 强烈推荐（720+ 有竞争力）",
     notes: "LSE 最竞争项目之一。双非基本不录。录取者多 90%+", tuitionFee: "£42,984",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Accounting-and-Finance", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-accounting-and-finance", verified: false,
   },
   {
     id: "lse-data-science", schoolId: "lse", name: "数据科学", nameEn: "MSc Data Science",
@@ -3259,7 +3259,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "计算机", "工程"],
     extraRequirements: "需编程经验（Python/R）", tuitionFee: "£37,536",
     notes: "统计系主办，偏理论。需编程经验（Python/R），双非需 90+",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Data-Science", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-data-science", verified: false,
   },
   {
     id: "lse-economics", schoolId: "lse", name: "经济学", nameEn: "MSc Economics",
@@ -3269,7 +3269,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学"],
     extraRequirements: "GRE 强烈推荐（Q170 目标）。需实分析级数学",
     notes: "全球最竞争经济学硕士之一。双非基本不录", tuitionFee: "£37,536",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Economics", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-economics", verified: false,
   },
   {
     id: "lse-ir", schoolId: "lse", name: "国际关系", nameEn: "MSc International Relations",
@@ -3278,7 +3278,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 100,
     requiresRelatedDegree: false, tuitionFee: "£30,984",
     notes: "全球顶尖 IR 项目。转专业友好，不限背景。适合外交/国际组织方向",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-International-Relations", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-international-relations", verified: false,
   },
   {
     id: "lse-media", schoolId: "lse", name: "媒体与传播", nameEn: "MSc Media and Communications",
@@ -3286,7 +3286,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 85, other: 88 }, gpaScale: "percentage",
     ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 100,
     requiresRelatedDegree: false, notes: "中国申请者极多", tuitionFee: "£30,984",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/MSc-Media-and-Communications", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-media-and-communications", verified: false,
   },
   {
     id: "lse-llm", schoolId: "lse", name: "法学硕士", nameEn: "LLM",
@@ -3295,7 +3295,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"], tuitionFee: "£30,984",
     notes: "需法学背景。LSE 法学院全球领先，适合国际法/商法方向",
-    source: "https://www.lse.ac.uk/study-at-lse/Graduate/degree-programmes-2025/LLM", verified: false,
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/llm", verified: false,
   },
   // ═══════════════ Durham ═══════════════
   // 商学院: 985/211=80%, 双非=85%, 三重认证
@@ -3509,7 +3509,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。2026 年 Adelaide University 新校。也有 Master of Data Science 可选",
     tuitionFee: "澳元 A$50,000/年",
-    source: "https://www.adelaide.edu.au/degree-finder/mcoms_mcmpsci.html",
+    source: "https://adelaideuni.edu.au/study/degrees/master-of-computer-science/",
     verified: false,
   },
   {
@@ -3520,7 +3520,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景（含 CS 基础课）。48 units 标准学制",
     tuitionFee: "澳元 A$50,000/年",
-    source: "https://www.adelaide.edu.au/degree-finder/mdsci_mdatasci.html",
+    source: "https://adelaideuni.edu.au/study/degrees/master-of-data-science/",
     verified: false,
   },
   {
@@ -4154,7 +4154,7 @@ export const programs: Program[] = [
     extraRequirements: "GMAT/GRE required. Work experience preferred (average 4-5 years)",
     tuitionFee: "US$61,990",
     notes: "10个月加速项目，STEM认证。适合有工作经验的供应链/运营专业人士",
-    source: "https://ctl.mit.edu/education/master-supply-chain-management",
+    source: "https://ctl.mit.edu/supply-chain-management-masters-program",
     verified: false,
   },
   {
@@ -4376,7 +4376,7 @@ export const programs: Program[] = [
     tuitionFee: "US$72,000/year",
     applicationFee: "US$85",
     notes: "1年全日制。需法学本科或同等学位。每年约招收180名国际学生",
-    source: "https://hls.harvard.edu/graduate-program/llm/",
+    source: "https://hls.harvard.edu/graduate-program/ll-m-program/",
     verified: false,
   },
   {
@@ -4529,7 +4529,7 @@ export const programs: Program[] = [
     tuitionFee: "US$80,000/year",
     applicationFee: "US$250",
     notes: "Booth MBA以金融和量化分析闻名。灵活的课程体系，几乎无必修课",
-    source: "https://www.chicagobooth.edu/mba/admissions",
+    source: "https://www.chicagobooth.edu/mba/full-time/admissions",
     verified: false,
   },
   {
@@ -4581,7 +4581,7 @@ export const programs: Program[] = [
     tuitionFee: "US$60,000/year",
     applicationFee: "US$90",
     notes: "芝大经济学世界顶尖。1年加速项目，通常为PhD准备。需要高等数学基础",
-    source: "https://economics.uchicago.edu/graduate/admissions",
+    source: "https://economics.uchicago.edu/graduate-study/admission",
     verified: false,
   },
   {
@@ -4845,7 +4845,7 @@ export const programs: Program[] = [
     tuitionFee: "US$72,000/year",
     applicationFee: "US$80",
     notes: "1年全日制LLM。Cornell Tech也提供LLM in Law, Technology and Entrepreneurship",
-    source: "https://www.lawschool.cornell.edu/admissions/llm-admissions/",
+    source: "https://www.lawschool.cornell.edu/admissions/ll-m-admissions/",
     verified: false,
   },
   {
@@ -5018,7 +5018,7 @@ export const programs: Program[] = [
     tuitionFee: "US$72,000/year",
     applicationFee: "US$85",
     notes: "Yale Law是全美排名第一的法学院。LLM规模极小（约25人），竞争极激烈",
-    source: "https://law.yale.edu/studying-law-yale/graduate-programs/llm-program",
+    source: "https://law.yale.edu/studying-law-yale/degree-programs/graduate-programs/llm-program",
     verified: false,
   },
   {
@@ -5044,7 +5044,7 @@ export const programs: Program[] = [
     tuitionFee: "US$48,000/year",
     applicationFee: "US$105",
     notes: "1年终端硕士（Terminal MA）。需要线性代数、概率论和编程基础",
-    source: "https://statistics.yale.edu/academics/graduate-programs",
+    source: "https://statistics.yale.edu/graduates",
     verified: false,
   },
   {
@@ -5401,7 +5401,7 @@ export const programs: Program[] = [
     tuitionFee: "US$78,000/year",
     applicationFee: "US$85",
     notes: "Columbia Law是T6法学院之一。LLM规模约150人。纽约法律就业市场优势明显",
-    source: "https://www.law.columbia.edu/admissions/llm-program",
+    source: "https://www.law.columbia.edu/admissions/graduate-admissions/llm",
     verified: false,
   },
   {
@@ -5559,7 +5559,7 @@ export const programs: Program[] = [
     tuitionFee: "US$84,000/year",
     applicationFee: "US$250",
     notes: "Kellogg与McCormick联合项目。融合商业与数据科学。STEM认证",
-    source: "https://www.kellogg.northwestern.edu/programs/msba.aspx",
+    source: "https://www.kellogg.northwestern.edu/data-analytics.aspx/",
     verified: false,
   },
 
@@ -5709,7 +5709,7 @@ export const programs: Program[] = [
     extraRequirements: "GMAT/GRE required. Strong quantitative background needed",
     tuitionFee: "US$79,440 (total)",
     notes: "Stern金融全美顶级。1年制密集项目，需量化背景。STEM项目，可获3年OPT",
-    source: "https://www.stern.nyu.edu/programs-admissions/ms-global-finance",
+    source: "https://www.stern.nyu.edu/programs/global-masters/ms-global-finance",
     verified: false,
   },
   {
@@ -5805,7 +5805,7 @@ export const programs: Program[] = [
     extraRequirements: "Law degree required. LSAC credential assembly required for international applicants",
     tuitionFee: "US$76,000 (total)",
     notes: "NYU Law全美Top 5法学院。LLM项目极强，特别在国际法、税法领域",
-    source: "https://www.law.nyu.edu/graduateadmissions/llmprogram",
+    source: "https://www.law.nyu.edu/llmjsd/master-of-laws",
     verified: false,
   },
 
@@ -5904,7 +5904,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE required",
     tuitionFee: "US$44,000/year",
     notes: "Luskin School公共政策全美Top 20。涵盖城市规划、社会政策、环境政策等方向",
-    source: "https://luskin.ucla.edu/public-policy/masters-of-public-policy",
+    source: "https://luskin.ucla.edu/public-policy/academic-programs",
     verified: false,
   },
   {
@@ -5916,7 +5916,7 @@ export const programs: Program[] = [
     extraRequirements: "Law degree required",
     tuitionFee: "US$64,000 (total)",
     notes: "UCLA Law全美Top 15。Entertainment law特别强。需要法学本科/JD背景",
-    source: "https://law.ucla.edu/admissions/llm-and-sdj-programs",
+    source: "https://law.ucla.edu/llm-sjd",
     verified: false,
   },
   {
@@ -5967,7 +5967,7 @@ export const programs: Program[] = [
     extraRequirements: "GMAT/GRE required. Programming and statistics experience preferred",
     tuitionFee: "US$67,000 (total)",
     notes: "9个月加速STEM项目。Tepper商业分析与AI结合，毕业生就业率高",
-    source: "https://www.cmu.edu/tepper/programs/master-in-business-analytics/",
+    source: "https://www.cmu.edu/tepper/programs/master-business-analytics",
     verified: false,
   },
   {
@@ -5991,7 +5991,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE recommended. Strong math/CS background required (linear algebra, probability, algorithms)",
     tuitionFee: "US$28,710/semester (约US$57,420/year)",
     notes: "CMU机器学习系全球顶尖，独立department。录取率极低。研究密集型项目",
-    source: "https://www.ml.cmu.edu/academics/ms-in-machine-learning.html",
+    source: "https://ml.cmu.edu/academics/primary-ms-machine-learning-masters",
     verified: false,
   },
   {
@@ -6027,7 +6027,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE optional. Strong EE/CE background required",
     tuitionFee: "US$28,710/semester (约US$57,420/year)",
     notes: "CMU ECE全美Top 10。方向含芯片设计、嵌入式系统、信号处理、机器人等",
-    source: "https://www.ece.cmu.edu/academics/ms/index.html",
+    source: "https://www.ece.cmu.edu/academics/ms-ece/index.html",
     verified: false,
   },
   {
@@ -6125,7 +6125,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE optional. CS background required",
     tuitionFee: "US$40,000/year",
     notes: "课程型硕士（非研究型），不需要thesis。适合想快速进入工业界的同学。与MS in CS区分",
-    source: "https://cs.illinois.edu/admissions/graduate/professional-mcs",
+    source: "https://siebelschool.illinois.edu/academics/graduate/professional-mcs",
     verified: false,
   },
   {
@@ -6149,7 +6149,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE optional",
     tuitionFee: "US$40,000/year",
     notes: "UIUC机械工程全美Top 10。含thesis和non-thesis选项",
-    source: "https://mechse.illinois.edu/graduate/graduate-admissions",
+    source: "https://mechse.illinois.edu/graduate/applying-mechse-graduate-programs",
     verified: false,
   },
   {
@@ -6161,7 +6161,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE not required",
     tuitionFee: "US$38,000/year",
     notes: "UIUC iSchool全美Top 5。方向含数据科学、UX、数字图书馆等。转专业友好，不要求GRE",
-    source: "https://ischool.illinois.edu/degrees-programs/ms-information-sciences",
+    source: "https://ischool.illinois.edu/academics/graduate/ms-information-management",
     verified: false,
   },
   {
@@ -6173,7 +6173,7 @@ export const programs: Program[] = [
     extraRequirements: "GMAT/GRE required. Quantitative and programming skills preferred",
     tuitionFee: "US$42,000 (total)",
     notes: "STEM项目。Gies商业分析结合数据技能与商业洞察。1年加速项目",
-    source: "https://giesbusiness.illinois.edu/business-analytics",
+    source: "https://giesbusiness.illinois.edu/academics/graduate/business-analytics",
     verified: false,
   },
   {
@@ -6271,7 +6271,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE optional. Aerospace/mechanical engineering background preferred",
     tuitionFee: "US$32,510/year (international)",
     notes: "Georgia Tech航空航天全美Top 5。含推进、空气动力学、结构、控制等方向",
-    source: "https://ae.gatech.edu/graduate-admissions",
+    source: "https://ae.gatech.edu/applying-graduate-ms-or-phd",
     verified: false,
   },
   {
@@ -6283,7 +6283,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE recommended. Quantitative background required",
     tuitionFee: "US$32,510/year (international)",
     notes: "Georgia Tech ISyE全美Top 1（连续30+年排名第一）。方向含运筹学、供应链、质量工程等",
-    source: "https://www.isye.gatech.edu/academics/graduate/masters-programs",
+    source: "https://www.isye.gatech.edu/academics/masters",
     verified: false,
   },
   {
@@ -6295,7 +6295,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE optional. BME/engineering/science background required",
     tuitionFee: "US$32,510/year (international)",
     notes: "Georgia Tech与Emory联合BME项目，全美Top 3。含医疗设备、生物力学、成像、神经工程等方向",
-    source: "https://bme.gatech.edu/bme/graduate-admissions",
+    source: "https://bme.gatech.edu/academics/masters-programs",
     verified: false,
   },
   {
@@ -6307,7 +6307,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE optional",
     tuitionFee: "US$32,510/year (international)",
     notes: "方向含结构、交通、环境、地质、水资源等。Georgia Tech CEE全美Top 10",
-    source: "https://ce.gatech.edu/graduate/prospective-students",
+    source: "https://ce.gatech.edu/prospective/graduate",
     verified: false,
   },
 
@@ -6333,7 +6333,7 @@ export const programs: Program[] = [
     extraRequirements: "GMAT/GRE required. Quantitative/programming skills preferred",
     tuitionFee: "US$47,000 (total, international)",
     notes: "11个月STEM项目。Purdue MSBAIM全美Top 20。含企业capstone项目",
-    source: "https://business.purdue.edu/masters/programs/business-analytics-and-information-management.php",
+    source: "https://business.purdue.edu/masters/programs/ms-business-analytics-and-information-management/",
     verified: false,
   },
   {
@@ -6345,7 +6345,7 @@ export const programs: Program[] = [
     extraRequirements: "GMAT/GRE required. Quantitative background needed",
     tuitionFee: "US$44,000 (total, international)",
     notes: "10个月STEM项目。含CFA考试准备内容。Purdue金融硕士性价比高",
-    source: "https://business.purdue.edu/masters/programs/finance.php",
+    source: "https://business.purdue.edu/masters/programs/ms-finance/",
     verified: false,
   },
   {

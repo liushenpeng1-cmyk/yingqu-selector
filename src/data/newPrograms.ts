@@ -146,7 +146,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GMAT/GRE recommended. 量化背景优先",
     tuitionFee: "US$62,000 (total, non-resident)",
     notes: "STEM项目，可获3年OPT。1年加速项目",
-    source: "https://rady.ucsd.edu/programs/masters/msba/",
+    source: "https://rady.ucsd.edu/programs/ms-business-analytics/",
     verified: false,
   },
   {
@@ -170,7 +170,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GRE optional. 需要编程和统计背景",
     tuitionFee: "US$52,000/year (non-resident)",
     notes: "STEM项目。Halıcıoğlu数据科学研究所2018年成立，发展迅速",
-    source: "https://datascience.ucsd.edu/academics/graduate/admissions/",
+    source: "https://datascience.ucsd.edu/graduate/graduate-admissions/",
     verified: false,
   },
   {
@@ -218,7 +218,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GRE optional",
     tuitionFee: "US$52,000/year (non-resident)",
     notes: "2024年新成立的公共卫生学院。接受各种本科背景",
-    source: "https://hwsph.ucsd.edu/education/mph.html",
+    source: "https://ph.ucsd.edu/masters/mph/index.html",
     verified: false,
   },
   {
@@ -316,7 +316,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GRE required. 需要微积分、线性代数、统计基础",
     tuitionFee: "US$40,582/year (non-resident)",
     notes: "偏研究型。经济学系全美排名约前25",
-    source: "https://liberalarts.utexas.edu/economics/graduate/",
+    source: "https://liberalarts.utexas.edu/economics/master-s-program/",
     verified: false,
   },
   {
@@ -340,7 +340,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GRE recommended. 需要数学/统计背景",
     tuitionFee: "US$40,582/year (non-resident)",
     notes: "STEM项目。统计与数据科学系近年发展迅速",
-    source: "https://stat.utexas.edu/academics/graduate",
+    source: "https://stat.utexas.edu/academics/master-science-statistics",
     verified: false,
   },
   {
@@ -352,7 +352,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GRE required",
     tuitionFee: "US$40,582/year (non-resident)",
     notes: "Moody传媒学院全美顶尖。广告和公关方向极强",
-    source: "https://moody.utexas.edu/admissions/graduate",
+    source: "https://moody.utexas.edu/graduate-programs",
     verified: false,
   },
   {
@@ -500,7 +500,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GMAT/GRE recommended",
     tuitionFee: "US$45,000 (total, non-resident)",
     notes: "STEM项目，可获3年OPT。1年加速项目",
-    source: "https://business.wisc.edu/graduate/ms-business-analytics/",
+    source: "https://business.wisc.edu/graduate/masters/business-analytics/",
     verified: false,
   },
   {
@@ -560,7 +560,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GRE recommended. 需要数学/统计背景",
     tuitionFee: "US$25,732/year (non-resident)",
     notes: "UW-Madison统计系全美前10。STEM项目",
-    source: "https://stat.wisc.edu/graduate-studies/",
+    source: "https://stat.wisc.edu/graduate-admissions/ms-program/",
     verified: false,
   },
   {
@@ -622,7 +622,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "GMAT/GRE recommended",
     tuitionFee: "US$62,000 (total)",
     notes: "STEM项目，可获3年OPT。Questrom商业分析在业界认可度高",
-    source: "https://www.bu.edu/questrom/graduate-programs/ms-business-analytics/",
+    source: "https://www.bu.edu/questrom/graduate-programs/specialty-masters-programs/ms-in-business-analytics/",
     verified: false,
   },
   {
@@ -878,7 +878,7 @@ export const newPrograms: Program[] = [
     extraRequirements: "强量化背景要求，GRE/GMAT 推荐",
     tuitionFee: "新币 S$60,000",
     notes: "商学院与理学院联合项目",
-    source: "https://msqf.nus.edu.sg/admissions/admission-requirements/",
+    source: "https://www.math.nus.edu.sg/pg/mqf/prospective-students/",
     verified: false,
   },
 
@@ -990,7 +990,7 @@ export const newPrograms: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "工程"],
     tuitionFee: "新币 S$63,220",
-    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-data-science",
+    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-data-science-(msds)",
     verified: false,
   },
   {
@@ -999,7 +999,7 @@ export const newPrograms: Program[] = [
     gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
     ieltsOverall: 6.5, toeflOverall: 100, requiresRelatedDegree: false,
     tuitionFee: "新币 S$63,220",
-    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-information-systems",
+    source: "https://www.ntu.edu.sg/education/graduate-programme/master-in-science-in-information-systems",
     verified: false,
   },
 
@@ -1011,7 +1011,7 @@ export const newPrograms: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     tuitionFee: "新币 S$58,000",
-    source: "https://www.ntu.edu.sg/eee/admissions/programmes/graduate-programmes/msc-electronics",
+    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-electronics",
     verified: false,
   },
   {
@@ -1021,7 +1021,7 @@ export const newPrograms: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "新币 S$58,000",
-    source: "https://www.ntu.edu.sg/mae/admissions/graduate-studies/msc-mechanical-engineering",
+    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-mechanical-engineering-2",
     verified: false,
   },
   {
@@ -1031,7 +1031,7 @@ export const newPrograms: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "新币 S$58,000",
-    source: "https://www.ntu.edu.sg/cee/admissions/graduate-studies/msc-civil-engineering",
+    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-science-in-civil-engineering",
     verified: false,
   },
 
@@ -1043,7 +1043,7 @@ export const newPrograms: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false,
     tuitionFee: "新币 S$44,145",
     notes: "新加坡顶尖传媒学院",
-    source: "https://www.ntu.edu.sg/wkwsci/admissions/graduate/msc-communication-studies",
+    source: "https://www.ntu.edu.sg/education/graduate-programme/master-of-media-and-communication",
     verified: false,
   },
 
@@ -1055,7 +1055,7 @@ export const newPrograms: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false,
     tuitionFee: "新币 S$44,145",
     notes: "RSIS 亚洲顶尖国际关系智库",
-    source: "https://www.rsis.edu.sg/graduate-education/graduate-programmes/msc-in-international-relations/",
+    source: "https://rsis.edu.sg/programme/gpo/msc-international-relations/",
     verified: false,
   },
 ];
