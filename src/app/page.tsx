@@ -610,10 +610,11 @@ export default function Home() {
             <a href="https://apps.apple.com/gb/app/bbnotes-ai-lecture-notes-pdf/id6758214249" target="_blank" rel="noopener noreferrer"
               className="block bg-gradient-to-r from-[#e8be64]/10 to-[#e8be64]/5 border border-[#e8be64]/20 rounded-2xl p-5 sm:p-6 hover:border-[#e8be64]/40 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#e8be64]/20 flex items-center justify-center text-2xl shrink-0">📝</div>
+                <img src="/bbnotes-icon.jpg" alt="BBnotes" className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI 智能笔记</h3>
-                  <p className="text-xs text-white/40 mt-0.5">留学生专属笔记 App — 录音秒变笔记，AI 自动整理课堂重点，支持 PDF 标注</p>
+                  <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI Lecture Notes PDF</h3>
+                  <p className="text-xs text-white/40 mt-0.5">英区大发明家第一个发明 — 留学生专属笔记 App，录音秒变笔记，AI 整理课堂重点</p>
+                  <p className="text-[11px] text-white/25 mt-1">非大陆 App Store 可下载</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
@@ -735,10 +736,11 @@ export default function Home() {
             <a href="https://apps.apple.com/gb/app/bbnotes-ai-lecture-notes-pdf/id6758214249" target="_blank" rel="noopener noreferrer"
               className="block bg-gradient-to-r from-[#e8be64]/10 to-[#e8be64]/5 border border-[#e8be64]/20 rounded-2xl p-5 sm:p-6 hover:border-[#e8be64]/40 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#e8be64]/20 flex items-center justify-center text-2xl shrink-0">📝</div>
+                <img src="/bbnotes-icon.jpg" alt="BBnotes" className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI 智能笔记</h3>
-                  <p className="text-xs text-white/40 mt-0.5">留学生专属笔记 App — 录音秒变笔记，AI 自动整理课堂重点，支持 PDF 标注</p>
+                  <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI Lecture Notes PDF</h3>
+                  <p className="text-xs text-white/40 mt-0.5">英区大发明家第一个发明 — 留学生专属笔记 App，录音秒变笔记，AI 整理课堂重点</p>
+                  <p className="text-[11px] text-white/25 mt-1">非大陆 App Store 可下载</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
