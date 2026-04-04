@@ -113,6 +113,12 @@ function SchoolCard({
         className="transition-all duration-400 ease-in-out overflow-hidden"
       >
         <div ref={contentRef} className="divide-y divide-white/[0.04]">
+          {/* Holistic review notice for non-UK/AU regions */}
+          {(school.country !== "UK" && school.country !== "AU") && (
+            <div className="px-4 sm:px-5 py-2.5 bg-[#e8be64]/5 border-b border-[#e8be64]/10 text-xs text-[#e8be64]/70 leading-relaxed">
+              ⚠️ {school.country === "US" ? "美国" : school.country === "CA" ? "加拿大" : school.country === "HK" ? "香港" : "新加坡"}院校采用综合评审制（Holistic Review），GPA 仅为参考门槛，实际录取受 GRE/GMAT、推荐信、PS、面试、科研/实习等多因素影响。
+            </div>
+          )}
           {progs.map((result) => {
             const cfg = levelConfig[result.level];
             return (
