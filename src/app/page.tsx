@@ -613,7 +613,7 @@ export default function Home() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#e8be64]/20 flex items-center justify-center text-2xl shrink-0">📝</div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI 智能笔记</h3>
-                  <p className="text-xs text-white/40 mt-0.5">录音秒变笔记，AI 整理课堂重点，留学生必备学习神器</p>
+                  <p className="text-xs text-white/40 mt-0.5">留学生专属笔记 App — 录音秒变笔记，AI 自动整理课堂重点，支持 PDF 标注</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
@@ -738,7 +738,7 @@ export default function Home() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#e8be64]/20 flex items-center justify-center text-2xl shrink-0">📝</div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm sm:text-base text-[#e8be64]">BBnotes - AI 智能笔记</h3>
-                  <p className="text-xs text-white/40 mt-0.5">录音秒变笔记，AI 整理课堂重点，留学生必备学习神器</p>
+                  <p className="text-xs text-white/40 mt-0.5">留学生专属笔记 App — 录音秒变笔记，AI 自动整理课堂重点，支持 PDF 标注</p>
                 </div>
                 <span className="text-xs text-[#e8be64]/60 group-hover:text-[#e8be64] transition-colors shrink-0">下载 →</span>
               </div>
