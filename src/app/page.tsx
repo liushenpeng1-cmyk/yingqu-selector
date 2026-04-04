@@ -137,8 +137,8 @@ function SchoolCard({
                 <div className="flex gap-3 sm:gap-4 text-sm mt-2 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-hide">
                   <div className="shrink-0">
                     <span className="text-[11px] text-white/20 uppercase tracking-wider block">GPA</span>
-                    <span className={`font-semibold text-xs sm:text-sm ${result.gpaStatus.passed ? "text-green-400" : result.gpaStatus.gap <= 5 ? "text-yellow-400" : "text-red-400"}`}>
-                      {result.gpaStatus.required}%+ {result.gpaStatus.passed ? "✓" : `(差${result.gpaStatus.gap})`}
+                    <span className={`font-semibold text-xs sm:text-sm ${result.gpaStatus.passed ? "text-green-400" : result.gpaStatus.gap <= (result.program.gpaScale === "gpa4" ? 0.3 : 5) ? "text-yellow-400" : "text-red-400"}`}>
+                      {result.gpaStatus.required}{result.program.gpaScale === "gpa4" ? "+" : "%+"} {result.gpaStatus.passed ? "✓" : `(差${Math.abs(result.gpaStatus.gap)})`}
                     </span>
                   </div>
                   <div className="shrink-0">
@@ -219,6 +219,7 @@ export default function Home() {
   const [selectedSchool, setSelectedSchool] = useState<ChinaUniversity | null>(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [gpa, setGpa] = useState("");
+  const [gpaScale, setGpaScale] = useState<"percentage" | "gpa4">("percentage");
   const [langTest, setLangTest] = useState<"IELTS" | "TOEFL">("IELTS");
   const [langScore, setLangScore] = useState("");
   const [currentCategoryId, setCurrentCategoryId] = useState("business");
@@ -258,7 +259,7 @@ export default function Home() {
 
   const tier = selectedSchool?.tier;
   const rawLangScore = parseFloat(langScore) || 0;
-  const rawGpa = parseFloat(gpa) || 0;
+  const rawGpaInput = parseFloat(gpa) || 0;
 
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
   const selectedTargetLabel = targetSubMajor ? `${targetSubMajor.name} (${targetSubMajor.nameEn})` : "";
@@ -297,7 +298,7 @@ export default function Home() {
       .filter((s) => schoolsWithPrograms.has(s.id))
       .map((school) => {
         const progs = matchPrograms(
-          school.id, tier, rawGpa, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId
+          school.id, tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, gpaScale
         );
         const bestLevel: ProgramMatchLevel | "excluded" = progs.length === 0
           ? "excluded"
@@ -308,7 +309,7 @@ export default function Home() {
         const order = { high: 0, medium: 1, low: 2, excluded: 3 };
         return order[a.bestLevel] - order[b.bestLevel] || a.school.qsRank - b.school.qsRank;
       });
-  }, [tier, rawGpa, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, regions]);
+  }, [tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, gpaScale, regions]);
 
   const counts = {
     high: schoolResults.filter((r) => r.bestLevel === "high").length,
@@ -457,9 +458,21 @@ export default function Home() {
               {/* GPA + Language — side by side on wider phones */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">GPA（百分制） <span className="text-[#e8be64] text-xs">●</span></label>
-                  <input type="number" inputMode="decimal" value={gpa} onChange={(e) => setGpa(e.target.value)} placeholder="例：85"
-                    className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 sm:py-3.5 text-[#f0ede6] placeholder:text-white/20 focus:border-[#e8be64] outline-none transition-all text-base" />
+                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">GPA <span className="text-[#e8be64] text-xs">●</span></label>
+                  <div className="flex gap-2 items-start">
+                    <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden shrink-0">
+                      {([["percentage", "百分制"], ["gpa4", "4.0制"]] as const).map(([val, label]) => (
+                        <button key={val} type="button" onClick={() => { setGpaScale(val); setGpa(""); }}
+                          className={`px-3 sm:px-4 py-3 sm:py-3.5 text-sm font-medium transition-all ${
+                            gpaScale === val ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"
+                          }`}>{label}</button>
+                      ))}
+                    </div>
+                    <input type="number" inputMode="decimal" step={gpaScale === "gpa4" ? "0.1" : "1"} value={gpa}
+                      onChange={(e) => setGpa(e.target.value)}
+                      placeholder={gpaScale === "gpa4" ? "3.5" : "85"}
+                      className="flex-1 min-w-0 bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 sm:py-3.5 text-[#f0ede6] placeholder:text-white/20 focus:border-[#e8be64] outline-none transition-all text-base" />
+                  </div>
                 </div>
 
                 <div>

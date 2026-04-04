@@ -6487,6 +6487,7 @@ export function matchPrograms(
   targetCategory: string,
   currentCategory: string,
   targetSubMajorId?: string,
+  userGpaScale: "percentage" | "gpa4" = "percentage",
 ): ProgramMatchResult[] {
   // Match by category OR by subMajorId — because the same subject
   // can be categorized differently at different schools
@@ -6503,12 +6504,24 @@ export function matchPrograms(
     const requiredGpa = isPreferred ? program.gpaRequirements.preferred : program.gpaRequirements.other;
     const requiredLang = langTest === "TOEFL" ? program.toeflOverall : program.ieltsOverall;
 
-    const gpaGap = Math.round((requiredGpa - gpa) * 10) / 10;
+    // Convert user GPA to match the program's scale
+    let userGpaConverted = gpa;
+    if (userGpaScale !== program.gpaScale) {
+      if (userGpaScale === "gpa4" && program.gpaScale === "percentage") {
+        // 4.0 → percentage: 4.0=100, 3.0=75, 2.0=50
+        userGpaConverted = gpa * 25;
+      } else {
+        // percentage → 4.0: 100=4.0, 75=3.0, 50=2.0
+        userGpaConverted = gpa / 25;
+      }
+    }
+
+    const gpaGap = Math.round((requiredGpa - userGpaConverted) * 10) / 10;
     const langGap = langTest === "TOEFL"
       ? Math.round(requiredLang - langScore)
       : Math.round((requiredLang - langScore) * 10) / 10;
 
-    const gpaPassed = gpa >= requiredGpa;
+    const gpaPassed = userGpaConverted >= requiredGpa;
     const langPassed = langScore >= requiredLang;
 
     const gpaClose = gpaGap > 0 && gpaGap <= (program.gpaScale === "gpa4" ? 0.3 : 5);
