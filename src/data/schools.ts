@@ -246,7 +246,7 @@ export const schools: School[] = [
     name: "谢菲尔德大学",
     nameEn: "University of Sheffield",
     country: "UK",
-    qsRank: 105,
+    qsRank: 92,
     ieltsMin: 6.5, toeflMin: 79,
     gpaScale: "percentage" as const,
     gpaRequirements: { preferred: 75, other: 78  },
@@ -463,7 +463,7 @@ export const schools: School[] = [
     source: "https://www.st-andrews.ac.uk/subjects/entry-requirements/",
   },
   {
-    id: "nottingham", name: "诺丁汉大学", nameEn: "University of Nottingham", country: "UK", qsRank: 108,
+    id: "nottingham", name: "诺丁汉大学", nameEn: "University of Nottingham", country: "UK", qsRank: 97,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。对双非相对友好",
@@ -1033,6 +1033,24 @@ export const schools: School[] = [
     extraRequirements: "GRE（2026 年多数项目可选提交）",
     notes: "Jones 商学院 MBA 性价比高（96%学生获奖学金）。工程和理学强。位于休斯顿，能源/医疗资源丰富",
     source: "https://graduate.rice.edu/admissions/how-to-apply",
+  },
+  {
+    id: "uw", name: "华盛顿大学", nameEn: "University of Washington", country: "US", qsRank: 81,
+    ieltsMin: 7.0, toeflMin: 92, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.3 },
+    applicationFee: "US$85", listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
+    extraRequirements: "GRE（部分项目要求）",
+    notes: "CS 全美顶尖，Foster 商学院竞争激烈。位于西雅图，科技公司资源丰富",
+    source: "https://grad.uw.edu/admissions/",
+  },
+  {
+    id: "penn-state", name: "宾夕法尼亚州立大学", nameEn: "Pennsylvania State University", country: "US", qsRank: 82,
+    ieltsMin: 6.5, toeflMin: 80, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.0 },
+    applicationFee: "US$65", listPolicy: "open", preferredTiers: [],
+    majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
+    extraRequirements: "GRE（部分项目要求）",
+    notes: "工程和商科强势，Smeal 商学院认可度高。主校区 University Park",
+    source: "https://gradschool.psu.edu/admissions/",
   },
 ];
 
