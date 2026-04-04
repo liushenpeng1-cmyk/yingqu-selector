@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
-import { schools, regionLabels, type Region } from "@/data/schools";
+import { schools, regionLabels, getLanguageCourseSuggestion, type Region } from "@/data/schools";
 import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china-universities";
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
 import { matchPrograms, schoolsWithPrograms, totalSchoolCount, totalProgramCount, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
@@ -166,6 +166,23 @@ function SchoolCard({
                     </div>
                   )}
                 </div>
+
+                {/* Language course suggestion when not meeting language requirement */}
+                {!result.langStatus.passed && (() => {
+                  const suggestion = getLanguageCourseSuggestion(school, result.langStatus.gap, langTest);
+                  if (!suggestion) return null;
+                  return (
+                    <div className="mt-2 px-2.5 py-2 rounded-lg bg-purple-400/8 border border-purple-400/15 text-xs leading-relaxed">
+                      <span className="text-purple-300 font-medium">🎓 语言班选项：</span>
+                      <span className="text-purple-300/70 ml-1">
+                        {suggestion.weeks > 0
+                          ? `${suggestion.note}${suggestion.estimatedFee ? ` · 约 ${suggestion.estimatedFee}` : ""}`
+                          : suggestion.note
+                        }
+                      </span>
+                    </div>
+                  );
+                })()}
 
                 {/* Extra requirements */}
                 {result.program.extraRequirements && (
