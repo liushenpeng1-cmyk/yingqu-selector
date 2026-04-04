@@ -54,6 +54,7 @@ function SchoolCard({
   langTest,
   rawLangScore,
   defaultExpanded,
+  userTier,
 }: {
   school: typeof schools[0];
   programs: ProgramMatchResult[];
@@ -61,6 +62,7 @@ function SchoolCard({
   langTest: "IELTS" | "TOEFL";
   rawLangScore: number;
   defaultExpanded: boolean;
+  userTier: string;
 }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -117,6 +119,12 @@ function SchoolCard({
           {(school.country !== "UK" && school.country !== "AU") && (
             <div className="px-4 sm:px-5 py-2.5 bg-[#e8be64]/5 border-b border-[#e8be64]/10 text-xs text-[#e8be64]/70 leading-relaxed">
               ⚠️ {school.country === "US" ? "美国" : school.country === "CA" ? "加拿大" : school.country === "HK" ? "香港" : "新加坡"}院校采用综合评审制（Holistic Review），GPA 仅为参考门槛，实际录取受 GRE/GMAT、推荐信、PS、面试、科研/实习等多因素影响。
+            </div>
+          )}
+          {/* Strong warning for 双非 + US Top 30 */}
+          {school.country === "US" && school.qsRank <= 30 && !["985", "211", "双一流"].includes(userTier) && (
+            <div className="px-4 sm:px-5 py-2.5 bg-red-500/10 border-b border-red-500/20 text-xs text-red-400/90 leading-relaxed">
+              🚨 双非背景申请 QS Top 30 美国院校难度极大。美国顶尖校非常看重本科院校声誉，双非录取案例极少。GPA 达标不代表有竞争力，建议同时准备保底方案。
             </div>
           )}
           {progs.map((result) => {
@@ -297,9 +305,14 @@ export default function Home() {
       .filter((s) => regions.size === 0 || regions.has(s.country))
       .filter((s) => schoolsWithPrograms.has(s.id))
       .map((school) => {
-        const progs = matchPrograms(
+        let progs = matchPrograms(
           school.id, tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, gpaScale
         );
+        // 双非 + US Top 30: cap at "medium" — GPA达标不代表有竞争力
+        const isNonElite = !["985", "211", "双一流"].includes(tier);
+        if (isNonElite && school.country === "US" && school.qsRank <= 30) {
+          progs = progs.map(p => p.level === "high" ? { ...p, level: "medium" as ProgramMatchLevel } : p);
+        }
         const bestLevel: ProgramMatchLevel | "excluded" = progs.length === 0
           ? "excluded"
           : progs[0].level;
@@ -664,6 +677,7 @@ export default function Home() {
                 langTest={langTest}
                 rawLangScore={rawLangScore}
                 defaultExpanded={index === 0}
+                userTier={tier || ""}
               />
             ))}
 
