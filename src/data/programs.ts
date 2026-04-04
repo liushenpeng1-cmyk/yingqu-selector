@@ -8047,6 +8047,2620 @@ export const programs: Program[] = [
     verified: false,
   },
 
+
+  // ┌──────────────────────────────────────────────────────────────┐
+  // │           gap-fill programs (auto-merged)                    │
+  // └──────────────────────────────────────────────────────────────┘
+
+  // ═══════════════ MIT — social-science (gap-fill) ═══════════════
+  // media: SKIP (no journalism/media department)
+  // education: SKIP (no education school)
+  // law: SKIP (no law school)
+  // science: SKIP (no standalone taught masters in pure sciences; SM degrees are PhD-route only)
+  {
+    id: "mit-polisci", schoolId: "mit", name: "政治学硕士", nameEn: "SM in Political Science",
+    department: "Department of Political Science", category: "social-science", subMajorId: "political-science", duration: "1.5 years",
+    gpaRequirements: { preferred: 3.8, other: 3.6 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "GRE 必须提交",
+    notes: "研究型硕士，需完成论文答辩。系不提供 SM 奖学金，需自费",
+    tuitionFee: "$64,310/year",
+    source: "https://polisci.mit.edu/graduate/masters",
+    verified: false,
+  },
+
+  // ═══════════════ Imperial — science (gap-fill) ═══════════════
+  // media/education/law/art-design/social-science: SKIP (tech university, no relevant departments)
+  {
+    id: "imperial-statistics", schoolId: "imperial", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Mathematics, Faculty of Natural Sciences", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92, toeflWriting: 20,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景，含概率、线性代数、微积分等核心前置课",
+    tuitionFee: "£38,200",
+    source: "https://www.imperial.ac.uk/study/courses/postgraduate-taught/statistics/",
+    verified: false,
+  },
+  {
+    id: "imperial-applied-maths", schoolId: "imperial", name: "应用数学", nameEn: "MSc Applied Mathematics",
+    department: "Department of Mathematics, Faculty of Natural Sciences", category: "science", subMajorId: "mathematics", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92, toeflWriting: 20,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "Imperial 理学院核心项目。需本科数学/应用数学/物理背景",
+    tuitionFee: "£38,200",
+    source: "https://www.imperial.ac.uk/study/courses/postgraduate-taught/applied-mathematics/",
+    verified: false,
+  },
+
+  // ═══════════════ Oxford — art-design, science, social-science (gap-fill) ═══════════════
+  // media: SKIP (no journalism/media studies department)
+  {
+    id: "oxford-fine-art", schoolId: "oxford", name: "纯艺术", nameEn: "MFA Fine Art",
+    department: "Ruskin School of Art", category: "art-design", subMajorId: "fine-art", duration: "1 year",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.5, ieltsOther: 7.0, toeflOverall: 110, toeflWriting: 25,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须。需提交研究计划和创作提案",
+    notes: "极度精品项目，每年录取约 15 人。注重当代艺术实践与批判性研究",
+    tuitionFee: "£41,250",
+    source: "https://www.rsa.ox.ac.uk/study/mfa",
+    verified: false,
+  },
+  {
+    id: "oxford-maths", schoolId: "oxford", name: "数学科学", nameEn: "MSc Mathematical Sciences",
+    department: "Mathematical Institute", category: "science", subMajorId: "mathematics", duration: "9 months",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, toeflWriting: 22,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "Oxford Mathematics & Statistics (OMMS)，涵盖纯数学、应用数学、统计学、计算机科学方向",
+    tuitionFee: "£41,250",
+    source: "https://www.maths.ox.ac.uk/study-here/postgraduate-study/msc-courses/msc-mathematical-sciences-omms",
+    verified: false,
+  },
+  {
+    id: "oxford-stats", schoolId: "oxford", name: "统计科学", nameEn: "MSc Statistical Science",
+    department: "Department of Statistics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, toeflWriting: 22,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需本科数学/统计背景，侧重现代统计方法、概率论与应用",
+    tuitionFee: "£38,940",
+    source: "https://www.ox.ac.uk/admissions/graduate/courses/msc-statistical-science",
+    verified: false,
+  },
+  {
+    id: "oxford-public-policy", schoolId: "oxford", name: "公共政策", nameEn: "MSc Public Policy (MPP)",
+    department: "Blavatnik School of Government", category: "social-science", subMajorId: "public-policy", duration: "1 year",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.5, ieltsOther: 7.0, toeflOverall: 110, toeflWriting: 25,
+    requiresRelatedDegree: false,
+    notes: "极其竞争。不限本科背景，需展示对公共政策的热情与经验",
+    tuitionFee: "£46,700",
+    source: "https://www.bsg.ox.ac.uk/study/mpp",
+    verified: false,
+  },
+  {
+    id: "oxford-ir", schoolId: "oxford", name: "国际关系", nameEn: "MPhil International Relations",
+    department: "Department of Politics and International Relations", category: "social-science", subMajorId: "international-relations", duration: "2 years",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.5, ieltsOther: 7.0, toeflOverall: 110, toeflWriting: 25,
+    requiresRelatedDegree: false,
+    notes: "2 年研究型项目。GRE 推荐但非必须。竞争极其激烈",
+    tuitionFee: "£36,550",
+    source: "https://www.ox.ac.uk/admissions/graduate/courses/mphil-international-relations",
+    verified: false,
+  },
+
+  // ═══════════════ Harvard — engineering, art-design (gap-fill) ═══════════════
+  // media: SKIP (no journalism/media school)
+  {
+    id: "harvard-sm-eng", schoolId: "harvard", name: "工程科学硕士", nameEn: "SM in Engineering Sciences",
+    department: "Harvard John A. Paulson School of Engineering and Applied Sciences", category: "engineering", subMajorId: "electrical-engineering", duration: "1-1.5 years",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学", "计算机"],
+    notes: "SM 学位覆盖 EE、ME、生物工程等方向。SEAS 不提供硕士奖学金",
+    tuitionFee: "$59,076/year",
+    source: "https://seas.harvard.edu/office-academic-programs/graduate-policies-procedures-and-forms/sm-and-me-degrees",
+    verified: false,
+  },
+  {
+    id: "harvard-march", schoolId: "harvard", name: "建筑学硕士", nameEn: "Master of Architecture (MArch I)",
+    department: "Harvard Graduate School of Design", category: "art-design", subMajorId: "architecture", duration: "3.5 years",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须。需本科数学和物理课程",
+    notes: "MArch I 不要求建筑本科背景（3.5 年），MArch II 需建筑本科（2 年）。GSD 全球顶尖",
+    tuitionFee: "$61,510/year",
+    source: "https://www.gsd.harvard.edu/architecture/programs/master-of-architecture-i/",
+    verified: false,
+  },
+
+  // ═══════════════ Cambridge — art-design, science, social-science (gap-fill) ═══════════════
+  // media: SKIP (no media/journalism department)
+  {
+    id: "cambridge-architecture", schoolId: "cambridge", name: "建筑与城市研究", nameEn: "MPhil Architecture and Urban Studies",
+    department: "Department of Architecture", category: "art-design", subMajorId: "architecture", duration: "9 months",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.5, ieltsOther: 7.0, toeflOverall: 110, toeflWriting: 25,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    notes: "侧重建筑理论与城市研究，非职业建筑师培养项目。需建筑/城规/设计相关背景",
+    tuitionFee: "£35,220",
+    source: "https://www.postgraduate.study.cam.ac.uk/courses/directory/aharmpaus",
+    verified: false,
+  },
+  {
+    id: "cambridge-mast-stats", schoolId: "cambridge", name: "数学统计学", nameEn: "MASt in Mathematical Statistics (Part III)",
+    department: "Department of Pure Mathematics and Mathematical Statistics", category: "science", subMajorId: "statistics", duration: "9 months",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.5, ieltsOther: 7.0, toeflOverall: 110, toeflWriting: 25,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "著名的 Part III 课程，全球顶尖的数学/统计研究生教育。需一等荣誉学位",
+    tuitionFee: "£35,526",
+    source: "https://www.postgraduate.study.cam.ac.uk/courses/directory/mapmaspmm",
+    verified: false,
+  },
+  {
+    id: "cambridge-politics-ir", schoolId: "cambridge", name: "政治与国际关系", nameEn: "MPhil in Politics and International Studies",
+    department: "Department of Politics and International Studies (POLIS)", category: "social-science", subMajorId: "international-relations", duration: "9 months",
+    gpaRequirements: { preferred: 90, other: 95 }, gpaScale: "percentage",
+    ieltsOverall: 7.5, ieltsOther: 7.0, toeflOverall: 110, toeflWriting: 25,
+    requiresRelatedDegree: false,
+    notes: "9 个月密集课程 + 15,000 字论文。不限本科背景，需展示学术能力",
+    tuitionFee: "£37,296",
+    source: "https://www.polis.cam.ac.uk/study-at-polis/graduates/MPhilIRPOL",
+    verified: false,
+  },
+
+  // ═══════════════ Stanford — law (gap-fill) ═══════════════
+  // media: SKIP (coterminal MA only, no external applicants)
+  // art-design: SKIP (no architecture/fine art school)
+  {
+    id: "stanford-llm", schoolId: "stanford", name: "法学硕士", nameEn: "LLM",
+    department: "Stanford Law School", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 3.8, other: 3.6 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    extraRequirements: "需美国以外法学学位 + 至少 2 年法律工作经验",
+    notes: "每年仅录取约 30 人，极度精品。含 Corporate Governance、Environmental Law、International Economic Law 等方向",
+    tuitionFee: "$76,608",
+    source: "https://law.stanford.edu/apply/tuition-financial-aid/cost-of-attendance/",
+    verified: false,
+  },
+
+  // ═══════════════ NUS — media, art-design (gap-fill) ═══════════════
+  // education: SKIP (NIE belongs to NTU, not NUS)
+  {
+    id: "nus-communication", schoolId: "nus", name: "传播学", nameEn: "Master of Communication",
+    department: "Department of Communications and New Media, Faculty of Arts and Social Sciences", category: "media", subMajorId: "digital-media", duration: "1 year",
+    gpaRequirements: { preferred: 83, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "亚洲领先新媒体传播项目。侧重数字媒体、传播领导力、数字营销与数据分析",
+    tuitionFee: "新币 S$48,000",
+    source: "https://fass.nus.edu.sg/cnm/master-of-communication/",
+    verified: false,
+  },
+  {
+    id: "nus-architecture", schoolId: "nus", name: "建筑学", nameEn: "Master of Architecture",
+    department: "College of Design and Engineering", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 83, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "作品集必须。需建筑学本科背景",
+    notes: "亚洲顶尖建筑学院。深入研究亚洲和赤道地区设计机遇",
+    tuitionFee: "新币 S$39,617/year",
+    source: "https://cde.nus.edu.sg/arch/programmes/master-of-architecture/",
+    verified: false,
+  },
+
+  // ═══════════════ UCL — media, science, social-science (gap-fill) ═══════════════
+  {
+    id: "ucl-digital-media", schoolId: "ucl", name: "数字媒体（制作方向）", nameEn: "MA Digital Media: Production",
+    department: "IOE, Faculty of Education and Society", category: "media", subMajorId: "digital-media", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, toeflWriting: 24,
+    requiresRelatedDegree: false,
+    notes: "侧重数字媒体制作实践，含视频、音频、互动媒体等方向",
+    tuitionFee: "£28,500",
+    source: "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma",
+    verified: false,
+  },
+  {
+    id: "ucl-statistics", schoolId: "ucl", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Statistical Science", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, toeflWriting: 24,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计本科背景。含概率统计、回归分析、贝叶斯方法等",
+    tuitionFee: "£35,000",
+    source: "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/statistics-msc",
+    verified: false,
+  },
+  {
+    id: "ucl-public-health", schoolId: "ucl", name: "公共卫生", nameEn: "MSc Public Health",
+    department: "Institute of Epidemiology & Health Care", category: "science", subMajorId: "public-health", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, toeflWriting: 24,
+    requiresRelatedDegree: false,
+    notes: "转专业友好。适合公共卫生、全球健康方向",
+    tuitionFee: "£31,500",
+    source: "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/public-health-msc",
+    verified: false,
+  },
+  {
+    id: "ucl-public-policy", schoolId: "ucl", name: "公共政策", nameEn: "MSc Public Policy",
+    department: "Department of Political Science, Faculty of Social & Historical Sciences", category: "social-science", subMajorId: "public-policy", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, toeflWriting: 24,
+    requiresRelatedDegree: false,
+    notes: "不限本科背景。适合政治学、经济学、IR、法律、哲学等背景",
+    tuitionFee: "£28,500",
+    source: "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/public-policy-msc",
+    verified: false,
+  },
+
+  // ═══════════════ UPenn — media, art-design, science (gap-fill) ═══════════════
+  {
+    id: "upenn-mcmi", schoolId: "upenn", name: "传播与媒体产业", nameEn: "Master of Communication and Media Industries (MCMI)",
+    department: "Annenberg School for Communication", category: "media", subMajorId: "media-studies", duration: "1 year",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "Annenberg 新开项目，每年仅录取约 15 人。侧重媒体产业与传播研究",
+    tuitionFee: "$47,844",
+    source: "https://www.asc.upenn.edu/graduate/master-communication-and-media-industries-mcmi",
+    verified: false,
+  },
+  {
+    id: "upenn-march", schoolId: "upenn", name: "建筑学硕士", nameEn: "Master of Architecture (MArch)",
+    department: "Stuart Weitzman School of Design", category: "art-design", subMajorId: "architecture", duration: "3 years",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须",
+    notes: "Weitzman School 全美顶尖。MArch 不要求建筑本科背景（3 年制）",
+    tuitionFee: "$65,000/year",
+    source: "https://www.design.upenn.edu/architecture/graduate/about",
+    verified: false,
+  },
+  {
+    id: "upenn-mph", schoolId: "upenn", name: "公共卫生", nameEn: "Master of Public Health (MPH)",
+    department: "Perelman School of Medicine", category: "science", subMajorId: "public-health", duration: "1 year",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "按学分收费。转专业友好，适合医学、理学、社科等背景",
+    tuitionFee: "$52,340 (total)",
+    source: "https://mph.med.upenn.edu/",
+    verified: false,
+  },
+
+  // ═══════════════ UC Berkeley — media, education, law, art-design (gap-fill) ═══════════════
+  {
+    id: "ucberkeley-journalism", schoolId: "ucberkeley", name: "新闻学硕士", nameEn: "Master of Journalism",
+    department: "Graduate School of Journalism", category: "media", subMajorId: "journalism", duration: "2 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "Berkeley J-School 全美顶尖。超过 50% 学生获部门奖学金",
+    tuitionFee: "$30,968/year (out-of-state)",
+    source: "https://journalism.berkeley.edu/admissions/",
+    verified: false,
+  },
+  {
+    id: "ucberkeley-education", schoolId: "ucberkeley", name: "教育学硕士", nameEn: "MA in Education",
+    department: "Berkeley School of Education", category: "education", subMajorId: "education-studies", duration: "1 year",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "含 STEM Education、Language & Literacy、Policy 等方向。不限本科背景",
+    tuitionFee: "$30,968/year (out-of-state)",
+    source: "https://gse.berkeley.edu/academics/masters-programs",
+    verified: false,
+  },
+  {
+    id: "ucberkeley-llm", schoolId: "ucberkeley", name: "法学硕士", nameEn: "LL.M.",
+    department: "Berkeley Law", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "不区分加州居民/非居民，统一学费",
+    tuitionFee: "$79,328",
+    source: "https://www.law.berkeley.edu/admissions/financial-aid/llm-financial-aid/cost-of-attendance/",
+    verified: false,
+  },
+  {
+    id: "ucberkeley-march", schoolId: "ucberkeley", name: "建筑学硕士", nameEn: "Master of Architecture (MArch)",
+    department: "College of Environmental Design", category: "art-design", subMajorId: "architecture", duration: "3 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须",
+    notes: "CED 全美顶尖。MArch 不要求建筑本科背景（3 年制）",
+    tuitionFee: "$30,968/year (out-of-state) + PDST",
+    source: "https://ced.berkeley.edu/arch/degrees-admissions/master-of-architecture",
+    verified: false,
+  },
+
+  // ═══════════════ Melbourne — art-design, science, social-science (gap-fill) ═══════════════
+  {
+    id: "melbourne-architecture", schoolId: "melbourne", name: "建筑学", nameEn: "Master of Architecture",
+    department: "Faculty of Architecture, Building and Planning", category: "art-design", subMajorId: "architecture", duration: "2-3 years",
+    gpaRequirements: { preferred: 83, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集 + 个人陈述。建筑本科 2 年制，非建筑 3 年制",
+    notes: "澳洲顶尖建筑项目。灵活学制，可适应不同背景学生",
+    tuitionFee: "AUD $52,992/year",
+    source: "https://study.unimelb.edu.au/find/courses/graduate/master-of-architecture/",
+    verified: false,
+  },
+  {
+    id: "melbourne-public-health", schoolId: "melbourne", name: "公共卫生", nameEn: "Master of Public Health",
+    department: "Melbourne School of Population and Global Health", category: "science", subMajorId: "public-health", duration: "2 years",
+    gpaRequirements: { preferred: 83, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "转专业友好。澳洲公共卫生领域排名第一",
+    tuitionFee: "AUD $60,992/year",
+    source: "https://study.unimelb.edu.au/find/courses/graduate/master-of-public-health/",
+    verified: false,
+  },
+  {
+    id: "melbourne-ir", schoolId: "melbourne", name: "国际关系", nameEn: "Master of International Relations",
+    department: "School of Social and Political Sciences, Faculty of Arts", category: "social-science", subMajorId: "international-relations", duration: "2 years",
+    gpaRequirements: { preferred: 83, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "不限本科背景。含全球治理、安全研究、亚太关系等方向",
+    tuitionFee: "AUD $45,824/year",
+    source: "https://study.unimelb.edu.au/find/courses/graduate/master-of-international-relations/",
+    verified: false,
+  },
+
+  // ═══════════════ NTU SG — art-design, science (gap-fill) ═══════════════
+  // law: SKIP (no law school at NTU)
+  {
+    id: "ntu-sg-game-design", schoolId: "ntu-sg", name: "游戏设计与技术", nameEn: "MSc Game Design, Art and Technology",
+    department: "School of Art, Design and Media", category: "art-design", subMajorId: "animation", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "NTU ADM 全球排名 #19。侧重游戏设计、生成式 AI 与创意技术",
+    tuitionFee: "新币 S$49,050",
+    source: "https://www.ntu.edu.sg/adm/programmes/graduate-admissions/msc-in-game-design-art-and-technology",
+    verified: false,
+  },
+  {
+    id: "ntu-sg-physics", schoolId: "ntu-sg", name: "物理学", nameEn: "MSc Physics (Applied Physics)",
+    department: "School of Physical and Mathematical Sciences", category: "science", subMajorId: "physics", duration: "1-2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "含应用物理、理论物理方向。SPMS 理学院项目",
+    tuitionFee: "新币 S$38,000-45,000",
+    source: "https://www.ntu.edu.sg/spms/admissions",
+    verified: false,
+  },
+
+  // ═══════════════ Cornell — art-design (gap-fill) ═══════════════
+  // media: SKIP (Communication MA is PhD-track only)
+  // education: SKIP (no education school)
+  {
+    id: "cornell-march", schoolId: "cornell", name: "建筑学硕士", nameEn: "M.Arch. (Professional)",
+    department: "College of Architecture, Art, and Planning (AAP)", category: "art-design", subMajorId: "architecture", duration: "3.5 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须",
+    notes: "AAP 全美顶尖。3.5 年制，接受各学科背景。学费含竞争性奖学金",
+    tuitionFee: "$71,266/year",
+    source: "https://aap.cornell.edu/admissions/graduate/architecture",
+    verified: false,
+  },
+
+  // ═══════════════ HKU — engineering, media, art-design, science, social-science (gap-fill) ═══════════════
+  {
+    id: "hku-eee", schoolId: "hku", name: "电子电气工程", nameEn: "MSc Electrical and Electronic Engineering",
+    department: "Faculty of Engineering", category: "engineering", subMajorId: "electrical-engineering", duration: "1-2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
+    notes: "港大工学院项目。含通信、微电子、电力系统等方向",
+    tuitionFee: "港币 HK$180,000",
+    source: "https://engg.hku.hk/Admissions/MSc/Curricula-Offered",
+    verified: false,
+  },
+  {
+    id: "hku-meche", schoolId: "hku", name: "机械工程", nameEn: "MSc Mechanical Engineering",
+    department: "Faculty of Engineering", category: "engineering", subMajorId: "mechanical-engineering", duration: "1-2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
+    notes: "港大工学院项目。含能源、设计与制造等方向",
+    tuitionFee: "港币 HK$180,000",
+    source: "https://engg.hku.hk/Admissions/MSc/Curricula-Offered",
+    verified: false,
+  },
+  {
+    id: "hku-journalism", schoolId: "hku", name: "新闻学", nameEn: "Master of Journalism",
+    department: "Journalism and Media Studies Centre", category: "media", subMajorId: "journalism", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "香港首个新闻学研究生学位课程。含商业金融报道、数据新闻、AI 与媒体创新等方向",
+    tuitionFee: "港币 HK$249,000",
+    source: "https://jmsc.hku.hk/mjprogramme/",
+    verified: false,
+  },
+  {
+    id: "hku-architecture", schoolId: "hku", name: "建筑学", nameEn: "Master of Architecture",
+    department: "Department of Architecture, Faculty of Architecture", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 83, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "作品集必须。需建筑学本科背景",
+    notes: "港大建筑学院亚洲排名顶尖",
+    tuitionFee: "港币 HK$200,000/year",
+    source: "https://www.arch.hku.hk/programmes/architecture/master-of-architecture/",
+    verified: false,
+  },
+  {
+    id: "hku-mph", schoolId: "hku", name: "公共卫生", nameEn: "Master of Public Health",
+    department: "School of Public Health, Li Ka Shing Faculty of Medicine", category: "science", subMajorId: "public-health", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "转专业友好。港大公共卫生在亚太地区声誉极高（COVID-19 研究中心）",
+    tuitionFee: "港币 HK$168,000",
+    source: "https://sph.hku.hk/en/Programmes/Master-of-Public-Health",
+    verified: false,
+  },
+  {
+    id: "hku-mipa", schoolId: "hku", name: "国际与公共事务", nameEn: "Master of International and Public Affairs (MIPA)",
+    department: "Department of Politics and Public Administration", category: "social-science", subMajorId: "international-relations", duration: "1-2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "聚焦亚太地区国际关系。晚间/周末授课，适合在职人士",
+    tuitionFee: "港币 HK$168,000",
+    source: "https://ppa.hku.hk/mipa/",
+    verified: false,
+  },
+
+  // ═══════════════ Sydney — art-design, science, social-science (gap-fill) ═══════════════
+  {
+    id: "sydney-architecture", schoolId: "sydney", name: "建筑学", nameEn: "Master of Architecture",
+    department: "School of Architecture, Design and Planning", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 96,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集 + 个人陈述",
+    notes: "悉尼大学建筑设计学院。NAAB 认证，国际认可度高",
+    tuitionFee: "AUD $48,100/year",
+    source: "https://www.sydney.edu.au/courses/courses/pc/master-of-architecture.html",
+    verified: false,
+  },
+  {
+    id: "sydney-public-health", schoolId: "sydney", name: "公共卫生", nameEn: "Master of Public Health",
+    department: "Sydney School of Public Health", category: "science", subMajorId: "public-health", duration: "1.5 years",
+    gpaRequirements: { preferred: 75, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 85,
+    requiresRelatedDegree: false,
+    notes: "转专业友好。澳洲公共卫生领域领先项目",
+    tuitionFee: "AUD $52,000/year",
+    source: "https://www.sydney.edu.au/courses/courses/pc/master-of-public-health0.html",
+    verified: false,
+  },
+  {
+    id: "sydney-ir", schoolId: "sydney", name: "国际安全", nameEn: "Master of International Security",
+    department: "Department of Government and International Relations", category: "social-science", subMajorId: "international-relations", duration: "1.5 years",
+    gpaRequirements: { preferred: 75, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 96,
+    requiresRelatedDegree: false,
+    notes: "不限本科背景。含安全研究、国际关系理论、亚太安全等方向",
+    tuitionFee: "AUD $48,000/year",
+    source: "https://www.sydney.edu.au/courses/courses/pc/master-of-international-security.html",
+    verified: false,
+  },
+
+  // ═══════════════ Yale — social-science (gap-fill) ═══════════════
+  // engineering: SKIP (limited standalone masters)
+  // media: SKIP (no journalism/media school)
+  // education: SKIP (no education school)
+  {
+    id: "yale-global-affairs", schoolId: "yale", name: "全球事务", nameEn: "MA in Global Affairs",
+    department: "Jackson School of Global Affairs", category: "social-science", subMajorId: "international-relations", duration: "2 years",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "耶鲁 Jackson School 旗舰项目。不限本科背景，侧重全球治理与国际事务",
+    tuitionFee: "$50,900/year",
+    source: "https://jackson.yale.edu/academics/ma-program/",
+    verified: false,
+  },
+
+  // ═══════════════ Columbia — education, art-design (gap-fill) ═══════════════
+  {
+    id: "columbia-education", schoolId: "columbia", name: "教育学", nameEn: "MA in Education",
+    department: "Teachers College, Columbia University", category: "education", subMajorId: "education-studies", duration: "1-2 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "Teachers College 全美教育学院排名前三。按学分收费，$2,131/credit。含多个方向",
+    tuitionFee: "$2,131/credit (~$68,000 total)",
+    source: "https://www.tc.columbia.edu/admission/",
+    verified: false,
+  },
+  {
+    id: "columbia-march", schoolId: "columbia", name: "建筑学硕士", nameEn: "Master of Architecture (MArch)",
+    department: "Graduate School of Architecture, Planning and Preservation (GSAPP)", category: "art-design", subMajorId: "architecture", duration: "3 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须",
+    notes: "GSAPP 全球顶尖建筑学院。不要求建筑本科背景（3 年制）",
+    tuitionFee: "$65,000/year",
+    source: "https://www.arch.columbia.edu/programs/1-master-of-architecture",
+    verified: false,
+  },
+
+  // ═══════════════ UNSW — media, art-design, science, social-science (gap-fill) ═══════════════
+  {
+    id: "unsw-journalism", schoolId: "unsw", name: "新闻与传播", nameEn: "Master of Journalism and Communication",
+    department: "Faculty of Arts, Design and Architecture", category: "media", subMajorId: "journalism", duration: "1.5 years",
+    gpaRequirements: { preferred: 72, other: 88 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 94,
+    requiresRelatedDegree: false,
+    notes: "澳洲就业排名 #1（AFR 2024）。不限本科背景",
+    tuitionFee: "AUD $41,280/year",
+    source: "https://www.unsw.edu.au/study/postgraduate/master-of-journalism-and-communication",
+    verified: false,
+  },
+  {
+    id: "unsw-architecture", schoolId: "unsw", name: "建筑学", nameEn: "Master of Architecture",
+    department: "Faculty of Arts, Design and Architecture", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 72, other: 76 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 94,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "作品集必须。需建筑学相关本科背景",
+    notes: "UNSW Built Environment 澳洲领先",
+    tuitionFee: "AUD $46,320/year",
+    source: "https://www.unsw.edu.au/study/postgraduate/master-of-architecture",
+    verified: false,
+  },
+  {
+    id: "unsw-statistics", schoolId: "unsw", name: "统计学", nameEn: "Master of Statistics",
+    department: "School of Mathematics and Statistics, Faculty of Science", category: "science", subMajorId: "statistics", duration: "2 years",
+    gpaRequirements: { preferred: 72, other: 76 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景",
+    tuitionFee: "AUD $48,200/year",
+    source: "https://www.unsw.edu.au/study/postgraduate/master-of-statistics",
+    verified: false,
+  },
+  {
+    id: "unsw-ir", schoolId: "unsw", name: "国际关系", nameEn: "Master of International Relations",
+    department: "School of Social Sciences, Faculty of Arts, Design and Architecture", category: "social-science", subMajorId: "international-relations", duration: "1.5 years",
+    gpaRequirements: { preferred: 72, other: 88 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 94,
+    requiresRelatedDegree: false,
+    notes: "不限本科背景。UNSW 社科学院在澳洲享有声誉",
+    tuitionFee: "AUD $40,800/year",
+    source: "https://www.unsw.edu.au/study/postgraduate/master-of-international-relations",
+    verified: false,
+  },
+
+  // ═══════════════ PSL — engineering, social-science (gap-fill) ═══════════════
+  // media/education/law/art-design: SKIP
+  {
+    id: "psl-engineering", schoolId: "psl", name: "工程（Mines Paris）", nameEn: "MSc Engineering (Mines Paris)",
+    department: "MINES Paris — PSL", category: "engineering", subMajorId: "engineering-management", duration: "2 years",
+    gpaRequirements: { preferred: 85, other: 88 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
+    notes: "Mines Paris 法国精英工程师学院。含能源、材料、环境、管理等方向。部分课程法语授课",
+    tuitionFee: "€4,500/year (non-EU)",
+    source: "https://www.minesparis.psl.eu/en/home/",
+    verified: false,
+  },
+  {
+    id: "psl-social-sciences", schoolId: "psl", name: "社会科学", nameEn: "MSc Social Sciences (ENS / EHESS)",
+    department: "Ecole Normale Supérieure — Department of Social Sciences / EHESS", category: "social-science", subMajorId: "sociology", duration: "2 years",
+    gpaRequirements: { preferred: 83, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: false,
+    notes: "ENS + EHESS 法国社科研究最高殿堂。含社会学、政治学、哲学等方向。部分课程法语授课",
+    tuitionFee: "€3,770/year (non-EU)",
+    source: "https://www.ens.psl.eu/en/academics/masters",
+    verified: false,
+  },
+
+  // ═══════════════ Toronto — art-design (gap-fill) ═══════════════
+  {
+    id: "toronto-march", schoolId: "toronto", name: "建筑学", nameEn: "Master of Architecture",
+    department: "John H. Daniels Faculty of Architecture, Landscape, and Design", category: "art-design", subMajorId: "architecture", duration: "3.5 years",
+    gpaRequirements: { preferred: 83, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 93, toeflWriting: 22,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须",
+    notes: "Daniels Faculty 加拿大顶尖建筑学院。3.5 年制不要求建筑本科背景",
+    tuitionFee: "加元 C$57,020/year",
+    source: "https://www.daniels.utoronto.ca/programs/graduate/master-architecture",
+    verified: false,
+  },
+
+  // ═══════════════ Princeton — art-design (gap-fill) ═══════════════
+  // media/education/law: SKIP (Princeton has none of these)
+  {
+    id: "princeton-march", schoolId: "princeton", name: "建筑学硕士", nameEn: "Master of Architecture (M.Arch.)",
+    department: "Princeton School of Architecture", category: "art-design", subMajorId: "architecture", duration: "3 years",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "作品集必须。推荐微积分和物理课程",
+    notes: "Princeton SOA 全美最精品建筑项目之一。每年仅录取约 30 人",
+    tuitionFee: "$65,120/year",
+    source: "https://soa.princeton.edu/content/professional-master-architecture-admission",
+    verified: false,
+  },
+
+  // ═══════════════ Edinburgh (QS #27) — media, art-design, science (gap-fill) ═══════════════
+  {
+    id: "edinburgh-digital-media", schoolId: "edinburgh", name: "设计与数字媒体", nameEn: "MSc Design and Digital Media",
+    department: "Edinburgh College of Art", category: "media", subMajorId: "digital-media", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集",
+    notes: "Edinburgh College of Art项目，融合设计实践与数字媒体技术。接受设计、技术、计算等相关背景",
+    tuitionFee: "£33,200",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/37-design-and-digital-media",
+    verified: false,
+  },
+  {
+    id: "edinburgh-architecture", schoolId: "edinburgh", name: "建筑与城市设计", nameEn: "MSc Architectural and Urban Design",
+    department: "Edinburgh College of Art — Edinburgh School of Architecture and Landscape Architecture", category: "art-design", subMajorId: "architecture", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    extraRequirements: "需提交作品集。建筑学或相关设计背景",
+    notes: "Band C。Edinburgh College of Art建筑学院项目。聚焦城市设计与建筑研究",
+    tuitionFee: "£29,900",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/1089-architectural-and-urban-design",
+    verified: false,
+  },
+  {
+    id: "edinburgh-statistics", schoolId: "edinburgh", name: "统计学与运筹学", nameEn: "MSc Statistics and Operational Research",
+    department: "School of Mathematics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "Band C。需数学/统计背景。学费低于商学院项目",
+    tuitionFee: "£31,600",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/660-statistics-and-operational-research",
+    verified: false,
+  },
+  {
+    id: "edinburgh-psychology", schoolId: "edinburgh", name: "心理学（转换）", nameEn: "MSc Psychology (Conversion)",
+    department: "School of Philosophy, Psychology and Language Sciences", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "转专业友好的心理学转换项目，获BPS认证。不限本科背景",
+    tuitionFee: "£29,900",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/860-psychology-conversion",
+    verified: false,
+  },
+
+  // ═══════════════ TUM (QS #28) — art-design (gap-fill) ═══════════════
+  // media: SKIP (工科大学无新闻/传媒系)
+  // education: SKIP (无教育学院)
+  // law: SKIP (无法学院)
+  // social-science: SKIP (工科大学无社科系)
+  {
+    id: "tum-architecture", schoolId: "tum", name: "建筑学", nameEn: "MSc Architecture",
+    department: "School of Engineering and Design (ED)", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 88,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "需提交作品集。需建筑学本科学位",
+    tuitionFee: "€150/semester (semester contribution only)",
+    notes: "非欧盟学生2024起需缴纳€4,000-6,000/学期学费。德国公立大学传统免学费政策已调整",
+    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/architecture-master/",
+    verified: false,
+  },
+
+  // ═══════════════ McGill (QS #29) — art-design, science (gap-fill) ═══════════════
+  {
+    id: "mcgill-march", schoolId: "mcgill", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "Peter Guo-hua Fu School of Architecture", category: "art-design", subMajorId: "architecture", duration: "2-3.5 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 86,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集。无建筑背景3.5年，有建筑背景2年",
+    notes: "接受无建筑背景申请者（3.5年版本）。有建筑本科可缩短至2年。作品集是核心评审材料",
+    tuitionFee: "加元 C$29,780-31,269/年",
+    source: "https://www.mcgill.ca/architecture/programs/master-architecture",
+    verified: false,
+  },
+  {
+    id: "mcgill-statistics", schoolId: "mcgill", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Mathematics and Statistics", category: "science", subMajorId: "statistics", duration: "2 years",
+    gpaRequirements: { preferred: 83, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 86,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "研究型项目，需完成论文。需要较强的数学背景（概率论、数理统计、线性代数）",
+    tuitionFee: "加元 C$29,780-31,269/年",
+    source: "https://www.mcgill.ca/mathstat/graduate/prospective-students",
+    verified: false,
+  },
+  {
+    id: "mcgill-biology", schoolId: "mcgill", name: "生物学", nameEn: "MSc Biology",
+    department: "Department of Biology", category: "science", subMajorId: "biology", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 86,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "研究型项目，需完成论文。需提前联系导师。涵盖生态学、进化生物学、分子生物学等方向",
+    tuitionFee: "加元 C$29,780-31,269/年",
+    source: "https://www.mcgill.ca/biology/graduate-studies",
+    verified: false,
+  },
+
+  // ═══════════════ ANU (QS #30) — media, science (gap-fill) ═══════════════
+  // education: SKIP (无独立教育学硕士项目)
+  // art-design: SKIP (视觉艺术项目以研究型为主，不适合国际留学申请)
+  {
+    id: "anu-science-comm", schoolId: "anu", name: "科学传播", nameEn: "Master of Science Communication",
+    department: "ANU College of Science and Medicine", category: "media", subMajorId: "strategic-communication", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "96学分。跨学科项目，涵盖科学新闻、健康传播、政策传播、数字媒体。接受各种背景",
+    tuitionFee: "澳元 A$48,480/年",
+    source: "https://programsandcourses.anu.edu.au/program/mscicom",
+    verified: false,
+  },
+  {
+    id: "anu-biology", schoolId: "anu", name: "生物科学", nameEn: "Master of Science in Biological Sciences",
+    department: "ANU College of Science and Medicine", category: "science", subMajorId: "biology", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "96学分。可选方向包括生态学、进化生物学、植物科学、细胞与分子生物学等",
+    tuitionFee: "澳元 A$50,760/年",
+    source: "https://programsandcourses.anu.edu.au/program/nscbs",
+    verified: false,
+  },
+  {
+    id: "anu-math-sciences", schoolId: "anu", name: "数学科学", nameEn: "Master of Mathematical Sciences",
+    department: "ANU College of Science and Medicine — Mathematical Sciences Institute", category: "science", subMajorId: "mathematics", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "96学分。涵盖纯数学、应用数学、统计学等方向",
+    tuitionFee: "澳元 A$50,760/年",
+    source: "https://programsandcourses.anu.edu.au/program/nmths",
+    verified: false,
+  },
+
+  // ═══════════════ SNU (QS #31) — media, education, law, art-design, science (gap-fill) ═══════════════
+  {
+    id: "snu-communication", schoolId: "snu", name: "传播学", nameEn: "MA in Communication",
+    department: "Department of Communication, College of Social Sciences", category: "media", subMajorId: "media-studies", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    extraRequirements: "TOPIK 4级或英语成绩二选一",
+    tuitionFee: "₩6,556,000/年（约￥3.5万人民币）",
+    applicationFee: "₩90,000",
+    notes: "韩语授课为主，涵盖传播理论、新闻学、媒体研究等方向。国际生需有一定韩语基础",
+    source: "https://communication.snu.ac.kr/en/",
+    verified: false,
+  },
+  {
+    id: "snu-education", schoolId: "snu", name: "教育学", nameEn: "MA in Education",
+    department: "College of Education", category: "education", subMajorId: "education-studies", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    extraRequirements: "TOPIK 4级或英语成绩二选一",
+    tuitionFee: "₩6,556,000/年（约￥3.5万人民币）",
+    applicationFee: "₩90,000",
+    notes: "韩语授课为主。涵盖教育学原理、教育心理学、课程与教学等方向。需提前联系导师",
+    source: "https://education.snu.ac.kr/en/",
+    verified: false,
+  },
+  {
+    id: "snu-llm", schoolId: "snu", name: "法学硕士", nameEn: "LLM",
+    department: "School of Law", category: "law", subMajorId: "llm-general", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    extraRequirements: "TOPIK 4级或英语成绩；需法学学位",
+    tuitionFee: "₩10,358,000/年（约￥5.6万人民币）",
+    applicationFee: "₩90,000",
+    notes: "SNU法学院在韩国法律教育中排名第一。韩英双语授课，国际法方向有部分英文课程",
+    source: "https://law.snu.ac.kr/en/",
+    verified: false,
+  },
+  {
+    id: "snu-design", schoolId: "snu", name: "设计学", nameEn: "MA in Design",
+    department: "Department of Design, College of Fine Arts", category: "art-design", subMajorId: "industrial-design", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "TOPIK 4级或英语成绩；需提交作品集",
+    tuitionFee: "₩7,994,000/年（约￥4.3万人民币）",
+    applicationFee: "₩90,000",
+    notes: "韩语授课为主。涵盖工业设计、视觉传达、交互设计等方向。SNU美术学院设计系",
+    source: "https://art.snu.ac.kr/en/",
+    verified: false,
+  },
+  {
+    id: "snu-physics", schoolId: "snu", name: "物理学", nameEn: "MSc Physics",
+    department: "Department of Physics and Astronomy, College of Natural Sciences", category: "science", subMajorId: "physics", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    extraRequirements: "TOPIK 3级或英语成绩二选一",
+    tuitionFee: "₩7,994,000/年（约￥4.3万人民币）",
+    applicationFee: "₩90,000",
+    notes: "研究型项目，需完成论文。韩英混合授课。需提前联系导师",
+    source: "https://physics.snu.ac.kr/en/",
+    verified: false,
+  },
+  {
+    id: "snu-statistics", schoolId: "snu", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Statistics, College of Natural Sciences", category: "science", subMajorId: "statistics", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "商科"],
+    extraRequirements: "TOPIK 3级或英语成绩二选一",
+    tuitionFee: "₩7,994,000/年（约￥4.3万人民币）",
+    applicationFee: "₩90,000",
+    notes: "研究型项目，需完成论文。涵盖统计推断、贝叶斯统计、生物统计等方向",
+    source: "https://stat.snu.ac.kr/en/",
+    verified: false,
+  },
+
+  // ═══════════════ UMich (QS #33) — law, art-design (gap-fill) ═══════════════
+  // media: SKIP (传播学系仅有PhD项目，无独立硕士)
+  {
+    id: "umich-llm", schoolId: "umich", name: "法学硕士", nameEn: "LLM",
+    department: "University of Michigan Law School", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 3.7, other: 3.5 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    extraRequirements: "需通过LSAC提交申请。需法学学位（LLB/JD）",
+    tuitionFee: "US$73,584",
+    applicationFee: "US$75",
+    notes: "Michigan Law全美Top 10。LLM项目约40人/年，国际生为主。可选方向多元。国际学生附加费$500/学期",
+    source: "https://michigan.law.umich.edu/academics/programs-study/llm-program",
+    verified: false,
+  },
+  {
+    id: "umich-march", schoolId: "umich", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "Taubman College of Architecture and Urban Planning", category: "art-design", subMajorId: "architecture", duration: "2-3 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 84,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集。GRE不要求。无建筑背景3年，有背景2年",
+    tuitionFee: "US$55,000/year",
+    notes: "Taubman College全美顶尖建筑学院。接受无建筑背景申请者（3年版本）。作品集是关键评审材料",
+    source: "https://taubmancollege.umich.edu/architecture/degrees/master-architecture",
+    verified: false,
+  },
+
+  // ═══════════════ Manchester (QS #34) — media, art-design, science (gap-fill) ═══════════════
+  {
+    id: "manchester-digital-media", schoolId: "manchester", name: "数字媒体、文化与社会", nameEn: "MA Digital Media, Culture and Society",
+    department: "School of Social Sciences", category: "media", subMajorId: "digital-media", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: false,
+    applicationFee: "£60",
+    notes: "跨学科项目，涵盖数字媒体研究、数字人文、科技与社会研究。转专业友好",
+    tuitionFee: "£33,100",
+    source: "https://www.manchester.ac.uk/study/masters/courses/list/20641/ma-digital-media-culture-and-society/",
+    verified: false,
+  },
+  {
+    id: "manchester-march", schoolId: "manchester", name: "建筑学", nameEn: "MArch Architecture",
+    department: "Manchester School of Architecture (joint with Manchester Metropolitan University)", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "需提交作品集。需RIBA Part 1或同等资格",
+    tuitionFee: "£33,100",
+    notes: "Manchester School of Architecture全英顶尖。需建筑学本科（RIBA Part 1）。联合授课项目",
+    source: "https://www.manchester.ac.uk/study/masters/courses/list/01305/march-architecture/",
+    verified: false,
+  },
+  {
+    id: "manchester-statistics", schoolId: "manchester", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Mathematics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 5.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "需要较强的数学/统计背景。涵盖概率论、回归分析、贝叶斯方法等",
+    tuitionFee: "£33,100",
+    source: "https://www.manchester.ac.uk/study/masters/courses/list/00630/msc-statistics/",
+    verified: false,
+  },
+  {
+    id: "manchester-physics", schoolId: "manchester", name: "物理学", nameEn: "MSc Physics",
+    department: "Department of Physics and Astronomy", category: "science", subMajorId: "physics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 5.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "含粒子物理、凝聚态、核物理等方向。曼大物理系有诺贝尔奖传统（石墨烯）",
+    tuitionFee: "£33,100",
+    source: "https://www.manchester.ac.uk/study/masters/courses/list/09879/msc-physics/",
+    verified: false,
+  },
+
+  // ═══════════════ CUHK (QS #36) — engineering, media, science (gap-fill) ═══════════════
+  // art-design: SKIP (无独立建筑/设计/纯艺学院)
+  {
+    id: "cuhk-electronic-eng", schoolId: "cuhk", name: "电子工程", nameEn: "MSc Electronic Engineering",
+    department: "Department of Electronic Engineering, Faculty of Engineering", category: "engineering", subMajorId: "electrical-engineering", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
+    tuitionFee: "港币 HK$210,000",
+    notes: "涵盖通信、信号处理、集成电路等方向",
+    source: "https://pg.cuhk.edu.hk/pgp/programme/mseg",
+    verified: false,
+  },
+  {
+    id: "cuhk-mechanical-eng", schoolId: "cuhk", name: "机械与自动化工程", nameEn: "MSc Mechanical and Automation Engineering",
+    department: "Department of Mechanical and Automation Engineering, Faculty of Engineering", category: "engineering", subMajorId: "mechanical-engineering", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
+    tuitionFee: "港币 HK$210,000",
+    notes: "涵盖机器人、制造工程、流体力学等方向",
+    source: "https://pg.cuhk.edu.hk/pgp/programme/msmae",
+    verified: false,
+  },
+  {
+    id: "cuhk-global-comm", schoolId: "cuhk", name: "全球传播", nameEn: "MA in Global Communication",
+    department: "School of Journalism and Communication", category: "media", subMajorId: "strategic-communication", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    tuitionFee: "港币 HK$180,000",
+    notes: "全英文授课。CUHK新闻与传播学院亚洲顶尖。涵盖全球化、跨文化传播、数字传播等方向",
+    source: "https://pg.com.cuhk.edu.hk/pgp_global/",
+    verified: false,
+  },
+  {
+    id: "cuhk-mathematics", schoolId: "cuhk", name: "数学", nameEn: "MSc Mathematics",
+    department: "Department of Mathematics, Faculty of Science", category: "science", subMajorId: "mathematics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    tuitionFee: "港币 HK$155,000",
+    notes: "涵盖纯数学、应用数学、数学教育等方向",
+    source: "https://www.math.cuhk.edu.hk/programme/msc",
+    verified: false,
+  },
+
+  // ═══════════════ Monash (QS #37) — media, law, art-design, science, social-science (gap-fill) ═══════════════
+  {
+    id: "monash-communication", schoolId: "monash", name: "传播与媒体研究", nameEn: "Master of Communications and Media Studies",
+    department: "Faculty of Arts", category: "media", subMajorId: "media-studies", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖数字媒体、传播策略、公共关系等方向",
+    tuitionFee: "澳元 A$37,000/年",
+    source: "https://www.monash.edu/study/courses/find-a-course/2025/communications-and-media-studies-a6002",
+    verified: false,
+  },
+  {
+    id: "monash-llm", schoolId: "monash", name: "法学硕士", nameEn: "Master of Laws (LLM)",
+    department: "Faculty of Law", category: "law", subMajorId: "llm-general", duration: "1-2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 94,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "需法学学位。IELTS要求高于其他项目（7.0/6.5）。可选方向包括商法、人权法、国际法等",
+    tuitionFee: "澳元 A$46,000/年",
+    source: "https://www.monash.edu/study/courses/find-a-course/2025/laws-d6007",
+    verified: false,
+  },
+  {
+    id: "monash-architecture", schoolId: "monash", name: "建筑学", nameEn: "Master of Architecture",
+    department: "Monash Art, Design and Architecture (MADA)", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "需提交作品集。需建筑设计本科学位",
+    notes: "获澳大利亚建筑师认证委员会(AACA)认证。需建筑设计相关本科",
+    tuitionFee: "澳元 A$42,800/年",
+    source: "https://www.monash.edu/study/courses/find-a-course/2025/architecture-f6001",
+    verified: false,
+  },
+  {
+    id: "monash-public-health", schoolId: "monash", name: "公共卫生", nameEn: "Master of Public Health",
+    department: "School of Public Health and Preventive Medicine", category: "science", subMajorId: "public-health", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    notes: "不限背景。转专业友好。涵盖流行病学、生物统计、全球健康等方向",
+    tuitionFee: "澳元 A$42,800/年",
+    source: "https://www.monash.edu/study/courses/find-a-course/2025/public-health-d6012",
+    verified: false,
+  },
+  {
+    id: "monash-ir", schoolId: "monash", name: "国际关系", nameEn: "Master of International Relations",
+    department: "Faculty of Arts", category: "social-science", subMajorId: "international-relations", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖外交政策、安全研究、全球治理等方向",
+    tuitionFee: "澳元 A$37,000/年",
+    source: "https://www.monash.edu/study/courses/find-a-course/2025/international-relations-a6003",
+    verified: false,
+  },
+
+  // ═══════════════ UBC (QS #38) — art-design (gap-fill) ═══════════════
+  {
+    id: "ubc-march", schoolId: "ubc", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "School of Architecture and Landscape Architecture (SALA)", category: "art-design", subMajorId: "architecture", duration: "3.5 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集。无建筑背景3.5年",
+    tuitionFee: "加元 C$12,000-15,000/年 (国际生)",
+    notes: "SALA项目，接受无建筑背景申请者。作品集是核心评审材料。强调可持续设计和社会责任",
+    source: "https://sala.ubc.ca/program/master-of-architecture/",
+    verified: false,
+  },
+
+  // ═══════════════ NYU (QS #38) — education, art-design, social-science (gap-fill) ═══════════════
+  {
+    id: "nyu-tesol", schoolId: "nyu", name: "TESOL", nameEn: "MA in TESOL",
+    department: "NYU Steinhardt School of Culture, Education, and Human Development", category: "education", subMajorId: "tesol", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "Steinhardt教育学院项目。不限本科背景。涵盖教学方法、语言学基础、课堂观察等。按学分收费约$2,272/学分",
+    tuitionFee: "US$80,000 (estimated total, ~36 credits)",
+    source: "https://steinhardt.nyu.edu/degree/ma-tesol",
+    verified: false,
+  },
+  {
+    id: "nyu-itp", schoolId: "nyu", name: "交互电信", nameEn: "MPS Interactive Telecommunications Program (ITP)",
+    department: "NYU Tisch School of the Arts", category: "art-design", subMajorId: "ux-ui", duration: "2 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集或项目描述",
+    notes: "ITP是全球知名的创意技术项目，融合艺术、设计与技术。转专业极其友好，不限背景。位于Tisch艺术学院",
+    tuitionFee: "US$65,000/year",
+    source: "https://tisch.nyu.edu/itp",
+    verified: false,
+  },
+  {
+    id: "nyu-ir", schoolId: "nyu", name: "国际关系", nameEn: "MS in Global Affairs",
+    department: "School of Professional Studies — Center for Global Affairs", category: "social-science", subMajorId: "international-relations", duration: "2 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "SPS项目，位于纽约市中心。涵盖全球经济、安全、人权等方向。对工作经验有加分但非必须",
+    tuitionFee: "US$55,000/year",
+    source: "https://www.sps.nyu.edu/professional-pathways/masters-degrees/ms-in-global-affairs.html",
+    verified: false,
+  },
+
+  // ═══════════════ KAIST (QS #39) — art-design, science (gap-fill) ═══════════════
+  // media: SKIP (无新闻/传媒系)
+  // education: SKIP (无教育学院)
+  // law: SKIP (无法学院)
+  // social-science: SKIP (社科课程极为有限)
+  {
+    id: "kaist-industrial-design", schoolId: "kaist", name: "工业设计", nameEn: "MSc Industrial Design",
+    department: "Department of Industrial Design", category: "art-design", subMajorId: "industrial-design", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 83,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集",
+    tuitionFee: "₩19,000,000/年（通常全额奖学金覆盖）",
+    applicationFee: "$80 USD",
+    notes: "全英文授课，TOPIK不作要求。大多数录取生获全额学费减免+月度津贴。科技导向的设计研究",
+    source: "https://id.kaist.ac.kr/",
+    verified: false,
+  },
+  {
+    id: "kaist-physics", schoolId: "kaist", name: "物理学", nameEn: "MSc Physics",
+    department: "Department of Physics, College of Natural Sciences", category: "science", subMajorId: "physics", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 83,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    tuitionFee: "₩19,000,000/年（通常全额奖学金覆盖）",
+    applicationFee: "$80 USD",
+    notes: "全英文授课，TOPIK不作要求。大多数录取生获全额学费减免+月度津贴。涵盖凝聚态、量子物理等方向",
+    source: "https://physics.kaist.ac.kr/",
+    verified: false,
+  },
+  {
+    id: "kaist-chemistry", schoolId: "kaist", name: "化学", nameEn: "MSc Chemistry",
+    department: "Department of Chemistry, College of Natural Sciences", category: "science", subMajorId: "chemistry", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 83,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    tuitionFee: "₩19,000,000/年（通常全额奖学金覆盖）",
+    applicationFee: "$80 USD",
+    notes: "全英文授课，TOPIK不作要求。大多数录取生获全额学费减免+月度津贴",
+    source: "https://chem.kaist.ac.kr/",
+    verified: false,
+  },
+
+  // ═══════════════ KCL (QS #40) — science (gap-fill) ═══════════════
+  // art-design: SKIP (无建筑/设计/纯艺学院)
+  {
+    id: "kcl-psychology-msc", schoolId: "kcl", name: "心理学", nameEn: "MSc Psychology",
+    department: "Institute of Psychiatry, Psychology and Neuroscience (IoPPN)", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "IoPPN全球精神卫生领域领先。转换课程，接受非心理学背景。BPS认证方向可获Chartership资格",
+    tuitionFee: "£31,500",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/psychology-msc",
+    verified: false,
+  },
+  {
+    id: "kcl-public-health", schoolId: "kcl", name: "公共卫生", nameEn: "MSc Public Health",
+    department: "School of Life Course and Population Sciences", category: "science", subMajorId: "public-health", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "转专业友好，不限背景。涵盖流行病学、健康政策、全球卫生等方向",
+    tuitionFee: "£31,500",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/public-health-msc",
+    verified: false,
+  },
+
+  // ═══════════════ Queensland (QS #40) — media, law, art-design, science, social-science (gap-fill) ═══════════════
+  {
+    id: "uq-communication", schoolId: "queensland", name: "传播学", nameEn: "Master of Communication",
+    department: "School of Communication and Arts", category: "media", subMajorId: "media-studies", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖公共关系、组织传播、数字媒体等方向",
+    tuitionFee: "澳元 A$38,304/年",
+    source: "https://study.uq.edu.au/study-options/programs/master-communication-5687",
+    verified: false,
+  },
+  {
+    id: "uq-llm", schoolId: "queensland", name: "法学硕士", nameEn: "Master of Laws (LLM)",
+    department: "TC Beirne School of Law", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "需法学学位。可选方向包括国际法、商法、税法等",
+    tuitionFee: "澳元 A$48,064/年",
+    source: "https://study.uq.edu.au/study-options/programs/master-laws-5588",
+    verified: false,
+  },
+  {
+    id: "uq-architecture", schoolId: "queensland", name: "建筑学", nameEn: "Master of Architecture",
+    department: "School of Architecture, Design and Planning", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"],
+    extraRequirements: "需提交作品集。需建筑设计本科学位",
+    notes: "获澳大利亚建筑师认证委员会(AACA)认证。需建筑设计相关本科",
+    tuitionFee: "澳元 A$48,064/年",
+    source: "https://study.uq.edu.au/study-options/programs/master-architecture-5546",
+    verified: false,
+  },
+  {
+    id: "uq-public-health", schoolId: "queensland", name: "公共卫生", nameEn: "Master of Public Health",
+    department: "School of Public Health", category: "science", subMajorId: "public-health", duration: "1.5 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖流行病学、生物统计、全球卫生、健康促进等方向",
+    tuitionFee: "澳元 A$42,000/年",
+    source: "https://study.uq.edu.au/study-options/programs/master-public-health-5589",
+    verified: false,
+  },
+  {
+    id: "uq-ir", schoolId: "queensland", name: "国际关系", nameEn: "Master of International Relations",
+    department: "School of Political Science and International Studies", category: "social-science", subMajorId: "international-relations", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖亚太安全、外交政策、全球治理等方向",
+    tuitionFee: "澳元 A$38,304/年",
+    source: "https://study.uq.edu.au/study-options/programs/master-international-relations-5659",
+    verified: false,
+  },
+
+  // ═══════════════ UCLA (QS #42) — art-design (gap-fill) ═══════════════
+  // media: SKIP (传播学系仅有PhD项目，无独立硕士)
+  {
+    id: "ucla-msaud", schoolId: "ucla", name: "建筑与城市设计", nameEn: "MS Architecture and Urban Design (MSAUD)",
+    department: "UCLA Architecture and Urban Design", category: "art-design", subMajorId: "architecture", duration: "1 year",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    extraRequirements: "需提交作品集。需建筑、景观、城市规划或相关设计本科学位",
+    tuitionFee: "US$36,317/year (non-resident)",
+    notes: "1年研究型项目（post-professional）。已有建筑专业学位的申请者。位于洛杉矶，城市设计资源丰富",
+    source: "https://aud.ucla.edu/academics/m-s-architecture-and-urban-design",
+    verified: false,
+  },
+
+  // ═══════════════ Northwestern (QS #42) — science (gap-fill) ═══════════════
+  // art-design: SKIP (无建筑/设计/纯艺学院)
+  // social-science: SKIP (社科研究生项目以PhD为主，缺少独立授课型硕士)
+  {
+    id: "northwestern-statistics", schoolId: "northwestern", name: "统计学", nameEn: "MS in Statistics",
+    department: "Department of Statistics and Data Science", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    tuitionFee: "US$22,973/quarter",
+    notes: "12个月项目，按quarter制收费。适合准备读博或进入数据科学行业。需数学/统计背景",
+    source: "https://statistics.northwestern.edu/graduate/ms-program/",
+    verified: false,
+  },
+
+  // ═══════════════ HKUST (QS #47) — engineering, science (gap-fill) ═══════════════
+  // media: SKIP (无新闻/传媒系)
+  // education: SKIP (无教育学院)
+  // law: SKIP (无法学院)
+  // art-design: SKIP (无艺术设计学院)
+  // social-science: SKIP (社会科学部无独立授课型硕士项目)
+  {
+    id: "hkust-mechanical", schoolId: "hkust", name: "机械工程", nameEn: "MSc Mechanical Engineering",
+    department: "Department of Mechanical and Aerospace Engineering, School of Engineering", category: "engineering", subMajorId: "mechanical-engineering", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
+    tuitionFee: "港币 HK$216,500",
+    notes: "含机器人、先进制造、能源系统等方向",
+    source: "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-mech",
+    verified: false,
+  },
+  {
+    id: "hkust-chemical-energy", schoolId: "hkust", name: "化学与能源工程", nameEn: "MSc Chemical and Energy Engineering",
+    department: "Department of Chemical and Biological Engineering, School of Engineering", category: "engineering", subMajorId: "chemical-engineering", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
+    tuitionFee: "港币 HK$208,000",
+    notes: "涵盖能源转换、材料化学、过程工程等方向",
+    source: "https://seng.hkust.edu.hk/academics/taught-postgraduate/msc-cee",
+    verified: false,
+  },
+  {
+    id: "hkust-analytical-chemistry", schoolId: "hkust", name: "分析化学", nameEn: "MSc Analytical Chemistry",
+    department: "Department of Chemistry, School of Science", category: "science", subMajorId: "chemistry", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    tuitionFee: "港币 HK$155,000",
+    notes: "偏应用导向，涵盖质谱、光谱、色谱等现代分析技术",
+    source: "https://pg.ust.hk/prospective-students/programs/msc-analytical-chemistry",
+    verified: false,
+  },
+
+  // ═══════════════ LSE (QS #50) — science (gap-fill) ═══════════════
+  // engineering: SKIP (无工程学院)
+  // education: SKIP (无教育学院)
+  // art-design: SKIP (无艺术设计学院)
+  {
+    id: "lse-statistics-msc", schoolId: "lse", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Statistics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 85, other: 90 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    extraRequirements: "需要强概率论与数理统计背景",
+    notes: "LSE统计系与数据科学项目同属统计系。偏理论。双非需90+",
+    tuitionFee: "£37,536",
+    source: "https://www.lse.ac.uk/study-at-lse/graduate/msc-statistics",
+    verified: false,
+  },
+
+  // ═══════════════ Yonsei (QS #50) — education, science (gap-fill) ═══════════════
+  // law: SKIP (法学院以韩国法律师培训为主，无英文LLM)
+  // art-design: SKIP (无独立建筑/设计学院)
+  {
+    id: "yonsei-education", schoolId: "yonsei", name: "教育学", nameEn: "MA in Education",
+    department: "Department of Education, College of Education", category: "education", subMajorId: "education-studies", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 5.5, toeflOverall: 71,
+    requiresRelatedDegree: false,
+    extraRequirements: "TOPIK 4级或英语成绩二选一",
+    tuitionFee: "₩10,338,000/年（约￥5.6万人民币）",
+    applicationFee: "₩150,000",
+    notes: "韩语授课为主。涵盖教育哲学、课程与教学、教育行政等方向。入学金₩1,028,000",
+    source: "https://educat.yonsei.ac.kr/educat_en/index.do",
+    verified: false,
+  },
+  {
+    id: "yonsei-physics", schoolId: "yonsei", name: "物理学", nameEn: "MSc Physics",
+    department: "Department of Physics, College of Science", category: "science", subMajorId: "physics", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 5.5, toeflOverall: 71,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    extraRequirements: "TOPIK 4级或英语成绩二选一",
+    tuitionFee: "₩14,550,000/年（约￥7.8万人民币）",
+    applicationFee: "₩150,000",
+    notes: "韩英双语授课。涵盖凝聚态物理、粒子物理、光学等方向。GRA可覆盖学费+津贴",
+    source: "https://physics.yonsei.ac.kr/physics_en/index.do",
+    verified: false,
+  },
+  {
+    id: "yonsei-chemistry", schoolId: "yonsei", name: "化学", nameEn: "MSc Chemistry",
+    department: "Department of Chemistry, College of Science", category: "science", subMajorId: "chemistry", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 5.5, toeflOverall: 71,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    extraRequirements: "TOPIK 4级或英语成绩二选一",
+    tuitionFee: "₩14,550,000/年（约￥7.8万人民币）",
+    applicationFee: "₩150,000",
+    notes: "韩英双语授课。涵盖有机化学、无机化学、物理化学、分析化学等方向。GRA可覆盖学费+津贴",
+    source: "https://chem.yonsei.ac.kr/chem_en/index.do",
+    verified: false,
+  },
+
+  // ═══════════════ LMU (QS #50) — social-science (gap-fill) ═══════════════
+  // engineering: SKIP (LMU非工科大学)
+  // media: SKIP (传播学项目为德语授课)
+  // education: SKIP (教育学项目为德语授课)
+  // law: SKIP (法学项目为德语授课，无英文LLM)
+  // art-design: SKIP (无建筑/设计/纯艺学院)
+  {
+    id: "lmu-political-science", schoolId: "lmu", name: "政治学", nameEn: "MA Political Science",
+    department: "Geschwister Scholl Institute of Political Science", category: "social-science", subMajorId: "political-science", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 88,
+    requiresRelatedDegree: false,
+    tuitionFee: "€150/semester (semester contribution only)",
+    notes: "含英语授课方向。涵盖比较政治、国际关系、政治理论、欧洲政治等方向",
+    source: "https://www.en.gsi.uni-muenchen.de/studies/application/ma_application/index.html",
+    verified: false,
+  },
+
+  // ═══════════════ CMU (QS #52) — art-design, science (gap-fill) ═══════════════
+  // media: SKIP (无新闻/传媒系)
+  // education: SKIP (无传统教育学院)
+  // law: SKIP (无法学院)
+  {
+    id: "cmu-mdes", schoolId: "cmu", name: "设计学硕士", nameEn: "Master of Design (MDes)",
+    department: "School of Design, College of Fine Arts", category: "art-design", subMajorId: "industrial-design", duration: "2 years",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集",
+    tuitionFee: "US$45,000/year",
+    notes: "CMU设计学院全美顶尖。接受跨学科背景，鼓励设计与技术、社会创新的融合。助教奖学金可减$2,000/学期",
+    source: "https://www.design.cmu.edu/masters-program-admissions",
+    verified: false,
+  },
+  {
+    id: "cmu-statistics", schoolId: "cmu", name: "统计学与数据科学", nameEn: "MS in Statistics and Data Science",
+    department: "Department of Statistics & Data Science, Dietrich College", category: "science", subMajorId: "statistics", duration: "1.5 years",
+    gpaRequirements: { preferred: 3.6, other: 3.4 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "计算机", "工程"],
+    extraRequirements: "GRE推荐。需要强数学/统计背景（概率论、线性代数、数理统计）",
+    tuitionFee: "US$57,420/year",
+    notes: "CMU统计系全美顶尖。3学期完成。STEM项目可获3年OPT",
+    source: "https://www.cmu.edu/dietrich/statistics-datascience/academics/ms-program/",
+    verified: false,
+  },
+
+  // ═══════════════ UvA (QS #53) — education, law, science (gap-fill) ═══════════════
+  // engineering: SKIP (UvA无工程学院)
+  // art-design: SKIP (无建筑/设计/纯艺学院)
+  {
+    id: "uva-education", schoolId: "uva", name: "儿童发展与教育", nameEn: "MSc Child Development and Education",
+    department: "Faculty of Social and Behavioural Sciences — Research Institute of Child Development and Education", category: "education", subMajorId: "education-studies", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    notes: "全英文授课。跨学科项目，融合教育学、心理学、社会学视角。转专业友好",
+    tuitionFee: "€16,000/year (non-EU)",
+    source: "https://www.uva.nl/en/programmes/masters/child-development-and-education/child-development-and-education.html",
+    verified: false,
+  },
+  {
+    id: "uva-llm", schoolId: "uva", name: "国际法与欧洲法", nameEn: "LLM International and European Law",
+    department: "Amsterdam Law School", category: "law", subMajorId: "international-law", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "全英文授课。Amsterdam Law School在国际法与欧洲法领域领先。含多个专业方向",
+    tuitionFee: "€25,900/year (non-EU)",
+    source: "https://www.uva.nl/en/programmes/masters/international-and-european-law/international-and-european-law.html",
+    verified: false,
+  },
+  {
+    id: "uva-physics", schoolId: "uva", name: "物理学与天文学", nameEn: "MSc Physics and Astronomy",
+    department: "Faculty of Science — Institute of Physics", category: "science", subMajorId: "physics", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "全英文授课。涵盖粒子物理、天文、凝聚态等方向。与NIKHEF、SRON等研究机构合作",
+    tuitionFee: "€17,500/year (non-EU)",
+    source: "https://www.uva.nl/en/programmes/masters/physics-and-astronomy/physics-and-astronomy.html",
+    verified: false,
+  },
+  {
+    id: "uva-mathematics", schoolId: "uva", name: "数学", nameEn: "MSc Mathematics",
+    department: "Faculty of Science — Korteweg-de Vries Institute for Mathematics", category: "science", subMajorId: "mathematics", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "全英文授课。含纯数学、应用数学、随机分析等方向",
+    tuitionFee: "€17,500/year (non-EU)",
+    source: "https://www.uva.nl/en/programmes/masters/mathematics/mathematics.html",
+    verified: false,
+  },
+
+  // ═══════════════ University of Bristol (QS 54) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "bristol-digital-media", schoolId: "bristol", name: "数字媒体创新", nameEn: "MA Digital Media Innovation",
+    department: "School of Humanities", category: "media", subMajorId: "digital-media", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.5, toeflOverall: 88,
+    requiresRelatedDegree: false,
+    notes: "跨学科项目，结合数字媒体理论与实践。适合任何背景申请者",
+    tuitionFee: "£29,600",
+    source: "https://www.bristol.ac.uk/study/postgraduate/taught/ma-digital-media-innovation/",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "bristol-math-sciences", schoolId: "bristol", name: "数学科学", nameEn: "MSc Mathematical Sciences",
+    department: "School of Mathematics", category: "science", subMajorId: "mathematics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 85,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "可选纯数、应用数、统计等方向。Bristol 数学系排名英国前列",
+    tuitionFee: "£29,600",
+    source: "https://www.bristol.ac.uk/study/postgraduate/taught/msc-mathematical-sciences/",
+    verified: false,
+  },
+  {
+    id: "bristol-psychology", schoolId: "bristol", name: "心理学（转专业）", nameEn: "MSc Psychology (Conversion)",
+    department: "School of Psychological Science", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 95,
+    requiresRelatedDegree: false,
+    notes: "BPS 认证转专业项目，接受非心理学背景。毕业可获 GBC 资格",
+    tuitionFee: "£28,300",
+    source: "https://www.bristol.ac.uk/study/postgraduate/taught/msc-psychology-conversion/",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "bristol-international-relations", schoolId: "bristol", name: "国际关系", nameEn: "MSc International Relations",
+    department: "School of Sociology, Politics and International Studies (SPAIS)", category: "social-science", subMajorId: "international-relations", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.5, toeflOverall: 88,
+    requiresRelatedDegree: false,
+    notes: "SPAIS 旗舰项目。涵盖外交、政策分析、国际安全等方向",
+    tuitionFee: "£26,200",
+    source: "https://www.bristol.ac.uk/study/postgraduate/taught/msc-international-relations/",
+    verified: false,
+  },
+  {
+    id: "bristol-sociology", schoolId: "bristol", name: "社会学", nameEn: "MSc Sociology",
+    department: "School of Sociology, Politics and International Studies (SPAIS)", category: "social-science", subMajorId: "sociology", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.5, toeflOverall: 88,
+    requiresRelatedDegree: false,
+    notes: "涵盖种族、性别、数字社会学、文化等方向",
+    tuitionFee: "£26,200",
+    source: "https://www.bristol.ac.uk/study/postgraduate/taught/msc-sociology/",
+    verified: false,
+  },
+  // Bristol: SKIP art-design (no architecture/design school at University of Bristol)
+
+  // ═══════════════ Hong Kong Polytechnic University (QS 57) (gap-fill) ═══════════════
+  // PolyU: SKIP law (no law school)
+
+  // --- science ---
+  {
+    id: "polyu-applied-math", schoolId: "polyu", name: "科技应用数学", nameEn: "MSc in Applied Mathematics for Science and Technology (AMST)",
+    department: "Department of Applied Mathematics", category: "science", subMajorId: "mathematics", duration: "1.5 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程", "计算机"],
+    notes: "PolyU 应用数学系项目，侧重科技应用。需数学/理工背景",
+    tuitionFee: "港币 HK$198,000",
+    source: "https://www.polyu.edu.hk/ama/study/taught-postgraduate-programmes/",
+    verified: false,
+  },
+
+  // ═══════════════ UT Austin (QS 58) (gap-fill) ═══════════════
+  // --- education ---
+  {
+    id: "ut-austin-education", schoolId: "ut-austin", name: "课程与教学", nameEn: "MEd in Curriculum and Instruction",
+    department: "College of Education", category: "education", subMajorId: "education-studies", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    notes: "UT Austin 教育学院排名全美前列。多个方向可选：STEM Education, Language & Literacy 等",
+    tuitionFee: "US$23,000/year (non-resident)",
+    source: "https://education.utexas.edu/departments/curriculum-instruction/graduate-programs",
+    verified: false,
+  },
+
+  // --- law ---
+  {
+    id: "ut-austin-llm", schoolId: "ut-austin", name: "法学硕士", nameEn: "Master of Laws (LL.M.)",
+    department: "School of Law", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 98,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    extraRequirements: "需持有法学第一学位（LLB 或同等）",
+    notes: "Texas Law 全美 Top 15 法学院。LLM 项目约 30 人，可选修 JD 课程",
+    tuitionFee: "US$49,490 (non-resident, total)",
+    source: "https://law.utexas.edu/master-of-laws/",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "ut-austin-architecture", schoolId: "ut-austin", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "School of Architecture", category: "art-design", subMajorId: "architecture", duration: "2-3.5 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "NAAB 认证。Track 1 (3.5年，无建筑背景) 和 Track 2 (2年，有建筑背景)",
+    tuitionFee: "US$23,000/year (non-resident)",
+    source: "https://soa.utexas.edu/programs/architecture",
+    verified: false,
+  },
+
+  // ═══════════════ CityU Hong Kong (QS 62) (gap-fill) ═══════════════
+  // CityU: SKIP education (no dedicated education school)
+
+  // --- art-design ---
+  {
+    id: "cityu-mfa-creative-media", schoolId: "cityu-hk", name: "创意媒体艺术硕士", nameEn: "MFA Creative Media",
+    department: "School of Creative Media", category: "art-design", subMajorId: "animation", duration: "2 years",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交创意作品集",
+    notes: "香港首个创意媒体 MFA 项目。涵盖数字艺术、动画、新媒体艺术、数字制造等。终端艺术学位",
+    tuitionFee: "港币 HK$267,840",
+    source: "https://www.cityu.edu.hk/pg/programme/p80",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "cityu-mathematics", schoolId: "cityu-hk", name: "数学", nameEn: "MSc Mathematics",
+    department: "Department of Mathematics, College of Science", category: "science", subMajorId: "mathematics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "CityU 理学院数学系项目。需数学或相关背景",
+    tuitionFee: "港币 HK$178,200",
+    source: "https://www.cityu.edu.hk/pg/programme/p57",
+    verified: false,
+  },
+
+  // ═══════════════ UCSD (QS 62) (gap-fill) ═══════════════
+  // UCSD: SKIP law (no law school), SKIP media (PhD only in Communication)
+
+  // --- education ---
+  {
+    id: "ucsd-education", schoolId: "ucsd", name: "教育学", nameEn: "MEd in Teaching and Learning",
+    department: "Education Studies", category: "education", subMajorId: "education-studies", duration: "1-2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 85,
+    requiresRelatedDegree: false,
+    notes: "UCSD EDS 提供多方向教育硕士。可选 Curriculum Design, STEM Education 等",
+    tuitionFee: "US$30,200/year (non-resident)",
+    source: "https://eds.ucsd.edu/graduate-programs/",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "ucsd-visual-arts", schoolId: "ucsd", name: "视觉艺术", nameEn: "MFA Visual Arts",
+    department: "Department of Visual Arts", category: "art-design", subMajorId: "fine-art", duration: "3 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 85,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "UCSD 视觉艺术系以当代艺术和跨媒体闻名。全额资助（多数学生获 TA/RA）",
+    tuitionFee: "US$30,200/year (non-resident)",
+    source: "https://visarts.ucsd.edu/graduate/mfa.html",
+    verified: false,
+  },
+
+  // ═══════════════ UIUC (QS 64) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "uiuc-journalism", schoolId: "uiuc", name: "新闻学", nameEn: "MS in Journalism",
+    department: "College of Media", category: "media", subMajorId: "journalism", duration: "1 year",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "UIUC College of Media 旗下项目。数字媒体和新闻编辑室方向。可与 JD 联合攻读",
+    tuitionFee: "US$34,000/year (non-resident)",
+    source: "https://media.illinois.edu/journalism/",
+    verified: false,
+  },
+
+  // --- law ---
+  {
+    id: "uiuc-llm", schoolId: "uiuc", name: "法学硕士", nameEn: "Master of Laws (LL.M.)",
+    department: "College of Law", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "需持有法学第一学位。Illinois Law 提供灵活课程选择",
+    tuitionFee: "US$48,000/year (non-resident)",
+    source: "https://law.illinois.edu/academics/graduate-programs/llm/",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "uiuc-architecture", schoolId: "uiuc", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "School of Architecture, College of Fine and Applied Arts", category: "art-design", subMajorId: "architecture", duration: "2-3 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "NAAB 认证。College of Fine and Applied Arts 下属项目",
+    tuitionFee: "US$34,000/year (non-resident)",
+    source: "https://arch.illinois.edu/programs/graduate/",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "uiuc-statistics", schoolId: "uiuc", name: "统计学", nameEn: "MS in Statistics",
+    department: "Department of Statistics", category: "science", subMajorId: "statistics", duration: "2 years",
+    gpaRequirements: { preferred: 3.4, other: 3.2 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程", "商科"],
+    notes: "UIUC 统计系全美前列。需有较强数学/统计背景（线性代数、概率论等）",
+    tuitionFee: "US$34,000/year (non-resident)",
+    source: "https://stat.illinois.edu/academics/graduate-programs/ms-statistics",
+    verified: false,
+  },
+  {
+    id: "uiuc-psychology", schoolId: "uiuc", name: "心理学", nameEn: "MS in Psychology",
+    department: "Department of Psychology", category: "science", subMajorId: "psychology", duration: "2 years",
+    gpaRequirements: { preferred: 3.4, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "通常作为 PhD 阶段的一部分获得。需心理学或相关背景",
+    tuitionFee: "US$34,000/year (non-resident)",
+    source: "https://psychology.illinois.edu/academics/graduate-program",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "uiuc-political-science", schoolId: "uiuc", name: "政治学", nameEn: "MA in Political Science",
+    department: "Department of Political Science", category: "social-science", subMajorId: "political-science", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 79,
+    requiresRelatedDegree: false,
+    notes: "涵盖比较政治、国际关系、美国政治、政治理论等方向",
+    tuitionFee: "US$34,000/year (non-resident)",
+    source: "https://pol.illinois.edu/academics/graduate-program",
+    verified: false,
+  },
+
+  // ═══════════════ Université Paris-Saclay (QS 68) (gap-fill) ═══════════════
+  // Paris-Saclay: SKIP media, education, art-design (science/tech-focused university)
+
+  // --- law ---
+  {
+    id: "saclay-law", schoolId: "paris-saclay", name: "法学硕士", nameEn: "Master en Droit (LLM)",
+    department: "Faculty of Law, Economics and Management", category: "law", subMajorId: "llm-general", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 83 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 85,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "法语授课为主。方向含私法、公法、社会法。非欧盟学生学费极低（部分豁免差异化收费）",
+    tuitionFee: "€3,770/year (non-EU)",
+    source: "https://www.universite-paris-saclay.fr/en/education/master/law",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "saclay-sociology", schoolId: "paris-saclay", name: "社会学", nameEn: "Master Sociologie",
+    department: "Faculty of Social Sciences", category: "social-science", subMajorId: "sociology", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, toeflOverall: 85,
+    requiresRelatedDegree: false,
+    notes: "法语授课。涵盖当代政治社会学、社会运动等。学费极低",
+    tuitionFee: "€3,770/year (non-EU)",
+    source: "https://www.universite-paris-saclay.fr/en/education/master/sociology",
+    verified: false,
+  },
+
+  // ═══════════════ University of Warwick (QS 69) (gap-fill) ═══════════════
+  // Warwick: SKIP art-design (no architecture/design school)
+
+  // --- media ---
+  {
+    id: "warwick-film-tv", schoolId: "warwick", name: "电影与电视研究", nameEn: "MA Film and Television Studies",
+    department: "Department of Film and Television Studies", category: "media", subMajorId: "film-tv", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "Warwick 影视研究系排名英国前列。不限背景",
+    tuitionFee: "£26,110",
+    source: "https://warwick.ac.uk/study/postgraduate/courses/ma-film-tv/",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "warwick-statistics", schoolId: "warwick", name: "统计学", nameEn: "MSc Statistics",
+    department: "Department of Statistics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 82, other: 87 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "Warwick 统计系全英顶尖。需很强的数学/统计背景",
+    tuitionFee: "£31,450",
+    source: "https://warwick.ac.uk/study/postgraduate/courses/msc-statistics/",
+    verified: false,
+  },
+  {
+    id: "warwick-psychology", schoolId: "warwick", name: "心理学研究", nameEn: "MSc Psychological Research",
+    department: "Department of Psychology", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "需心理学或相关背景。BPS 认证",
+    tuitionFee: "£26,110",
+    source: "https://warwick.ac.uk/study/postgraduate/courses/msc-psychological-research/",
+    verified: false,
+  },
+
+  // ═══════════════ University of Leeds (QS 75) (gap-fill) ═══════════════
+  // --- art-design ---
+  {
+    id: "leeds-design", schoolId: "leeds", name: "设计", nameEn: "MA Design",
+    department: "School of Design", category: "art-design", subMajorId: "graphic-design", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "Leeds 设计学院在英国设计教育领域享有盛誉。涵盖平面、交互、产品设计等",
+    tuitionFee: "£27,250",
+    source: "https://courses.leeds.ac.uk/i453/design-ma",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "leeds-statistics", schoolId: "leeds", name: "统计学", nameEn: "MSc Statistics",
+    department: "School of Mathematics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景，包括概率论和数理统计基础",
+    tuitionFee: "£28,250",
+    source: "https://courses.leeds.ac.uk/i269/statistics-msc",
+    verified: false,
+  },
+  {
+    id: "leeds-psychology", schoolId: "leeds", name: "心理学（转专业）", nameEn: "MSc Psychological Science (Conversion)",
+    department: "School of Psychology", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: false,
+    notes: "BPS 认证转专业项目。接受非心理学背景",
+    tuitionFee: "£27,250",
+    source: "https://courses.leeds.ac.uk/i492/psychological-science-conversion-msc",
+    verified: false,
+  },
+
+  // ═══════════════ University of Western Australia (QS 77) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "uwa-strategic-communication", schoolId: "western-australia", name: "战略传播", nameEn: "Master of Strategic Communication",
+    department: "Faculty of Arts, Business, Law and Education", category: "media", subMajorId: "strategic-communication", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 70, other: 75 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 82,
+    requiresRelatedDegree: false,
+    notes: "WAM 60%。不限背景。涵盖公关、数字传播、组织沟通等",
+    tuitionFee: "澳元 A$38,800/年",
+    source: "https://www.uwa.edu.au/study/courses/master-of-strategic-communication",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "uwa-architecture", schoolId: "western-australia", name: "建筑学", nameEn: "Master of Architecture",
+    department: "School of Design", category: "art-design", subMajorId: "architecture", duration: "2-3 years",
+    gpaRequirements: { preferred: 65, other: 70 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 82,
+    requiresRelatedDegree: false,
+    extraRequirements: "无建筑背景可申请 3 年版",
+    notes: "WAM 60%。2年版需建筑本科，3年版接受任何背景。注册建筑师路径",
+    tuitionFee: "澳元 A$38,800/年",
+    source: "https://www.uwa.edu.au/study/courses/master-of-architecture",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "uwa-psychology", schoolId: "western-australia", name: "心理学", nameEn: "Master of Industrial and Organisational Psychology",
+    department: "School of Psychological Science", category: "science", subMajorId: "psychology", duration: "2 years",
+    gpaRequirements: { preferred: 70, other: 75 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 94,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "APAC 认证。需心理学学士或同等学历。工业/组织心理学方向",
+    tuitionFee: "澳元 A$42,100/年",
+    source: "https://www.uwa.edu.au/study/courses/master-of-industrial-and-organisational-psychology",
+    verified: false,
+  },
+  {
+    id: "uwa-public-health", schoolId: "western-australia", name: "公共卫生", nameEn: "Master of Public Health",
+    department: "School of Population and Global Health", category: "science", subMajorId: "public-health", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 65, other: 70 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 82,
+    requiresRelatedDegree: false,
+    notes: "WAM 60%。不限背景。涵盖流行病学、生物统计等方向",
+    tuitionFee: "澳元 A$42,100/年",
+    source: "https://www.uwa.edu.au/study/courses/master-of-public-health",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "uwa-international-relations", schoolId: "western-australia", name: "国际关系", nameEn: "Master of International Relations",
+    department: "Faculty of Arts, Business, Law and Education", category: "social-science", subMajorId: "international-relations", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 70, other: 75 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 82,
+    requiresRelatedDegree: false,
+    notes: "WAM 60%。不限背景。涵盖外交政策、亚太安全等",
+    tuitionFee: "澳元 A$38,800/年",
+    source: "https://www.uwa.edu.au/study/courses/master-of-international-relations",
+    verified: false,
+  },
+
+  // ═══════════════ University of Glasgow (QS 78) (gap-fill) ═══════════════
+  // Glasgow: SKIP art-design (Glasgow School of Art is a separate institution)
+
+  // --- science ---
+  {
+    id: "glasgow-statistics", schoolId: "glasgow", name: "统计学", nameEn: "MSc Statistics",
+    department: "School of Mathematics & Statistics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景。Glasgow 数学系研究实力强劲",
+    tuitionFee: "£28,420",
+    source: "https://www.gla.ac.uk/postgraduate/taught/statistics/",
+    verified: false,
+  },
+  {
+    id: "glasgow-psychology", schoolId: "glasgow", name: "心理学研究方法", nameEn: "MSc Research Methods in Psychological Science",
+    department: "School of Psychology & Neuroscience", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "BPS 认可。需心理学或相关背景",
+    tuitionFee: "£28,420",
+    source: "https://www.gla.ac.uk/postgraduate/taught/psychological-science-research-methods/",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "glasgow-public-policy", schoolId: "glasgow", name: "公共政策", nameEn: "MSc Public Policy",
+    department: "School of Social & Political Sciences", category: "social-science", subMajorId: "public-policy", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 90,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖政策分析、评估等方向",
+    tuitionFee: "£25,750",
+    source: "https://www.gla.ac.uk/postgraduate/taught/public-policy/",
+    verified: false,
+  },
+  {
+    id: "glasgow-sociology", schoolId: "glasgow", name: "社会学", nameEn: "MSc Sociology",
+    department: "School of Social & Political Sciences", category: "social-science", subMajorId: "sociology", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 90,
+    requiresRelatedDegree: false,
+    notes: "不限背景。Glasgow 社科学院排名英国前列",
+    tuitionFee: "£25,750",
+    source: "https://www.gla.ac.uk/postgraduate/taught/sociology/",
+    verified: false,
+  },
+
+  // ═══════════════ University of Southampton (QS 80) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "southampton-digital-media", schoolId: "southampton", name: "数字媒体", nameEn: "MA Digital Media",
+    department: "Winchester School of Art", category: "media", subMajorId: "digital-media", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    notes: "Winchester School of Art 项目。结合数字媒体理论与实践创作",
+    tuitionFee: "£24,000",
+    source: "https://www.southampton.ac.uk/courses/digital-media-masters-ma",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "southampton-communication-design", schoolId: "southampton", name: "传播设计", nameEn: "MA Communication Design",
+    department: "Winchester School of Art", category: "art-design", subMajorId: "graphic-design", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "Winchester School of Art (WSA) 是 Southampton 大学的一部分。涵盖平面设计、品牌设计、视觉传达等",
+    tuitionFee: "£24,000",
+    source: "https://www.southampton.ac.uk/courses/communication-design-masters-ma",
+    verified: false,
+  },
+  {
+    id: "southampton-fine-art", schoolId: "southampton", name: "纯艺术", nameEn: "MA Fine Art",
+    department: "Winchester School of Art", category: "art-design", subMajorId: "fine-art", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "WSA 纯艺术项目。支持绘画、雕塑、装置、数字媒体等多种创作形式",
+    tuitionFee: "£24,000",
+    source: "https://www.southampton.ac.uk/courses/fine-art-masters-ma",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "southampton-statistics", schoolId: "southampton", name: "统计学", nameEn: "MSc Statistics",
+    department: "School of Mathematical Sciences", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景。Southampton 统计学排名英国前列",
+    tuitionFee: "£28,600",
+    source: "https://www.southampton.ac.uk/courses/statistics-masters-msc",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "southampton-politics-ir", schoolId: "southampton", name: "政治与国际关系", nameEn: "MA Politics and International Relations",
+    department: "Department of Politics and International Relations", category: "social-science", subMajorId: "international-relations", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖国际安全、全球治理、外交政策等",
+    tuitionFee: "£24,000",
+    source: "https://www.southampton.ac.uk/courses/politics-international-relations-masters-ma",
+    verified: false,
+  },
+
+  // ═══════════════ University of Washington (QS 81) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "uw-communication", schoolId: "uw", name: "传播领导力", nameEn: "MA Communication Leadership",
+    department: "Department of Communication", category: "media", subMajorId: "strategic-communication", duration: "1.5 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    notes: "侧重数字媒体与传播战略。$867/学分。适合职业人士",
+    tuitionFee: "US$27,321/year",
+    source: "https://commlead.uw.edu/",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "uw-architecture", schoolId: "uw", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "College of Built Environments", category: "art-design", subMajorId: "architecture", duration: "2-3 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 92,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio). GRE optional",
+    notes: "NAAB 认证。2年（有建筑背景）或3年（无建筑背景）。Pacific Northwest 设计特色",
+    tuitionFee: "US$33,114/year (non-resident)",
+    source: "https://arch.be.uw.edu/admissions/",
+    verified: false,
+  },
+
+  // ═══════════════ University of Adelaide (QS 82) (gap-fill) ═══════════════
+  // Adelaide: SKIP media (no dedicated communication master's confirmed)
+
+  // --- education ---
+  {
+    id: "adelaide-education", schoolId: "adelaide", name: "教育学", nameEn: "Master of Education (MEd)",
+    department: "School of Education", category: "education", subMajorId: "education-studies", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "2026 年起合并为 Adelaide University。多个方向可选",
+    tuitionFee: "澳元 A$39,000/年",
+    source: "https://www.adelaide.edu.au/degree-finder/2025/med_medcswk.html",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "adelaide-architecture", schoolId: "adelaide", name: "建筑学", nameEn: "Master of Architecture",
+    department: "School of Architecture and Built Environment", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    extraRequirements: "需建筑学学士或相关学位",
+    notes: "NAAB 等同的澳洲注册建筑师路径。2026 年起合并为 Adelaide University",
+    tuitionFee: "澳元 A$42,500/年",
+    source: "https://www.adelaide.edu.au/degree-finder/2025/march_marchcswk.html",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "adelaide-psychology", schoolId: "adelaide", name: "心理学", nameEn: "Master of Psychology (Clinical)",
+    department: "School of Psychology", category: "science", subMajorId: "psychology", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 7.0, toeflOverall: 94,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    extraRequirements: "需心理学学士（4年制或荣誉学位）",
+    notes: "APAC 认证。需心理学背景。竞争激烈。2026 年起合并为 Adelaide University",
+    tuitionFee: "澳元 A$46,000/年",
+    source: "https://www.adelaide.edu.au/degree-finder/2025/mpsyc_mpsyclin.html",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "adelaide-public-policy", schoolId: "adelaide", name: "公共政策", nameEn: "Master of Public Policy",
+    department: "Faculty of Arts, Business, Law and Economics", category: "social-science", subMajorId: "public-policy", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖政策分析、公共管理等。2026 年起合并为 Adelaide University",
+    tuitionFee: "澳元 A$42,500/年",
+    source: "https://www.adelaide.edu.au/degree-finder/2025/mpubp_mpubpolcswk.html",
+    verified: false,
+  },
+
+  // ═══════════════ Penn State (QS 82) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "pennstate-communications", schoolId: "penn-state", name: "传播学", nameEn: "MA in Communications",
+    department: "Bellisario College of Communications", category: "media", subMajorId: "strategic-communication", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "Bellisario College of Communications。涵盖新闻、广告、公关、媒体研究等方向。可申请 TA/RA 资助",
+    tuitionFee: "US$42,000/year (non-resident)",
+    source: "https://bulletins.psu.edu/graduate/programs/majors/communications/",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "pennstate-architecture", schoolId: "penn-state", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "Stuckeman School of Architecture, College of Arts and Architecture", category: "art-design", subMajorId: "architecture", duration: "2-3 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "NAAB 认证。Stuckeman School 下属项目。3年（First Professional）或 2年（Post-Professional）",
+    tuitionFee: "US$42,000/year (non-resident)",
+    source: "https://arts.psu.edu/architecture/graduate/",
+    verified: false,
+  },
+
+  // ═══════════════ UW-Madison (QS 83) (gap-fill) ═══════════════
+  // UW-Madison: SKIP art-design (no architecture school)
+
+  // --- education ---
+  {
+    id: "uw-madison-education", schoolId: "uw-madison", name: "教育学", nameEn: "MS in Education",
+    department: "School of Education", category: "education", subMajorId: "education-studies", duration: "1-2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "UW-Madison 教育学院全美 Top 10。多方向可选：Curriculum & Instruction, Educational Policy 等",
+    tuitionFee: "US$24,054/year (non-resident)",
+    source: "https://education.wisc.edu/academics/graduate-programs/",
+    verified: false,
+  },
+
+  // --- law ---
+  {
+    id: "uw-madison-llm", schoolId: "uw-madison", name: "法学硕士", nameEn: "Master of Laws (LL.M.)",
+    department: "University of Wisconsin Law School", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    extraRequirements: "需持有法学第一学位（LLB或同等）",
+    notes: "面向国际法律毕业生。秋季入学或春季入学均可。可选修 JD 课程",
+    tuitionFee: "US$53,928/year (non-resident)",
+    source: "https://law.wisc.edu/grad/llm/",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "uw-madison-public-affairs", schoolId: "uw-madison", name: "公共事务", nameEn: "Master of Public Affairs (MPA)",
+    department: "La Follette School of Public Affairs", category: "social-science", subMajorId: "public-policy", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "La Follette School 全美公共政策学院排名前列。涵盖政策分析、公共管理等",
+    tuitionFee: "US$24,054/year (non-resident)",
+    source: "https://lafollette.wisc.edu/mpa-program/",
+    verified: false,
+  },
+  {
+    id: "uw-madison-political-science", schoolId: "uw-madison", name: "政治学", nameEn: "MA in Political Science",
+    department: "Department of Political Science", category: "social-science", subMajorId: "political-science", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "通常作为 PhD 项目的一部分。涵盖比较政治、国际关系、美国政治等",
+    tuitionFee: "US$24,054/year (non-resident)",
+    source: "https://polisci.wisc.edu/graduate-program/",
+    verified: false,
+  },
+
+  // ═══════════════ University of Birmingham (QS 84) (gap-fill) ═══════════════
+  // Birmingham: SKIP art-design (no architecture/art school — Birmingham City University is separate)
+
+  // --- media ---
+  {
+    id: "birmingham-film-tv", schoolId: "birmingham", name: "电影与电视", nameEn: "MA Film and Television: Industries and Cultures",
+    department: "Department of Film and Creative Writing", category: "media", subMajorId: "film-tv", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 95,
+    requiresRelatedDegree: false,
+    notes: "不限背景，无需媒体/电影学位。涵盖电影产业、策展、数字营销、新闻等职业方向",
+    tuitionFee: "£24,120",
+    source: "https://www.birmingham.ac.uk/study/postgraduate/subjects/film-studies-courses/film-and-television-industries-and-cultures-ma",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "birmingham-mathematics", schoolId: "birmingham", name: "数学", nameEn: "MSc Mathematics",
+    department: "School of Mathematics", category: "science", subMajorId: "mathematics", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.0, ieltsOther: 6.0, toeflOverall: 80,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学或含大量数学内容的学位。Birmingham 数学系在代数、组合等方向有特色",
+    tuitionFee: "£27,000",
+    source: "https://www.birmingham.ac.uk/study/postgraduate/subjects/mathematics-courses/mathematics-msc",
+    verified: false,
+  },
+  {
+    id: "birmingham-psychology", schoolId: "birmingham", name: "心理学（转专业）", nameEn: "MSc Psychology (Conversion)",
+    department: "School of Psychology", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 88,
+    requiresRelatedDegree: false,
+    notes: "BPS 认证转专业项目。接受任何背景",
+    tuitionFee: "£26,180",
+    source: "https://www.birmingham.ac.uk/study/postgraduate/subjects/psychology-courses/psychology-conversion-msc",
+    verified: false,
+  },
+
+  // ═══════════════ Georgia Tech (QS 85) (gap-fill) ═══════════════
+  // Georgia Tech: SKIP media, education, law (tech-focused; no journalism/ed/law schools)
+
+  // --- art-design ---
+  {
+    id: "gatech-architecture", schoolId: "gatech", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "College of Design — School of Architecture", category: "art-design", subMajorId: "architecture", duration: "2-3.5 years",
+    gpaRequirements: { preferred: 3.4, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "NAAB 认证。60-102 学时取决于建筑背景。Georgia Tech 设计学院在科技+建筑交叉领域极强",
+    tuitionFee: "US$32,144/year (non-resident)",
+    source: "https://arch.gatech.edu/",
+    verified: false,
+  },
+  {
+    id: "gatech-industrial-design", schoolId: "gatech", name: "工业设计", nameEn: "Master of Industrial Design (MID)",
+    department: "College of Design — School of Industrial Design", category: "art-design", subMajorId: "industrial-design", duration: "2 years",
+    gpaRequirements: { preferred: 3.4, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "Georgia Tech 工业设计以科技驱动设计著称。接受非设计背景",
+    tuitionFee: "US$32,144/year (non-resident)",
+    source: "https://id.gatech.edu/academics/mid",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "gatech-physics", schoolId: "gatech", name: "物理学", nameEn: "MS in Physics",
+    department: "School of Physics, College of Sciences", category: "science", subMajorId: "physics", duration: "2 years",
+    gpaRequirements: { preferred: 3.4, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.5, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "Georgia Tech 物理系在凝聚态物理、天体物理等方向有优势",
+    tuitionFee: "US$32,144/year (non-resident)",
+    source: "https://physics.gatech.edu/academics/graduate",
+    verified: false,
+  },
+  {
+    id: "gatech-psychology", schoolId: "gatech", name: "心理学", nameEn: "MS in Psychology",
+    department: "School of Psychology, College of Sciences", category: "science", subMajorId: "psychology", duration: "2 years",
+    gpaRequirements: { preferred: 3.4, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.5, toeflOverall: 100,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "Georgia Tech 心理学侧重认知科学、工程心理学、量化心理学等。与 HCI 交叉密切",
+    tuitionFee: "US$32,144/year (non-resident)",
+    source: "https://psychology.gatech.edu/graduate",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "gatech-public-policy", schoolId: "gatech", name: "公共政策", nameEn: "MS in Public Policy",
+    department: "School of Public Policy, Ivan Allen College of Liberal Arts", category: "social-science", subMajorId: "public-policy", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.5, toeflOverall: 100,
+    requiresRelatedDegree: false,
+    notes: "Georgia Tech 公共政策侧重科技政策、能源政策、创新政策等。STEM 背景加分",
+    tuitionFee: "US$32,144/year (non-resident)",
+    source: "https://spp.gatech.edu/",
+    verified: false,
+  },
+
+  // ═══════════════ UTS (QS 88) (gap-fill) ═══════════════
+  // --- media ---
+  {
+    id: "uts-communication", schoolId: "uts", name: "传播管理", nameEn: "Master of Communication Management",
+    department: "Faculty of Arts and Social Sciences", category: "media", subMajorId: "strategic-communication", duration: "1.5 years",
+    gpaRequirements: { preferred: 72, other: 78 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsWriting: 6.0, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖公关、组织传播、数字传播等。UTS 不官方区分 211/双非",
+    tuitionFee: "澳元 A$40,000/年",
+    source: "https://www.uts.edu.au/study/find-a-course/master-communication-management",
+    verified: false,
+  },
+
+  // --- law ---
+  {
+    id: "uts-llm", schoolId: "uts", name: "法学硕士", nameEn: "Master of Laws (LLM)",
+    department: "Faculty of Law", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 72, other: 78 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsWriting: 6.0, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    notes: "需法学学位。UTS 法学院在实务导向的法律教育方面有特色",
+    tuitionFee: "澳元 A$42,000/年",
+    source: "https://www.uts.edu.au/study/find-a-course/master-laws",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "uts-architecture", schoolId: "uts", name: "建筑学", nameEn: "Master of Architecture",
+    department: "School of Architecture, Faculty of Design, Architecture and Building", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 72, other: 78 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsWriting: 6.0, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    extraRequirements: "需建筑学相关学士学位",
+    notes: "UTS DAB 学院项目。注册建筑师路径",
+    tuitionFee: "澳元 A$42,000/年",
+    source: "https://www.uts.edu.au/study/find-a-course/master-architecture",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "uts-science", schoolId: "uts", name: "理学", nameEn: "Master of Science",
+    department: "Faculty of Science", category: "science", subMajorId: "environmental-science", duration: "1.5-2 years",
+    gpaRequirements: { preferred: 72, other: 78 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsWriting: 6.0, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "UTS 理学院。多方向可选：Environmental Sciences, Marine Biology, Forensic Science 等",
+    tuitionFee: "澳元 A$42,000/年",
+    source: "https://www.uts.edu.au/study/find-a-course/master-science",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "uts-international-studies", schoolId: "uts", name: "国际研究", nameEn: "Master of Arts in International Studies",
+    department: "Faculty of Arts and Social Sciences", category: "social-science", subMajorId: "international-relations", duration: "1.5 years",
+    gpaRequirements: { preferred: 72, other: 78 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsWriting: 6.0, ieltsOther: 6.0, toeflOverall: 79, toeflWriting: 21,
+    requiresRelatedDegree: false,
+    notes: "不限背景。涵盖国际关系、亚太研究、全球政治等",
+    tuitionFee: "澳元 A$35,000/年",
+    source: "https://www.uts.edu.au/study/find-a-course/master-arts-international-studies",
+    verified: false,
+  },
+
+  // ═══════════════ Durham University (QS 89) (gap-fill) ═══════════════
+  // Durham: SKIP art-design (no architecture/design school)
+
+  // --- media ---
+  {
+    id: "durham-visual-culture", schoolId: "durham", name: "视觉文化", nameEn: "MA Visual Culture",
+    department: "School of Modern Languages and Cultures", category: "media", subMajorId: "media-studies", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 102,
+    requiresRelatedDegree: false,
+    notes: "与 BFI 合作。涵盖电影、摄影、视觉文化理论等。不限本科背景",
+    tuitionFee: "£24,500",
+    source: "https://www.durham.ac.uk/departments/academic/modern-languages-cultures/postgraduate-study/taught-courses/ma-in-visual-culture/",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "durham-math-sciences", schoolId: "durham", name: "数学科学", nameEn: "MSc Mathematical Sciences",
+    department: "Department of Mathematical Sciences", category: "science", subMajorId: "mathematics", duration: "1 year",
+    gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
+    notes: "Durham 数学系英国排名前列。需较强数学背景",
+    tuitionFee: "£28,900",
+    source: "https://www.durham.ac.uk/departments/academic/mathematical-sciences/postgraduate-study/",
+    verified: false,
+  },
+
+  // ═══════════════ University of Sheffield (QS 92) (gap-fill) ═══════════════
+  // --- art-design ---
+  {
+    id: "sheffield-architecture", schoolId: "sheffield", name: "建筑设计", nameEn: "MA Architectural Design",
+    department: "School of Architecture and Landscape", category: "art-design", subMajorId: "architecture", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 88,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    extraRequirements: "需提交作品集 (Portfolio)。需建筑或相关设计背景",
+    notes: "Sheffield 建筑系英国排名靠前。Studio-based 教学模式",
+    tuitionFee: "£26,950",
+    source: "https://sheffield.ac.uk/postgraduate/taught/courses/2026/architectural-design-ma",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "sheffield-statistics", schoolId: "sheffield", name: "统计学", nameEn: "MSc Statistics",
+    department: "School of Mathematics and Statistics", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 88,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景。含概率论、贝叶斯方法、机器学习等方向",
+    tuitionFee: "£27,500",
+    source: "https://www.sheffield.ac.uk/postgraduate/taught/courses/2026/statistics-msc",
+    verified: false,
+  },
+  {
+    id: "sheffield-psychology", schoolId: "sheffield", name: "心理学研究方法", nameEn: "MSc Psychological Research Methods",
+    department: "Department of Psychology", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 88,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "BPS 认证。需心理学或相关背景。提供丰富的研究方法训练",
+    tuitionFee: "£25,750",
+    source: "https://www.sheffield.ac.uk/postgraduate/taught/courses/2026/psychological-research-methods-msc",
+    verified: false,
+  },
+
+  // ═══════════════ Boston University (QS 93) (gap-fill) ═══════════════
+  // --- education ---
+  {
+    id: "boston-education", schoolId: "boston-u", name: "教育学", nameEn: "EdM in Education",
+    department: "Wheelock College of Education & Human Development", category: "education", subMajorId: "education-studies", duration: "1-2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 84,
+    requiresRelatedDegree: false,
+    notes: "BU Wheelock 提供多方向硕士：Curriculum & Teaching, Educational Leadership, Policy Studies 等。学费$66,670/年",
+    tuitionFee: "US$66,670/year",
+    source: "https://www.bu.edu/wheelock/academics-professional-development/graduate-programs/masters-programs/",
+    verified: false,
+  },
+
+  // --- art-design ---
+  {
+    id: "boston-graphic-design", schoolId: "boston-u", name: "平面设计", nameEn: "MFA Graphic Design",
+    department: "College of Fine Arts", category: "art-design", subMajorId: "graphic-design", duration: "2-3 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 84,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio)",
+    notes: "BU College of Fine Arts。接受非设计背景（3年制）",
+    tuitionFee: "US$61,050/year",
+    source: "https://www.bu.edu/cfa/academics/graphic-design/",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "boston-political-science", schoolId: "boston-u", name: "政治学", nameEn: "MA in Political Science",
+    department: "Department of Political Science, College of Arts & Sciences", category: "social-science", subMajorId: "political-science", duration: "1-2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 84,
+    requiresRelatedDegree: false,
+    notes: "涵盖美国政治、比较政治、国际关系、政治理论等方向",
+    tuitionFee: "US$61,050/year",
+    source: "https://www.bu.edu/polisci/graduate/",
+    verified: false,
+  },
+  {
+    id: "boston-international-relations", schoolId: "boston-u", name: "国际关系", nameEn: "MA in International Relations",
+    department: "Frederick S. Pardee School of Global Studies", category: "social-science", subMajorId: "international-relations", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 90,
+    requiresRelatedDegree: false,
+    notes: "BU Pardee School 全美国际关系排名前列。涵盖外交、安全、发展等方向",
+    tuitionFee: "US$61,050/year",
+    source: "https://www.bu.edu/pardeeschool/academics/ma-in-international-relations/",
+    verified: false,
+  },
+
+  // ═══════════════ University of Alberta (QS 96) (gap-fill) ═══════════════
+  // Alberta: SKIP media (no dedicated comm master's confirmed), SKIP art-design (not confident)
+
+  // --- law ---
+  {
+    id: "alberta-llm", schoolId: "alberta", name: "法学硕士", nameEn: "Master of Laws (LLM)",
+    department: "Faculty of Law", category: "law", subMajorId: "llm-general", duration: "1 year",
+    gpaRequirements: { preferred: 78, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
+    extraRequirements: "需持有法学第一学位（LLB/JD），GPA 3.0+ on 4.0 scale",
+    notes: "Alberta 法学院加拿大排名靠前。面向国际法律毕业生",
+    tuitionFee: "加元 CAD$18,024/year",
+    source: "https://www.ualberta.ca/en/law/programs/graduate-programs/llm.html",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "alberta-statistics", schoolId: "alberta", name: "统计学", nameEn: "MSc in Statistical and Applied Mathematics",
+    department: "Department of Mathematical and Statistical Sciences", category: "science", subMajorId: "statistics", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景。Alberta 数学统计系在应用数学领域有优势",
+    tuitionFee: "加元 CAD$12,000/year (international)",
+    source: "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/",
+    verified: false,
+  },
+  {
+    id: "alberta-psychology", schoolId: "alberta", name: "心理学", nameEn: "MSc in Psychology",
+    department: "Department of Psychology", category: "science", subMajorId: "psychology", duration: "2 years",
+    gpaRequirements: { preferred: 78, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, toeflOverall: 90,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "需心理学或相关背景。方向含认知科学、社会心理学等。通常含研究成分",
+    tuitionFee: "加元 CAD$12,000/year (international)",
+    source: "https://www.ualberta.ca/en/psychology/graduate-program/",
+    verified: false,
+  },
+
+  // ═══════════════ Rice University (QS 96) (gap-fill) ═══════════════
+  // Rice: SKIP media, education, law (no journalism/ed/law schools)
+
+  // --- art-design ---
+  {
+    id: "rice-architecture", schoolId: "rice", name: "建筑学", nameEn: "Master of Architecture (MArch)",
+    department: "Rice School of Architecture", category: "art-design", subMajorId: "architecture", duration: "2.5-3.5 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 7.0, toeflOverall: 90,
+    requiresRelatedDegree: false,
+    extraRequirements: "需提交作品集 (Portfolio). GRE strongly recommended",
+    notes: "NAAB 认证。Rice School of Architecture 排名全美前列。小班精英教育",
+    tuitionFee: "US$54,100/year",
+    source: "https://arch.rice.edu/apply/graduate",
+    verified: false,
+  },
+
+  // ═══════════════ University of Nottingham (QS 97) (gap-fill) ═══════════════
+  // Nottingham: SKIP media (not enough confidence for specific program)
+
+  // --- art-design ---
+  {
+    id: "nottingham-architecture", schoolId: "nottingham", name: "建筑学", nameEn: "MArch Architecture (ARB/RIBA Part 2)",
+    department: "Department of Architecture and Built Environment", category: "art-design", subMajorId: "architecture", duration: "2 years",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"],
+    extraRequirements: "需建筑学 Part 1 资质或同等学历。需提交作品集",
+    notes: "ARB/RIBA Part 2 认证。面向注册建筑师的专业课程",
+    tuitionFee: "£28,600",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/architecture-march-arb-riba-part-2",
+    verified: false,
+  },
+
+  // --- science ---
+  {
+    id: "nottingham-statistics", schoolId: "nottingham", name: "统计学", nameEn: "MSc Statistics",
+    department: "School of Mathematical Sciences", category: "science", subMajorId: "statistics", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
+    notes: "需数学/统计背景。Nottingham 统计系在 Bayesian 方法等方向有优势",
+    tuitionFee: "£28,600",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/statistics-msc",
+    verified: false,
+  },
+  {
+    id: "nottingham-psychology", schoolId: "nottingham", name: "心理学研究方法", nameEn: "MSc Psychological Research Methods",
+    department: "School of Psychology", category: "science", subMajorId: "psychology", duration: "1 year",
+    gpaRequirements: { preferred: 75, other: 82 }, gpaScale: "percentage",
+    ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 87,
+    requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
+    notes: "BPS 认证。需心理学或相关背景",
+    tuitionFee: "£26,500",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/psychological-research-methods-msc",
+    verified: false,
+  },
+
+  // ═══════════════ Purdue University (QS 99) (gap-fill) ═══════════════
+  // Purdue: SKIP law (no law school), SKIP art-design (no architecture program confirmed)
+
+  // --- media ---
+  {
+    id: "purdue-communication", schoolId: "purdue", name: "传播学", nameEn: "MS in Communication",
+    department: "Brian Lamb School of Communication", category: "media", subMajorId: "strategic-communication", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "Brian Lamb School of Communication。方向含战略传播、健康传播、政治传播等。TA/RA 资助机会多",
+    tuitionFee: "US$28,520/year (non-resident)",
+    source: "https://www.cla.purdue.edu/communication/graduate/",
+    verified: false,
+  },
+
+  // --- education ---
+  {
+    id: "purdue-education", schoolId: "purdue", name: "课程与教学", nameEn: "MS in Curriculum and Instruction",
+    department: "College of Education", category: "education", subMajorId: "education-studies", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "Purdue 教育学院。涵盖 STEM Education, Literacy, Educational Technology 等方向",
+    tuitionFee: "US$28,520/year (non-resident)",
+    source: "https://education.purdue.edu/graduate-students/prospective-students/",
+    verified: false,
+  },
+
+  // --- social-science ---
+  {
+    id: "purdue-political-science", schoolId: "purdue", name: "政治学", nameEn: "MA in Political Science",
+    department: "Department of Political Science", category: "social-science", subMajorId: "political-science", duration: "2 years",
+    gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4",
+    ieltsOverall: 6.5, toeflOverall: 80,
+    requiresRelatedDegree: false,
+    notes: "涵盖美国政治、比较政治、国际关系、政治方法论等。TA/RA 资助机会",
+    tuitionFee: "US$28,520/year (non-resident)",
+    source: "https://www.cla.purdue.edu/polsci/graduate/",
+    verified: false,
+  },
 ];
 
 programs.push(...newPrograms);
