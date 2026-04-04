@@ -3306,7 +3306,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage",
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: false, notes: "三重认证商学院。转专业项目", tuitionFee: "£32,500",
-    source: "https://www.durham.ac.uk/study/courses/management-msc/", verified: false,
+    source: "https://www.durham.ac.uk/business/courses/management-n2p109/", verified: false,
   },
   {
     id: "durham-finance", schoolId: "durham", name: "金融", nameEn: "MSc Finance",
@@ -3315,7 +3315,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学", "工程"],
     notes: "CFA 合作项目", tuitionFee: "£32,500",
-    source: "https://www.durham.ac.uk/study/courses/finance-msc/", verified: false,
+    source: "https://www.durham.ac.uk/business/courses/finance-n3k109/", verified: false,
   },
   {
     id: "durham-marketing", schoolId: "durham", name: "市场营销", nameEn: "MSc Marketing",
@@ -3324,7 +3324,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: false, tuitionFee: "£32,500",
     notes: "三重认证商学院。转专业友好，不限背景",
-    source: "https://www.durham.ac.uk/study/courses/marketing-msc/", verified: false,
+    source: "https://www.durham.ac.uk/business/courses/marketing-n5k609/", verified: false,
   },
   {
     id: "durham-accounting", schoolId: "durham", name: "会计", nameEn: "MSc Accounting",
@@ -3333,7 +3333,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科"], tuitionFee: "£32,500",
     notes: "三重认证商学院。需商科背景，含 ACCA 免考资格",
-    source: "https://www.durham.ac.uk/study/courses/accounting-msc/", verified: false,
+    source: "https://www.durham.ac.uk/business/courses/accounting-l1t509/", verified: false,
   },
   {
     id: "durham-cs", schoolId: "durham", name: "计算机科学", nameEn: "MSc Computer Science",
@@ -3342,7 +3342,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机"], tuitionFee: "£29,500",
     notes: "需 CS 背景。杜伦 CS 系规模较小，教学导向",
-    source: "https://www.durham.ac.uk/study/courses/computer-science-msc/", verified: false,
+    source: "https://www.durham.ac.uk/study/courses/advanced-computer-science-g5t609/", verified: false,
   },
   {
     id: "durham-data-science", schoolId: "durham", name: "数据科学", nameEn: "MSc Data Science",
@@ -3351,7 +3351,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "工程"], tuitionFee: "£29,500",
     notes: "需 CS/理学/工程背景。CS 系主办",
-    source: "https://www.durham.ac.uk/study/courses/data-science-msc/", verified: false,
+    source: "https://www.durham.ac.uk/study/courses/master-of-data-science-g5k823/", verified: false,
   },
   {
     id: "durham-tesol", schoolId: "durham", name: "TESOL", nameEn: "MA TESOL",
@@ -3359,7 +3359,7 @@ export const programs: Program[] = [
     gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
     ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100,
     requiresRelatedDegree: false, notes: "IELTS 7.0（高于其他杜伦项目）", tuitionFee: "£24,500",
-    source: "https://www.durham.ac.uk/study/courses/teaching-english-to-speakers-of-other-languages-tesol-ma/", verified: false,
+    source: "https://www.durham.ac.uk/study/courses/tesol-and-applied-linguistics-q3ke07/", verified: false,
   },
   {
     id: "durham-ir", schoolId: "durham", name: "国际关系", nameEn: "MA International Relations",
@@ -3368,7 +3368,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsOther: 6.0, toeflOverall: 92,
     requiresRelatedDegree: false, tuitionFee: "£24,500",
     notes: "转专业友好，不限背景。杜伦政治与国际关系在英国口碑好",
-    source: "https://www.durham.ac.uk/study/courses/international-relations-ma/", verified: false,
+    source: "https://www.durham.ac.uk/study/courses/international-relations-l2t207/", verified: false,
   },
   {
     id: "durham-llm", schoolId: "durham", name: "法学硕士", nameEn: "LLM",
@@ -3377,7 +3377,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"], tuitionFee: "£24,500",
     notes: "需法学背景。IELTS 7.0（高于杜伦多数项目）",
-    source: "https://www.durham.ac.uk/study/courses/law-llm/", verified: false,
+    source: "https://www.durham.ac.uk/study/courses/master-of-laws-m1k116/", verified: false,
   },
   {
     id: "durham-engineering", schoolId: "durham", name: "工程学", nameEn: "MSc Engineering",
@@ -3725,7 +3725,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     notes: "工科核心项目，要求 211 院校 85%+ 或 87.5%+",
     tuitionFee: "£40,900",
-    source: "https://www.imperial.ac.uk/study/courses/postgraduate-taught/analogue-and-digital-integrated-circuit-design/",
+    source: "https://www.imperial.ac.uk/study/courses/postgraduate-taught/analogue-digital-circuit-design/",
     verified: false,
   },
   {
@@ -4713,7 +4713,7 @@ export const programs: Program[] = [
     tuitionFee: "US$70,000/year",
     applicationFee: "US$80",
     notes: "1年全日制LLM项目。Penn Law T6之一",
-    source: "https://www.law.upenn.edu/admissions/llm-program/",
+    source: "https://www.law.upenn.edu/admissions/grad/llm.php",
     verified: false,
   },
   {
@@ -6775,7 +6775,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "CHF 1,460/year",
-    source: "https://ethz.ch/en/studies/master/degree-programmes/natural-sciences-and-mathematics/mathematics.html",
+    source: "https://ethz.ch/en/studies/master/degree-programmes/natural-sciences-and-mathematics/mathematics-applied-mathematics.html",
     verified: false,
   },
   {
@@ -6795,7 +6795,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "CHF 1,460/year",
-    source: "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/civil-engineering.html",
+    source: "https://ethz.ch/en/studies/master/degree-programmes/architecture-and-civil-engineering/civil-engineering.html",
     verified: false,
   },
   {
@@ -6816,7 +6816,7 @@ export const programs: Program[] = [
     ieltsOverall: 7.0, toeflOverall: 100,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     tuitionFee: "CHF 1,460/year",
-    source: "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/environmental-engineering.html",
+    source: "https://ethz.ch/en/studies/master/degree-programmes/architecture-and-civil-engineering/environmental-engineering.html",
     verified: false,
   },
 
@@ -6960,7 +6960,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "全英授课，含集成电路、通信、控制等方向",
-    source: "https://www.cit.tum.de/en/cit/studies/degree-programs/master-electrical-and-computer-engineering/",
+    source: "https://www.cit.tum.de/en/cit/studies/degree-programs/master-electrical-engineering-information-technology/",
     verified: false,
   },
   {
@@ -6971,7 +6971,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "英语或德语授课。德国工程第一名校",
-    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/mechanical-engineering-master/",
+    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/mechanical-engineering-m-sc/",
     verified: false,
   },
   {
@@ -6982,7 +6982,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false, acceptedBackgrounds: ["商科", "工程", "理学"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "TUM 商学院旗舰项目，技术管理方向。全英授课",
-    source: "https://www.mgt.tum.de/programs/master-in-management-and-technology",
+    source: "https://www.mgt.tum.de/programs/master-in-management-technology",
     verified: false,
   },
   {
@@ -6993,7 +6993,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "德国航空航天最强，英语/德语授课",
-    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/aerospace-master/",
+    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/aerospace-m-sc/",
     verified: false,
   },
   {
@@ -7003,7 +7003,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 88,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "€150/semester (semester contribution only)",
-    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/civil-engineering-master/",
+    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/civil-engineering-m-sc/",
     verified: false,
   },
   {
@@ -7039,7 +7039,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "全英授课可选。LMU 与 TUM 互补，偏理论方向",
-    source: "https://www.lmu.de/en/study/degree-programs/master/computer-science-30-ects-msc/index.html",
+    source: "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/informatik-master-hauptfach-4501.html",
     verified: false,
   },
   {
@@ -7050,7 +7050,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "工程"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "全英授课，涵盖统计学习、深度学习、数据工程",
-    source: "https://www.lmu.de/en/study/degree-programs/master/data-science-msc/index.html",
+    source: "https://www.stat.lmu.de/en/studies/master/",
     verified: false,
   },
   {
@@ -7060,7 +7060,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 88,
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "商科"],
     tuitionFee: "€150/semester (semester contribution only)",
-    source: "https://www.lmu.de/en/study/degree-programs/master/statistics-and-data-science-msc/index.html",
+    source: "https://www.stat.lmu.de/en/studies/master/",
     verified: false,
   },
   {
@@ -7072,7 +7072,7 @@ export const programs: Program[] = [
     extraRequirements: "需要微积分、线代、统计基础",
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "全英授课，偏研究导向",
-    source: "https://www.lmu.de/en/study/degree-programs/master/economics-msc/index.html",
+    source: "https://www.econ.lmu.de/en/study/master-in-economics/master-of-science-in-economics/",
     verified: false,
   },
   {
@@ -7082,7 +7082,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 88,
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "€150/semester (semester contribution only)",
-    source: "https://www.lmu.de/en/study/degree-programs/master/mathematics-msc/index.html",
+    source: "https://www.en.math.lmu.de/studium/fachstudium/studiengaenge/master_mathematik/index.html",
     verified: false,
   },
   {
@@ -7093,7 +7093,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "LMU 物理强势，含粒子物理、凝聚态等方向",
-    source: "https://www.lmu.de/en/study/degree-programs/master/physics-msc/index.html",
+    source: "https://www.physik.lmu.de/en/studies/study-programs/msc-physics/",
     verified: false,
   },
   {
@@ -7104,7 +7104,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "全英授课，含临床心理、认知神经科学方向",
-    source: "https://www.lmu.de/en/study/degree-programs/master/psychology-clinical-psychology-and-cognitive-neuroscience-msc/index.html",
+    source: "https://www.psy.lmu.de/ncp/",
     verified: false,
   },
   {
@@ -7116,7 +7116,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE/GMAT 推荐，需通过选拔面试",
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "全英授课，跨学科项目。选拔非常严格（录取率<5%）",
-    source: "https://www.lmu.de/en/study/degree-programs/master/media-management-and-digital-technologies-msc/index.html",
+    source: "https://www.som.lmu.de/en/studies/study-offer/master-management-digital-technologies/",
     verified: false,
   },
 
@@ -7130,7 +7130,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"],
     tuitionFee: "€18,750/year (non-EU)",
     notes: "全英授课。含 AI、软件工程、数据科学等方向",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/computer-science/msc-computer-science",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/cs/msc-computer-science",
     verified: false,
   },
   {
@@ -7140,7 +7140,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 90,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     tuitionFee: "€18,750/year (non-EU)",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/electrical-engineering/msc-electrical-engineering",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/ee/msc-electrical-engineering",
     verified: false,
   },
   {
@@ -7150,7 +7150,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 90,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "€18,750/year (non-EU)",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/mechanical-engineering/msc-mechanical-engineering",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/me/msc-mechanical-engineering",
     verified: false,
   },
   {
@@ -7161,7 +7161,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "€18,750/year (non-EU)",
     notes: "欧洲航空航天顶尖项目",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/aerospace-engineering/msc-aerospace-engineering",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering",
     verified: false,
   },
   {
@@ -7171,7 +7171,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 90,
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "€18,750/year (non-EU)",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/civil-engineering/msc-civil-engineering",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/cie/msc-civil-engineering",
     verified: false,
   },
   {
@@ -7183,7 +7183,7 @@ export const programs: Program[] = [
     extraRequirements: "需要作品集",
     tuitionFee: "€18,750/year (non-EU)",
     notes: "荷兰建筑最强，世界顶尖",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/architecture/msc-architecture",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/aubs/msc-architecture-urbanism-and-building-sciences",
     verified: false,
   },
   {
@@ -7194,7 +7194,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false, acceptedBackgrounds: ["工程", "商科", "理学"],
     tuitionFee: "€18,750/year (non-EU)",
     notes: "技术管理方向，适合工程背景转商科",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/management-of-technology/msc-management-of-technology",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/mot/mot/",
     verified: false,
   },
   {
@@ -7204,7 +7204,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 90,
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "€18,750/year (non-EU)",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/applied-mathematics/msc-applied-mathematics",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/am/msc-applied-mathematics",
     verified: false,
   },
   {
@@ -7216,7 +7216,7 @@ export const programs: Program[] = [
     extraRequirements: "需要作品集和动机信",
     tuitionFee: "€18,750/year (non-EU)",
     notes: "荷兰设计教育顶尖，偏交互设计方向",
-    source: "https://www.tudelft.nl/en/education/programmes/masters/design-for-interaction/msc-design-for-interaction",
+    source: "https://www.tudelft.nl/en/education/programmes/masters/dfi/msc-design-for-interaction",
     verified: false,
   },
 
@@ -7250,7 +7250,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 92,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "商科"],
     tuitionFee: "€17,500/year (non-EU)",
-    source: "https://www.uva.nl/en/programmes/masters/data-science/data-science.html",
+    source: "https://www.uva.nl/en/programmes/masters/data-science-and-business-analytics/data-science-and-business-analytics.html",
     verified: false,
   },
   {
@@ -7272,7 +7272,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学"],
     extraRequirements: "需要微积分、统计、微观/宏观经济学基础",
     tuitionFee: "€16,000/year (non-EU)",
-    source: "https://www.uva.nl/en/programmes/masters/economics/economics.html",
+    source: "https://ase.uva.nl/content/masters/economics/economics.html",
     verified: false,
   },
   {
@@ -7314,7 +7314,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学", "工程"],
     extraRequirements: "GMAT/GRE 推荐",
     tuitionFee: "€16,000/year (non-EU)",
-    source: "https://www.uva.nl/en/programmes/masters/finance/finance.html",
+    source: "https://abs.uva.nl/content/masters/finance/finance.html",
     verified: false,
   },
 
@@ -7328,7 +7328,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"],
     tuitionFee: "€3,770/year (non-EU)",
     notes: "ENS 计算机极具声望，法国精英教育体系。部分课程法语授课",
-    source: "https://www.ens.psl.eu/en/academics/masters/computer-science",
+    source: "https://psl.eu/en/education/masters-degree-computer-science",
     verified: false,
   },
   {
@@ -7339,7 +7339,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "€3,770/year (non-EU)",
     notes: "法国数学最高殿堂，菲尔兹奖得主摇篮",
-    source: "https://www.ens.psl.eu/en/academics/masters/mathematics",
+    source: "https://psl.eu/en/education/master-s-degree-mathematics-and-applications",
     verified: false,
   },
   {
@@ -7349,7 +7349,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, toeflOverall: 90,
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "€3,770/year (non-EU)",
-    source: "https://www.ens.psl.eu/en/academics/masters/physics",
+    source: "https://psl.eu/en/education/master-s-degree-physics",
     verified: false,
   },
   {
@@ -7360,7 +7360,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["商科", "理学", "工程"],
     tuitionFee: "€6,000/year",
     notes: "Dauphine 金融法国第一，英法双语授课",
-    source: "https://dauphine.psl.eu/en/training/masters/finance",
+    source: "https://dauphine.psl.eu/en/training/masters-degrees/finance/finance-masters-year-1",
     verified: false,
   },
   {
@@ -7383,7 +7383,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     tuitionFee: "€6,000/year",
     notes: "Dauphine 管理学院，EQUIS 认证",
-    source: "https://dauphine.psl.eu/en/training/masters/management",
+    source: "https://dauphine.psl.eu/en/training/masters-degrees/masters-degree-in-management-mem",
     verified: false,
   },
   {
@@ -7394,7 +7394,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学", "商科"],
     tuitionFee: "€6,000/year",
     notes: "Dauphine MIDO 学院（数学与信息），全英可选",
-    source: "https://dauphine.psl.eu/en/training/masters/computer-science",
+    source: "https://dauphine.psl.eu/en/training/masters-degrees/computer-science",
     verified: false,
   },
   {
@@ -7405,7 +7405,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"],
     tuitionFee: "€3,770/year (non-EU)",
     notes: "PSL AI 项目联合 ENS 与 Dauphine 资源，法国 AI 研究最强阵容",
-    source: "https://www.psl.eu/en/education/master-artificial-intelligence",
+    source: "https://psl.eu/en/education/master-s-degree-artificial-intelligence-and-society",
     verified: false,
   },
 
@@ -7440,7 +7440,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.0, toeflOverall: 85,
     requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"],
     tuitionFee: "€3,770/year (non-EU)",
-    source: "https://www.universite-paris-saclay.fr/en/education/master/mathematics-and-applications/m2-data-science",
+    source: "https://www.universite-paris-saclay.fr/en/education/master/mathematics-and-applications/m2-data-sciences",
     verified: false,
   },
   {
@@ -7502,7 +7502,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.0, toeflOverall: 85,
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "€3,770/year (non-EU)",
-    source: "https://www.universite-paris-saclay.fr/en/education/master/biology-health",
+    source: "https://www.universite-paris-saclay.fr/en/education/master/life-sciences-and-health",
     verified: false,
   },
 
@@ -7522,7 +7522,7 @@ export const programs: Program[] = [
     tuitionFee: "¥535,800/年（约￥2.6万人民币）",
     applicationFee: "¥30,000",
     notes: "全英文授课SGU项目，每年约15人录取，竞争激烈。4月/10月入学。入学金¥282,000",
-    source: "https://www.gaia.e.u-tokyo.ac.jp/utipe/admission/master/m-overview.html",
+    source: "https://www.gaia.e.u-tokyo.ac.jp/utipe/",
     verified: false,
   },
   {
@@ -7762,7 +7762,7 @@ export const programs: Program[] = [
     tuitionFee: "₩10,724,000/年（约￥5.8万人民币）",
     applicationFee: "₩90,000",
     notes: "全英文授课，TOPIK不作要求。方向：国际商务、国际合作、国际发展、区域研究、韩国研究",
-    source: "https://gsis.snu.ac.kr/masters-program/",
+    source: "https://gsis.snu.ac.kr/",
     verified: false,
   },
   {
@@ -7925,7 +7925,7 @@ export const programs: Program[] = [
     tuitionFee: "₩19,000,000/年（通常全额奖学金覆盖）",
     applicationFee: "$80 USD",
     notes: "全英文授课，TOPIK不作要求。最低18学分选修课要求",
-    source: "https://ce.kaist.ac.kr/",
+    source: "https://cee.kaist.ac.kr/",
     verified: false,
   },
 
@@ -8004,7 +8004,7 @@ export const programs: Program[] = [
     tuitionFee: "₩14,550,000/年（约￥7.8万人民币）",
     applicationFee: "₩150,000",
     notes: "韩英双语授课。GRA可覆盖学费+津贴",
-    source: "http://me.yonsei.ac.kr/eng/edu/requirement.asp",
+    source: "https://me.yonsei.ac.kr/me_en/graduate/research.do",
     verified: false,
   },
   {
@@ -8360,7 +8360,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "含 STEM Education、Language & Literacy、Policy 等方向。不限本科背景",
     tuitionFee: "$30,968/year (out-of-state)",
-    source: "https://gse.berkeley.edu/academics/masters-programs",
+    source: "https://bse.berkeley.edu/masters-education-program",
     verified: false,
   },
   {
@@ -8581,7 +8581,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "耶鲁 Jackson School 旗舰项目。不限本科背景，侧重全球治理与国际事务",
     tuitionFee: "$50,900/year",
-    source: "https://jackson.yale.edu/academics/ma-program/",
+    source: "https://jackson.yale.edu/academics/mas/",
     verified: false,
   },
 
@@ -8678,7 +8678,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "ENS + EHESS 法国社科研究最高殿堂。含社会学、政治学、哲学等方向。部分课程法语授课",
     tuitionFee: "€3,770/year (non-EU)",
-    source: "https://www.ens.psl.eu/en/academics/masters",
+    source: "https://psl.eu/en/education/masters-degree-social-sciences",
     verified: false,
   },
 
@@ -8733,7 +8733,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集。建筑学或相关设计背景",
     notes: "Band C。Edinburgh College of Art建筑学院项目。聚焦城市设计与建筑研究",
     tuitionFee: "£29,900",
-    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/1089-architectural-and-urban-design",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/636-architectural-and-urban-design",
     verified: false,
   },
   {
@@ -8755,7 +8755,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "转专业友好的心理学转换项目，获BPS认证。不限本科背景",
     tuitionFee: "£29,900",
-    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/860-psychology-conversion",
+    source: "https://study.ed.ac.uk/programmes/postgraduate-taught/883-psychology-of-mental-health-conversion",
     verified: false,
   },
 
@@ -8773,7 +8773,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集。需建筑学本科学位",
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "非欧盟学生2024起需缴纳€4,000-6,000/学期学费。德国公立大学传统免学费政策已调整",
-    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/architecture-master/",
+    source: "https://www.ed.tum.de/en/ed/studies/degree-programs/architecture-m-a/",
     verified: false,
   },
 
@@ -8787,7 +8787,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集。无建筑背景3.5年，有建筑背景2年",
     notes: "接受无建筑背景申请者（3.5年版本）。有建筑本科可缩短至2年。作品集是核心评审材料",
     tuitionFee: "加元 C$29,780-31,269/年",
-    source: "https://www.mcgill.ca/architecture/programs/master-architecture",
+    source: "https://www.mcgill.ca/architecture/programs/professional",
     verified: false,
   },
   {
@@ -8809,7 +8809,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     notes: "研究型项目，需完成论文。需提前联系导师。涵盖生态学、进化生物学、分子生物学等方向",
     tuitionFee: "加元 C$29,780-31,269/年",
-    source: "https://www.mcgill.ca/biology/graduate-studies",
+    source: "https://www.mcgill.ca/biology/graduate",
     verified: false,
   },
 
@@ -8861,7 +8861,7 @@ export const programs: Program[] = [
     tuitionFee: "₩6,556,000/年（约￥3.5万人民币）",
     applicationFee: "₩90,000",
     notes: "韩语授课为主，涵盖传播理论、新闻学、媒体研究等方向。国际生需有一定韩语基础",
-    source: "https://communication.snu.ac.kr/en/",
+    source: "https://communication.snu.ac.kr/en/program/graduate/",
     verified: false,
   },
   {
@@ -8874,7 +8874,7 @@ export const programs: Program[] = [
     tuitionFee: "₩6,556,000/年（约￥3.5万人民币）",
     applicationFee: "₩90,000",
     notes: "韩语授课为主。涵盖教育学原理、教育心理学、课程与教学等方向。需提前联系导师",
-    source: "https://education.snu.ac.kr/en/",
+    source: "https://en.snu.ac.kr/academics/programs/graduate",
     verified: false,
   },
   {
@@ -8926,7 +8926,7 @@ export const programs: Program[] = [
     tuitionFee: "₩7,994,000/年（约￥4.3万人民币）",
     applicationFee: "₩90,000",
     notes: "研究型项目，需完成论文。涵盖统计推断、贝叶斯统计、生物统计等方向",
-    source: "https://stat.snu.ac.kr/en/",
+    source: "https://stat.snu.ac.kr/en/courses/graduate/",
     verified: false,
   },
 
@@ -8980,7 +8980,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集。需RIBA Part 1或同等资格",
     tuitionFee: "£33,100",
     notes: "Manchester School of Architecture全英顶尖。需建筑学本科（RIBA Part 1）。联合授课项目",
-    source: "https://www.manchester.ac.uk/study/masters/courses/list/01305/march-architecture/",
+    source: "https://www.manchester.ac.uk/study/masters/courses/list/09342/march-architecture/",
     verified: false,
   },
   {
@@ -8991,7 +8991,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     notes: "需要较强的数学/统计背景。涵盖概率论、回归分析、贝叶斯方法等",
     tuitionFee: "£33,100",
-    source: "https://www.manchester.ac.uk/study/masters/courses/list/00630/msc-statistics/",
+    source: "https://www.manchester.ac.uk/study/masters/courses/list/02362/msc-statistics/",
     verified: false,
   },
   {
@@ -9002,7 +9002,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     notes: "含粒子物理、凝聚态、核物理等方向。曼大物理系有诺贝尔奖传统（石墨烯）",
     tuitionFee: "£33,100",
-    source: "https://www.manchester.ac.uk/study/masters/courses/list/09879/msc-physics/",
+    source: "https://www.physics.manchester.ac.uk/study/masters/",
     verified: false,
   },
 
@@ -9016,7 +9016,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
     tuitionFee: "港币 HK$210,000",
     notes: "涵盖通信、信号处理、集成电路等方向",
-    source: "https://pg.cuhk.edu.hk/pgp/programme/mseg",
+    source: "https://www.gs.cuhk.edu.hk/admissions/programme/engineering",
     verified: false,
   },
   {
@@ -9027,7 +9027,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["工程"],
     tuitionFee: "港币 HK$210,000",
     notes: "涵盖机器人、制造工程、流体力学等方向",
-    source: "https://pg.cuhk.edu.hk/pgp/programme/msmae",
+    source: "https://www4.mae.cuhk.edu.hk/msc-in-mae/",
     verified: false,
   },
   {
@@ -9049,7 +9049,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     tuitionFee: "港币 HK$155,000",
     notes: "涵盖纯数学、应用数学、数学教育等方向",
-    source: "https://www.math.cuhk.edu.hk/programme/msc",
+    source: "https://www.math.cuhk.edu.hk/postgraduates/taught-programme/msc-mathematics",
     verified: false,
   },
 
@@ -9134,7 +9134,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "Steinhardt教育学院项目。不限本科背景。涵盖教学方法、语言学基础、课堂观察等。按学分收费约$2,272/学分",
     tuitionFee: "US$80,000 (estimated total, ~36 credits)",
-    source: "https://steinhardt.nyu.edu/degree/ma-tesol",
+    source: "https://steinhardt.nyu.edu/degree/ma-teaching-english-speakers-other-languages-non-certification",
     verified: false,
   },
   {
@@ -9214,7 +9214,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "IoPPN全球精神卫生领域领先。转换课程，接受非心理学背景。BPS认证方向可获Chartership资格",
     tuitionFee: "£31,500",
-    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/psychology-msc",
+    source: "https://www.kcl.ac.uk/psychology/postgraduate-taught",
     verified: false,
   },
   {
@@ -9225,7 +9225,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "转专业友好，不限背景。涵盖流行病学、健康政策、全球卫生等方向",
     tuitionFee: "£31,500",
-    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/public-health-msc",
+    source: "https://www.kcl.ac.uk/study/postgraduate-taught/courses/public-health-mph",
     verified: false,
   },
 
@@ -9238,7 +9238,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖公共关系、组织传播、数字媒体等方向",
     tuitionFee: "澳元 A$38,304/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-communication-5687",
+    source: "https://study.uq.edu.au/study-options/programs/master-communication-5651",
     verified: false,
   },
   {
@@ -9249,7 +9249,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "需法学学位。可选方向包括国际法、商法、税法等",
     tuitionFee: "澳元 A$48,064/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-laws-5588",
+    source: "https://study.uq.edu.au/study-options/programs/master-laws-5591",
     verified: false,
   },
   {
@@ -9261,7 +9261,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集。需建筑设计本科学位",
     notes: "获澳大利亚建筑师认证委员会(AACA)认证。需建筑设计相关本科",
     tuitionFee: "澳元 A$48,064/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-architecture-5546",
+    source: "https://study.uq.edu.au/study-options/programs/master-architecture-5429",
     verified: false,
   },
   {
@@ -9272,7 +9272,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖流行病学、生物统计、全球卫生、健康促进等方向",
     tuitionFee: "澳元 A$42,000/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-public-health-5589",
+    source: "https://study.uq.edu.au/study-options/programs/master-public-health-5760",
     verified: false,
   },
   {
@@ -9283,7 +9283,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖亚太安全、外交政策、全球治理等方向",
     tuitionFee: "澳元 A$38,304/年",
-    source: "https://study.uq.edu.au/study-options/programs/master-international-relations-5659",
+    source: "https://study.uq.edu.au/study-options/programs/master-international-relations-5641",
     verified: false,
   },
 
@@ -9313,7 +9313,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
     tuitionFee: "US$22,973/quarter",
     notes: "12个月项目，按quarter制收费。适合准备读博或进入数据科学行业。需数学/统计背景",
-    source: "https://statistics.northwestern.edu/graduate/ms-program/",
+    source: "https://statistics.northwestern.edu/graduate/ms-stat-program/",
     verified: false,
   },
 
@@ -9387,7 +9387,7 @@ export const programs: Program[] = [
     tuitionFee: "₩10,338,000/年（约￥5.6万人民币）",
     applicationFee: "₩150,000",
     notes: "韩语授课为主。涵盖教育哲学、课程与教学、教育行政等方向。入学金₩1,028,000",
-    source: "https://educat.yonsei.ac.kr/educat_en/index.do",
+    source: "https://eduyonsei.yonsei.ac.kr/edu_en/graduate02.do",
     verified: false,
   },
   {
@@ -9413,7 +9413,7 @@ export const programs: Program[] = [
     tuitionFee: "₩14,550,000/年（约￥7.8万人民币）",
     applicationFee: "₩150,000",
     notes: "韩英双语授课。涵盖有机化学、无机化学、物理化学、分析化学等方向。GRA可覆盖学费+津贴",
-    source: "https://chem.yonsei.ac.kr/chem_en/index.do",
+    source: "http://science.yonsei.ac.kr/en/major/graduate",
     verified: false,
   },
 
@@ -9431,7 +9431,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "含英语授课方向。涵盖比较政治、国际关系、政治理论、欧洲政治等方向",
-    source: "https://www.en.gsi.uni-muenchen.de/studies/application/ma_application/index.html",
+    source: "https://www.en.gsi.uni-muenchen.de/study/programmes/master/index.html",
     verified: false,
   },
 
@@ -9448,7 +9448,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集",
     tuitionFee: "US$45,000/year",
     notes: "CMU设计学院全美顶尖。接受跨学科背景，鼓励设计与技术、社会创新的融合。助教奖学金可减$2,000/学期",
-    source: "https://www.design.cmu.edu/masters-program-admissions",
+    source: "https://www.design.cmu.edu/admissions/masters-program-admissions",
     verified: false,
   },
   {
@@ -9460,7 +9460,7 @@ export const programs: Program[] = [
     extraRequirements: "GRE推荐。需要强数学/统计背景（概率论、线性代数、数理统计）",
     tuitionFee: "US$57,420/year",
     notes: "CMU统计系全美顶尖。3学期完成。STEM项目可获3年OPT",
-    source: "https://www.cmu.edu/dietrich/statistics-datascience/academics/ms-program/",
+    source: "https://www.cmu.edu/dietrich/statistics-datascience/academics/phd/ms-statistics.html",
     verified: false,
   },
 
@@ -9475,7 +9475,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "全英文授课。跨学科项目，融合教育学、心理学、社会学视角。转专业友好",
     tuitionFee: "€16,000/year (non-EU)",
-    source: "https://www.uva.nl/en/programmes/masters/child-development-and-education/child-development-and-education.html",
+    source: "https://www.uva.nl/en/about-the-uva/organisation/faculties/faculty-of-social-and-behavioural-sciences/education/child-development-and-education/masters.html",
     verified: false,
   },
   {
@@ -9497,7 +9497,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     notes: "全英文授课。涵盖粒子物理、天文、凝聚态等方向。与NIKHEF、SRON等研究机构合作",
     tuitionFee: "€17,500/year (non-EU)",
-    source: "https://www.uva.nl/en/programmes/masters/physics-and-astronomy/physics-and-astronomy.html",
+    source: "https://www.uva.nl/shared-content/programmas/en/masters/physics-and-astronomy-general-physics-and-astronomy/physics-and-astronomy-general-physics-and-astronomy.html",
     verified: false,
   },
   {
@@ -9675,7 +9675,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "UCSD EDS 提供多方向教育硕士。可选 Curriculum Design, STEM Education 等",
     tuitionFee: "US$30,200/year (non-resident)",
-    source: "https://eds.ucsd.edu/graduate-programs/",
+    source: "https://eds.ucsd.edu/graduate/index.html",
     verified: false,
   },
 
@@ -9689,7 +9689,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集 (Portfolio)",
     notes: "UCSD 视觉艺术系以当代艺术和跨媒体闻名。全额资助（多数学生获 TA/RA）",
     tuitionFee: "US$30,200/year (non-resident)",
-    source: "https://visarts.ucsd.edu/graduate/mfa.html",
+    source: "https://visarts.ucsd.edu/grad/mfa.html",
     verified: false,
   },
 
@@ -9716,7 +9716,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "需持有法学第一学位。Illinois Law 提供灵活课程选择",
     tuitionFee: "US$48,000/year (non-resident)",
-    source: "https://law.illinois.edu/academics/graduate-programs/llm/",
+    source: "https://law.illinois.edu/academics/degree-programs/llm-program/",
     verified: false,
   },
 
@@ -9754,7 +9754,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
     notes: "通常作为 PhD 阶段的一部分获得。需心理学或相关背景",
     tuitionFee: "US$34,000/year (non-resident)",
-    source: "https://psychology.illinois.edu/academics/graduate-program",
+    source: "https://psychology.illinois.edu/academics/msps",
     verified: false,
   },
 
@@ -9783,7 +9783,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["法律"],
     notes: "法语授课为主。方向含私法、公法、社会法。非欧盟学生学费极低（部分豁免差异化收费）",
     tuitionFee: "€3,770/year (non-EU)",
-    source: "https://www.universite-paris-saclay.fr/en/education/master/law",
+    source: "https://www.universite-paris-saclay.fr/en/education/master/international-law-and-european-law",
     verified: false,
   },
 
@@ -9851,7 +9851,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集 (Portfolio)",
     notes: "Leeds 设计学院在英国设计教育领域享有盛誉。涵盖平面、交互、产品设计等",
     tuitionFee: "£27,250",
-    source: "https://courses.leeds.ac.uk/i453/design-ma",
+    source: "https://courses.leeds.ac.uk/a672/design-ma",
     verified: false,
   },
 
@@ -9864,7 +9864,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
     notes: "需数学/统计背景，包括概率论和数理统计基础",
     tuitionFee: "£28,250",
-    source: "https://courses.leeds.ac.uk/i269/statistics-msc",
+    source: "https://courses.leeds.ac.uk/f038/statistics-msc",
     verified: false,
   },
   {
@@ -9967,7 +9967,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
     notes: "BPS 认可。需心理学或相关背景",
     tuitionFee: "£28,420",
-    source: "https://www.gla.ac.uk/postgraduate/taught/psychological-science-research-methods/",
+    source: "https://www.gla.ac.uk/postgraduate/taught/psychologicalscienceresearchmethodsof/",
     verified: false,
   },
 
@@ -10101,7 +10101,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "2026 年起合并为 Adelaide University。多个方向可选",
     tuitionFee: "澳元 A$39,000/年",
-    source: "https://www.adelaide.edu.au/degree-finder/2025/med_medcswk.html",
+    source: "https://www.adelaide.edu.au/degree-finder/meduc_meduc.html",
     verified: false,
   },
 
@@ -10115,7 +10115,7 @@ export const programs: Program[] = [
     extraRequirements: "需建筑学学士或相关学位",
     notes: "NAAB 等同的澳洲注册建筑师路径。2026 年起合并为 Adelaide University",
     tuitionFee: "澳元 A$42,500/年",
-    source: "https://www.adelaide.edu.au/degree-finder/2025/march_marchcswk.html",
+    source: "https://www.adelaide.edu.au/degree-finder/march_marchcswk.html",
     verified: false,
   },
 
@@ -10129,7 +10129,7 @@ export const programs: Program[] = [
     extraRequirements: "需心理学学士（4年制或荣誉学位）",
     notes: "APAC 认证。需心理学背景。竞争激烈。2026 年起合并为 Adelaide University",
     tuitionFee: "澳元 A$46,000/年",
-    source: "https://www.adelaide.edu.au/degree-finder/2025/mpsyc_mpsyclin.html",
+    source: "https://www.adelaide.edu.au/degree-finder/mpsyc_mclinpsy.html",
     verified: false,
   },
 
@@ -10142,7 +10142,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖政策分析、公共管理等。2026 年起合并为 Adelaide University",
     tuitionFee: "澳元 A$42,500/年",
-    source: "https://www.adelaide.edu.au/degree-finder/2025/mpubp_mpubpolcswk.html",
+    source: "https://www.adelaide.edu.au/degree-finder/mpup_mpubpoli.html",
     verified: false,
   },
 
@@ -10170,7 +10170,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集 (Portfolio)",
     notes: "NAAB 认证。Stuckeman School 下属项目。3年（First Professional）或 2年（Post-Professional）",
     tuitionFee: "US$42,000/year (non-resident)",
-    source: "https://arts.psu.edu/architecture/graduate/",
+    source: "https://arts.psu.edu/degrees/master-of-architecture-in-architecture",
     verified: false,
   },
 
@@ -10213,7 +10213,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "La Follette School 全美公共政策学院排名前列。涵盖政策分析、公共管理等",
     tuitionFee: "US$24,054/year (non-resident)",
-    source: "https://lafollette.wisc.edu/mpa-program/",
+    source: "https://lafollette.wisc.edu/academics/master-of-public-affairs/",
     verified: false,
   },
   {
@@ -10224,7 +10224,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "通常作为 PhD 项目的一部分。涵盖比较政治、国际关系、美国政治等",
     tuitionFee: "US$24,054/year (non-resident)",
-    source: "https://polisci.wisc.edu/graduate-program/",
+    source: "https://polisci.wisc.edu/phd-program/",
     verified: false,
   },
 
@@ -10253,7 +10253,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "工程"],
     notes: "需数学或含大量数学内容的学位。Birmingham 数学系在代数、组合等方向有特色",
     tuitionFee: "£27,000",
-    source: "https://www.birmingham.ac.uk/study/postgraduate/subjects/mathematics-courses/mathematics-msc",
+    source: "https://www.birmingham.ac.uk/study/postgraduate/subjects/mathematics-courses",
     verified: false,
   },
   {
@@ -10344,7 +10344,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖公关、组织传播、数字传播等。UTS 不官方区分 211/双非",
     tuitionFee: "澳元 A$40,000/年",
-    source: "https://www.uts.edu.au/study/find-a-course/master-communication-management",
+    source: "https://www.uts.edu.au/courses/master-of-strategic-communication",
     verified: false,
   },
 
@@ -10397,7 +10397,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖国际关系、亚太研究、全球政治等",
     tuitionFee: "澳元 A$35,000/年",
-    source: "https://www.uts.edu.au/study/find-a-course/master-arts-international-studies",
+    source: "https://www.uts.edu.au/future-students/international-studies",
     verified: false,
   },
 
@@ -10534,7 +10534,7 @@ export const programs: Program[] = [
     extraRequirements: "需持有法学第一学位（LLB/JD），GPA 3.0+ on 4.0 scale",
     notes: "Alberta 法学院加拿大排名靠前。面向国际法律毕业生",
     tuitionFee: "加元 CAD$18,024/year",
-    source: "https://www.ualberta.ca/en/law/programs/graduate-programs/llm.html",
+    source: "https://www.ualberta.ca/en/law/programs/llm/index.html",
     verified: false,
   },
 
@@ -10558,7 +10558,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
     notes: "需心理学或相关背景。方向含认知科学、社会心理学等。通常含研究成分",
     tuitionFee: "加元 CAD$12,000/year (international)",
-    source: "https://www.ualberta.ca/en/psychology/graduate-program/",
+    source: "https://www.ualberta.ca/en/psychology/graduate-studies/index.html",
     verified: false,
   },
 
@@ -10616,7 +10616,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学", "社科"],
     notes: "BPS 认证。需心理学或相关背景",
     tuitionFee: "£26,500",
-    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/psychological-research-methods-msc",
+    source: "https://www.nottingham.ac.uk/pgstudy/course/taught/psychology-research-methods-msc",
     verified: false,
   },
 
