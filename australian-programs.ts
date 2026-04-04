@@ -673,4 +673,735 @@ export const australianPrograms: UniversityPrograms[] = [
       },
     ],
   },
+
+  // ============================================================
+  // 4. UNIVERSITY OF WESTERN AUSTRALIA (UWA)
+  // ============================================================
+  {
+    university: "University of Western Australia",
+    shortName: "UWA",
+    programs: [
+      {
+        programName: "Master of Commerce",
+        faculty: "UWA Business School",
+        gpaRequirement: {
+          scale: "UWA Weighted Average Mark (WAM) minimum 60%",
+          tier211: "70%",
+          nonTier211: "75%",
+          notes:
+            "UWA does not officially publish separate 211 vs non-211 thresholds. " +
+            "The published requirement is WAM 60% (UWA scale). " +
+            "Indicative Chinese equivalents based on agent/community data: " +
+            "211: ~70%, non-211: ~75%. " +
+            "Specialisations: Accounting, Finance, Management, Marketing, Economics, " +
+            "Employment Relations, Business Information and Logistics Management.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 82,
+          listening: 20,
+          reading: 18,
+          writing: 22,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any bachelor's degree. Students without a commerce background " +
+          "may need to complete conversion units (up to 24 points).",
+        tuitionFeeAUD: 48700,
+        tuitionFeeYear: 2026,
+        duration: "1.5-2 years (72-96 points)",
+        url: "https://www.uwa.edu.au/study/courses/master-of-commerce",
+      },
+      {
+        programName: "Master of Information Technology",
+        faculty:
+          "School of Physics, Mathematics and Computing, Faculty of Engineering and Mathematical Sciences",
+        gpaRequirement: {
+          scale: "UWA WAM minimum 60%",
+          tier211: "65%",
+          nonTier211: "70%",
+          notes:
+            "UWA does not officially differentiate 211 vs non-211. " +
+            "Published requirement is WAM 60%. Indicative Chinese equivalents: " +
+            "211: ~65%, non-211: ~70%. " +
+            "Specialisations: Applied Computing, Artificial Intelligence, Software Systems.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 82,
+          listening: 20,
+          reading: 18,
+          writing: 22,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "2-year program open to any discipline. " +
+          "Students without an IT background start with foundation units.",
+        tuitionFeeAUD: 48700,
+        tuitionFeeYear: 2026,
+        duration: "1.5-2 years (72-96 points)",
+        url: "https://www.uwa.edu.au/study/courses/master-of-information-technology",
+      },
+      {
+        programName: "Master of Data Science",
+        faculty:
+          "School of Physics, Mathematics and Computing, Faculty of Engineering and Mathematical Sciences",
+        gpaRequirement: {
+          scale: "UWA WAM minimum 65%",
+          tier211: "65%",
+          nonTier211: "70%",
+          notes:
+            "Higher GPA threshold than most UWA coursework masters (WAM 65% vs 60%). " +
+            "Requires completion of ATAR Mathematics Methods or equivalent. " +
+            "Indicative Chinese equivalents: 211: ~65%, non-211: ~70%.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 82,
+          listening: 20,
+          reading: 18,
+          writing: 22,
+          speaking: 20,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a bachelor's degree plus completion of ATAR Mathematics Methods " +
+          "(or equivalent mathematics/statistics coursework). " +
+          "Backgrounds in science, engineering, IT, or mathematics are typical.",
+        tuitionFeeAUD: 52000,
+        tuitionFeeYear: 2026,
+        duration: "1.5-2 years (72-96 points)",
+        url: "https://www.uwa.edu.au/study/courses/master-of-data-science",
+      },
+      {
+        programName: "Master of Professional Engineering",
+        faculty: "School of Engineering, Faculty of Engineering and Mathematical Sciences",
+        gpaRequirement: {
+          scale: "UWA WAM minimum 60%",
+          tier211: "65%",
+          nonTier211: "70%",
+          notes:
+            "Requires engineering or related science background. " +
+            "Indicative Chinese equivalents: 211: ~65%, non-211: ~70%. " +
+            "Specialisations: Chemical, Civil, Electrical and Electronic, " +
+            "Environmental, Mechanical, Mining, Software.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 82,
+          listening: 20,
+          reading: 18,
+          writing: 22,
+          speaking: 20,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a bachelor's degree in engineering or relevant science field. " +
+          "Students without an Engineering Science major from UWA (or equivalent) " +
+          "must complete conversion units (up to 48 points). " +
+          "Engineers Australia (EA) accredited.",
+        tuitionFeeAUD: 48700,
+        tuitionFeeYear: 2026,
+        duration: "2-3 years (96-144 points)",
+        url: "https://www.uwa.edu.au/study/courses/master-of-professional-engineering",
+      },
+      {
+        programName: "Master of Laws (LLM)",
+        faculty: "UWA Law School",
+        gpaRequirement: {
+          scale: "UWA WAM — assessed individually",
+          tier211: "70%",
+          nonTier211: "75%",
+          notes:
+            "Requires a Juris Doctor or Bachelor of Laws (LLB). " +
+            "UWA does not publish a specific percentage threshold for LLM; " +
+            "Indicative estimates: 211: ~70%, non-211: ~75%.",
+        },
+        ielts: {
+          overall: 7.0,
+          listening: 6.5,
+          reading: 6.5,
+          writing: 6.5,
+          speaking: 6.5,
+        },
+        toefl: {
+          overall: 100,
+          listening: 20,
+          reading: 20,
+          writing: 24,
+          speaking: 20,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a Juris Doctor (JD) or Bachelor of Laws (LLB), " +
+          "or equivalent as recognised by UWA.",
+        tuitionFeeAUD: 45500,
+        tuitionFeeYear: 2026,
+        duration: "1-2 years (48-96 points)",
+        url: "https://www.uwa.edu.au/study/courses/master-of-laws",
+      },
+      {
+        programName: "Master of Education",
+        faculty: "Graduate School of Education",
+        gpaRequirement: {
+          scale: "UWA WAM minimum 60%",
+          tier211: "65%",
+          nonTier211: "70%",
+          notes:
+            "Requires an education degree or a bachelor's degree in any field " +
+            "plus relevant professional experience. " +
+            "Indicative Chinese equivalents: 211: ~65%, non-211: ~70%.",
+        },
+        ielts: {
+          overall: 7.5,
+          listening: 6.5,
+          reading: 6.5,
+          writing: 7.0,
+          speaking: 6.5,
+        },
+        toefl: {
+          overall: 105,
+          listening: 24,
+          reading: 24,
+          writing: 27,
+          speaking: 24,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Accepts graduates of any discipline, but an education degree or " +
+          "relevant professional experience is strongly preferred. " +
+          "Note the significantly higher English language requirement (IELTS 7.5).",
+        tuitionFeeAUD: 39800,
+        tuitionFeeYear: 2026,
+        duration: "1-2 years (48-96 points)",
+        url: "https://www.uwa.edu.au/study/Courses/Master-of-Education",
+      },
+    ],
+  },
+
+  // ============================================================
+  // 5. UNIVERSITY OF ADELAIDE
+  // ============================================================
+  {
+    university: "University of Adelaide",
+    shortName: "Adelaide",
+    programs: [
+      {
+        programName: "Master of Finance",
+        faculty: "Adelaide Business School",
+        gpaRequirement: {
+          scale: "Adelaide GPA (minimum 4.0/7.0 equivalent)",
+          tier211: "75%",
+          nonTier211: "80%",
+          notes:
+            "IMPORTANT: The University of Adelaide and the University of South Australia " +
+            "merged to form Adelaide University from January 2026. " +
+            "211: ~75%, non-211: ~80% based on agent/community data. " +
+            "Adelaide does not officially publish 211 vs non-211 splits.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 13,
+          reading: 13,
+          writing: 21,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any bachelor's degree. Quantitative background is advantageous.",
+        tuitionFeeAUD: 50000,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (36 units)",
+        url: "https://adelaide.edu.au/study/degrees/master-of-finance/",
+      },
+      {
+        programName: "Master of Accounting",
+        faculty: "Adelaide Business School",
+        gpaRequirement: {
+          scale: "Adelaide GPA (minimum 4.0/7.0 equivalent)",
+          tier211: "75%",
+          nonTier211: "80%",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 13,
+          reading: 13,
+          writing: 21,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any discipline. CPA Australia and CA ANZ accredited pathway. " +
+          "Standard duration 2 years (48 units).",
+        tuitionFeeAUD: 50000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (48 units)",
+        url: "https://adelaide.edu.au/study/degrees/master-of-accounting/",
+      },
+      {
+        programName: "Master of International Business",
+        faculty: "Adelaide Business School",
+        gpaRequirement: {
+          scale: "Adelaide GPA (minimum 4.0/7.0 equivalent)",
+          tier211: "75%",
+          nonTier211: "80%",
+          notes:
+            "Adelaide does not offer a standalone Master of Management. " +
+            "The closest equivalent is the Master of International Business. " +
+            "An alternative is the International MBA.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 13,
+          reading: 13,
+          writing: 21,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes: "Open to any discipline.",
+        tuitionFeeAUD: 50000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (48 units)",
+        url: "https://adelaide.edu.au/study/degrees/master-of-international-business/",
+      },
+      {
+        programName: "Master of Computer Science",
+        faculty: "School of Computer and Mathematical Sciences",
+        gpaRequirement: {
+          scale: "Adelaide GPA (minimum 4.0-5.0/7.0 equivalent)",
+          tier211: "75%",
+          nonTier211: "80%",
+          notes:
+            "Adelaide also offers Master of Data Science and " +
+            "Master of AI and Machine Learning as alternatives.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 13,
+          reading: 13,
+          writing: 21,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any discipline (includes CS foundation courses). " +
+          "Students with a CS background may receive credit for prior learning.",
+        tuitionFeeAUD: 50000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (48 units)",
+        url: "https://www.adelaide.edu.au/degree-finder/mcoms_mcmpsci.html",
+      },
+      {
+        programName: "Master of Data Science",
+        faculty: "School of Computer and Mathematical Sciences",
+        gpaRequirement: {
+          scale: "Adelaide GPA (minimum 4.0-5.0/7.0 equivalent)",
+          tier211: "75%",
+          nonTier211: "80%",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 13,
+          reading: 13,
+          writing: 21,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any professional background. " +
+          "The curriculum includes CS foundations for non-technical students. " +
+          "International students must take ENG 7057 Communication & Critical Thinking.",
+        tuitionFeeAUD: 50000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (48 units)",
+        url: "https://www.adelaide.edu.au/degree-finder/mdsci_mdatasci.html",
+      },
+      {
+        programName: "Master of Engineering",
+        faculty:
+          "Faculty of Sciences, Engineering and Technology",
+        gpaRequirement: {
+          scale: "Adelaide GPA (minimum 4.5-5.0/7.0 equivalent)",
+          tier211: "75%",
+          nonTier211: "80%",
+          notes:
+            "Multiple specialisations available: Chemical, Civil & Structural, " +
+            "Electrical, Electronic, Mechanical, Mining, Systems. " +
+            "Some specialisations may have higher thresholds.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 13,
+          reading: 13,
+          writing: 21,
+          speaking: 18,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a bachelor's degree in engineering or a relevant field " +
+          "(science, mathematics). Engineers Australia (EA) accredited.",
+        tuitionFeeAUD: 52000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (48 units)",
+        url: "https://adelaide.edu.au/study/degrees/master-of-engineering-systems/",
+      },
+      {
+        programName: "Master of Laws (LLM)",
+        faculty: "Adelaide Law School",
+        gpaRequirement: {
+          scale: "Adelaide GPA — assessed individually",
+          tier211: "75%",
+          nonTier211: "80%",
+          notes:
+            "Requires a law degree (LLB or equivalent). " +
+            "Higher English language requirement than other programs (IELTS 7.0). " +
+            "1-year program (AQF Level 9 Extension).",
+        },
+        ielts: {
+          overall: 7.0,
+          listening: 6.5,
+          reading: 6.5,
+          writing: 6.5,
+          speaking: 6.5,
+        },
+        toefl: {
+          overall: 94,
+          listening: 24,
+          reading: 24,
+          writing: 27,
+          speaking: 24,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a Bachelor of Laws (LLB), Juris Doctor (JD), or equivalent.",
+        tuitionFeeAUD: 47000,
+        tuitionFeeYear: 2026,
+        duration: "1 year (24 units)",
+        url: "https://adelaide.edu.au/study/degrees/master-of-laws/",
+      },
+    ],
+  },
+
+  // ============================================================
+  // 6. UNIVERSITY OF TECHNOLOGY SYDNEY (UTS)
+  // ============================================================
+  {
+    university: "University of Technology Sydney",
+    shortName: "UTS",
+    programs: [
+      {
+        programName: "Master of Finance",
+        faculty: "UTS Business School",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree with satisfactory GPA",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "UTS does NOT officially differentiate between 211 and non-211 Chinese " +
+            "universities. All applicants are assessed equally based on their " +
+            "academic record. Indicative thresholds from agent data: " +
+            "211: ~72%, non-211: ~78%. " +
+            "Also available as 2-year Finance (Extension) variant.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any bachelor's degree. " +
+          "The 1.5-year standard version does not require a finance background.",
+        tuitionFeeAUD: 51000,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (72 credit points)",
+        url: "https://www.uts.edu.au/study/find-a-course/master-finance",
+      },
+      {
+        programName: "Master of Management",
+        faculty: "UTS Business School",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree with satisfactory GPA",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "UTS does not differentiate 211 vs non-211. " +
+            "Also available as 2-year Management (Extension) variant.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes: "Open to any bachelor's degree.",
+        tuitionFeeAUD: 48000,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (72 credit points)",
+        url: "https://www.uts.edu.au/courses/master-of-management",
+      },
+      {
+        programName: "Master of Information Technology",
+        faculty: "Faculty of Engineering and Information Technology",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree with satisfactory GPA",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "UTS does not differentiate 211 vs non-211. " +
+            "Also available as IT (Extension) 2-year and IT (Advanced) variants.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any bachelor's degree. " +
+          "Students without an IT background take foundation subjects.",
+        tuitionFeeAUD: 51000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 credit points)",
+        url: "https://www.uts.edu.au/courses/master-of-information-technology",
+      },
+      {
+        programName: "Master of Data Science and Innovation",
+        faculty: "Faculty of Engineering and Information Technology",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree with satisfactory GPA",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "UTS does not differentiate 211 vs non-211. " +
+            "This is UTS's primary data science program. " +
+            "Note: the separate Master of Artificial Intelligence requires " +
+            "a related IT/engineering/maths degree.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to any bachelor's degree. " +
+          "The program is designed for both technical and non-technical backgrounds.",
+        tuitionFeeAUD: 47000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 credit points)",
+        url: "https://www.uts.edu.au/courses/master-of-data-science-and-innovation",
+      },
+      {
+        programName: "Master of Artificial Intelligence",
+        faculty: "Faculty of Engineering and Information Technology",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree (75%+ pass) in IT/Engineering/Maths",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "Requires a related degree (IT, Electrical Engineering, Mathematical Sciences) " +
+            "with at least 75% of subjects at pass level, or equivalent + 2 years " +
+            "professional IT experience.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a bachelor's degree in IT, Electrical and Electronic Engineering " +
+          "and Technology, or Mathematical Sciences, with at least 75% of subjects " +
+          "completed at pass level. Alternatively, a bachelor's in these fields plus " +
+          "minimum 2 years full-time relevant IT professional work experience.",
+        tuitionFeeAUD: 51000,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (72 credit points)",
+        url: "https://www.uts.edu.au/courses/master-of-artificial-intelligence",
+      },
+      {
+        programName: "Master of Professional Engineering",
+        faculty: "Faculty of Engineering and Information Technology",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree with satisfactory GPA",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "Requires an engineering or relevant science background. " +
+            "Engineers Australia (EA) accredited. " +
+            "Specialisations: Biomedical, Civil, Electrical, Mechanical, Software, etc.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a bachelor's degree in engineering or a relevant science/technology " +
+          "field. Also available as an Extension variant.",
+        tuitionFeeAUD: 49000,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 credit points)",
+        url: "https://www.uts.edu.au/courses/master-of-professional-engineering",
+      },
+      {
+        programName: "Master of TESOL and Applied Linguistics",
+        faculty: "Faculty of Arts and Social Sciences",
+        gpaRequirement: {
+          scale: "Equivalent to Australian bachelor's degree with satisfactory GPA",
+          tier211: "72%",
+          nonTier211: "78%",
+          notes:
+            "UTS's education offering is TESOL-focused rather than a traditional " +
+            "Master of Education. Also available as 2-year Extension variant.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 79,
+          listening: 20,
+          reading: 18,
+          writing: 21,
+          speaking: 20,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to graduates of any discipline. " +
+          "No teaching experience required for the standard 1.5-year version.",
+        tuitionFeeAUD: 39000,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (72 credit points)",
+        url: "https://www.uts.edu.au/study/find-a-course/master-tesol-and-applied-linguistics",
+      },
+    ],
+  },
 ];
