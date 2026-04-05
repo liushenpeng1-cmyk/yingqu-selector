@@ -593,18 +593,18 @@ export const schools: School[] = [
   },// ═══════════════ SG 新加坡 ═══════════════
   {
     id: "nus", name: "新加坡国立大学", nameEn: "National University of Singapore", country: "SG", qsRank: 8,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.0, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88 }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "法律", "理学", "社科"],
     extraRequirements: "部分专业需 GRE/GMAT",
-    notes: "⚠️ 数据待确认。亚洲顶尖，竞争极强",
+    notes: "无硬性院校 List，但院校背景有影响。双非可申，需更高 GPA（88-90+）+ 强实习/科研补偿。2024-25 年扩招放宽",
     source: "https://nusgs.nus.edu.sg/admissions/",
   },
   {
     id: "ntu-sg", name: "南洋理工大学", nameEn: "Nanyang Technological University", country: "SG", qsRank: 15,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 87  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
+    ieltsMin: 6.0, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 87 }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     extraRequirements: "工科部分需 GRE",
-    notes: "⚠️ 数据待确认。工科和传媒极强",
+    notes: "无硬性院校 List，双非可申但需更高 GPA（85-88+）。工科和传媒极强。2024-25 年新增 AI/能源等专业",
     source: "https://www.ntu.edu.sg/admissions/graduate/radmissionguide",
   },// ═══════════════ CA 加拿大 ═══════════════
   {
