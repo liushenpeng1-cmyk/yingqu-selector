@@ -452,23 +452,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认，建议查官网",
     source: "https://www.mq.edu.au/study/how-to-apply/international/entry-requirements",
-  },
-  {
-    id: "deakin",
-    name: "迪肯大学",
-    nameEn: "Deakin University",
-    country: "AU",
-    qsRank: 185,
-    ieltsMin: 6.0, toeflMin: 60,
-    gpaScale: "percentage" as const,
-    gpaRequirements: { preferred: 63, other: 70  },
-    listPolicy: "open",
-    preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认，建议查官网",
-    source: "https://www.deakin.edu.au/courses/entry-requirements/international",
-  },
-  // ═══════════════ Imperial / Oxford / Cambridge ═══════════════
+  },// ═══════════════ Imperial / Oxford / Cambridge ═══════════════
   {
     id: "imperial", name: "帝国理工学院", nameEn: "Imperial College London", country: "UK", qsRank: 2,
     ieltsMin: 7.0, toeflMin: 100, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 90 },
@@ -556,106 +540,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     notes: "⚠️ 数据待确认。商科竞争强",
     source: "https://www.bath.ac.uk/study/pg/apply/international/",
-  },
-  {
-    id: "liverpool", name: "利物浦大学", nameEn: "University of Liverpool", country: "UK", qsRank: 165,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认。对双非友好",
-    source: "https://www.liverpool.ac.uk/study/international/countries/china/",
-  },
-  {
-    id: "exeter", name: "埃克塞特大学", nameEn: "University of Exeter", country: "UK", qsRank: 169,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.exeter.ac.uk/study/international/your-country/china/",
-  },
-  {
-    id: "reading", name: "雷丁大学", nameEn: "University of Reading", country: "UK", qsRank: 172,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.reading.ac.uk/international/countries/china/",
-  },
-  {
-    id: "york", name: "约克大学", nameEn: "University of York", country: "UK", qsRank: 184,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.york.ac.uk/study/international/your-country/china/",
-  },
-  {
-    id: "cardiff", name: "卡迪夫大学", nameEn: "Cardiff University", country: "UK", qsRank: 186,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.cardiff.ac.uk/international/your-country/china",
-  },
-  {
-    id: "queens-belfast", name: "贝尔法斯特女王大学", nameEn: "Queen's University Belfast", country: "UK", qsRank: 206,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
-    notes: "⚠️ 数据待确认。门槛较低，对双非友好",
-    source: "https://www.qub.ac.uk/International/international-students/your-country/china/",
-  },
-  {
-    id: "loughborough", name: "拉夫堡大学", nameEn: "Loughborough University", country: "UK", qsRank: 224,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 73, other: 78  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "艺术设计", "理学", "社科"],
-    notes: "⚠️ 数据待确认。体育和设计专业强",
-    source: "https://www.lboro.ac.uk/international/your-country/china/",
-  },
-  {
-    id: "aberdeen", name: "阿伯丁大学", nameEn: "University of Aberdeen", country: "UK", qsRank: 236,
-    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
-    notes: "⚠️ 数据待确认。门槛较低",
-    source: "https://www.abdn.ac.uk/study/international/country-information-289.php",
-  },
-  {
-    id: "sussex", name: "萨塞克斯大学", nameEn: "University of Sussex", country: "UK", qsRank: 246,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.sussex.ac.uk/study/international-students/your-country/china",
-  },
-  {
-    id: "heriot-watt", name: "赫瑞瓦特大学", nameEn: "Heriot-Watt University", country: "UK", qsRank: 256,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "理学"],
-    notes: "⚠️ 数据待确认。精算和石油工程强",
-    source: "https://www.hw.ac.uk/study/international/country/china.htm",
-  },
-  {
-    id: "strathclyde", name: "思克莱德大学", nameEn: "University of Strathclyde", country: "UK", qsRank: 281,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
-    notes: "⚠️ 数据待确认。商学院三重认证",
-    source: "https://www.strath.ac.uk/studywithus/internationalstudents/yourcountry/china/",
-  },
-  {
-    id: "leicester", name: "莱斯特大学", nameEn: "University of Leicester", country: "UK", qsRank: 285,
-    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://le.ac.uk/international/countries/china",
-  },
-  {
-    id: "surrey", name: "萨里大学", nameEn: "University of Surrey", country: "UK", qsRank: 285,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 75  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "理学", "社科"],
-    notes: "⚠️ 数据待确认。酒店管理强",
-    source: "https://www.surrey.ac.uk/international/country/china",
-  },
-  {
-    id: "swansea", name: "斯旺西大学", nameEn: "Swansea University", country: "UK", qsRank: 298,
-    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "理学", "社科"],
-    notes: "⚠️ 数据待确认。门槛较低",
-    source: "https://www.swansea.ac.uk/international/students/your-country/china/",
-  },
-  // ═══════════════ NEW AU (QS top 300, not yet verified) ═══════════════
+  },// ═══════════════ NEW AU (QS top 300, not yet verified) ═══════════════
   {
     id: "western-australia", name: "西澳大学", nameEn: "University of Western Australia", country: "AU", qsRank: 77,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 78  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
@@ -669,57 +554,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "教育", "传媒", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认。IT 和传媒强",
     source: "https://www.uts.edu.au/study/international/essential-information/entry-requirements",
-  },
-  {
-    id: "wollongong", name: "伍伦贡大学", nameEn: "University of Wollongong", country: "AU", qsRank: 167,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.uow.edu.au/study/international/apply/",
-  },
-  {
-    id: "curtin", name: "科廷大学", nameEn: "Curtin University", country: "AU", qsRank: 174,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "理学", "社科"],
-    notes: "⚠️ 数据待确认。矿业和石油工程强",
-    source: "https://www.curtin.edu.au/study/international-students/",
-  },
-  {
-    id: "newcastle-au", name: "纽卡斯尔大学(澳)", nameEn: "University of Newcastle (AU)", country: "AU", qsRank: 179,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.newcastle.edu.au/international/study-with-us",
-  },
-  {
-    id: "qut", name: "昆士兰科技大学", nameEn: "Queensland University of Technology", country: "AU", qsRank: 189,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 68, other: 73  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "艺术设计", "理学", "社科"],
-    notes: "⚠️ 数据待确认。传媒和创意产业强",
-    source: "https://www.qut.edu.au/study/international/applying",
-  },
-  {
-    id: "la-trobe", name: "乐卓博大学", nameEn: "La Trobe University", country: "AU", qsRank: 217,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 65, other: 70  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认",
-    source: "https://www.latrobe.edu.au/international/how-to-apply",
-  },
-  {
-    id: "griffith", name: "格里菲斯大学", nameEn: "Griffith University", country: "AU", qsRank: 243,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 65, other: 70  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认。酒店管理和旅游强",
-    source: "https://www.griffith.edu.au/international/apply",
-  },
-  {
-    id: "tasmania", name: "塔斯马尼亚大学", nameEn: "University of Tasmania", country: "AU", qsRank: 293,
-    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 63, other: 68  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认。门槛较低，偏远地区加分",
-    source: "https://www.utas.edu.au/international/study",
-  },
-  // ═══════════════ HK 香港 ═══════════════
+  },// ═══════════════ HK 香港 ═══════════════
   {
     id: "hku", name: "香港大学", nameEn: "University of Hong Kong", country: "HK", qsRank: 17,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88 },
@@ -755,15 +590,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "艺术设计", "理学", "社科"],
     notes: "酒店管理全球第一，设计亚洲顶尖。商学院 IELTS 6.5+，其他多数 6.0",
     source: "https://www.polyu.edu.hk/study/pg/taught-postgraduate",
-  },
-  {
-    id: "hkbu", name: "香港浸会大学", nameEn: "Hong Kong Baptist University", country: "HK", qsRank: 252,
-    ieltsMin: 6.0, toeflMin: 60, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "传媒", "教育", "艺术设计", "理学", "社科"],
-    notes: "⚠️ 数据待确认。传媒专业强",
-    source: "https://gs.hkbu.edu.hk/admission/taught-postgraduate-programmes",
-  },
-  // ═══════════════ SG 新加坡 ═══════════════
+  },// ═══════════════ SG 新加坡 ═══════════════
   {
     id: "nus", name: "新加坡国立大学", nameEn: "National University of Singapore", country: "SG", qsRank: 8,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 85, other: 88  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
@@ -779,16 +606,7 @@ export const schools: School[] = [
     extraRequirements: "工科部分需 GRE",
     notes: "⚠️ 数据待确认。工科和传媒极强",
     source: "https://www.ntu.edu.sg/admissions/graduate/radmissionguide",
-  },
-  {
-    id: "smu", name: "新加坡管理大学", nameEn: "Singapore Management University", country: "SG", qsRank: 162,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "法律", "社科"],
-    extraRequirements: "商科需 GMAT/GRE",
-    notes: "⚠️ 数据待确认。商科和金融专精",
-    source: "https://admissions.smu.edu.sg/postgraduate",
-  },
-  // ═══════════════ CA 加拿大 ═══════════════
+  },// ═══════════════ CA 加拿大 ═══════════════
   {
     id: "toronto", name: "多伦多大学", nameEn: "University of Toronto", country: "CA", qsRank: 25,
     ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85  }, listPolicy: "open", preferredTiers: [],
@@ -831,36 +649,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认。Ivey 商学院极强",
     source: "https://grad.uwo.ca/admissions/index.html",
-  },
-  {
-    id: "montreal", name: "蒙特利尔大学", nameEn: "Université de Montréal", country: "CA", qsRank: 159,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
-    notes: "⚠️ 数据待确认。法语授课为主，部分英语项目",
-    source: "https://admission.umontreal.ca/en/",
-  },
-  {
-    id: "ottawa", name: "渥太华大学", nameEn: "University of Ottawa", country: "CA", qsRank: 189,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
-    notes: "⚠️ 数据待确认。英法双语大学",
-    source: "https://www.uottawa.ca/graduate-studies/programs-admission",
-  },
-  {
-    id: "queens-ca", name: "女王大学", nameEn: "Queen's University", country: "CA", qsRank: 197,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
-    notes: "⚠️ 数据待确认。Smith 商学院知名",
-    source: "https://www.queensu.ca/sgs/prospective-students/applying",
-  },
-  {
-    id: "mcmaster", name: "麦克马斯特大学", nameEn: "McMaster University", country: "CA", qsRank: 176,
-    ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80  }, listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
-    notes: "⚠️ 数据待确认。工程和健康科学强",
-    source: "https://gs.mcmaster.ca/admissions/",
-  },
-  // ═══════════════ US 美国 (QS top 100) ═══════════════
+  },// ═══════════════ US 美国 (QS top 100) ═══════════════
   {
     id: "mit", name: "麻省理工学院", nameEn: "MIT", country: "US", qsRank: 1,
     ieltsMin: 7.0, toeflMin: 94, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.8, other: 3.8 },
@@ -1244,16 +1033,7 @@ export const schools: School[] = [
     majorCategories: ["理学", "社科", "法律", "传媒", "计算机", "工程"],
     notes: "法国历史名校，理学和人文全球领先。部分英文授课，学费极低（约€250/年注册费）",
     source: "https://www.sorbonne-universite.fr/en/education",
-  },
-  {
-    id: "ens-lyon", name: "里昂高等师范学院", nameEn: "École Normale Supérieure de Lyon", country: "FR", qsRank: 187,
-    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "社科", "教育"],
-    notes: "法国精英高师系统，科研导向。学费极低，竞争激烈",
-    source: "https://www.ens-lyon.fr/en/studies/admissions",
-  },
-  // ═══════════════ US (补充) ═══════════════
+  },// ═══════════════ US (补充) ═══════════════
   {
     id: "usc", name: "南加州大学", nameEn: "University of Southern California", country: "US", qsRank: 125,
     ieltsMin: 7.0, toeflMin: 90, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.3 },
@@ -1273,78 +1053,7 @@ export const schools: School[] = [
     applicationFee: "US$155",
     notes: "UC 系统名校，农业和生物科学全球顶尖。位于加州萨克拉门托附近",
     source: "https://grad.ucdavis.edu/admissions",
-  },
-  {
-    id: "michigan-state", name: "密歇根州立大学", nameEn: "Michigan State University", country: "US", qsRank: 152,
-    ieltsMin: 6.5, toeflMin: 80, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.0, other: 3.0 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "理学", "社科"],
-    extraRequirements: "部分项目需 GRE/GMAT",
-    applicationFee: "US$65",
-    notes: "教育学和供应链管理全美领先。Big Ten 名校",
-    source: "https://grad.msu.edu/admissions",
-  },
-  {
-    id: "texas-am", name: "德州农工大学", nameEn: "Texas A&M University", country: "US", qsRank: 154,
-    ieltsMin: 6.0, toeflMin: 80, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.0, other: 3.0 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "计算机", "商科", "理学", "社科"],
-    extraRequirements: "工程和理科通常需 GRE",
-    applicationFee: "US$89",
-    notes: "工程全美 Top 10，石油工程全球顶尖。德州最大公立校",
-    source: "https://admissions.tamu.edu/apply/graduate",
-  },
-  {
-    id: "unc", name: "北卡罗来纳大学教堂山", nameEn: "University of North Carolina at Chapel Hill", country: "US", qsRank: 155,
-    ieltsMin: 7.0, toeflMin: 90, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.0 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "传媒", "教育", "法律", "理学", "社科"],
-    extraRequirements: "商学院需 GMAT/GRE",
-    applicationFee: "US$95",
-    notes: "公立常春藤，商学院和新闻传媒全美顶尖",
-    source: "https://gradschool.unc.edu/admissions/",
-  },
-  {
-    id: "washu", name: "圣路易斯华盛顿大学", nameEn: "Washington University in St. Louis", country: "US", qsRank: 176,
-    ieltsMin: 7.0, toeflMin: 90, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.5, other: 3.3 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "法律", "理学", "社科"],
-    extraRequirements: "商学院需 GMAT/GRE",
-    applicationFee: "US$75",
-    notes: "私立名校，商学院和医学院全美顶尖。录取要求高",
-    source: "https://gradstudies.artsci.wustl.edu/admissions",
-  },
-  {
-    id: "ucsb", name: "加州大学圣塔芭芭拉分校", nameEn: "University of California, Santa Barbara", country: "US", qsRank: 178,
-    ieltsMin: 7.0, toeflMin: 80, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.0 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["计算机", "工程", "理学", "社科"],
-    extraRequirements: "大部分项目需 GRE",
-    applicationFee: "US$155",
-    notes: "UC 系统名校，材料科学和物理全球领先。海滨校园",
-    source: "https://www.graddiv.ucsb.edu/admissions",
-  },
-  {
-    id: "emory", name: "埃默里大学", nameEn: "Emory University", country: "US", qsRank: 196,
-    ieltsMin: 7.0, toeflMin: 90, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.3, other: 3.0 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "理学", "社科", "法律"],
-    extraRequirements: "商学院需 GMAT/GRE",
-    applicationFee: "US$75",
-    notes: "亚特兰大私立名校，商学院和公共卫生全美顶尖",
-    source: "https://www.gs.emory.edu/admissions/",
-  },
-  {
-    id: "asu", name: "亚利桑那州立大学", nameEn: "Arizona State University", country: "US", qsRank: 200,
-    ieltsMin: 6.5, toeflMin: 80, gpaScale: "gpa4" as const, gpaRequirements: { preferred: 3.0, other: 3.0 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "教育", "传媒", "理学", "社科"],
-    extraRequirements: "部分项目需 GRE",
-    applicationFee: "US$70",
-    notes: "全美最大公立校之一，创新排名连续多年第一。在线项目丰富",
-    source: "https://admission.asu.edu/graduate",
-  },
-  // ═══════════════ JP (补充) ═══════════════
+  },// ═══════════════ JP (补充) ═══════════════
   {
     id: "tokyo-tech", name: "东京工业大学", nameEn: "Tokyo Institute of Technology", country: "JP", qsRank: 84,
     ieltsMin: 6.5, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 80 },
@@ -1371,52 +1080,7 @@ export const schools: School[] = [
     extraRequirements: "需要研究计划书，建议提前联系导师",
     notes: "旧帝大，材料科学全球领先。IGPAS/FGL 英文项目。仙台生活成本低",
     source: "https://www.tohoku.ac.jp/en/admissions/admission_graduate.html",
-  },
-  {
-    id: "nagoya-u", name: "名古屋大学", nameEn: "Nagoya University", country: "JP", qsRank: 152,
-    ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "理学", "计算机", "社科"],
-    extraRequirements: "需要研究计划书。G30 英文项目",
-    notes: "旧帝大，6 位诺贝尔奖得主（物理）。G30 英文项目丰富",
-    source: "https://en.nagoya-u.ac.jp/admissions/graduate_students/index.html",
-  },
-  {
-    id: "kyushu-u", name: "九州大学", nameEn: "Kyushu University", country: "JP", qsRank: 167,
-    ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "理学", "计算机", "社科"],
-    extraRequirements: "需要研究计划书。IUPE 英文项目",
-    notes: "旧帝大，位于福冈（离中国近）。IUPE 英文项目",
-    source: "https://www.kyushu-u.ac.jp/en/admission/entrance/",
-  },
-  {
-    id: "hokkaido-u", name: "北海道大学", nameEn: "Hokkaido University", country: "JP", qsRank: 173,
-    ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "理学", "计算机", "社科"],
-    extraRequirements: "需要研究计划书。MJSP 等英文项目",
-    notes: "旧帝大，日本面积最大校园。环境科学和农学强",
-    source: "https://www.global.hokudai.ac.jp/admissions/graduate-admissions-overview/",
-  },
-  {
-    id: "waseda", name: "早稻田大学", nameEn: "Waseda University", country: "JP", qsRank: 181,
-    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "社科", "传媒", "理学"],
-    extraRequirements: "部分英文项目无需联系导师，直接申请即可",
-    notes: "日本顶尖私立，英文授课硕士项目非常丰富。在中国知名度高",
-    source: "https://www.waseda.jp/inst/admission/en/graduate/",
-  },
-  {
-    id: "keio", name: "庆应义塾大学", nameEn: "Keio University", country: "JP", qsRank: 188,
-    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "社科", "传媒", "理学"],
-    notes: "日本顶尖私立，KMD（媒体设计）项目知名。校友网络强大",
-    source: "https://www.keio.ac.jp/en/admissions/graduate/",
-  },
-  // ═══════════════ KR (补充) ═══════════════
+  },// ═══════════════ KR (补充) ═══════════════
   {
     id: "korea-u", name: "高丽大学", nameEn: "Korea University", country: "KR", qsRank: 67,
     ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
@@ -1442,26 +1106,7 @@ export const schools: School[] = [
     extraRequirements: "部分项目需 TOPIK 4级",
     notes: "三星深度合作校，半导体和商科强。有英文授课项目",
     source: "https://www.skku.edu/eng/edu/graduateSchool/graduate_school.do",
-  },
-  {
-    id: "hanyang", name: "汉阳大学", nameEn: "Hanyang University", country: "KR", qsRank: 162,
-    ieltsMin: 5.5, toeflMin: 72, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "计算机", "商科", "社科", "艺术设计"],
-    extraRequirements: "部分项目需 TOPIK 3级或 IELTS",
-    notes: "韩国工科强校，与产业界联系紧密。在中国留学生中热门",
-    source: "https://www.hanyang.ac.kr/web/eng/admissions-guide",
-  },
-  // ═══════════════ CA (补充) ═══════════════
-  {
-    id: "calgary", name: "卡尔加里大学", nameEn: "University of Calgary", country: "CA", qsRank: 198,
-    ieltsMin: 6.5, toeflMin: 86, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "计算机", "商科", "理学", "社科", "教育"],
-    notes: "阿尔伯塔省，石油工程和能源相关专业强。生活成本较低",
-    source: "https://grad.ucalgary.ca/future-students",
-  },
-  // ═══════════════ NZ (新西兰) ═══════════════
+  },// ═══════════════ CA (补充) ═══════════════// ═══════════════ NZ (新西兰) ═══════════════
   {
     id: "auckland", name: "奥克兰大学", nameEn: "University of Auckland", country: "NZ", qsRank: 65,
     ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
@@ -1524,17 +1169,7 @@ export const schools: School[] = [
     extraRequirements: "需要 APS 审核证书。部分项目英文授课",
     notes: "TU9 成员，位于柏林。创新和创业生态好。学费免费",
     source: "https://www.tu.berlin/en/studying/study-programs/all-programs-offered",
-  },
-  {
-    id: "hamburg", name: "汉堡大学", nameEn: "Universität Hamburg", country: "DE", qsRank: 191,
-    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "社科", "法律"],
-    extraRequirements: "需要 APS 审核证书",
-    notes: "北德最大综合大学，物理和气候科学强。学费免费",
-    source: "https://www.uni-hamburg.de/en/campuscenter/studienangebot/studiengang.html",
-  },
-  // ═══════════════ CH (补充) ═══════════════
+  },// ═══════════════ CH (补充) ═══════════════
   {
     id: "uzh", name: "苏黎世大学", nameEn: "University of Zurich", country: "CH", qsRank: 109,
     ieltsMin: 7.0, toeflMin: 100, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 82 },
@@ -1550,24 +1185,7 @@ export const schools: School[] = [
     majorCategories: ["理学", "社科"],
     notes: "瑞士最古老大学，医药和化学强（诺华、罗氏总部所在地）。学费约 CHF 1,700/学期",
     source: "https://www.unibas.ch/en/Studies/Application-Admission.html",
-  },
-  {
-    id: "geneva", name: "日内瓦大学", nameEn: "University of Geneva", country: "CH", qsRank: 155,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "理学", "社科", "法律"],
-    notes: "国际组织云集（UN、WTO等）。国际关系和金融强。法语区，部分英文授课",
-    source: "https://www.unige.ch/immatriculations/en/conditions",
-  },
-  {
-    id: "bern", name: "伯尔尼大学", nameEn: "University of Bern", country: "CH", qsRank: 161,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "社科"],
-    notes: "瑞士首都，天体物理和气候科学强。学费约 CHF 1,500/学期",
-    source: "https://www.unibe.ch/studies/programs/index_eng.html",
-  },
-  // ═══════════════ NL (补充) ═══════════════
+  },// ═══════════════ NL (补充) ═══════════════
   {
     id: "utrecht", name: "乌特勒支大学", nameEn: "Utrecht University", country: "NL", qsRank: 105,
     ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
@@ -1591,32 +1209,7 @@ export const schools: School[] = [
     majorCategories: ["社科", "法律", "理学"],
     notes: "荷兰最古老大学，国际法和人文强。学费约 €18k/年",
     source: "https://www.universiteitleiden.nl/en/education/masters",
-  },
-  {
-    id: "wageningen", name: "瓦格宁根大学", nameEn: "Wageningen University & Research", country: "NL", qsRank: 155,
-    ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "工程"],
-    notes: "农业和食品科学全球第一。环境科学顶尖。学费约 €20k/年",
-    source: "https://www.wur.nl/en/education-programmes/master.htm",
-  },
-  {
-    id: "erasmus", name: "鹿特丹伊拉斯姆斯大学", nameEn: "Erasmus University Rotterdam", country: "NL", qsRank: 158,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "社科", "理学"],
-    notes: "商学院（RSM）欧洲顶尖，经济学强。学费约 €18k-20k/年",
-    source: "https://www.eur.nl/en/education/master-programmes",
-  },
-  {
-    id: "groningen", name: "格罗宁根大学", nameEn: "University of Groningen", country: "NL", qsRank: 159,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
-    notes: "荷兰北部名校，AI 和能源研究强。英文授课硕士多。学费约 €16k/年",
-    source: "https://www.rug.nl/masters/",
-  },
-  // ═══════════════ SE (瑞典) ═══════════════
+  },// ═══════════════ SE (瑞典) ═══════════════
   {
     id: "kth", name: "瑞典皇家理工学院", nameEn: "KTH Royal Institute of Technology", country: "SE", qsRank: 74,
     ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
@@ -1656,16 +1249,7 @@ export const schools: School[] = [
     majorCategories: ["工程", "计算机", "理学"],
     notes: "瑞典工科名校，汽车工程和可持续能源强。哥德堡（沃尔沃总部）。学费约 SEK 160k/年",
     source: "https://www.chalmers.se/en/education/find-masters-programme/",
-  },
-  {
-    id: "gothenburg", name: "哥德堡大学", nameEn: "University of Gothenburg", country: "SE", qsRank: 194,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 76, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "社科", "理学", "艺术设计"],
-    notes: "瑞典第二大城市，海洋科学和可持续发展强。学费约 SEK 100k-260k/年",
-    source: "https://www.gu.se/en/study-in-gothenburg/apply/apply-for-masters-program",
-  },
-  // ═══════════════ DK (丹麦) ═══════════════
+  },// ═══════════════ DK (丹麦) ═══════════════
   {
     id: "copenhagen", name: "哥本哈根大学", nameEn: "University of Copenhagen", country: "DK", qsRank: 100,
     ieltsMin: 6.5, toeflMin: 83, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 82 },
@@ -1758,40 +1342,7 @@ export const schools: School[] = [
     notes: "西方最古老大学（1088年），法学和人文传统深厚。学费低（约€2k-4k/年）",
     source: "https://www.unibo.it/en/study/phd-professional-masters-specialisation-schools-and-other-programmes/professional-master",
   },
-  // ═══════════════ ES (西班牙) ═══════════════
-  {
-    id: "complutense", name: "马德里康普顿斯大学", nameEn: "Complutense University of Madrid", country: "ES", qsRank: 164,
-    ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["社科", "法律", "理学", "传媒"],
-    notes: "西班牙最大综合大学，人文社科强。西语授课为主。学费极低（约€3k-6k/年）",
-    source: "https://www.ucm.es/english/masters",
-  },
-  {
-    id: "ub", name: "巴塞罗那大学", nameEn: "University of Barcelona", country: "ES", qsRank: 165,
-    ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "理学", "社科", "法律"],
-    notes: "西班牙综合实力最强，医学和化学领先。加泰罗尼亚语/西语授课。学费约€3k-5k/年",
-    source: "https://web.ub.edu/en/web/estudis/masters-postgraduate-degrees",
-  },
-  {
-    id: "uab", name: "巴塞罗那自治大学", nameEn: "Universitat Autònoma de Barcelona", country: "ES", qsRank: 175,
-    ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "社科", "传媒", "教育"],
-    notes: "西班牙科研产出最高的大学之一。传播学和环境科学强。学费约€3k-5k/年",
-    source: "https://www.uab.cat/web/estudiar/official-master-s-degrees/all-master-s-degrees-1096480309770.html",
-  },
-  {
-    id: "uam", name: "马德里自治大学", nameEn: "Universidad Autónoma de Madrid", country: "ES", qsRank: 198,
-    ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "社科", "法律"],
-    notes: "西班牙顶尖科研型大学，物理和生物强。学费约€3k-5k/年",
-    source: "https://www.uam.es/uam/en/posgrado/todos-masteres-oficiales",
-  },
-  // ═══════════════ BE (比利时) ═══════════════
+  // ═══════════════ ES (西班牙) ═══════════════// ═══════════════ BE (比利时) ═══════════════
   {
     id: "ku-leuven", name: "鲁汶大学", nameEn: "KU Leuven", country: "BE", qsRank: 63,
     ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 83 },
@@ -1799,16 +1350,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "理学", "社科", "法律", "教育"],
     notes: "比利时第一，欧洲创新排名常年第一。英文授课硕士多。学费约€6k-12k/年",
     source: "https://www.kuleuven.be/english/prospective-students/admissions",
-  },
-  {
-    id: "ghent", name: "根特大学", nameEn: "Ghent University", country: "BE", qsRank: 169,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "理学", "社科", "法律"],
-    notes: "比利时第二，生物技术和工程强。学费约€3k-6k/年",
-    source: "https://www.ugent.be/en/programmes",
-  },
-  // ═══════════════ AT (奥地利) ═══════════════
+  },// ═══════════════ AT (奥地利) ═══════════════
   {
     id: "vienna", name: "维也纳大学", nameEn: "University of Vienna", country: "AT", qsRank: 137,
     ieltsMin: 6.5, toeflMin: 88, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
@@ -1816,16 +1358,7 @@ export const schools: School[] = [
     majorCategories: ["社科", "理学", "法律"],
     notes: "奥地利最大最古老大学，心理学和物理强。学费约€726/学期（非欧盟€1,452）",
     source: "https://studieren.univie.ac.at/en/",
-  },
-  {
-    id: "tu-wien", name: "维也纳工业大学", nameEn: "Technische Universität Wien", country: "AT", qsRank: 190,
-    ieltsMin: 6.5, toeflMin: 88, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "计算机", "理学"],
-    notes: "奥地利理工名校，建筑和CS强。学费约€726/学期（非欧盟€1,452）",
-    source: "https://www.tuwien.at/en/studies/admission",
-  },
-  // ═══════════════ MY (马来西亚) ═══════════════
+  },// ═══════════════ MY (马来西亚) ═══════════════
   {
     id: "um", name: "马来亚大学", nameEn: "Universiti Malaya", country: "MY", qsRank: 60,
     ieltsMin: 6.0, toeflMin: 80, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
@@ -1857,16 +1390,7 @@ export const schools: School[] = [
     majorCategories: ["工程", "理学", "商科", "社科"],
     notes: "农业和食品科学强。吉隆坡附近。学费低",
     source: "https://www.upm.edu.my/admission/",
-  },
-  {
-    id: "utm", name: "马来西亚工艺大学", nameEn: "Universiti Teknologi Malaysia", country: "MY", qsRank: 181,
-    ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["工程", "计算机", "理学", "商科"],
-    notes: "马来西亚理工名校，位于柔佛。学费低",
-    source: "https://admission.utm.my/",
-  },
-  // ═══════════════ IN (印度) ═══════════════
+  },// ═══════════════ IN (印度) ═══════════════
   {
     id: "iit-bombay", name: "印度理工学院孟买", nameEn: "IIT Bombay", country: "IN", qsRank: 118,
     ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 82 },
@@ -1901,16 +1425,7 @@ export const schools: School[] = [
     majorCategories: ["工程", "理学", "商科", "社科"],
     notes: "沙特综合大学，海洋科学强。部分项目提供奖学金。位于吉达",
     source: "https://www.kau.edu.sa/home_english.aspx",
-  },
-  {
-    id: "ksu", name: "沙特国王大学", nameEn: "King Saud University", country: "SA", qsRank: 200,
-    ieltsMin: 5.5, toeflMin: 72, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "工程", "理学", "社科"],
-    notes: "沙特最古老大学（利雅得）。部分项目提供全额奖学金",
-    source: "https://ksu.edu.sa/en/deanships/graduate-studies",
-  },
-  // ═══════════════ QA (卡塔尔) ═══════════════
+  },// ═══════════════ QA (卡塔尔) ═══════════════
   {
     id: "qu", name: "卡塔尔大学", nameEn: "Qatar University", country: "QA", qsRank: 122,
     ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
@@ -1918,16 +1433,7 @@ export const schools: School[] = [
     majorCategories: ["工程", "商科", "理学", "社科"],
     notes: "卡塔尔最大公立大学，英语授课。学费低+奖学金机会",
     source: "https://www.qu.edu.qa/admission/graduate",
-  },
-  {
-    id: "hbku", name: "哈马德本哈利法大学", nameEn: "Hamad bin Khalifa University", country: "QA", qsRank: 183,
-    ieltsMin: 6.5, toeflMin: 90, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["计算机", "工程", "理学", "社科"],
-    notes: "卡塔尔精英新校（教育城）。全额奖学金+生活费。科研导向",
-    source: "https://www.hbku.edu.qa/en/Admissions",
-  },
-  // ═══════════════ RU (俄罗斯) ═══════════════
+  },// ═══════════════ RU (俄罗斯) ═══════════════
   {
     id: "msu", name: "莫斯科国立大学", nameEn: "Lomonosov Moscow State University", country: "RU", qsRank: 94,
     ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
@@ -1936,16 +1442,7 @@ export const schools: School[] = [
     notes: "俄罗斯第一名校，数学和物理全球领先。学费低（约 $4k-8k/年）。需注意签证政策",
     source: "https://msu.ru/en/admissions/",
   },
-  // ═══════════════ ZA (南非) ═══════════════
-  {
-    id: "uct", name: "开普敦大学", nameEn: "University of Cape Town", country: "ZA", qsRank: 171,
-    ieltsMin: 6.5, toeflMin: 88, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "工程", "理学", "社科", "法律"],
-    notes: "非洲排名第一，科研型大学。英语授课。学费低（约 ZAR 60k-100k/年）",
-    source: "https://uct.ac.za/postgraduate-hub/apply-uct/international-applications",
-  },
-  // ═══════════════ AR (阿根廷) ═══════════════
+  // ═══════════════ ZA (南非) ═══════════════// ═══════════════ AR (阿根廷) ═══════════════
   {
     id: "uba", name: "布宜诺斯艾利斯大学", nameEn: "Universidad de Buenos Aires", country: "AR", qsRank: 71,
     ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 75 },
@@ -1988,34 +1485,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "理学", "社科", "法律", "艺术设计"],
     notes: "拉美顶尖巨型大学（35万学生），世界遗产校园。公立免学费。西语授课",
     source: "https://www.posgrado.unam.mx/",
-  },
-  {
-    id: "tec-monterrey", name: "蒙特雷科技大学", nameEn: "Tecnológico de Monterrey", country: "MX", qsRank: 185,
-    ieltsMin: 6.5, toeflMin: 85, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "计算机", "工程"],
-    notes: "墨西哥顶尖私立，商学院和工程强。部分英文授课。企业合作密切",
-    source: "https://maestriasydiplomados.tec.mx/admisiones?locale=en",
-  },
-  // ═══════════════ CO (哥伦比亚) ═══════════════
-  {
-    id: "uniandes", name: "安第斯大学", nameEn: "Universidad de los Andes", country: "CO", qsRank: 179,
-    ieltsMin: 6.5, toeflMin: 83, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 80 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["商科", "工程", "社科", "法律"],
-    notes: "哥伦比亚顶尖私立大学，商学院有AACSB认证。位于波哥大",
-    source: "https://uniandes.edu.co/en/admissions-and-financial-support/study-at-uniandes",
-  },
-  // ═══════════════ KZ (哈萨克斯坦) ═══════════════
-  {
-    id: "al-farabi", name: "阿尔法拉比哈萨克国立大学", nameEn: "Al-Farabi Kazakh National University", country: "KZ", qsRank: 163,
-    ieltsMin: 6.0, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 75 },
-    listPolicy: "open", preferredTiers: [],
-    majorCategories: ["理学", "工程", "社科"],
-    notes: "中亚第一名校（阿拉木图）。学费极低。俄语/哈语/英语授课",
-    source: "https://welcome.kaznu.kz/en/welcome/foreign",
-  },
-  // ═══════════════ 艺术设计专排名校 ═══════════════
+  },// ═══════════════ CO (哥伦比亚) ═══════════════// ═══════════════ KZ (哈萨克斯坦) ═══════════════// ═══════════════ 艺术设计专排名校 ═══════════════
   {
     id: "rca", name: "皇家艺术学院", nameEn: "Royal College of Art", country: "UK", qsRank: 301,
     ieltsMin: 6.5, toeflMin: 88, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 78 },
