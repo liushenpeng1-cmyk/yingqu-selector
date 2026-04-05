@@ -7724,7 +7724,7 @@ export const programs: Program[] = [
     tuitionFee: "₩43,130,000（总费用4学期，约￥23万人民币）",
     applicationFee: "₩90,000",
     notes: "全英文授课。TOPIK不作要求。奖学金可覆盖10-30%学费",
-    source: "https://gsb.snu.ac.kr/en/adminssions/overview",
+    source: "https://gsb.snu.ac.kr/en/admission/notice",
     verified: false,
   },
   {
@@ -7750,7 +7750,7 @@ export const programs: Program[] = [
     tuitionFee: "₩7,994,000/年（约￥4.3万人民币）",
     applicationFee: "₩90,000",
     notes: "半导体、信号处理、AI硬件、电力系统等研究方向强势",
-    source: "https://ece.snu.ac.kr/en/",
+    source: "https://ee.snu.ac.kr/en/admissions/graduate/international",
     verified: false,
   },
   {
@@ -7775,7 +7775,7 @@ export const programs: Program[] = [
     tuitionFee: "₩6,556,000/年（约￥3.5万人民币）",
     applicationFee: "₩90,000",
     notes: "研究型项目，多数课程韩语授课，建议有一定韩语基础",
-    source: "https://econ.snu.ac.kr/graduate/academic-information",
+    source: "https://econ.snu.ac.kr/",
     verified: false,
   },
   {
@@ -8913,7 +8913,7 @@ export const programs: Program[] = [
     tuitionFee: "₩7,994,000/年（约￥4.3万人民币）",
     applicationFee: "₩90,000",
     notes: "研究型项目，需完成论文。韩英混合授课。需提前联系导师",
-    source: "https://physics.snu.ac.kr/en/",
+    source: "https://physics.snu.ac.kr/en/academics/graduate/curriculum",
     verified: false,
   },
   {
@@ -9431,7 +9431,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     tuitionFee: "€150/semester (semester contribution only)",
     notes: "含英语授课方向。涵盖比较政治、国际关系、政治理论、欧洲政治等方向",
-    source: "https://www.en.gsi.uni-muenchen.de/study/programmes/master/index.html",
+    source: "https://www.en.gsi.uni-muenchen.de/studies/programmes/polsci_ma/index.html",
     verified: false,
   },
 
@@ -9497,7 +9497,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: true, acceptedBackgrounds: ["理学"],
     notes: "全英文授课。涵盖粒子物理、天文、凝聚态等方向。与NIKHEF、SRON等研究机构合作",
     tuitionFee: "€17,500/year (non-EU)",
-    source: "https://www.uva.nl/shared-content/programmas/en/masters/physics-and-astronomy-general-physics-and-astronomy/physics-and-astronomy-general-physics-and-astronomy.html",
+    source: "https://www.uva.nl/shared-content/programmas/en/masters/physics-and-astronomy/physics.html",
     verified: false,
   },
   {
@@ -9730,7 +9730,7 @@ export const programs: Program[] = [
     extraRequirements: "需提交作品集 (Portfolio)",
     notes: "NAAB 认证。College of Fine and Applied Arts 下属项目",
     tuitionFee: "US$34,000/year (non-resident)",
-    source: "https://arch.illinois.edu/programs/graduate/",
+    source: "https://arch.illinois.edu/programs-applying/graduate-degrees/",
     verified: false,
   },
 
@@ -10101,7 +10101,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "2026 年起合并为 Adelaide University。多个方向可选",
     tuitionFee: "澳元 A$39,000/年",
-    source: "https://www.adelaide.edu.au/degree-finder/meduc_meduc.html",
+    source: "https://able.adelaide.edu.au/education/study/master-of-education",
     verified: false,
   },
 
@@ -10115,7 +10115,7 @@ export const programs: Program[] = [
     extraRequirements: "需建筑学学士或相关学位",
     notes: "NAAB 等同的澳洲注册建筑师路径。2026 年起合并为 Adelaide University",
     tuitionFee: "澳元 A$42,500/年",
-    source: "https://www.adelaide.edu.au/degree-finder/march_marchcswk.html",
+    source: "https://adelaide.edu.au/study/degrees/master-of-architecture/",
     verified: false,
   },
 
@@ -10129,7 +10129,7 @@ export const programs: Program[] = [
     extraRequirements: "需心理学学士（4年制或荣誉学位）",
     notes: "APAC 认证。需心理学背景。竞争激烈。2026 年起合并为 Adelaide University",
     tuitionFee: "澳元 A$46,000/年",
-    source: "https://www.adelaide.edu.au/degree-finder/mpsyc_mclinpsy.html",
+    source: "https://calendar.adelaide.edu.au/aprcw/2025/mpsyc_mclinpsy",
     verified: false,
   },
 
@@ -10142,7 +10142,7 @@ export const programs: Program[] = [
     requiresRelatedDegree: false,
     notes: "不限背景。涵盖政策分析、公共管理等。2026 年起合并为 Adelaide University",
     tuitionFee: "澳元 A$42,500/年",
-    source: "https://www.adelaide.edu.au/degree-finder/mpup_mpubpoli.html",
+    source: "https://arts.adelaide.edu.au/study-with-us/postgraduate/postgraduate-public-policy",
     verified: false,
   },
 
@@ -10679,7 +10679,7 @@ export const programs: Program[] = [
     ieltsOverall: 6.5, ieltsWriting: 6.0, toeflOverall: 88,
     requiresRelatedDegree: false, extraRequirements: "需作品集 + 面试。与帝国理工联合授课",
     notes: "与 Imperial 合办，设计+工程双重视角",
-    tuitionFee: "£37,000/year", source: "https://www.rca.ac.uk/study/programme-finder/industrial-design-engineering-ma/", verified: false,
+    tuitionFee: "£37,000/year", source: "https://www.rca.ac.uk/study/programme-finder/innovation-design-engineering-ma-msc/", verified: false,
   },
   {
     id: "rca-graphic-design", schoolId: "rca", name: "视觉传达", nameEn: "MA Visual Communication",
@@ -11128,7 +11128,7 @@ export const programs: Program[] = [
   { id: "auckland-civil", schoolId: "auckland", name: "土木工程", nameEn: "ME Civil Engineering", department: "Faculty of Engineering", category: "engineering", subMajorId: "civil-engineering", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: true, acceptedBackgrounds: ["工程"], notes: "工程教育新西兰领先", tuitionFee: "NZD 47,000/year", source: "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-engineering-me.html", verified: false },
   { id: "auckland-tesol", schoolId: "auckland", name: "英语教学", nameEn: "MA TESOL", department: "Faculty of Education", category: "education", subMajorId: "tesol", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 94, requiresRelatedDegree: false, notes: "转专业友好", tuitionFee: "NZD 40,000/year", source: "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-teaching-english-to-speakers-of-other-languages-mtesol.html", verified: false },
   { id: "auckland-law", schoolId: "auckland", name: "法学", nameEn: "LLM", department: "Faculty of Law", category: "law", subMajorId: "llm-general", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 94, requiresRelatedDegree: true, acceptedBackgrounds: ["法律"], notes: "新西兰法学最强", tuitionFee: "NZD 40,000/year", source: "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-laws-llm.html", verified: false },
-  { id: "auckland-statistics", schoolId: "auckland", name: "统计学", nameEn: "MSc Statistics", department: "Dept of Statistics", category: "science", subMajorId: "statistics", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "R语言发源地", tuitionFee: "NZD 47,000/year", source: "https://www.auckland.ac.nz/en/science/study-with-us/study-options/programmes.html", verified: false },
+  { id: "auckland-statistics", schoolId: "auckland", name: "统计学", nameEn: "MSc Statistics", department: "Dept of Statistics", category: "science", subMajorId: "statistics", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "R语言发源地", tuitionFee: "NZD 47,000/year", source: "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/statistics/postgraduate.html", verified: false },
   { id: "auckland-public-policy", schoolId: "auckland", name: "公共政策", nameEn: "MPP Public Policy", department: "Faculty of Arts", category: "social-science", subMajorId: "public-policy", duration: "1.5 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: false, notes: "转专业友好", tuitionFee: "NZD 40,000/year", source: "https://www.auckland.ac.nz/en/study/study-options/postgraduate-study-options.html", verified: false },
 
   // ═══════════════ Korea University (QS 67) ═══════════════
@@ -11351,27 +11351,27 @@ export const programs: Program[] = [
 
   // --- UBA 布宜诺斯艾利斯大学 (QS 71) ---
   { id: "uba-economics", schoolId: "uba", name: "经济学", nameEn: "Maestría en Economía", department: "Facultad de Ciencias Económicas", category: "business", subMajorId: "economics", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "西班牙语授课。公立免学费", tuitionFee: "免学费", source: "https://www.economicas.uba.ar/posgrado/", verified: false },
-  { id: "uba-cs", schoolId: "uba", name: "计算机科学", nameEn: "Maestría en Ciencias de la Computación", department: "Facultad de Ciencias Exactas y Naturales", category: "cs", subMajorId: "computer-science", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"], notes: "西班牙语授课。免学费。阿根廷CS最强", tuitionFee: "免学费", source: "https://exactas.uba.ar/academico/posgrado/", verified: false },
+  { id: "uba-cs", schoolId: "uba", name: "计算机科学", nameEn: "Maestría en Ciencias de la Computación", department: "Facultad de Ciencias Exactas y Naturales", category: "cs", subMajorId: "computer-science", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"], notes: "西班牙语授课。免学费。阿根廷CS最强", tuitionFee: "免学费", source: "https://exactas.uba.ar/ensenanza/carreras-de-posgrado/", verified: false },
   { id: "uba-civil", schoolId: "uba", name: "土木工程", nameEn: "Maestría en Ingeniería Civil", department: "Facultad de Ingeniería", category: "engineering", subMajorId: "civil-engineering", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["工程"], notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://www.fi.uba.ar/posgrado", verified: false },
-  { id: "uba-math", schoolId: "uba", name: "数学", nameEn: "Maestría en Matemática", department: "Facultad de Ciencias Exactas y Naturales", category: "science", subMajorId: "mathematics", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://exactas.uba.ar/academico/posgrado/", verified: false },
+  { id: "uba-math", schoolId: "uba", name: "数学", nameEn: "Maestría en Matemática", department: "Facultad de Ciencias Exactas y Naturales", category: "science", subMajorId: "mathematics", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://exactas.uba.ar/ensenanza/carreras-de-posgrado/", verified: false },
   { id: "uba-sociology", schoolId: "uba", name: "社会学", nameEn: "Maestría en Sociología", department: "Facultad de Ciencias Sociales", category: "social-science", subMajorId: "sociology", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://www.sociales.uba.ar/posgrados/", verified: false },
   { id: "uba-law", schoolId: "uba", name: "法学", nameEn: "Maestría en Derecho", department: "Facultad de Derecho", category: "law", subMajorId: "llm-general", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["法律"], notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://www.derecho.uba.ar/academica/posgrados/", verified: false },
-  { id: "uba-education", schoolId: "uba", name: "教育学", nameEn: "Maestría en Educación", department: "Facultad de Filosofía y Letras", category: "education", subMajorId: "education-studies", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://www.filo.uba.ar/posgrado", verified: false },
+  { id: "uba-education", schoolId: "uba", name: "教育学", nameEn: "Maestría en Educación", department: "Facultad de Filosofía y Letras", category: "education", subMajorId: "education-studies", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "西语授课。免学费", tuitionFee: "免学费", source: "https://posgrado.filo.uba.ar/doctorados", verified: false },
 
   // --- USP 圣保罗大学 (QS 92) ---
   { id: "usp-cs", schoolId: "usp", name: "计算机科学", nameEn: "MSc Computer Science", department: "Instituto de Matemática e Estatística", category: "cs", subMajorId: "computer-science", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["计算机", "理学"], notes: "拉美CS第一。免学费。葡语为主", tuitionFee: "免学费", source: "https://www.ime.usp.br/en/pos/cc", verified: false },
   { id: "usp-engineering", schoolId: "usp", name: "电气工程", nameEn: "MSc Electrical Engineering", department: "Escola Politécnica", category: "engineering", subMajorId: "electrical-engineering", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["工程"], notes: "南美工程顶尖。免学费", tuitionFee: "免学费", source: "https://www.poli.usp.br/en/graduate", verified: false },
   { id: "usp-physics", schoolId: "usp", name: "物理学", nameEn: "MSc Physics", department: "Instituto de Física", category: "science", subMajorId: "physics", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "免学费", tuitionFee: "免学费", source: "https://portal.if.usp.br/pg/en", verified: false },
   { id: "usp-economics", schoolId: "usp", name: "经济学", nameEn: "MSc Economics", department: "Faculdade de Economia", category: "business", subMajorId: "economics", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "拉美经济学最强之一。免学费", tuitionFee: "免学费", source: "https://www.fea.usp.br/en/graduate", verified: false },
-  { id: "usp-law", schoolId: "usp", name: "法学", nameEn: "MSc Law", department: "Faculdade de Direito", category: "law", subMajorId: "llm-general", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["法律"], notes: "拉美法学第一。葡语授课。免学费", tuitionFee: "免学费", source: "https://www.direito.usp.br/pos-graduacao/", verified: false },
-  { id: "usp-sociology", schoolId: "usp", name: "社会学", nameEn: "MSc Sociology", department: "Faculdade de Filosofia, Letras e Ciências Humanas", category: "social-science", subMajorId: "sociology", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "免学费", tuitionFee: "免学费", source: "https://www.fflch.usp.br/en/graduate", verified: false },
+  { id: "usp-law", schoolId: "usp", name: "法学", nameEn: "MSc Law", department: "Faculdade de Direito", category: "law", subMajorId: "llm-general", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["法律"], notes: "拉美法学第一。葡语授课。免学费", tuitionFee: "免学费", source: "https://pos-graduacao.direito.usp.br/", verified: false },
+  { id: "usp-sociology", schoolId: "usp", name: "社会学", nameEn: "MSc Sociology", department: "Faculdade de Filosofia, Letras e Ciências Humanas", category: "social-science", subMajorId: "sociology", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "免学费", tuitionFee: "免学费", source: "https://ppghdl.fflch.usp.br/en", verified: false },
   { id: "usp-education", schoolId: "usp", name: "教育学", nameEn: "MSc Education", department: "Faculdade de Educação", category: "education", subMajorId: "education-studies", duration: "2 years", gpaRequirements: { preferred: 75, other: 75 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: false, notes: "免学费", tuitionFee: "免学费", source: "https://www4.fe.usp.br/en/graduate", verified: false },
 
   // --- PUC Chile (QS 93) ---
   { id: "puc-chile-mba", schoolId: "puc-chile", name: "MBA", nameEn: "MBA", department: "School of Management", category: "business", subMajorId: "mba", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: false, notes: "拉美MBA顶尖。部分英文授课", tuitionFee: "US$18,000", source: "https://escueladeadministracion.uc.cl/en/mba/", verified: false },
-  { id: "puc-chile-engineering", schoolId: "puc-chile", name: "工程学", nameEn: "MSc Engineering", department: "School of Engineering", category: "engineering", subMajorId: "civil-engineering", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: true, acceptedBackgrounds: ["工程"], notes: "拉美工程强校", tuitionFee: "US$8,000/year", source: "https://www.ing.uc.cl/en/graduate-programs/", verified: false },
+  { id: "puc-chile-engineering", schoolId: "puc-chile", name: "工程学", nameEn: "MSc Engineering", department: "School of Engineering", category: "engineering", subMajorId: "civil-engineering", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: true, acceptedBackgrounds: ["工程"], notes: "拉美工程强校", tuitionFee: "US$8,000/year", source: "https://www.ing.uc.cl/en/programas-de-estudio/", verified: false },
   { id: "puc-chile-math", schoolId: "puc-chile", name: "数学", nameEn: "MSc Mathematics", department: "Faculty of Mathematics", category: "science", subMajorId: "mathematics", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "拉美数学领先", tuitionFee: "US$8,000/year", source: "https://www.mat.uc.cl/en/graduate.html", verified: false },
-  { id: "puc-chile-sociology", schoolId: "puc-chile", name: "社会学", nameEn: "MA Sociology", department: "Instituto de Sociología", category: "social-science", subMajorId: "sociology", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: false, notes: "西语授课", tuitionFee: "US$8,000/year", source: "https://sociologia.uc.cl/en/graduate/", verified: false },
+  { id: "puc-chile-sociology", schoolId: "puc-chile", name: "社会学", nameEn: "MA Sociology", department: "Instituto de Sociología", category: "social-science", subMajorId: "sociology", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: false, notes: "西语授课", tuitionFee: "US$8,000/year", source: "https://doctorados.uc.cl/program/doctoral-program-in-sociology/", verified: false },
 
   // --- MSU 莫斯科国立大学 (QS 94) ---
   { id: "msu-math", schoolId: "msu", name: "数学", nameEn: "MSc Mathematics", department: "Faculty of Mechanics and Mathematics", category: "science", subMajorId: "mathematics", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.0, toeflOverall: 79, requiresRelatedDegree: true, acceptedBackgrounds: ["理学"], notes: "俄罗斯数学全球领先。学费低", tuitionFee: "US$5,000/year", source: "https://msu.ru/en/admissions/", verified: false },
@@ -11399,7 +11399,7 @@ export const programs: Program[] = [
   // --- 现有 QS 前100 学校大类缺口补全 ---
 
   // Cornell (QS 16) — 缺教育
-  { id: "cornell-education", schoolId: "cornell", name: "教育学", nameEn: "MA Education", department: "College of Human Ecology", category: "education", subMajorId: "education-studies", duration: "2 years", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, notes: "Human Ecology学院下设。教育政策和领导力方向", tuitionFee: "US$62,000/year", source: "https://www.human.cornell.edu/hd/academics/grad", verified: false },
+  { id: "cornell-education", schoolId: "cornell", name: "教育学", nameEn: "MA Education", department: "College of Human Ecology", category: "education", subMajorId: "education-studies", duration: "2 years", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, notes: "Human Ecology学院下设。教育政策和领导力方向", tuitionFee: "US$62,000/year", source: "https://www.human.cornell.edu/hd/academics/graduate", verified: false },
 
   // UChicago (QS 21) — 缺传媒、教育
   { id: "uchicago-media", schoolId: "uchicago", name: "数字媒体", nameEn: "MA Digital Studies", department: "Division of Humanities", category: "media", subMajorId: "digital-media", duration: "1 year", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 104, requiresRelatedDegree: false, notes: "数字人文和媒体研究方向", tuitionFee: "US$62,000/year", source: "https://humdev.uchicago.edu/", verified: false },
@@ -11422,13 +11422,13 @@ export const programs: Program[] = [
   { id: "sorbonne-engineering", schoolId: "sorbonne", name: "电子工程", nameEn: "MSc Electronic Engineering", department: "Faculty of Science and Engineering", category: "engineering", subMajorId: "electrical-engineering", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"], notes: "理工方向。部分英文授课", tuitionFee: "€250/year", source: "https://sciences.sorbonne-universite.fr/en/masters", verified: false },
 
   // Auckland (QS 65) — 缺艺术设计
-  { id: "auckland-architecture", schoolId: "auckland", name: "建筑学", nameEn: "Master of Architecture (Professional)", department: "School of Architecture and Planning", category: "art-design", subMajorId: "architecture", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"], extraRequirements: "需作品集", notes: "新西兰建筑认证(NZRAB)", tuitionFee: "NZD 47,000/year", source: "https://www.auckland.ac.nz/en/creative/study-with-us/postgraduate-study.html", verified: false },
+  { id: "auckland-architecture", schoolId: "auckland", name: "建筑学", nameEn: "Master of Architecture (Professional)", department: "School of Architecture and Planning", category: "art-design", subMajorId: "architecture", duration: "2 years", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计", "工程"], extraRequirements: "需作品集", notes: "新西兰建筑认证(NZRAB)", tuitionFee: "NZD 47,000/year", source: "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option.html?programmeType=doctorates,masters,postgraduate-diploma-and-certificates&programmeFaculty=creative-arts-and-industries", verified: false },
 
   // Adelaide (QS 82) — 缺传媒
-  { id: "adelaide-media", schoolId: "adelaide", name: "媒体研究", nameEn: "Master of Arts (Media Studies)", department: "School of Humanities", category: "media", subMajorId: "media-studies", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 79, requiresRelatedDegree: false, notes: "含数字媒体和传播方向", tuitionFee: "A$39,000/year", source: "https://www.adelaide.edu.au/degree-finder/", verified: false },
+  { id: "adelaide-media", schoolId: "adelaide", name: "媒体研究", nameEn: "Master of Arts (Media Studies)", department: "School of Humanities", category: "media", subMajorId: "media-studies", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 79, requiresRelatedDegree: false, notes: "含数字媒体和传播方向", tuitionFee: "A$39,000/year", source: "https://www.adelaide.edu.au/degree-finder/mmesc_mmesc.html", verified: false },
 
   // Nottingham (QS 97) — 缺传媒
-  { id: "nottingham-media", schoolId: "nottingham", name: "数字媒体与社会", nameEn: "MA Digital Media and Society", department: "School of Sociology and Social Policy", category: "media", subMajorId: "digital-media", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 87, requiresRelatedDegree: false, notes: "诺丁汉传媒与社会研究", tuitionFee: "£24,000", source: "https://www.nottingham.ac.uk/pgstudy/course/taught/digital-media-and-society-ma", verified: false },
+  { id: "nottingham-media", schoolId: "nottingham", name: "数字媒体与社会", nameEn: "MA Digital Media and Society", department: "School of Sociology and Social Policy", category: "media", subMajorId: "digital-media", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 87, requiresRelatedDegree: false, notes: "诺丁汉传媒与社会研究", tuitionFee: "£24,000", source: "https://www.nottingham.ac.uk/pgstudy/course/taught/international-media-and-communication-studies-ma", verified: false },
 ];
 
 programs.push(...newPrograms);

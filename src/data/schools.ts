@@ -490,7 +490,7 @@ export const schools: School[] = [
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "艺术设计", "理学", "社科"],
     notes: "⚠️ 数据待确认",
-    source: "https://www.southampton.ac.uk/uni-life/international/your-country/china.page",
+    source: "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china",
   },
   {
     id: "durham", name: "杜伦大学", nameEn: "Durham University", country: "UK", qsRank: 89,
@@ -504,14 +504,14 @@ export const schools: School[] = [
     ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 80, other: 85  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "传媒", "理学", "社科"],
     notes: "⚠️ 数据待确认",
-    source: "https://www.st-andrews.ac.uk/subjects/entry-requirements/",
+    source: "https://www.st-andrews.ac.uk/subjects/entry/",
   },
   {
     id: "nottingham", name: "诺丁汉大学", nameEn: "University of Nottingham", country: "UK", qsRank: 97,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。对双非相对友好",
-    source: "https://www.nottingham.ac.uk/studywithus/international-applicants/country-specific-information/china.aspx",
+    source: "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china.aspx",
   },
   {
     id: "qmul", name: "伦敦玛丽女王大学", nameEn: "Queen Mary University of London", country: "UK", qsRank: 120,
@@ -532,21 +532,21 @@ export const schools: School[] = [
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 75, other: 80  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "理学", "社科"],
     notes: "⚠️ 数据待确认",
-    source: "https://www.lancaster.ac.uk/study/international-students/your-country/china/",
+    source: "https://www.lancaster.ac.uk/study/international-students/find-your-country/china/",
   },
   {
     id: "bath", name: "巴斯大学", nameEn: "University of Bath", country: "UK", qsRank: 150,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 78, other: 83  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     notes: "⚠️ 数据待确认。商科竞争强",
-    source: "https://www.bath.ac.uk/study/pg/apply/international/",
+    source: "https://www.bath.ac.uk/guides/applying-for-a-taught-postgraduate-course/",
   },// ═══════════════ NEW AU (QS top 300, not yet verified) ═══════════════
   {
     id: "western-australia", name: "西澳大学", nameEn: "University of Western Australia", country: "AU", qsRank: 77,
     ieltsMin: 6.5, toeflMin: 79, gpaScale: "percentage" as const, gpaRequirements: { preferred: 70, other: 78  }, listPolicy: "tiered", preferredTiers: ["985", "211", "双一流"],
     majorCategories: ["商科", "计算机", "工程", "教育", "法律", "理学", "社科"],
     notes: "八大之一。标准 IELTS 6.5/6.0，法律 7.0/6.5，教育 7.5/6.5+",
-    source: "https://www.uwa.edu.au/study/how-to-apply/international-students/entry-requirements",
+    source: "https://www.uwa.edu.au/study/how-to-apply/international-applicants",
   },
   {
     id: "uts", name: "悉尼科技大学", nameEn: "University of Technology Sydney", country: "AU", qsRank: 88,
@@ -612,7 +612,7 @@ export const schools: School[] = [
     ieltsMin: 7.0, toeflMin: 94, gpaScale: "percentage" as const, gpaRequirements: { preferred: 83, other: 85  }, listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     notes: "⚠️ 数据待确认。加拿大第一，要求 B+ 以上",
-    source: "https://www.sgs.utoronto.ca/admissions/",
+    source: "https://www.sgs.utoronto.ca/future-students/admission-application-requirements/",
   },
   {
     id: "mcgill", name: "麦吉尔大学", nameEn: "McGill University", country: "CA", qsRank: 29,
@@ -683,7 +683,7 @@ export const schools: School[] = [
     majorCategories: ["计算机", "工程", "理学"],
     extraRequirements: "GRE（推荐）",
     notes: "⚠️ 数据待确认。纯理工，规模极小",
-    source: "https://www.caltech.edu/admissions/graduate-admissions",
+    source: "https://www.gradoffice.caltech.edu/admissions",
   },
   {
     id: "upenn", name: "宾夕法尼亚大学", nameEn: "University of Pennsylvania", country: "US", qsRank: 11,
@@ -691,7 +691,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "传媒", "教育", "法律", "理学", "社科"],
     extraRequirements: "GRE/GMAT（按项目）",
     notes: "⚠️ 数据待确认。沃顿商学院",
-    source: "https://www.upenn.edu/admissions/grad",
+    source: "https://provost.upenn.edu/for-students/graduate-and-professional-education/graduate-admissions/",
   },
   {
     id: "columbia", name: "哥伦比亚大学", nameEn: "Columbia University", country: "US", qsRank: 23,
@@ -767,7 +767,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "艺术设计", "理学"],
     extraRequirements: "GRE（SCS 要求 CS GRE Subject）",
     notes: "⚠️ 数据待确认。CS 全球顶尖",
-    source: "https://www.cmu.edu/admission/graduate/index.html",
+    source: "https://www.cmu.edu/graduate/prospective/",
   },
   {
     id: "uiuc", name: "伊利诺伊大学厄巴纳-香槟", nameEn: "UIUC", country: "US", qsRank: 64,
@@ -872,7 +872,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "传媒", "法律", "理学", "社科"],
     extraRequirements: "GRE/GMAT（按项目要求）",
     notes: "Questrom 商学院、传媒学院和法学院实力强。位于波士顿，实习资源丰富",
-    source: "https://www.bu.edu/admissions/graduate/",
+    source: "https://www.bu.edu/grad/admission-funding/graduate-admission/",
   },
   {
     id: "rice", name: "莱斯大学", nameEn: "Rice University", country: "US", qsRank: 96,
@@ -926,7 +926,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     extraRequirements: "部分项目需要日语 N1，英文授课项目(PEAK/GSP)免日语",
     notes: "亚洲顶尖，英文授课项目竞争激烈。研究型为主，需提前联系导师",
-    source: "https://www.u-tokyo.ac.jp/en/prospective-students/graduate_course.html",
+    source: "https://www.u-tokyo.ac.jp/en/prospective-students/grad_admissions.html",
   },
   {
     id: "kyoto-u", name: "京都大学", nameEn: "Kyoto University", country: "JP", qsRank: 50,
@@ -935,7 +935,7 @@ export const schools: School[] = [
     majorCategories: ["计算机", "工程", "理学", "社科"],
     extraRequirements: "部分项目需要日语，英文授课项目可免",
     notes: "日本第二名校，学术自由氛围浓。理工科强势",
-    source: "https://www.kyoto-u.ac.jp/en/education-campus/graduate-school",
+    source: "https://www.kyoto-u.ac.jp/en/education-campus/education-and-admissions/graduate-degree-programs",
   },
   // ═══════════════ KR (韩国) ═══════════════
   {
@@ -945,7 +945,7 @@ export const schools: School[] = [
     majorCategories: ["商科", "计算机", "工程", "理学", "社科"],
     extraRequirements: "韩语 TOPIK 4 级或英语成绩",
     notes: "韩国第一学府，学费低廉，奖学金丰富。中国留学生较多",
-    source: "https://en.snu.ac.kr/apply/graduate",
+    source: "https://en.snu.ac.kr/admission/graduate/application",
   },
   {
     id: "kaist", name: "韩国科学技术院", nameEn: "KAIST", country: "KR", qsRank: 39,
@@ -998,7 +998,7 @@ export const schools: School[] = [
     listPolicy: "open", preferredTiers: [],
     majorCategories: ["商科", "计算机", "传媒", "社科", "理学"],
     notes: "传媒和商科欧洲顶尖。位于阿姆斯特丹市中心",
-    source: "https://www.uva.nl/en/education/master-s/master-s-programmes/master-s-programmes.html",
+    source: "https://www.uva.nl/en/education/master-s/master-s-programmes/masters-programmes.html",
   },
   // ═══════════════ FR (法国) ═══════════════
   {
@@ -1015,7 +1015,7 @@ export const schools: School[] = [
     listPolicy: "open", preferredTiers: [],
     majorCategories: ["计算机", "工程", "理学", "商科"],
     notes: "法国理工科强校，数学和物理全球领先。部分项目有英文授课选项",
-    source: "https://www.universite-paris-saclay.fr/en/education/masters-programmes",
+    source: "https://www.universite-paris-saclay.fr/en/education/master",
   },
   // ═══════════════ FR (补充) ═══════════════
   {
@@ -1424,7 +1424,7 @@ export const schools: School[] = [
     listPolicy: "open", preferredTiers: [],
     majorCategories: ["工程", "理学", "商科", "社科"],
     notes: "沙特综合大学，海洋科学强。部分项目提供奖学金。位于吉达",
-    source: "https://www.kau.edu.sa/home_english.aspx",
+    source: "https://kau.edu.sa/en/page/admission-to-postgraduate-studies",
   },// ═══════════════ QA (卡塔尔) ═══════════════
   {
     id: "qu", name: "卡塔尔大学", nameEn: "Qatar University", country: "QA", qsRank: 122,
@@ -1526,7 +1526,7 @@ export const schools: School[] = [
     majorCategories: ["艺术设计"],
     extraRequirements: "需作品集",
     notes: "纽约老牌艺术名校。室内设计全美第1，工业设计和建筑也很强",
-    source: "https://www.pratt.edu/admissions/applying/applying-graduate/",
+    source: "https://www.pratt.edu/admissions/graduate-admissions/apply/",
   },
   {
     id: "saic", name: "芝加哥艺术学院", nameEn: "School of the Art Institute of Chicago", country: "US", qsRank: 401,
@@ -1552,7 +1552,7 @@ export const schools: School[] = [
     listPolicy: "open", preferredTiers: [],
     majorCategories: ["艺术设计", "传媒", "社科"],
     notes: "纯艺术和当代艺术英国顶尖（多位 Turner Prize 得主）。设计、传媒也很强",
-    source: "https://www.gold.ac.uk/study/postgraduate/",
+    source: "https://www.gold.ac.uk/pg/",
   },
 ];
 
