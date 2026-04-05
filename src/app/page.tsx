@@ -121,9 +121,9 @@ function SchoolCard({
               ⚠️ 美国院校采用综合评审制（Holistic Review），GPA 仅为参考门槛。虽不公布院校名单，但本科院校声誉是重要录取因素。实际录取受 GRE/GMAT、推荐信、PS、实习/科研、面试等多因素综合影响。
             </div>
           )}
-          {(school.country === "CA" || school.country === "HK" || school.country === "SG") && (
+          {(school.country !== "US" && school.country !== "UK" && school.country !== "AU") && (
             <div className="px-4 sm:px-5 py-2.5 bg-[#e8be64]/5 border-b border-[#e8be64]/10 text-xs text-[#e8be64]/70 leading-relaxed">
-              ⚠️ {school.country === "CA" ? "加拿大" : school.country === "HK" ? "香港" : "新加坡"}院校采用综合评审制（Holistic Review），GPA 仅为参考门槛，实际录取受 GRE/GMAT、推荐信、PS、面试、科研/实习等多因素影响。
+              ⚠️ {regionLabels[school.country]}院校采用综合评审制，GPA 仅为参考门槛，实际录取受语言成绩、推荐信、PS、面试、科研/实习等多因素影响。
             </div>
           )}
           {progs.map((result) => {
@@ -236,6 +236,7 @@ export default function Home() {
   const [bgQuery, setBgQuery] = useState("");
   const [showBgDropdown, setShowBgDropdown] = useState(false);
   const [regions, setRegions] = useState<Set<Region>>(new Set());
+  const [showMoreRegions, setShowMoreRegions] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const majorDropdownRef = useRef<HTMLDivElement>(null);
@@ -564,21 +565,53 @@ export default function Home() {
                 </div>
               )}
 
-              {/* Region — horizontal scroll on mobile */}
+              {/* Region — grouped with expandable sections */}
               <div>
                 <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">目标地区（可多选） <span className="text-[#e8be64] text-xs">●</span></label>
+                {/* Popular regions — always visible */}
                 <div className="flex sm:flex-wrap gap-2 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-hide">
-                  {(Object.entries(regionLabels) as [Region, string][]).map(([key, label]) => {
+                  {(["UK", "AU", "HK", "SG", "US", "CA"] as Region[]).map((key) => {
                     const selected = regions.has(key);
                     return (
                       <button key={key} type="button"
                         onClick={() => { const next = new Set(regions); if (selected) next.delete(key); else next.add(key); setRegions(next); }}
                         className={`px-3 py-2 rounded-lg text-sm font-medium transition-all shrink-0 ${
                           selected ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#181920] border border-white/[0.06] text-white/50 hover:text-white active:bg-white/5"
-                        }`}>{label}</button>
+                        }`}>{regionLabels[key]}</button>
                     );
                   })}
+                  <button type="button" onClick={() => setShowMoreRegions(!showMoreRegions)}
+                    className="px-3 py-2 rounded-lg text-sm font-medium transition-all shrink-0 bg-[#181920] border border-white/[0.06] text-white/40 hover:text-white active:bg-white/5">
+                    {showMoreRegions ? "收起 ↑" : "更多地区 ↓"}
+                  </button>
                 </div>
+                {/* Expanded region groups */}
+                {showMoreRegions && (
+                  <div className="mt-3 space-y-2.5">
+                    {([
+                      { label: "亚洲", keys: ["JP", "KR", "MY", "IN", "SA", "QA"] as Region[] },
+                      { label: "欧洲", keys: ["DE", "CH", "NL", "FR", "SE", "DK", "FI", "NO", "IE", "IT", "ES", "BE", "AT"] as Region[] },
+                      { label: "大洋洲", keys: ["NZ"] as Region[] },
+                      { label: "其他", keys: ["RU", "AR", "BR", "CL", "MX", "CO", "KZ", "ZA"] as Region[] },
+                    ]).map((group) => (
+                      <div key={group.label}>
+                        <div className="text-xs text-white/30 mb-1">{group.label}</div>
+                        <div className="flex sm:flex-wrap gap-1.5 overflow-x-auto scrollbar-hide">
+                          {group.keys.map((key) => {
+                            const selected = regions.has(key);
+                            return (
+                              <button key={key} type="button"
+                                onClick={() => { const next = new Set(regions); if (selected) next.delete(key); else next.add(key); setRegions(next); }}
+                                className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
+                                  selected ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#181920] border border-white/[0.06] text-white/50 hover:text-white active:bg-white/5"
+                                }`}>{regionLabels[key]}</button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <button onClick={handleSubmit} disabled={!canSubmit}
