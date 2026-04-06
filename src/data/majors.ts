@@ -31,6 +31,9 @@ export const majorCategories: MajorCategory[] = [
       { id: "economics", name: "经济学", nameEn: "Economics", crossMajorFriendly: false, typicalBackgrounds: ["商科", "理学"] },
       { id: "real-estate", name: "房地产/金融地产", nameEn: "Real Estate", crossMajorFriendly: false, typicalBackgrounds: ["商科", "工程"] },
       { id: "entrepreneurship", name: "创业学", nameEn: "Entrepreneurship", crossMajorFriendly: true },
+      { id: "hospitality", name: "酒店管理/旅游管理", nameEn: "Hospitality & Tourism Management", crossMajorFriendly: true },
+      { id: "fintech", name: "金融科技", nameEn: "Financial Technology", crossMajorFriendly: false, typicalBackgrounds: ["商科", "计算机", "理学"] },
+      { id: "luxury-management", name: "奢侈品管理", nameEn: "Luxury Brand Management", crossMajorFriendly: true },
     ],
   },
   {
@@ -109,6 +112,7 @@ export const majorCategories: MajorCategory[] = [
       { id: "fine-art", name: "纯艺术", nameEn: "Fine Art", crossMajorFriendly: true },
       { id: "animation", name: "动画/游戏设计", nameEn: "Animation & Game Design", crossMajorFriendly: false },
       { id: "ux-ui", name: "交互设计/UI", nameEn: "Interaction Design / UI", crossMajorFriendly: true, typicalBackgrounds: ["艺术设计", "计算机"] },
+      { id: "landscape-architecture", name: "景观设计", nameEn: "Landscape Architecture", crossMajorFriendly: false, typicalBackgrounds: ["艺术设计", "工程"] },
     ],
   },
   {
@@ -125,6 +129,8 @@ export const majorCategories: MajorCategory[] = [
       { id: "food-science", name: "食品科学", nameEn: "Food Science", crossMajorFriendly: false },
       { id: "pharmacy", name: "药学", nameEn: "Pharmacy", crossMajorFriendly: false },
       { id: "public-health", name: "公共卫生", nameEn: "Public Health", crossMajorFriendly: true },
+      { id: "actuarial-science", name: "精算科学", nameEn: "Actuarial Science", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
+      { id: "nutrition", name: "营养学", nameEn: "Nutrition / Dietetics", crossMajorFriendly: false, typicalBackgrounds: ["理学"] },
     ],
   },
   {
@@ -144,6 +150,12 @@ export const majorCategories: MajorCategory[] = [
       { id: "geography", name: "地理学", nameEn: "Geography", crossMajorFriendly: true },
       { id: "sports-management", name: "体育管理/运动科学", nameEn: "Sport Management / Sport Science", crossMajorFriendly: true },
       { id: "sports-analytics", name: "体育数据分析/赛事分析", nameEn: "Sports Analytics / Performance Analysis", crossMajorFriendly: true, typicalBackgrounds: ["社科", "计算机", "理学"] },
+      { id: "criminology", name: "犯罪学", nameEn: "Criminology", crossMajorFriendly: true },
+      { id: "museum-studies", name: "博物馆学/策展", nameEn: "Museum Studies / Curating", crossMajorFriendly: true },
+      { id: "sustainability", name: "可持续发展/环境管理", nameEn: "Sustainability / Environmental Management", crossMajorFriendly: true },
+      { id: "cultural-industries", name: "文化创意产业", nameEn: "Creative & Cultural Industries", crossMajorFriendly: true },
+      { id: "urban-planning", name: "城市规划/城市设计", nameEn: "Urban Planning / Urban Design", crossMajorFriendly: true, typicalBackgrounds: ["社科", "艺术设计", "工程"] },
+      { id: "health-management", name: "健康管理/医疗管理", nameEn: "Health Management / Healthcare Administration", crossMajorFriendly: true },
     ],
   },
 ];
