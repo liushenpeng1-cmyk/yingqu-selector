@@ -142,6 +142,7 @@ export const majorCategories: MajorCategory[] = [
       { id: "history", name: "历史学", nameEn: "History", crossMajorFriendly: true },
       { id: "philosophy", name: "哲学", nameEn: "Philosophy", crossMajorFriendly: true },
       { id: "geography", name: "地理学", nameEn: "Geography", crossMajorFriendly: true },
+      { id: "sports-management", name: "体育管理/运动科学", nameEn: "Sport Management / Sport Science", crossMajorFriendly: true },
     ],
   },
 ];
