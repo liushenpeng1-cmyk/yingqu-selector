@@ -10926,8 +10926,8 @@ export const programs: Program[] = [
     tuitionFee: "US$52,000/year", source: "https://www.saic.edu/academics/departments/film-video-new-media-and-animation", verified: false,
   },
   {
-    id: "saic-graphic", schoolId: "saic", name: "视觉传达设计", nameEn: "MDes Designed Objects",
-    department: "Department of Architecture, Interior Architecture, and Designed Objects", category: "art-design", subMajorId: "graphic-design", duration: "2 years",
+    id: "saic-graphic", schoolId: "saic", name: "产品设计", nameEn: "MDes Designed Objects",
+    department: "Department of Architecture, Interior Architecture, and Designed Objects", category: "art-design", subMajorId: "industrial-design", duration: "2 years",
     gpaRequirements: { preferred: 3.0, other: 3.0 }, gpaScale: "gpa4",
     ieltsOverall: 6.5, toeflOverall: 82,
     requiresRelatedDegree: false, extraRequirements: "需作品集",
