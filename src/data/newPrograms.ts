@@ -903,17 +903,6 @@ export const newPrograms: Program[] = [
     source: "https://cde.nus.edu.sg/cee/graduate/coursework-programmes/",
     verified: false,
   },
-  {
-    id: "nus-env-eng", schoolId: "nus", name: "环境工程", nameEn: "MSc Environmental Engineering",
-    department: "College of Design and Engineering", category: "engineering", subMajorId: "environmental-engineering", duration: "1-2 years",
-    gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage",
-    ieltsOverall: 6.0, toeflOverall: 85,
-    requiresRelatedDegree: true, acceptedBackgrounds: ["工程", "理学"],
-    tuitionFee: "新币 S$58,000",
-    source: "https://cde.nus.edu.sg/cee/graduate/coursework-programmes/",
-    verified: false,
-  },
-
   // --- Social Science ---
   {
     id: "nus-public-policy", schoolId: "nus", name: "公共政策", nameEn: "Master in Public Policy",
