@@ -1614,8 +1614,8 @@ export function matchSchool(
     return { level: "excluded", reasons: [`该校暂无${major}方向的硕士项目`] };
   }
 
-  // Determine if user is in preferred tier
-  const isPreferred = school.preferredTiers.length === 0 || school.preferredTiers.includes(userTier);
+  // Determine if user is in preferred tier (overseas = preferred, no list restriction)
+  const isPreferred = userTier === "overseas" || school.preferredTiers.length === 0 || school.preferredTiers.includes(userTier);
   const requiredGpa = isPreferred ? school.gpaRequirements.preferred : school.gpaRequirements.other;
 
   // Convert user's GPA if the school uses a different scale
