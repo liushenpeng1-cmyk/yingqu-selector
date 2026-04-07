@@ -218,6 +218,8 @@ export default function Home() {
   const [step, setStep] = useState<"form" | "loading" | "results">("form");
 
   const [isOverseasUndergrad, setIsOverseasUndergrad] = useState(false);
+  const [isJointUniversity, setIsJointUniversity] = useState(false);
+  const [jointUniType, setJointUniType] = useState<"uk-partner" | "us-partner" | "hk-partner" | "">(""); // XJTLU/UNNC=uk, NYU Shanghai/DKU=us, CUHK-SZ=hk
   const [schoolQuery, setSchoolQuery] = useState("");
   const [selectedSchool, setSelectedSchool] = useState<ChinaUniversity | null>(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -264,7 +266,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [step]);
 
-  const tier = isOverseasUndergrad ? "overseas" : selectedSchool?.tier;
+  const tier = isOverseasUndergrad || isJointUniversity ? "overseas" : selectedSchool?.tier;
   const rawLangScore = langExempt ? 99 : (parseFloat(langScore) || 0); // 99 = always passes
   // Degree classification → equivalent percentage for matching
   // UK: First=nearly all, 2:1=most top-50, 2:2=borderline
@@ -309,7 +311,7 @@ export default function Home() {
   };
 
   const schoolResults = useMemo<SchoolGroup[]>(() => {
-    if (!tier && !isOverseasUndergrad) return [];
+    if (!tier && !isOverseasUndergrad && !isJointUniversity) return [];
     return schools
       .filter((s) => regions.size === 0 || regions.has(s.country))
       .filter((s) => schoolsWithPrograms.has(s.id))
@@ -337,11 +339,11 @@ export default function Home() {
 
   const totalPrograms = schoolResults.reduce((sum, s) => sum + s.programs.length, 0);
 
-  const hasGpa = isOverseasUndergrad
+  const hasGpa = (isOverseasUndergrad || isJointUniversity)
     ? (hasClassification || (gpa && parseFloat(gpa) > 0))
     : (gpa && parseFloat(gpa) > 0);
   const hasLang = langExempt || (langScore && rawLangScore > 0);
-  const hasSchool = isOverseasUndergrad || selectedSchool;
+  const hasSchool = isOverseasUndergrad || isJointUniversity || selectedSchool;
   const canSubmit = hasSchool && hasGpa && hasLang && regions.size > 0;
 
   function handleSelectSchool(uni: ChinaUniversity) {
@@ -437,19 +439,21 @@ export default function Home() {
               <span className="text-white/30 text-sm ml-2">填写你的背景信息</span>
             </div>
             <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
-              {/* Overseas / China toggle */}
+              {/* Background type toggle: China / Joint / Overseas */}
               <div>
                 <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">本科背景 <span className="text-[#e8be64] text-xs">●</span></label>
                 <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden mb-3">
-                  <button type="button" onClick={() => { setIsOverseasUndergrad(false); setLangExempt(false); setUkClassification(""); setAuClassification(""); setSelectedSchool(null); setSchoolQuery(""); }}
-                    className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${!isOverseasUndergrad ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🇨🇳 中国本科</button>
-                  <button type="button" onClick={() => { setIsOverseasUndergrad(true); setSelectedSchool(null); setSchoolQuery(""); setGpaScale("gpa4"); setGpa(""); setUkClassification(""); setAuClassification(""); }}
-                    className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${isOverseasUndergrad ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🌍 海外本科</button>
+                  <button type="button" onClick={() => { setIsOverseasUndergrad(false); setIsJointUniversity(false); setLangExempt(false); setUkClassification(""); setAuClassification(""); setJointUniType(""); setSelectedSchool(null); setSchoolQuery(""); }}
+                    className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${!isOverseasUndergrad && !isJointUniversity ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🇨🇳 中国本科</button>
+                  <button type="button" onClick={() => { setIsOverseasUndergrad(false); setIsJointUniversity(true); setSelectedSchool(null); setSchoolQuery(""); setGpa(""); setUkClassification(""); setAuClassification(""); }}
+                    className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${isJointUniversity ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🏫 中外合办</button>
+                  <button type="button" onClick={() => { setIsOverseasUndergrad(true); setIsJointUniversity(false); setSelectedSchool(null); setSchoolQuery(""); setGpaScale("gpa4"); setGpa(""); setUkClassification(""); setAuClassification(""); setJointUniType(""); }}
+                    className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${isOverseasUndergrad ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🌍 海外本科</button>
                 </div>
               </div>
 
-              {/* School Search (China) */}
-              {!isOverseasUndergrad && <div ref={dropdownRef} className="relative">
+              {/* School Search (China only) */}
+              {!isOverseasUndergrad && !isJointUniversity && <div ref={dropdownRef} className="relative">
                 <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">本科院校 <span className="text-[#e8be64] text-xs">●</span></label>
                 <input
                   type="text" value={schoolQuery}
@@ -487,6 +491,48 @@ export default function Home() {
                   </div>
                 )}
               </div>}
+
+              {/* Joint university (中外合办) info */}
+              {isJointUniversity && (
+                <div className="bg-[#181920] border border-[#e8be64]/20 rounded-xl p-4 space-y-3">
+                  <div className="text-sm text-[#e8be64]/80">🏫 中外合办大学</div>
+                  <div className="text-xs text-white/40 leading-relaxed">中外合办学位不走985/211/双非体系，海外院校按合作方学位标准评估。选择你的学校类型：</div>
+                  <div className="space-y-2">
+                    {([
+                      ["uk-partner", "🇬🇧 英方合作（西交利物浦/宁波诺丁汉等）", "按UK学位评估，使用UK分级制（60-69%=2:1）。绕过院校List。"],
+                      ["us-partner", "🇺🇸 美方合作（上海纽约/昆山杜克等）", "按美国学位评估，使用4.0制GPA。绕过院校List。"],
+                      ["hk-partner", "🇭🇰 港方合作（港中深等）", "评估方式因目标校而异。部分按港校学位，部分按中国大陆院校。建议查目标校官方说明。"],
+                    ] as const).map(([val, label, desc]) => (
+                      <button key={val} type="button" onClick={() => {
+                        setJointUniType(val);
+                        if (val === "uk-partner") { setGpaScale("percentage"); setUkClassification(""); setAuClassification(""); }
+                        else if (val === "us-partner") { setGpaScale("gpa4"); setUkClassification(""); setAuClassification(""); }
+                        else { setGpaScale("gpa4"); setUkClassification(""); setAuClassification(""); }
+                        setGpa("");
+                      }}
+                        className={`w-full text-left p-3 rounded-lg transition-all ${
+                          jointUniType === val ? "bg-[#e8be64]/15 border border-[#e8be64]/30" : "bg-[#12131a] border border-white/[0.06] hover:border-white/20"
+                        }`}>
+                        <div className={`text-xs font-medium ${jointUniType === val ? "text-[#e8be64]" : "text-white/60"}`}>{label}</div>
+                        <div className="text-[11px] text-white/30 mt-0.5 leading-relaxed">{desc}</div>
+                      </button>
+                    ))}
+                  </div>
+                  {jointUniType === "uk-partner" && (
+                    <div>
+                      <div className="text-xs text-white/40 mb-1.5">UK 学位等级</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {([["first", "First (70%+)"], ["2:1", "2:1 (60-69%)"], ["2:2", "2:2 (50-59%)"], ["", "手动输入%"]] as const).map(([val, label]) => (
+                          <button key={val} type="button" onClick={() => { setUkClassification(val); setAuClassification(""); if (val) setGpa(""); }}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                              ukClassification === val ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#12131a] border border-white/[0.06] text-white/40 hover:text-white"
+                            }`}>{label}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Overseas undergrad info */}
               {isOverseasUndergrad && (
@@ -733,7 +779,7 @@ export default function Home() {
       )}
 
       {/* ═══════════════ RESULTS ═══════════════ */}
-      {step === "results" && (selectedSchool || isOverseasUndergrad) && (
+      {step === "results" && (selectedSchool || isOverseasUndergrad || isJointUniversity) && (
         <main className="pt-20 sm:pt-24 pb-20 px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
           <div ref={resultsTopRef} />
 
@@ -742,9 +788,9 @@ export default function Home() {
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#e8be64]/20 to-[#e8be64]/5 flex items-center justify-center text-lg sm:text-xl shrink-0">🎓</div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-sm sm:text-base truncate">{isOverseasUndergrad ? "🌍 海外本科" : selectedSchool?.name}</h3>
+                <h3 className="font-semibold text-sm sm:text-base truncate">{isJointUniversity ? "🏫 中外合办" : isOverseasUndergrad ? "🌍 海外本科" : selectedSchool?.name}</h3>
                 <p className="text-xs sm:text-sm text-white/40 truncate">
-                  {isOverseasUndergrad ? "海外本科" : getTierLabel(selectedSchool?.tier || "")} · GPA {ukClassification ? `UK ${ukClassification === "first" ? "First" : ukClassification}` : auClassification ? `AU ${auClassification.toUpperCase()}` : gpa} · {langExempt ? "语言免试" : `${langTest} ${langScore}`} · {targetSubMajor?.name || targetCategoryName}
+                  {isJointUniversity ? (jointUniType === "uk-partner" ? "英方合作·UK学位" : jointUniType === "us-partner" ? "美方合作·US学位" : "港方合作") : isOverseasUndergrad ? "海外本科" : getTierLabel(selectedSchool?.tier || "")} · GPA {ukClassification ? `UK ${ukClassification === "first" ? "First" : ukClassification}` : auClassification ? `AU ${auClassification.toUpperCase()}` : gpa} · {langExempt ? "语言免试" : `${langTest} ${langScore}`} · {targetSubMajor?.name || targetCategoryName}
                 </p>
               </div>
               <button onClick={() => setStep("form")} className="text-xs sm:text-sm text-[#e8be64] hover:underline shrink-0">修改</button>
