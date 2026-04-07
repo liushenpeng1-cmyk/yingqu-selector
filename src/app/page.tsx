@@ -270,10 +270,14 @@ export default function Home() {
 
   const tier = isOverseasUndergrad ? "overseas" : selectedSchool?.tier;
   const rawLangScore = langExempt ? 99 : (parseFloat(langScore) || 0); // 99 = always passes
+  // UK degree classification → equivalent Chinese percentage for matching
+  // UK 70%+ (First) ≈ Chinese 85-90% (top tier)
+  // UK 60-69% (2:1) ≈ Chinese 75-84% (good)
+  // UK 50-59% (2:2) ≈ Chinese 65-74% (pass)
   const rawGpaInput = ukClassification
-    ? (ukClassification === "first" ? 90 : ukClassification === "2:1" ? 80 : 70)
+    ? (ukClassification === "first" ? 88 : ukClassification === "2:1" ? 78 : 68)
     : (parseFloat(gpa) || 0);
-  // UK classification outputs percentage values, so force percentage scale
+  // UK classification converts to Chinese-equivalent percentage for matching
   const effectiveGpaScale = ukClassification ? "percentage" as const : gpaScale;
 
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
@@ -562,7 +566,7 @@ export default function Home() {
                 {ukClassification && (
                   <div className="flex items-center justify-center">
                     <div className="bg-[#e8be64]/10 text-[#e8be64] border border-[#e8be64]/20 rounded-xl px-4 py-3 text-sm font-medium text-center w-full">
-                      学位等级: {ukClassification === "first" ? "First (一等)" : ukClassification === "2:1" ? "2:1 (二等上)" : "2:2 (二等下)"} ≈ GPA {ukClassification === "first" ? "90%" : ukClassification === "2:1" ? "80%" : "70%"}
+                      学位等级: {ukClassification === "first" ? "First (一等 · UK 70%+)" : ukClassification === "2:1" ? "2:1 (二等上 · UK 60-69%)" : "2:2 (二等下 · UK 50-59%)"} → 等效中国百分制 ≈ {ukClassification === "first" ? "88%" : ukClassification === "2:1" ? "78%" : "68%"}
                     </div>
                   </div>
                 )}
