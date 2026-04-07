@@ -129,6 +129,8 @@ export const majorCategories: MajorCategory[] = [
       { id: "food-science", name: "食品科学", nameEn: "Food Science", crossMajorFriendly: false },
       { id: "pharmacy", name: "药学", nameEn: "Pharmacy", crossMajorFriendly: false },
       { id: "public-health", name: "公共卫生", nameEn: "Public Health", crossMajorFriendly: true },
+      { id: "epidemiology", name: "流行病学/全球健康", nameEn: "Epidemiology / Global Health", crossMajorFriendly: false, typicalBackgrounds: ["理学"] },
+      { id: "biomedical-science", name: "生物医学/临床科学", nameEn: "Biomedical Sciences / Clinical Science", crossMajorFriendly: false, typicalBackgrounds: ["理学"] },
       { id: "actuarial-science", name: "精算科学", nameEn: "Actuarial Science", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
       { id: "nutrition", name: "营养学", nameEn: "Nutrition / Dietetics", crossMajorFriendly: false, typicalBackgrounds: ["理学"] },
     ],
