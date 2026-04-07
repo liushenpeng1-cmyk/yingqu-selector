@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { schools, regionLabels, getLanguageCourseSuggestion, type Region } from "@/data/schools";
 import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china-universities";
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
-import { matchPrograms, schoolsWithPrograms, totalProgramCount, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
+import { matchPrograms, schoolsWithPrograms, totalProgramCount, HOLISTIC_REVIEW_SCHOOLS, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
 
 const levelConfig: Record<ProgramMatchLevel | "excluded", { label: string; color: string; bg: string; border: string }> = {
   high: { label: "很有可能", color: "text-green-400", bg: "bg-green-400/10", border: "border-l-green-400" },
@@ -115,15 +115,10 @@ function SchoolCard({
         className="transition-all duration-400 ease-in-out overflow-hidden"
       >
         <div ref={contentRef} className="divide-y divide-white/[0.04]">
-          {/* Holistic review notice */}
-          {school.country === "US" && (
+          {/* Holistic review notice — shown for schools where GPA alone is insufficient */}
+          {HOLISTIC_REVIEW_SCHOOLS.has(school.id) && (
             <div className="px-4 sm:px-5 py-2.5 bg-[#e8be64]/5 border-b border-[#e8be64]/10 text-xs text-[#e8be64]/70 leading-relaxed">
-              ⚠️ 美国院校采用综合评审制（Holistic Review），GPA 仅为参考门槛。虽不公布院校名单，但本科院校声誉是重要录取因素。实际录取受 GRE/GMAT、推荐信、PS、实习/科研、面试等多因素综合影响。
-            </div>
-          )}
-          {(school.country !== "US" && school.country !== "UK" && school.country !== "AU") && (
-            <div className="px-4 sm:px-5 py-2.5 bg-[#e8be64]/5 border-b border-[#e8be64]/10 text-xs text-[#e8be64]/70 leading-relaxed">
-              ⚠️ {regionLabels[school.country]}院校采用综合评审制，GPA 仅为参考门槛，实际录取受语言成绩、推荐信、PS、面试、科研/实习等多因素影响。
+              ⚠️ 综合评审制：GPA 和语言仅为基本门槛，实际录取受推荐信、PS、实习/科研、面试等多因素综合影响。标签已调整为保守评估。
             </div>
           )}
           {progs.map((result) => {

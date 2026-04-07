@@ -12702,6 +12702,22 @@ export type ProgramMatchResult = {
   crossMajorNote: string;
 };
 
+// Schools with holistic review where GPA+language alone is insufficient
+// These schools heavily weigh soft factors (PS, recommendation letters, internships, research)
+// Matching should be more conservative — cap at "medium" instead of "high"
+export const HOLISTIC_REVIEW_SCHOOLS = new Set([
+  // Singapore (综合评审, 软实力权重很高)
+  "nus", "ntu-sg",
+  // Hong Kong top 3 (综合评审, 面试常见)
+  "hku", "hkust", "cuhk",
+  // US top schools (holistic review is standard)
+  "mit", "harvard", "stanford", "caltech", "upenn", "columbia", "cornell",
+  "uchicago", "yale", "princeton", "jhu", "northwestern", "duke", "brown",
+  "nyu", "ucla", "ucberkeley", "umich", "cmu",
+  // UK super-selective
+  "oxford", "cambridge", "imperial", "lse",
+]);
+
 export function matchPrograms(
   schoolId: string,
   userTier: string,
@@ -12772,6 +12788,12 @@ export function matchPrograms(
       level = "medium";
     } else {
       level = "low";
+    }
+
+    // Holistic review schools: cap at "medium" — GPA+language alone can't guarantee admission
+    // These schools heavily weigh PS, recommendations, internships, research, interviews
+    if (level === "high" && HOLISTIC_REVIEW_SCHOOLS.has(schoolId)) {
+      level = "medium";
     }
 
     return {
