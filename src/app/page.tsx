@@ -273,6 +273,8 @@ export default function Home() {
   const rawGpaInput = ukClassification
     ? (ukClassification === "first" ? 90 : ukClassification === "2:1" ? 80 : 70)
     : (parseFloat(gpa) || 0);
+  // UK classification outputs percentage values, so force percentage scale
+  const effectiveGpaScale = ukClassification ? "percentage" as const : gpaScale;
 
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
   const selectedTargetLabel = targetSubMajor ? `${targetSubMajor.name} (${targetSubMajor.nameEn})` : "";
@@ -311,7 +313,7 @@ export default function Home() {
       .filter((s) => schoolsWithPrograms.has(s.id))
       .map((school) => {
         const progs = matchPrograms(
-          school.id, tier || "overseas", rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, gpaScale
+          school.id, tier || "overseas", rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, effectiveGpaScale
         );
         const bestLevel: ProgramMatchLevel | "excluded" = progs.length === 0
           ? "excluded"
@@ -322,7 +324,7 @@ export default function Home() {
         const order = { high: 0, medium: 1, low: 2, excluded: 3 };
         return order[a.bestLevel] - order[b.bestLevel] || a.school.qsRank - b.school.qsRank;
       });
-  }, [tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, gpaScale, regions]);
+  }, [tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, effectiveGpaScale, regions]);
 
   const counts = {
     high: schoolResults.filter((r) => r.bestLevel === "high").length,
