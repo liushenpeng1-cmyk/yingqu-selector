@@ -270,14 +270,16 @@ export default function Home() {
 
   const tier = isOverseasUndergrad ? "overseas" : selectedSchool?.tier;
   const rawLangScore = langExempt ? 99 : (parseFloat(langScore) || 0); // 99 = always passes
-  // UK degree classification → equivalent Chinese percentage for matching
-  // UK 70%+ (First) ≈ Chinese 85-90% (top tier)
-  // UK 60-69% (2:1) ≈ Chinese 75-84% (good)
-  // UK 50-59% (2:2) ≈ Chinese 65-74% (pass)
+  // UK degree classification → matching logic:
+  // Most UK/world schools require 2:1 minimum (≈ equivalent to 985 preferred GPA)
+  // First = exceeds most requirements; 2:1 = meets most; 2:2 = borderline
+  // Map to percentage that reflects actual admission outcomes:
+  // First (UK 70%+): matches nearly all schools → use high percentage (92)
+  // 2:1 (UK 60-69%): meets most QS top-50 school requirements → use (82)
+  // 2:2 (UK 50-59%): borderline, some QS 50-150 accept → use (72)
   const rawGpaInput = ukClassification
-    ? (ukClassification === "first" ? 88 : ukClassification === "2:1" ? 78 : 68)
+    ? (ukClassification === "first" ? 92 : ukClassification === "2:1" ? 82 : 72)
     : (parseFloat(gpa) || 0);
-  // UK classification converts to Chinese-equivalent percentage for matching
   const effectiveGpaScale = ukClassification ? "percentage" as const : gpaScale;
 
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
@@ -566,7 +568,7 @@ export default function Home() {
                 {ukClassification && (
                   <div className="flex items-center justify-center">
                     <div className="bg-[#e8be64]/10 text-[#e8be64] border border-[#e8be64]/20 rounded-xl px-4 py-3 text-sm font-medium text-center w-full">
-                      学位等级: {ukClassification === "first" ? "First (一等 · UK 70%+)" : ukClassification === "2:1" ? "2:1 (二等上 · UK 60-69%)" : "2:2 (二等下 · UK 50-59%)"} → 等效中国百分制 ≈ {ukClassification === "first" ? "88%" : ukClassification === "2:1" ? "78%" : "68%"}
+                      {ukClassification === "first" ? "First (一等 · UK 70%+) — 几乎所有学校达标" : ukClassification === "2:1" ? "2:1 (二等上 · UK 60-69%) — 绝大多数学校的标准门槛" : "2:2 (二等下 · UK 50-59%) — 部分学校接受，需材料补强"}
                     </div>
                   </div>
                 )}
