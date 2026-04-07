@@ -229,6 +229,7 @@ export default function Home() {
   const [gpa, setGpa] = useState("");
   const [gpaScale, setGpaScale] = useState<"percentage" | "gpa4">("percentage");
   const [ukClassification, setUkClassification] = useState<"first" | "2:1" | "2:2" | "">(""); // UK degree classification
+  const [auClassification, setAuClassification] = useState<"hd" | "d" | "c" | "p" | "">(""); // AU WAM classification
   const [langTest, setLangTest] = useState<"IELTS" | "TOEFL">("IELTS");
   const [langScore, setLangScore] = useState("");
   const [langExempt, setLangExempt] = useState(false); // English-speaking country exemption
@@ -270,17 +271,17 @@ export default function Home() {
 
   const tier = isOverseasUndergrad ? "overseas" : selectedSchool?.tier;
   const rawLangScore = langExempt ? 99 : (parseFloat(langScore) || 0); // 99 = always passes
-  // UK degree classification → matching logic:
-  // Most UK/world schools require 2:1 minimum (≈ equivalent to 985 preferred GPA)
-  // First = exceeds most requirements; 2:1 = meets most; 2:2 = borderline
-  // Map to percentage that reflects actual admission outcomes:
-  // First (UK 70%+): matches nearly all schools → use high percentage (92)
-  // 2:1 (UK 60-69%): meets most QS top-50 school requirements → use (82)
-  // 2:2 (UK 50-59%): borderline, some QS 50-150 accept → use (72)
-  const rawGpaInput = ukClassification
+  // Degree classification → equivalent percentage for matching
+  // UK: First=nearly all, 2:1=most top-50, 2:2=borderline
+  // AU: HD=nearly all, D=most top-50, C=borderline, P=difficult
+  const hasClassification = ukClassification || auClassification;
+  const classificationGpa = ukClassification
     ? (ukClassification === "first" ? 92 : ukClassification === "2:1" ? 82 : 72)
-    : (parseFloat(gpa) || 0);
-  const effectiveGpaScale = ukClassification ? "percentage" as const : gpaScale;
+    : auClassification
+    ? (auClassification === "hd" ? 92 : auClassification === "d" ? 82 : auClassification === "c" ? 72 : 62)
+    : 0;
+  const rawGpaInput = hasClassification ? classificationGpa : (parseFloat(gpa) || 0);
+  const effectiveGpaScale = hasClassification ? "percentage" as const : gpaScale;
 
   const targetSubMajor = allSubMajors.find((s) => s.id === targetSubMajorId);
   const selectedTargetLabel = targetSubMajor ? `${targetSubMajor.name} (${targetSubMajor.nameEn})` : "";
@@ -342,7 +343,7 @@ export default function Home() {
   const totalPrograms = schoolResults.reduce((sum, s) => sum + s.programs.length, 0);
 
   const hasGpa = isOverseasUndergrad
-    ? (ukClassification !== "" || (gpa && parseFloat(gpa) > 0))
+    ? (hasClassification || (gpa && parseFloat(gpa) > 0))
     : (gpa && parseFloat(gpa) > 0);
   const hasLang = langExempt || (langScore && rawLangScore > 0);
   const hasSchool = isOverseasUndergrad || selectedSchool;
@@ -445,9 +446,9 @@ export default function Home() {
               <div>
                 <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">本科背景 <span className="text-[#e8be64] text-xs">●</span></label>
                 <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden mb-3">
-                  <button type="button" onClick={() => { setIsOverseasUndergrad(false); setLangExempt(false); setUkClassification(""); setSelectedSchool(null); setSchoolQuery(""); }}
+                  <button type="button" onClick={() => { setIsOverseasUndergrad(false); setLangExempt(false); setUkClassification(""); setAuClassification(""); setSelectedSchool(null); setSchoolQuery(""); }}
                     className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${!isOverseasUndergrad ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🇨🇳 中国本科</button>
-                  <button type="button" onClick={() => { setIsOverseasUndergrad(true); setSelectedSchool(null); setSchoolQuery(""); setGpaScale("gpa4"); setGpa(""); }}
+                  <button type="button" onClick={() => { setIsOverseasUndergrad(true); setSelectedSchool(null); setSchoolQuery(""); setGpaScale("gpa4"); setGpa(""); setUkClassification(""); setAuClassification(""); }}
                     className={`flex-1 px-4 py-2.5 text-sm font-medium transition-all ${isOverseasUndergrad ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>🌍 海外本科</button>
                 </div>
               </div>
@@ -499,16 +500,29 @@ export default function Home() {
                   <div className="text-xs text-white/40 leading-relaxed">海外本科不受院校 List 限制，使用与 985/211 相同的 GPA 门槛评估。英语国家本科可免语言成绩。</div>
                   {/* UK Classification shortcut */}
                   <div>
-                    <div className="text-xs text-white/40 mb-1.5">学位等级（英国本科可选）</div>
-                    <div className="flex gap-2">
-                      {([["first", "First (一等)"], ["2:1", "2:1 (二等上)"], ["2:2", "2:2 (二等下)"], ["", "不适用"]] as const).map(([val, label]) => (
-                        <button key={val} type="button" onClick={() => { setUkClassification(val); if (val) setGpa(""); }}
+                    <div className="text-xs text-white/40 mb-1.5">🇬🇧 英国学位等级</div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {([["first", "First"], ["2:1", "2:1"], ["2:2", "2:2"], ["", "不适用"]] as const).map(([val, label]) => (
+                        <button key={val} type="button" onClick={() => { setUkClassification(val); setAuClassification(""); if (val) setGpa(""); }}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                            ukClassification === val ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#12131a] border border-white/[0.06] text-white/40 hover:text-white"
+                            ukClassification === val && !auClassification ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#12131a] border border-white/[0.06] text-white/40 hover:text-white"
                           }`}>{label}</button>
                       ))}
                     </div>
                   </div>
+                  {/* AU Classification shortcut */}
+                  <div>
+                    <div className="text-xs text-white/40 mb-1.5">🇦🇺 澳洲 WAM 等级</div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {([["hd", "HD (85+)"], ["d", "D (75-84)"], ["c", "C (65-74)"], ["p", "P (50-64)"], ["", "不适用"]] as const).map(([val, label]) => (
+                        <button key={val} type="button" onClick={() => { setAuClassification(val); setUkClassification(""); if (val) setGpa(""); }}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                            auClassification === val && !ukClassification ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#12131a] border border-white/[0.06] text-white/40 hover:text-white"
+                          }`}>{label}</button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-[11px] text-white/25">美本/港本/加本直接用下方 GPA 4.0 制输入即可</div>
                   {/* Language exemption */}
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" checked={langExempt} onChange={(e) => { setLangExempt(e.target.checked); if (e.target.checked) setLangScore(""); }}
@@ -521,7 +535,7 @@ export default function Home() {
               {/* GPA + Language — side by side on wider phones */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* GPA — hide if UK classification selected */}
-                {!ukClassification && <div>
+                {!hasClassification && <div>
                   <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">GPA <span className="text-[#e8be64] text-xs">●</span></label>
                   <div className="flex gap-2 items-start">
                     <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden shrink-0">
@@ -565,10 +579,11 @@ export default function Home() {
                   </div>
                 )}
                 {/* Show UK class badge when selected */}
-                {ukClassification && (
+                {hasClassification && (
                   <div className="flex items-center justify-center">
-                    <div className="bg-[#e8be64]/10 text-[#e8be64] border border-[#e8be64]/20 rounded-xl px-4 py-3 text-sm font-medium text-center w-full">
-                      {ukClassification === "first" ? "First (一等 · UK 70%+) — 几乎所有学校达标" : ukClassification === "2:1" ? "2:1 (二等上 · UK 60-69%) — 绝大多数学校的标准门槛" : "2:2 (二等下 · UK 50-59%) — 部分学校接受，需材料补强"}
+                    <div className="bg-[#e8be64]/10 text-[#e8be64] border border-[#e8be64]/20 rounded-xl px-4 py-3 text-xs font-medium text-center w-full leading-relaxed">
+                      {ukClassification === "first" ? "🇬🇧 First — 几乎所有学校达标" : ukClassification === "2:1" ? "🇬🇧 2:1 — 绝大多数学校的标准门槛" : ukClassification === "2:2" ? "🇬🇧 2:2 — 部分学校接受，需材料补强" : ""}
+                      {auClassification === "hd" ? "🇦🇺 HD — 几乎所有学校达标" : auClassification === "d" ? "🇦🇺 Distinction — 绝大多数学校达标" : auClassification === "c" ? "🇦🇺 Credit — 部分学校接受" : auClassification === "p" ? "🇦🇺 Pass — 较难，少数学校接受" : ""}
                     </div>
                   </div>
                 )}
@@ -734,7 +749,7 @@ export default function Home() {
               <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-sm sm:text-base truncate">{isOverseasUndergrad ? "🌍 海外本科" : selectedSchool?.name}</h3>
                 <p className="text-xs sm:text-sm text-white/40 truncate">
-                  {isOverseasUndergrad ? "海外本科" : getTierLabel(selectedSchool?.tier || "")} · GPA {ukClassification ? (ukClassification === "first" ? "First" : ukClassification) : gpa} · {langExempt ? "语言免试" : `${langTest} ${langScore}`} · {targetSubMajor?.name || targetCategoryName}
+                  {isOverseasUndergrad ? "海外本科" : getTierLabel(selectedSchool?.tier || "")} · GPA {ukClassification ? `UK ${ukClassification === "first" ? "First" : ukClassification}` : auClassification ? `AU ${auClassification.toUpperCase()}` : gpa} · {langExempt ? "语言免试" : `${langTest} ${langScore}`} · {targetSubMajor?.name || targetCategoryName}
                 </p>
               </div>
               <button onClick={() => setStep("form")} className="text-xs sm:text-sm text-[#e8be64] hover:underline shrink-0">修改</button>
