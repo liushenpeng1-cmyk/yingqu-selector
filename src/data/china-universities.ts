@@ -1,4 +1,4 @@
-export type UniversityTier = "985" | "211" | "双一流" | "双非";
+export type UniversityTier = "985" | "211" | "双一流" | "双非" | "港澳";
 
 export type ChinaUniversity = {
   name: string;
@@ -288,6 +288,17 @@ const uShuangfei: string[] = [
 
 ];
 
+// 港澳院校
+const uGangAo: string[] = [
+  // ========== 澳门 ==========
+  "澳门大学", "澳门科技大学", "澳门理工大学", "澳门城市大学",
+  "澳门旅游学院", "澳门镜湖护理学院",
+  // ========== 香港（本科来源） ==========
+  "香港大学", "香港中文大学", "香港科技大学", "香港理工大学",
+  "香港城市大学", "香港浸会大学", "香港岭南大学", "香港教育大学",
+  "香港都会大学", "香港树仁大学", "香港恒生大学", "珠海学院",
+];
+
 // 校区/别名映射：搜索这些关键词时，匹配到对应的主校
 // 格式：别名/校区名 → 主校名
 const universityAliases: Record<string, string[]> = {
@@ -367,6 +378,18 @@ const universityAliases: Record<string, string[]> = {
   "中国石油大学": ["石大", "中国石油大学华东", "中国石油大学北京"],
   "南京农业大学": ["南农"],
 
+  // 港澳别名
+  "澳门大学": ["澳大", "UM Macau", "UMAC"],
+  "澳门科技大学": ["澳科大", "MUST"],
+  "澳门理工大学": ["澳理工", "MPU"],
+  "澳门城市大学": ["澳城大"],
+  "香港浸会大学": ["浸大", "HKBU"],
+  "香港岭南大学": ["岭南", "LU"],
+  "香港教育大学": ["教大", "EdUHK"],
+  "香港都会大学": ["都大", "HKMU", "香港公开大学"],
+  "香港树仁大学": ["树仁"],
+  "香港恒生大学": ["恒大", "恒生"],
+
   // 双一流别名
   "南方科技大学": ["南科大"],
   "上海科技大学": ["上科大"],
@@ -393,6 +416,7 @@ export const chinaUniversities: ChinaUniversity[] = [
   ...u211.map(name => ({ name, tier: "211" as UniversityTier, aliases: universityAliases[name] })),
   ...uShuangyiliu.map(name => ({ name, tier: "双一流" as UniversityTier, aliases: universityAliases[name] })),
   ...uShuangfei.map(name => ({ name, tier: "双非" as UniversityTier, aliases: universityAliases[name] })),
+  ...uGangAo.map(name => ({ name, tier: "港澳" as UniversityTier, aliases: universityAliases[name] })),
 ];
 
 export function findUniversity(query: string): ChinaUniversity[] {
@@ -415,6 +439,7 @@ export function getTierLabel(tier: string): string {
     "211": "211 工程",
     "双一流": "双一流",
     "双非": "双非",
+    "港澳": "港澳院校",
   };
   return labels[tier] || tier;
 }

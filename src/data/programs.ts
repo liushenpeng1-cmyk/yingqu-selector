@@ -13124,7 +13124,7 @@ export function matchPrograms(
 
   return schoolPrograms.map(program => {
     // Overseas undergrads use preferred (same as 985/211 — no list restriction)
-    const isPreferred = ["985", "211", "双一流", "overseas"].includes(userTier);
+    const isPreferred = ["985", "211", "双一流", "港澳", "overseas"].includes(userTier);
     const requiredGpa = isPreferred ? program.gpaRequirements.preferred : program.gpaRequirements.other;
     const requiredLang = langTest === "TOEFL" ? program.toeflOverall : program.ieltsOverall;
 
