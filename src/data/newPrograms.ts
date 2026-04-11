@@ -4122,5 +4122,116 @@ export const newPrograms: Program[] = [
 
   // --- Copenhagen ---
   { id: "copenhagen-musicology", schoolId: "copenhagen", name: "音乐学", nameEn: "MA Musicology", department: "Department of Arts and Cultural Studies", category: "art-design", subMajorId: "musicology", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 83, requiresRelatedDegree: true, acceptedBackgrounds: ["艺术设计"], notes: "需音乐学本科。120 ECTS。三方向：音乐史/音乐人类学/流行音乐研究。EU/EEA免学费", tuitionFee: "€10,000-17,000/year (non-EU)", source: "https://www.ku.dk/studies/masters/musicology", verified: false },
+
+// ═══════════════ Film / Screen 电影·影视·编剧·纪录片·动画VFX (Round 2) ═══════════════
+
+  // ── SCREENWRITING 编剧 ──────────────────────────────────────────
+
+  // Manchester — MA Screenwriting (Russell Group唯一编剧MA)
+  { id: "manchester-screenwriting", schoolId: "manchester", name: "编剧", nameEn: "MA Screenwriting", department: "School of Arts, Languages and Cultures", category: "media", subMajorId: "screenwriting", duration: "1 year", gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "Russell Group唯一编剧MA。每年仅招15人，极具竞争性。需提交3个原创故事创意（各1-2页）。可获行业实习或专业编剧导师。课程产出：短片剧本+故事长片剧本+TV系列先导集剧本。专业编剧Tim Price等授课", tuitionFee: "£28,500", source: "https://www.manchester.ac.uk/study/masters/courses/list/09832/ma-screenwriting/", verified: false },
+
+  // Leeds — MA Writing for Performance and Digital Media
+  { id: "leeds-writing-screen", schoolId: "leeds", name: "表演与数字媒体写作", nameEn: "MA Writing for Performance and Digital Media", department: "School of Performance and Cultural Industries", category: "media", subMajorId: "screenwriting", duration: "1 year", gpaRequirements: { preferred: 78, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 87, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "涵盖戏剧/影视/游戏/播客编剧。需提交2000-3000字创意写作作品集。stage@leeds专业剧场设施。可选screen pathway", tuitionFee: "£26,000", source: "https://courses.leeds.ac.uk/j456/writing-for-performance-and-digital-media-ma", verified: false },
+
+  // NYU Tisch — MFA Dramatic Writing (编剧/剧作)
+  { id: "nyu-dramatic-writing", schoolId: "nyu", name: "戏剧编剧", nameEn: "MFA Dramatic Writing", department: "Tisch School of the Arts — Goldberg Department of Dramatic Writing", category: "media", subMajorId: "screenwriting", duration: "3 years", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "全美编剧MFA顶尖。第一年学习剧本/电影剧本/电视编剧三种媒介写作。需提交剧本样本+个人陈述。有限额部分奖学金", tuitionFee: "US$39,856/term", source: "https://tisch.nyu.edu/dramatic-writing/graduateprogram", verified: false },
+
+  // UCLA — MFA Screenwriting
+  { id: "ucla-screenwriting", schoolId: "ucla", name: "编剧", nameEn: "MFA Screenwriting", department: "UCLA School of Theater, Film and Television", category: "media", subMajorId: "screenwriting", duration: "2 years", gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 87, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "好莱坞中心。全美编剧MFA前三。需提交写作样本+剧本创意。公立学费相对亲民", tuitionFee: "US$36,297/year (non-resident)", source: "https://www.tft.ucla.edu/programs/screenwriting-mfa/apply-to-screenwriting-mfa/", verified: false },
+
+  // USC — MFA Writing for Screen and Television
+  { id: "usc-screenwriting", schoolId: "usc", name: "影视编剧", nameEn: "MFA Writing for Screen and Television", department: "School of Cinematic Arts", category: "media", subMajorId: "screenwriting", duration: "2 years", gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "全美编剧MFA顶尖三校之一。SCA好莱坞核心资源。需自传体小品文+故事创意+写作样本。11月15日截止", tuitionFee: "US$2,624/unit", source: "https://cinema.usc.edu/admissions/procedures/writing/graduateprocedures.cfm", verified: false },
+
+  // Northwestern — MFA Writing for Screen and Stage
+  { id: "northwestern-screenwriting", schoolId: "northwestern", name: "影视与舞台编剧", nameEn: "MFA Writing for the Screen and Stage", department: "The Graduate School", category: "media", subMajorId: "screenwriting", duration: "2 years", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "全额学费减免+生活津贴，所有录取学生均享受！毕业产出：短片剧本+全长舞台剧+TV先导集+自选全长项目。芝加哥戏剧与影视资源丰富", tuitionFee: "Full tuition remission + stipend", source: "https://write.northwestern.edu/", verified: false },
+
+  // Boston University — MFA Screenwriting
+  { id: "boston-u-screenwriting", schoolId: "boston-u", name: "编剧", nameEn: "MFA in Screenwriting", department: "College of Communication — Film & Television", category: "media", subMajorId: "screenwriting", duration: "2 years", gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "4学期跨2城市：前3学期波士顿，第4学期洛杉矶实习。不需GRE。有教学助理和奖学金机会。含电影+电视+新媒体编剧", tuitionFee: "US$58,616/year", source: "https://www.bu.edu/com/academics/film-television/mfa-in-screenwriting/", verified: false },
+
+  // Aalto — MA Screenwriting
+  { id: "aalto-screenwriting", schoolId: "aalto", name: "编剧", nameEn: "MA Screenwriting", department: "Department of Film, Television and Scenography", category: "media", subMajorId: "screenwriting", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 92, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "可选电影或电视编剧方向。需作品集。北欧电影创作传统。Aalto艺术设计学院全球领先", tuitionFee: "€20,000/year", source: "https://www.aalto.fi/en/study-options/film-and-television-screenwriting-master-of-arts-art-and-design", verified: false },
+
+  // ── DOCUMENTARY 纪录片 ──────────────────────────────────────────
+
+  // Goldsmiths — MA Filmmaking (Screen Documentary)
+  { id: "goldsmiths-documentary", schoolId: "goldsmiths", name: "纪录片制作", nameEn: "MA Filmmaking (Screen Documentary)", department: "Screen School, Department of Media, Communications and Cultural Studies", category: "media", subMajorId: "documentary", duration: "1 year", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "需实际纪录片制作经验。IELTS写作需7.0。Screen School新建媒体设施，Arri摄影机和灯光。含观察纪录片/散文纪录片/社会行动纪录片方向", tuitionFee: "£32,000", source: "https://www.gold.ac.uk/pg/ma-filmmaking-screen-documentary/", verified: false },
+
+  // Edinburgh — MA Film Directing (documentary focus)
+  { id: "edinburgh-film-directing", schoolId: "edinburgh", name: "电影导演", nameEn: "MA Film Directing", department: "Edinburgh College of Art", category: "media", subMajorId: "documentary", duration: "1 year", gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "实践导向纪录片导演。需作品集+技术导演经验。1年制完成一部短纪录片。爱丁堡国际电影节资源。国际学生名额有限", tuitionFee: "£25,100", source: "https://study.ed.ac.uk/programmes/postgraduate-taught/733-film-directing", verified: false },
+
+  // QMUL — MA Film (Documentary Practice)
+  { id: "qmul-documentary", schoolId: "qmul", name: "纪录片实践", nameEn: "MA Film (Documentary Practice)", department: "Department of Film, School of Languages, Linguistics and Film", category: "media", subMajorId: "documentary", duration: "1 year", gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "MA Film三条pathway之一（另有Theory和Directing Fiction）。夏季学期完成20分钟纪录片或12000字论文。IELTS写作需7.0", tuitionFee: "£24,000", source: "https://www.qmul.ac.uk/sllf/film-studies/postgraduate/ma-documentary-practice/", verified: false },
+
+  // ── FILM PRODUCTION / DIRECTING 影视制作/导演 ──────────────────
+
+  // Goldsmiths — MA Filmmaking (Directing Fiction)
+  { id: "goldsmiths-filmmaking", schoolId: "goldsmiths", name: "电影制作(导演)", nameEn: "MA Filmmaking (Directing Fiction)", department: "Screen School, Department of Media, Communications and Cultural Studies", category: "media", subMajorId: "film-tv", duration: "1 year", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 88, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "五条fiction filmmaking pathway之一。毕业作品15分钟叙事短片。Arri摄影机+专业灯光。与专业演员和剧组合作。还有Cinematography/Editing/Sound/Producing pathway可选", tuitionFee: "£32,000", source: "https://www.gold.ac.uk/pg/ma-filmmaking/", verified: false },
+
+  // Goldsmiths — MA Filmmaking (Cinematography)
+  { id: "goldsmiths-cinematography", schoolId: "goldsmiths", name: "电影摄影", nameEn: "MA Filmmaking (Cinematography)", department: "Screen School, Department of Media, Communications and Cultural Studies", category: "media", subMajorId: "film-tv", duration: "1 year", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 88, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "电影摄影方向。培养摄影指导(Director of Photography)能力。新建专业媒体设施+Arri摄影机。与导演/制片/剪辑学生协作拍摄", tuitionFee: "£32,000", source: "https://www.gold.ac.uk/pg/ma-filmmaking/", verified: false },
+
+  // Glasgow — MSc Filmmaking & Media Arts
+  { id: "glasgow-filmmaking", schoolId: "glasgow", name: "电影制作与媒体艺术", nameEn: "MSc Filmmaking & Media Arts", department: "School of Culture and Creative Arts", category: "media", subMajorId: "film-tv", duration: "1 year", gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "低预算+实验电影方向。需提交3件创意作品+描述声明。实践与理论结合。UNESCO音乐之城Glasgow的丰富文化资源", tuitionFee: "£19,350", source: "https://www.gla.ac.uk/postgraduate/taught/filmmaking/", verified: false },
+
+  // Glasgow — MLitt Film & Television Studies
+  { id: "glasgow-film-tv", schoolId: "glasgow", name: "电影与电视研究", nameEn: "MLitt Film & Television Studies", department: "School of Culture and Creative Arts", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "英国少数电影与电视并重的硕士项目。电影理论+电视研究。可进入博士阶段或影视策划/管理/研究岗位", tuitionFee: "£19,350", source: "https://www.gla.ac.uk/postgraduate/taught/filmtelevisionstudies/", verified: false },
+
+  // QMUL — MA Film (Directing Fiction)
+  { id: "qmul-directing", schoolId: "qmul", name: "电影导演(剧情)", nameEn: "MA Film (Directing Fiction)", department: "Department of Film, School of Languages, Linguistics and Film", category: "media", subMajorId: "film-tv", duration: "1 year", gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "剧情片导演方向。技术训练+短片实际拍摄+理论教学结合。IELTS写作需7.0", tuitionFee: "£24,000", source: "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/film-ma/", verified: false },
+
+  // Nottingham — MA Film, Television and Screen Industries
+  { id: "nottingham-film-tv", schoolId: "nottingham", name: "电影、电视与荧幕产业", nameEn: "MA Film, Television and Screen Industries", department: "Department of Culture, Media and Visual Studies", category: "media", subMajorId: "film-tv", duration: "1 year", gpaRequirements: { preferred: 78, other: 82 }, gpaScale: "percentage", ieltsOverall: 7.0, ieltsOther: 6.5, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "BFI高等教育合作伙伴。与好莱坞片厂(Walt Disney等)有独家实习机会。全英唯一提供好莱坞片厂实习的MA项目。涵盖制片开发/营销/观众研究/国际市场", tuitionFee: "£24,000", source: "https://www.nottingham.ac.uk/pgstudy/course/taught/film-television-and-screen-industries-ma", verified: false },
+
+  // Newcastle — MA Global Film
+  { id: "newcastle-global-film", schoolId: "newcastle", name: "全球电影", nameEn: "MA Global Film", department: "School of Modern Languages", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage", ieltsOverall: 6.5, ieltsOther: 5.5, toeflOverall: 90, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "BAFTA提名获奖电影人授课编剧。全球唯一中国独立电影档案(CIFA)。Tyneside Cinema和Star and Shadow Cinema资源。跨文化电影实践与理论", tuitionFee: "£23,400", source: "https://www.ncl.ac.uk/postgraduate/degrees/4039f/", verified: false },
+
+  // Edinburgh — MSc Film Studies
+  { id: "edinburgh-film-studies", schoolId: "edinburgh", name: "电影研究", nameEn: "MSc Film Studies", department: "School of Literatures, Languages and Cultures", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "电影理论和电影哲学。欧洲和美国作者电影研究。不含技术制作课程。爱丁堡国际电影节", tuitionFee: "£25,100", source: "https://study.ed.ac.uk/programmes/postgraduate-taught/179-film-studies", verified: false },
+
+  // Edinburgh — MSc Film, Exhibition and Curation
+  { id: "edinburgh-film-curation", schoolId: "edinburgh", name: "电影展览与策展", nameEn: "MSc Film, Exhibition and Curation", department: "School of Literatures, Languages and Cultures", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 80, other: 85 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "全球首批电影策展专业硕士之一。适合志于电影节/影院/画廊策展工作的学生", tuitionFee: "£28,200", source: "https://study.ed.ac.uk/programmes/postgraduate-taught/658-film-exhibition-and-curation", verified: false },
+
+  // Goldsmiths — MA Film & Screen Studies
+  { id: "goldsmiths-film-studies", schoolId: "goldsmiths", name: "电影与荧幕研究", nameEn: "MA Film & Screen Studies", department: "Department of Media, Communications and Cultural Studies", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 88, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "超越传统电影研究边界。荧幕文化+移动影像+身份建构。理论导向", tuitionFee: "£21,000", source: "https://www.gold.ac.uk/pg/ma-film-screen-studies/", verified: false },
+
+  // ── CREATIVE PRODUCING 创意制片 ──────────────────────────────────
+
+  // USC — MFA Peter Stark Producing
+  { id: "usc-producing", schoolId: "usc", name: "创意制片", nameEn: "MFA Producing (Peter Stark Producing Program)", department: "School of Cinematic Arts", category: "media", subMajorId: "film-tv", duration: "2 years", gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "商科", "艺术设计"], notes: "全美最负盛名的制片人培养项目。44学分课程涵盖故事开发/娱乐经济学/片厂管理/预算/营销/独立制片。SCA设施世界一流。可竞争拍摄短片机会", tuitionFee: "US$2,624/unit", source: "http://cinema.usc.edu/producing/index.cfm", verified: false },
+
+  // Columbia — MFA Creative Producing
+  { id: "columbia-producing", schoolId: "columbia", name: "创意制片", nameEn: "MFA Creative Producing", department: "Columbia School of the Arts — Film", category: "media", subMajorId: "film-tv", duration: "3 years", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "商科", "艺术设计"], notes: "与Screenwriting&Directing和Writing for Film&TV共享第一年核心课程。需提交自传散文+戏剧写作样本+简历。每年$18M+学生资助", tuitionFee: "US$77,840/year", source: "https://arts.columbia.edu/film/degrees-concentrations", verified: false },
+
+  // ── VFX / ANIMATION / GAMES 视觉特效·动画·游戏 ──────────────────
+
+  // UNSW — Master of Animation and Visual Effects
+  { id: "unsw-animation-vfx", schoolId: "unsw", name: "动画与视觉特效", nameEn: "Master of Animation and Visual Effects", department: "Faculty of Arts, Design and Architecture", category: "art-design", subMajorId: "vfx", duration: "2 years", gpaRequirements: { preferred: 65, other: 70 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: false, acceptedBackgrounds: ["艺术设计", "传媒", "计算机"], notes: "从概念美术到后期制作全流程。含3D建模/动画/VFX合成。可选Work Integrated Learning实习。相关背景1.5年制，无背景2年制", tuitionFee: "A$44,000/year", source: "https://www.unsw.edu.au/study/postgraduate/master-of-animation-and-visual-effects", verified: false },
+
+  // SCAD — MFA Visual Effects
+  { id: "scad-vfx", schoolId: "scad", name: "视觉特效", nameEn: "MA/MFA Visual Effects", department: "School of Animation and Motion", category: "art-design", subMajorId: "vfx", duration: "1-2 years", gpaRequirements: { preferred: 3.0, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: false, acceptedBackgrounds: ["艺术设计", "计算机"], extraRequirements: "需作品集", notes: "SCAD VFX全美领先。MA 1年/MFA 2年可选。毕业生进入顶级VFX公司(ILM/Weta/Framestore等)", tuitionFee: "US$40,000/year", source: "https://www.scad.edu/academics/programs/visual-effects/degrees/mfa", verified: false },
+
+  // SCAD — MFA Motion Media Design
+  { id: "scad-motion-media", schoolId: "scad", name: "动态媒体设计", nameEn: "MFA Motion Media Design", department: "School of Animation and Motion", category: "art-design", subMajorId: "animation", duration: "2 years", gpaRequirements: { preferred: 3.0, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 6.5, toeflOverall: 85, requiresRelatedDegree: false, acceptedBackgrounds: ["艺术设计", "传媒"], extraRequirements: "需作品集", notes: "动态图形+品牌动画+UI动效。SCAD动态设计全美领先", tuitionFee: "US$40,000/year", source: "https://www.scad.edu/academics/programs/motion-media-design/degrees/mfa", verified: false },
+
+  // UCLA — MFA Animation
+  { id: "ucla-animation", schoolId: "ucla", name: "动画", nameEn: "MFA Animation", department: "UCLA School of Theater, Film and Television", category: "art-design", subMajorId: "animation", duration: "3 years", gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 87, requiresRelatedDegree: false, acceptedBackgrounds: ["艺术设计", "传媒"], extraRequirements: "需作品集（含动态作品）", notes: "好莱坞中心。UCLA TFT动画项目全美前列。3年MFA含实验动画/叙事动画/CG动画。公立学费相对友好", tuitionFee: "US$39,299/year (non-resident)", source: "https://www.tft.ucla.edu/programs/animation-mfa/", verified: false },
+
+  // CMU — Master of Entertainment Technology (MET)
+  { id: "cmu-entertainment-tech", schoolId: "cmu", name: "娱乐科技", nameEn: "Master of Entertainment Technology (MET)", department: "Entertainment Technology Center (College of Fine Arts + School of CS)", category: "art-design", subMajorId: "animation", duration: "2 years", gpaRequirements: { preferred: 3.5, other: 3.3 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["艺术设计", "计算机", "传媒"], extraRequirements: "需作品集", notes: "CMU艺术学院+CS学院联合授课。全球顶尖互动娱乐/游戏设计/AR/VR项目。课程含Building Virtual Worlds+即兴表演+视觉叙事。含暑期行业实习。Randy Pausch共同创立", tuitionFee: "US$57,000/year", source: "https://etc.cmu.edu/", verified: false },
+
+  // Aalto — MA Film Directing
+  { id: "aalto-film-directing", schoolId: "aalto", name: "电影导演", nameEn: "MA Film Directing", department: "Department of Film, Television and Scenography", category: "media", subMajorId: "film-tv", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 92, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "艺术设计"], notes: "需作品集。电影导演个人风格和视觉叙事能力培养。目标：具备导演故事长片和剧集的能力。注意：2026年不招生，下一轮2027年", tuitionFee: "€20,000/year", source: "https://www.aalto.fi/en/study-options/film-directing-master-of-arts-art-and-design", verified: false },
+
+  // Aalto — MA Film and Television Producing
+  { id: "aalto-film-producing", schoolId: "aalto", name: "影视制片", nameEn: "MA Film and Television Producing", department: "Department of Film, Television and Scenography", category: "media", subMajorId: "film-tv", duration: "2 years", gpaRequirements: { preferred: 75, other: 78 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 92, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "商科", "艺术设计"], notes: "英文授课。电影和电视制片管理。北欧电影产业网络。含项目开发/融资/发行", tuitionFee: "€20,000/year", source: "https://www.aalto.fi/en/study-options/film-and-television-producing-master-of-arts-art-and-design", verified: false },
+
+  // Glasgow — MSc Film Curation
+  { id: "glasgow-film-curation", schoolId: "glasgow", name: "电影策展", nameEn: "MSc Film Curation", department: "School of Culture and Creative Arts", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 80, other: 83 }, gpaScale: "percentage", ieltsOverall: 6.5, toeflOverall: 90, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科", "艺术设计"], notes: "电影策展和影展策划。Glasgow Film Theatre合作。适合志于电影节/影院策划工作的学生", tuitionFee: "£19,350", source: "https://www.gla.ac.uk/postgraduate/taught/filmcuration/", verified: false },
+
+  // QMUL — MA Film (Theory)
+  { id: "qmul-film-theory", schoolId: "qmul", name: "电影研究(理论)", nameEn: "MA Film (Theory)", department: "Department of Film, School of Languages, Linguistics and Film", category: "media", subMajorId: "film-studies", duration: "1 year", gpaRequirements: { preferred: 75, other: 80 }, gpaScale: "percentage", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "MA Film的理论pathway。电影美学/伦理/哲学。IELTS写作需7.0", tuitionFee: "£24,000", source: "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/film-ma/", verified: false },
+
+  // Boston University — MFA Film and Television Studies
+  { id: "boston-u-film-studies", schoolId: "boston-u", name: "电影与电视研究", nameEn: "MFA in Film and Television Studies", department: "College of Communication — Film & Television", category: "media", subMajorId: "film-studies", duration: "2 years", gpaRequirements: { preferred: 3.3, other: 3.0 }, gpaScale: "gpa4", ieltsOverall: 7.0, toeflOverall: 100, requiresRelatedDegree: false, acceptedBackgrounds: ["传媒", "社科"], notes: "电影和电视的文化与社会影响批判研究。不需GRE", tuitionFee: "US$58,616/year", source: "https://www.bu.edu/com/programs/film-television/mfa-in-film-and-television-studies/", verified: false },
 ];
 
