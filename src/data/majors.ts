@@ -12,6 +12,8 @@ export type SubMajor = {
   crossMajorFriendly: boolean;
   // What undergraduate backgrounds are typically required?
   typicalBackgrounds?: string[];
+  // Extra search keywords so users can find this major with related terms
+  keywords?: string[];
 };
 
 export const majorCategories: MajorCategory[] = [
@@ -137,7 +139,7 @@ export const majorCategories: MajorCategory[] = [
       { id: "chemistry", name: "化学", nameEn: "Chemistry", crossMajorFriendly: false },
       { id: "biology", name: "生物学", nameEn: "Biology", crossMajorFriendly: false },
       { id: "statistics", name: "统计学", nameEn: "Statistics", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
-      { id: "environmental-science", name: "环境科学", nameEn: "Environmental Science", crossMajorFriendly: false },
+      { id: "environmental-science", name: "环境科学", nameEn: "Environmental Science", crossMajorFriendly: false, keywords: ["气候", "气候变化", "climate change", "大气", "atmospheric"] },
       { id: "food-science", name: "食品科学", nameEn: "Food Science", crossMajorFriendly: false },
       { id: "actuarial-science", name: "精算科学", nameEn: "Actuarial Science", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
     ],
@@ -211,7 +213,7 @@ export const majorCategories: MajorCategory[] = [
       { id: "sports-analytics", name: "体育数据分析/赛事分析", nameEn: "Sports Analytics / Performance Analysis", crossMajorFriendly: true, typicalBackgrounds: ["社科", "计算机", "理学"] },
       { id: "criminology", name: "犯罪学", nameEn: "Criminology", crossMajorFriendly: true },
       { id: "museum-studies", name: "博物馆学/策展", nameEn: "Museum Studies / Curating", crossMajorFriendly: true },
-      { id: "sustainability", name: "可持续发展/环境管理", nameEn: "Sustainability / Environmental Management", crossMajorFriendly: true },
+      { id: "sustainability", name: "可持续发展/环境管理", nameEn: "Sustainability / Environmental Management", crossMajorFriendly: true, keywords: ["气候", "气候变化", "climate change", "碳管理", "carbon", "ESG"] },
       { id: "cultural-industries", name: "文化创意产业", nameEn: "Creative & Cultural Industries", crossMajorFriendly: true },
       { id: "urban-planning", name: "城市规划/城市设计", nameEn: "Urban Planning / Urban Design", crossMajorFriendly: true, typicalBackgrounds: ["社科", "艺术设计", "工程"] },
       { id: "health-management", name: "健康管理/医疗管理", nameEn: "Health Management / Healthcare Administration", crossMajorFriendly: true },

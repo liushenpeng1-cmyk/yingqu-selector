@@ -296,7 +296,8 @@ export default function Home() {
     ? allSubMajors.filter(s =>
         s.name.includes(majorQuery) ||
         s.nameEn.toLowerCase().includes(majorQuery.toLowerCase()) ||
-        s.categoryName.includes(majorQuery)
+        s.categoryName.includes(majorQuery) ||
+        (s.keywords && s.keywords.some(k => k.toLowerCase().includes(majorQuery.toLowerCase()) || majorQuery.toLowerCase().includes(k.toLowerCase())))
       ).slice(0, 10)
     : allSubMajors.slice(0, 10);
 
