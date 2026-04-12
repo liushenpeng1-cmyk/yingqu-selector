@@ -49,6 +49,15 @@ export const undergradSubjectAreas = [
   { id: "accounting-finance", name: "会计与金融", nameEn: "Accounting & Finance" },
   { id: "law", name: "法律", nameEn: "Law" },
   { id: "psychology", name: "心理学", nameEn: "Psychology" },
+  { id: "history", name: "历史", nameEn: "History" },
+  { id: "politics-ir", name: "政治/国际关系", nameEn: "Politics & International Relations" },
+  { id: "sociology", name: "社会学", nameEn: "Sociology" },
+  { id: "media", name: "传媒", nameEn: "Media & Communications" },
+  { id: "education", name: "教育学", nameEn: "Education" },
+  { id: "linguistics", name: "语言学/英语", nameEn: "Linguistics / English" },
+  { id: "philosophy", name: "哲学", nameEn: "Philosophy" },
+  { id: "geography", name: "地理/环境", nameEn: "Geography & Environment" },
+  { id: "art-design", name: "艺术设计", nameEn: "Art & Design" },
   { id: "architecture", name: "建筑", nameEn: "Architecture" },
 ];
 
@@ -483,6 +492,141 @@ export const undergradPrograms: UndergradProgram[] = [
   { id: "yk-ug-acc-fin", schoolId: "york", name: "会计与金融", nameEn: "Accounting, Business Finance and Management BSc", subjectArea: "accounting-finance", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
   { id: "birm-ug-acc-fin", schoolId: "birmingham", name: "会计与金融", nameEn: "Accounting and Finance BSc", subjectArea: "accounting-finance", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 32, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,260" },
   { id: "car-ug-acc-fin", schoolId: "cardiff", name: "会计与金融", nameEn: "Accounting and Finance BSc", subjectArea: "accounting-finance", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,950" },
+
+  // ═══════════════ HISTORY 历史 ═══════════════
+
+  { id: "ox-ug-history", schoolId: "oxford", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£35,080", notes: "需 HAT 入学考试" },
+  { id: "cam-ug-history", schoolId: "cambridge", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-history", schoolId: "ucl", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200" },
+  { id: "ed-ug-history", schoolId: "edinburgh", name: "历史", nameEn: "History MA", subjectArea: "history", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制" },
+  { id: "kcl-ug-history", schoolId: "kcl", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£23,940" },
+  { id: "man-ug-history", schoolId: "manchester", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "bris-ug-history", schoolId: "bristol", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£24,700" },
+  { id: "war-ug-history", schoolId: "warwick", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,280" },
+  { id: "dur-ug-history", schoolId: "durham", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "A*AA", ibScore: 37, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£25,500" },
+  { id: "lee-ug-history", schoolId: "leeds", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 35, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "birm-ug-history", schoolId: "birmingham", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 32, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,260" },
+  { id: "shef-ug-history", schoolId: "sheffield", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,680" },
+  { id: "nott-ug-history", schoolId: "nottingham", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,500" },
+  { id: "yk-ug-history", schoolId: "york", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "ex-ug-history", schoolId: "exeter", name: "历史", nameEn: "History BA", subjectArea: "history", alpiLevel: "AAA", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "sta-ug-history", schoolId: "standrews", name: "历史", nameEn: "History MA", subjectArea: "history", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960", notes: "苏格兰4年制" },
+
+  // ═══════════════ POLITICS & INTERNATIONAL RELATIONS 政治/国际关系 ═══════════════
+
+  { id: "ox-ug-politics-ir", schoolId: "oxford", name: "哲学政治经济(PPE)", nameEn: "Philosophy, Politics and Economics BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 39, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£35,080", notes: "需 TSA 入学考试" },
+  { id: "cam-ug-politics-ir", schoolId: "cambridge", name: "政治与国际关系", nameEn: "Human, Social, and Political Sciences BA", subjectArea: "politics-ir", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-politics-ir", schoolId: "ucl", name: "政治学", nameEn: "Politics and International Relations BSc", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200" },
+  { id: "lse-ug-politics-ir", schoolId: "lse", name: "国际关系", nameEn: "International Relations BSc", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£28,896" },
+  { id: "ed-ug-politics-ir", schoolId: "edinburgh", name: "政治学", nameEn: "Politics MA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制" },
+  { id: "kcl-ug-politics-ir", schoolId: "kcl", name: "国际关系", nameEn: "International Relations BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£23,940" },
+  { id: "man-ug-politics-ir", schoolId: "manchester", name: "政治学", nameEn: "Politics and International Relations BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "bris-ug-politics-ir", schoolId: "bristol", name: "政治与国际关系", nameEn: "Politics and International Relations BSc", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£24,700" },
+  { id: "war-ug-politics-ir", schoolId: "warwick", name: "政治学", nameEn: "Politics BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,280" },
+  { id: "dur-ug-politics-ir", schoolId: "durham", name: "政治学", nameEn: "Politics BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£25,500" },
+  { id: "lee-ug-politics-ir", schoolId: "leeds", name: "政治与国际关系", nameEn: "Politics and International Studies BA", subjectArea: "politics-ir", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "birm-ug-politics-ir", schoolId: "birmingham", name: "政治学", nameEn: "Political Science BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 32, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,260" },
+  { id: "nott-ug-politics-ir", schoolId: "nottingham", name: "国际关系", nameEn: "International Relations BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,500" },
+  { id: "yk-ug-politics-ir", schoolId: "york", name: "政治学", nameEn: "Politics BA", subjectArea: "politics-ir", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "ex-ug-politics-ir", schoolId: "exeter", name: "政治与国际关系", nameEn: "Politics and International Relations BA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "sta-ug-politics-ir", schoolId: "standrews", name: "国际关系", nameEn: "International Relations MA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960", notes: "苏格兰4年制" },
+  { id: "gla-ug-politics-ir", schoolId: "glasgow", name: "政治学", nameEn: "Politics MA", subjectArea: "politics-ir", alpiLevel: "AAA", ibScore: 36, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£22,020", notes: "苏格兰4年制" },
+
+  // ═══════════════ SOCIOLOGY 社会学 ═══════════════
+
+  { id: "cam-ug-sociology", schoolId: "cambridge", name: "社会学", nameEn: "Human, Social, and Political Sciences (Sociology) BA", subjectArea: "sociology", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-sociology", schoolId: "ucl", name: "社会学", nameEn: "Sociology BSc", subjectArea: "sociology", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200" },
+  { id: "lse-ug-sociology", schoolId: "lse", name: "社会学", nameEn: "Sociology BSc", subjectArea: "sociology", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£28,896" },
+  { id: "ed-ug-sociology", schoolId: "edinburgh", name: "社会学", nameEn: "Sociology MA", subjectArea: "sociology", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制" },
+  { id: "man-ug-sociology", schoolId: "manchester", name: "社会学", nameEn: "Sociology BA", subjectArea: "sociology", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "bris-ug-sociology", schoolId: "bristol", name: "社会学", nameEn: "Sociology BSc", subjectArea: "sociology", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£24,700" },
+  { id: "lee-ug-sociology", schoolId: "leeds", name: "社会学", nameEn: "Sociology BA", subjectArea: "sociology", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "birm-ug-sociology", schoolId: "birmingham", name: "社会学", nameEn: "Sociology BA", subjectArea: "sociology", alpiLevel: "AAB", ibScore: 32, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,260" },
+  { id: "nott-ug-sociology", schoolId: "nottingham", name: "社会学", nameEn: "Sociology BA", subjectArea: "sociology", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,500" },
+  { id: "gla-ug-sociology", schoolId: "glasgow", name: "社会学", nameEn: "Sociology MA", subjectArea: "sociology", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£22,020", notes: "苏格兰4年制" },
+  { id: "yk-ug-sociology", schoolId: "york", name: "社会学", nameEn: "Sociology BA", subjectArea: "sociology", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "car-ug-sociology", schoolId: "cardiff", name: "社会学", nameEn: "Sociology BSc", subjectArea: "sociology", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,950" },
+
+  // ═══════════════ MEDIA & COMMUNICATIONS 传媒 ═══════════════
+
+  { id: "ucl-ug-media", schoolId: "ucl", name: "传媒", nameEn: "Culture, Communication and Media BA", subjectArea: "media", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200" },
+  { id: "kcl-ug-media", schoolId: "kcl", name: "传媒", nameEn: "Culture, Media and Creative Industries BA", subjectArea: "media", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£23,940" },
+  { id: "lee-ug-media", schoolId: "leeds", name: "传媒", nameEn: "Communication and Media BA", subjectArea: "media", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "shef-ug-media", schoolId: "sheffield", name: "新闻学", nameEn: "Journalism Studies BA", subjectArea: "media", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,680", notes: "谢菲尔德新闻学全英顶尖" },
+  { id: "car-ug-media", schoolId: "cardiff", name: "新闻学", nameEn: "Journalism, Media and Communications BA", subjectArea: "media", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£21,950", notes: "卡迪夫新闻与传媒学院全英知名" },
+  { id: "lboro-ug-media", schoolId: "loughborough", name: "传媒", nameEn: "Communication and Media Studies BSc", subjectArea: "media", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,900" },
+  { id: "ncl-ug-media", schoolId: "newcastle", name: "传媒", nameEn: "Media, Communication and Cultural Studies BA", subjectArea: "media", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,800" },
+  { id: "liv-ug-media", schoolId: "liverpool", name: "传媒", nameEn: "Communication and Media BA", subjectArea: "media", alpiLevel: "ABB", ibScore: 31, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,400" },
+  { id: "gla-ug-media", schoolId: "glasgow", name: "传媒", nameEn: "Film and Television Studies MA", subjectArea: "media", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£22,020", notes: "苏格兰4年制" },
+  { id: "war-ug-media", schoolId: "warwick", name: "电影与电视研究", nameEn: "Film and Television Studies BA", subjectArea: "media", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,280" },
+
+  // ═══════════════ EDUCATION 教育学 ═══════════════
+
+  { id: "cam-ug-education", schoolId: "cambridge", name: "教育学", nameEn: "Education BA", subjectArea: "education", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-education", schoolId: "ucl", name: "教育学", nameEn: "Education Studies BA", subjectArea: "education", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200", notes: "UCL教育学院(IOE)全球顶尖" },
+  { id: "ed-ug-education", schoolId: "edinburgh", name: "教育学", nameEn: "Education MA", subjectArea: "education", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制" },
+  { id: "man-ug-education", schoolId: "manchester", name: "教育学", nameEn: "Education BA", subjectArea: "education", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "dur-ug-education", schoolId: "durham", name: "教育学", nameEn: "Education Studies BA", subjectArea: "education", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£25,500" },
+  { id: "birm-ug-education", schoolId: "birmingham", name: "教育学", nameEn: "Education BA", subjectArea: "education", alpiLevel: "AAB", ibScore: 32, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,260" },
+  { id: "gla-ug-education", schoolId: "glasgow", name: "教育学", nameEn: "Education MA", subjectArea: "education", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£22,020", notes: "苏格兰4年制" },
+  { id: "nott-ug-education", schoolId: "nottingham", name: "教育学", nameEn: "Education BA", subjectArea: "education", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,500" },
+  { id: "bath-ug-education", schoolId: "bath", name: "教育学", nameEn: "Education with Psychology BSc", subjectArea: "education", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£20,500" },
+
+  // ═══════════════ LINGUISTICS 语言学/英语 ═══════════════
+
+  { id: "ox-ug-linguistics", schoolId: "oxford", name: "英语语言文学", nameEn: "English Language and Literature BA", subjectArea: "linguistics", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£35,080", notes: "需 ELAT 入学考试" },
+  { id: "cam-ug-linguistics", schoolId: "cambridge", name: "语言学", nameEn: "Linguistics BA", subjectArea: "linguistics", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-linguistics", schoolId: "ucl", name: "语言学", nameEn: "Linguistics BA", subjectArea: "linguistics", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200" },
+  { id: "ed-ug-linguistics", schoolId: "edinburgh", name: "语言学", nameEn: "Linguistics and English Language MA", subjectArea: "linguistics", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制。爱丁堡语言学全英顶尖" },
+  { id: "kcl-ug-linguistics", schoolId: "kcl", name: "英语语言与语言学", nameEn: "English Language and Linguistics BA", subjectArea: "linguistics", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£23,940" },
+  { id: "man-ug-linguistics", schoolId: "manchester", name: "语言学", nameEn: "Linguistics BA", subjectArea: "linguistics", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
+  { id: "lan-ug-linguistics", schoolId: "lancaster", name: "语言学", nameEn: "Linguistics and English Language BA", subjectArea: "linguistics", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,450", notes: "兰卡斯特语言学全英前列" },
+  { id: "lee-ug-linguistics", schoolId: "leeds", name: "语言学", nameEn: "Linguistics and Phonetics BA", subjectArea: "linguistics", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "yk-ug-linguistics", schoolId: "york", name: "英语语言与语言学", nameEn: "English Language and Linguistics BA", subjectArea: "linguistics", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "ncl-ug-linguistics", schoolId: "newcastle", name: "语言学", nameEn: "Linguistics BA", subjectArea: "linguistics", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,800" },
+
+  // ═══════════════ PHILOSOPHY 哲学 ═══════════════
+
+  { id: "ox-ug-philosophy", schoolId: "oxford", name: "哲学", nameEn: "Philosophy and Theology BA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£35,080" },
+  { id: "cam-ug-philosophy", schoolId: "cambridge", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-philosophy", schoolId: "ucl", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£26,200" },
+  { id: "kcl-ug-philosophy", schoolId: "kcl", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£23,940" },
+  { id: "ed-ug-philosophy", schoolId: "edinburgh", name: "哲学", nameEn: "Philosophy MA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制" },
+  { id: "bris-ug-philosophy", schoolId: "bristol", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£24,700" },
+  { id: "war-ug-philosophy", schoolId: "warwick", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,280" },
+  { id: "dur-ug-philosophy", schoolId: "durham", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£25,500" },
+  { id: "sta-ug-philosophy", schoolId: "standrews", name: "哲学", nameEn: "Philosophy MA", subjectArea: "philosophy", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960", notes: "苏格兰4年制。圣安哲学全英顶尖" },
+  { id: "yk-ug-philosophy", schoolId: "york", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "lee-ug-philosophy", schoolId: "leeds", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "shef-ug-philosophy", schoolId: "sheffield", name: "哲学", nameEn: "Philosophy BA", subjectArea: "philosophy", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,680" },
+
+  // ═══════════════ GEOGRAPHY & ENVIRONMENT 地理/环境 ═══════════════
+
+  { id: "ox-ug-geography", schoolId: "oxford", name: "地理", nameEn: "Geography BA", subjectArea: "geography", alpiLevel: "A*AA", ibScore: 39, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£35,080" },
+  { id: "cam-ug-geography", schoolId: "cambridge", name: "地理", nameEn: "Geography BA", subjectArea: "geography", alpiLevel: "A*AA", ibScore: 40, ieltsOverall: 7.5, duration: "3 years", tuitionFee: "£37,293" },
+  { id: "ucl-ug-geography", schoolId: "ucl", name: "地理", nameEn: "Geography BSc", subjectArea: "geography", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£30,000" },
+  { id: "lse-ug-geography", schoolId: "lse", name: "地理与环境", nameEn: "Geography with Economics BSc", subjectArea: "geography", alpiLevel: "AAA", ibScore: 38, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£28,896" },
+  { id: "ed-ug-geography", schoolId: "edinburgh", name: "地理", nameEn: "Geography MA", subjectArea: "geography", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "苏格兰4年制" },
+  { id: "bris-ug-geography", schoolId: "bristol", name: "地理", nameEn: "Geography BSc", subjectArea: "geography", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£27,200" },
+  { id: "dur-ug-geography", schoolId: "durham", name: "地理", nameEn: "Geography BA", subjectArea: "geography", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£25,500" },
+  { id: "lee-ug-geography", schoolId: "leeds", name: "地理", nameEn: "Geography BSc", subjectArea: "geography", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,250" },
+  { id: "man-ug-geography", schoolId: "manchester", name: "地理", nameEn: "Geography BA", subjectArea: "geography", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,000" },
+  { id: "shef-ug-geography", schoolId: "sheffield", name: "地理", nameEn: "Geography BSc", subjectArea: "geography", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,680" },
+  { id: "nott-ug-geography", schoolId: "nottingham", name: "地理", nameEn: "Geography BSc", subjectArea: "geography", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,000" },
+  { id: "ex-ug-geography", schoolId: "exeter", name: "地理", nameEn: "Geography BSc", subjectArea: "geography", alpiLevel: "AAA", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,000" },
+  { id: "gla-ug-geography", schoolId: "glasgow", name: "地理", nameEn: "Geography MA", subjectArea: "geography", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£22,020", notes: "苏格兰4年制" },
+
+  // ═══════════════ ART & DESIGN 艺术设计 ═══════════════
+
+  { id: "ucl-ug-art-design", schoolId: "ucl", name: "美术(Slade)", nameEn: "Fine Art BA (Slade School)", subjectArea: "art-design", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,500", notes: "需作品集" },
+  { id: "ucl-ug-art-design-arch", schoolId: "ucl", name: "建筑与城市设计(Bartlett)", nameEn: "Architectural and Interdisciplinary Studies BSc (Bartlett)", subjectArea: "art-design", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£35,000", notes: "需作品集" },
+  { id: "ed-ug-art-design", schoolId: "edinburgh", name: "艺术设计", nameEn: "Art BA", subjectArea: "art-design", alpiLevel: "AAB", ibScore: 34, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£26,500", notes: "需作品集" },
+  { id: "gla-ug-art-design", schoolId: "glasgow", name: "艺术设计", nameEn: "Fine Art BA (Glasgow School of Art)", subjectArea: "art-design", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 75, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£22,020", notes: "需作品集" },
+  { id: "lee-ug-art-design", schoolId: "leeds", name: "艺术设计", nameEn: "Fine Art BA", subjectArea: "art-design", alpiLevel: "AAB", ibScore: 34, gaokaoPercent: 78, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£24,250", notes: "需作品集" },
+  { id: "ncl-ug-art-design", schoolId: "newcastle", name: "艺术设计", nameEn: "Fine Art BA", subjectArea: "art-design", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£22,800", notes: "需作品集" },
+  { id: "lboro-ug-art-design", schoolId: "loughborough", name: "艺术设计", nameEn: "Graphic Communication and Illustration BA", subjectArea: "art-design", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,900", notes: "需作品集" },
+  { id: "dun-ug-art-design", schoolId: "dundee", name: "艺术设计", nameEn: "Art and Design BA (Duncan of Jordanstone)", subjectArea: "art-design", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£22,950", notes: "需作品集" },
+  { id: "car-ug-art-design", schoolId: "cardiff", name: "艺术设计", nameEn: "Graphic Communication BA", subjectArea: "art-design", alpiLevel: "ABB", ibScore: 30, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£21,950", notes: "需作品集" },
 ];
 
 export const totalUndergradProgramCount = undergradPrograms.length;
