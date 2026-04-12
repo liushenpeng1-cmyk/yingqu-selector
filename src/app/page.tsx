@@ -6,6 +6,8 @@ import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
 import { matchPrograms, schoolsWithPrograms, totalProgramCount, HOLISTIC_REVIEW_SCHOOLS, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
 import { undergradSubjectAreas, alevelSubjects, matchUndergradPrograms, totalUndergradProgramCount, type UndergradSchoolResult, type UndergradMatchLevel } from "@/data/undergrad-programs";
+import { openReferral, type ReferralPayload } from "@/lib/referral";
+import { useFavorites, MAX_FAVORITES } from "@/lib/favorites";
 
 const levelConfig: Record<ProgramMatchLevel | "excluded", { label: string; color: string; bg: string; border: string }> = {
   high: { label: "很有可能", color: "text-green-400", bg: "bg-green-400/10", border: "border-l-green-400" },
@@ -56,6 +58,9 @@ function SchoolCard({
   rawLangScore,
   defaultExpanded,
   userTier,
+  isFavoritedProgram,
+  onToggleProgramFavorite,
+  onApply,
 }: {
   school: typeof schools[0];
   programs: ProgramMatchResult[];
@@ -64,6 +69,9 @@ function SchoolCard({
   rawLangScore: number;
   defaultExpanded: boolean;
   userTier: string;
+  isFavoritedProgram: (programId: string) => boolean;
+  onToggleProgramFavorite: (programId: string) => void;
+  onApply: () => void;
 }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -85,27 +93,39 @@ function SchoolCard({
   return (
     <div className={`bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden border-l-[3px] ${levelConfig[bestLevel].border}`}>
       {/* School Header — tappable */}
-      <button
-        type="button"
-        onClick={() => setExpanded(!expanded)}
-        className="w-full px-4 sm:px-5 py-3.5 sm:py-4 border-b border-white/[0.06] flex items-center justify-between text-left active:bg-white/[0.03] transition-colors"
-      >
-        <div className="min-w-0 flex-1">
-          <div className="font-bold text-[15px] sm:text-base truncate">{school.name}</div>
-          <div className="text-xs text-white/30 mt-0.5 truncate">{school.nameEn} · QS #{school.qsRank} · {regionLabels[school.country]}</div>
-        </div>
-        <div className="flex items-center gap-2 shrink-0 ml-3">
-          <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${levelConfig[bestLevel].bg} ${levelConfig[bestLevel].color}`}>
-            {progs.length} 个项目
-          </span>
-          <svg
-            className={`w-4 h-4 text-white/30 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
-            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+      <div className="border-b border-white/[0.06] flex items-center">
+        <button
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          className="flex-1 min-w-0 px-4 sm:px-5 py-3.5 sm:py-4 flex items-center justify-between text-left active:bg-white/[0.03] transition-colors"
+        >
+          <div className="min-w-0 flex-1">
+            <div className="font-bold text-[15px] sm:text-base truncate">{school.name}</div>
+            <div className="text-xs text-white/30 mt-0.5 truncate">{school.nameEn} · QS #{school.qsRank} · {regionLabels[school.country]}</div>
+          </div>
+          <div className="flex items-center gap-2 shrink-0 ml-3">
+            <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${levelConfig[bestLevel].bg} ${levelConfig[bestLevel].color}`}>
+              {progs.length} 个项目
+            </span>
+            <svg
+              className={`w-4 h-4 text-white/30 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </button>
+        <div className="pr-3 sm:pr-4 shrink-0">
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); onApply(); }}
+            className="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#e8be64] text-[#0a0b0f] hover:bg-[#f0ca7a] active:scale-95 transition-all whitespace-nowrap"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+            <span className="hidden sm:inline">申请 →</span>
+            <span className="sm:hidden">✈️</span>
+          </button>
         </div>
-      </button>
+      </div>
 
       {/* Collapsible program list */}
       <div
@@ -131,9 +151,21 @@ function SchoolCard({
                     <div className="font-semibold text-sm sm:text-[15px]">{result.program.name}</div>
                     <div className="text-xs text-white/25 mt-0.5 truncate">{result.program.nameEn} · {result.program.department}</div>
                   </div>
-                  <span className={`px-2 py-0.5 rounded-md text-xs font-semibold shrink-0 ${cfg.bg} ${cfg.color}`}>
-                    {cfg.label}
-                  </span>
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <span className={`px-2 py-0.5 rounded-md text-xs font-semibold ${cfg.bg} ${cfg.color}`}>
+                      {cfg.label}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => onToggleProgramFavorite(result.program.id)}
+                      aria-label={isFavoritedProgram(result.program.id) ? "取消收藏" : "加入收藏"}
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-sm active:scale-90 transition-all hover:bg-white/[0.06]"
+                    >
+                      <span className={isFavoritedProgram(result.program.id) ? "" : "grayscale opacity-50"}>
+                        {isFavoritedProgram(result.program.id) ? "❤️" : "🤍"}
+                      </span>
+                    </button>
+                  </div>
                 </div>
 
                 {/* Stats row — horizontal scroll on mobile */}
@@ -254,6 +286,9 @@ export default function Home() {
   const [regions, setRegions] = useState<Set<Region>>(new Set());
   const [showMoreRegions, setShowMoreRegions] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // ── Favorites (localStorage-backed) ──
+  const favorites = useFavorites();
 
   // Budget calculator state
   const [budgetCurrency, setBudgetCurrency] = useState<"GBP" | "AUD" | "HKD" | "SGD" | "USD" | "CAD" | "EUR" | "JPY" | "KRW" | "NZD" | "MYR" | "SEK" | "DKK" | "NOK" | "CHF">("GBP");
@@ -381,6 +416,46 @@ export default function Home() {
     setShowDropdown(value.length > 0);
   }
 
+  // ── Referral payload builders ──
+  const buildPgPayload = useCallback((schoolIds: string[], programIds?: string[]): ReferralPayload => ({
+    ref: "yingqu",
+    target: "pg",
+    schoolIds,
+    programIds: programIds && programIds.length > 0 ? programIds : undefined,
+    regions: Array.from(regions),
+    lang: langTest,
+    langScore: langScore || undefined,
+    langExempt: langExempt || undefined,
+    gpa: gpa || undefined,
+    gpaScale,
+    userTier: tier || undefined,
+    currentCategoryId,
+    targetSubMajorId,
+    ukClassification: ukClassification || undefined,
+    auClassification: auClassification || undefined,
+    isOverseasUndergrad: isOverseasUndergrad || undefined,
+    isJointUniversity: isJointUniversity || undefined,
+    jointUniType: jointUniType || undefined,
+  }), [regions, langTest, langScore, langExempt, gpa, gpaScale, tier, currentCategoryId, targetSubMajorId, ukClassification, auClassification, isOverseasUndergrad, isJointUniversity, jointUniType]);
+
+  const buildUgPayload = useCallback((schoolIds: string[], programIds?: string[]): ReferralPayload => ({
+    ref: "yingqu",
+    target: "ug",
+    schoolIds,
+    programIds: programIds && programIds.length > 0 ? programIds : undefined,
+    regions: Array.from(regions),
+    lang: ugLangTest,
+    langScore: ugLangScore || undefined,
+    curriculum: ugCurriculum,
+    alevelGrades: ugCurriculum === "alevel"
+      ? ugAlevelGrades.filter(g => g.subject && g.grade)
+      : undefined,
+    ibScore: ugCurriculum === "ib" ? (ugIbScore || undefined) : undefined,
+    gaokaoScore: ugCurriculum === "gaokao" ? (ugGaokaoScore || undefined) : undefined,
+    gaokaoTotal: ugCurriculum === "gaokao" ? (ugGaokaoTotal || undefined) : undefined,
+    subjectArea: ugSubjectArea,
+  }), [regions, ugLangTest, ugLangScore, ugCurriculum, ugAlevelGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]);
+
   const handleSubmit = useCallback(() => {
     if (!canSubmit) return;
     setStep("loading");
@@ -454,7 +529,7 @@ export default function Home() {
             {/* Study level toggle */}
             <div className="flex justify-center mt-5 sm:mt-6">
               <div className="inline-flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
-                <button type="button" onClick={() => setStudyLevel("undergraduate")}
+                <button type="button" onClick={() => { setStudyLevel("undergraduate"); setRegions(prev => prev.size === 0 ? new Set<Region>(["UK"]) : prev); }}
                   className={`px-5 sm:px-6 py-2.5 text-sm font-medium transition-all ${studyLevel === "undergraduate" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>
                   本科申请
                 </button>
@@ -583,6 +658,24 @@ export default function Home() {
                   </div>
                 </div>
 
+                {/* Region — aligned with postgraduate flow */}
+                <div>
+                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">目标地区（可多选） <span className="text-[#e8be64] text-xs">●</span></label>
+                  <div className="flex sm:flex-wrap gap-2 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-hide">
+                    {(["UK", "AU", "US", "CA", "NZ", "HK", "SG"] as Region[]).map((key) => {
+                      const selected = regions.has(key);
+                      return (
+                        <button key={key} type="button"
+                          onClick={() => { const next = new Set(regions); if (selected) next.delete(key); else next.add(key); setRegions(next); }}
+                          className={`px-3 py-2 rounded-lg text-sm font-medium transition-all shrink-0 ${
+                            selected ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#181920] border border-white/[0.06] text-white/50 hover:text-white active:bg-white/5"
+                          }`}>{regionLabels[key]}</button>
+                      );
+                    })}
+                  </div>
+                  <p className="text-[11px] text-white/30 mt-2">目前本科数据以英国为主，美国/澳洲/加拿大/新西兰陆续补充中</p>
+                </div>
+
                 {/* Submit */}
                 <button onClick={() => {
                   const results = matchUndergradPrograms({
@@ -594,20 +687,23 @@ export default function Home() {
                     langScore: parseFloat(ugLangScore) || 0,
                     langTest: ugLangTest,
                     subjectArea: ugSubjectArea,
+                    regions,
                   });
                   setUgResults(results);
                   setStep("loading");
                   setTimeout(() => setStep("results"), 1200);
                 }}
                   disabled={
+                    regions.size === 0 ||
                     (ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length < 3) ||
                     (ugCurriculum === "ib" && !ugIbScore) ||
                     (ugCurriculum === "gaokao" && !ugGaokaoScore)
                   }
                   className={`w-full py-3.5 sm:py-4 rounded-xl font-bold text-base transition-all ${
-                    ((ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length >= 3) ||
-                     (ugCurriculum === "ib" && ugIbScore) ||
-                     (ugCurriculum === "gaokao" && ugGaokaoScore))
+                    (regions.size > 0 &&
+                      ((ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length >= 3) ||
+                       (ugCurriculum === "ib" && ugIbScore) ||
+                       (ugCurriculum === "gaokao" && ugGaokaoScore)))
                       ? "bg-[#e8be64] text-[#0a0b0f] hover:shadow-[0_8px_30px_rgba(232,190,100,0.25)] active:scale-[0.98] cursor-pointer"
                       : "bg-[#e8be64]/20 text-[#e8be64]/40 cursor-not-allowed"
                   }`}>开始匹配 →</button>
@@ -979,9 +1075,24 @@ export default function Home() {
           <div className="space-y-4">
             {ugResults.filter(r => r.bestLevel !== "excluded").map(school => (
               <div key={school.schoolId} className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden">
-                <div className="px-4 sm:px-5 py-3 sm:py-4 border-b border-white/[0.06]">
-                  <h3 className="font-semibold text-[#f0ede6]">{school.schoolName}</h3>
-                  <p className="text-xs text-white/30">{school.schoolNameEn}</p>
+                <div className="px-4 sm:px-5 py-3 sm:py-4 border-b border-white/[0.06] flex items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-[#f0ede6]">{school.schoolName}</h3>
+                      <span className="text-[11px] px-1.5 py-0.5 rounded bg-white/5 text-white/50">{regionLabels[school.country]}</span>
+                    </div>
+                    <p className="text-xs text-white/30">{school.schoolNameEn}</p>
+                  </div>
+                  <div className="shrink-0">
+                    <button
+                      type="button"
+                      onClick={() => openReferral(buildUgPayload([school.schoolId], school.programs.map(r => r.program.id)))}
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#e8be64] text-[#0a0b0f] hover:bg-[#f0ca7a] active:scale-95 transition-all whitespace-nowrap"
+                    >
+                      <span className="hidden sm:inline">申请 →</span>
+                      <span className="sm:hidden">✈️</span>
+                    </button>
+                  </div>
                 </div>
                 <div className="divide-y divide-white/[0.04]">
                   {school.programs.filter(r => r.level !== "excluded").map(r => {
@@ -989,11 +1100,23 @@ export default function Home() {
                     return (
                       <div key={r.program.id} className={`px-4 sm:px-5 py-3 sm:py-4 border-l-[3px] ${cfg.border} ${cfg.bg}`}>
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <div>
+                          <div className="min-w-0 flex-1">
                             <span className="font-medium text-[#f0ede6] text-sm">{r.program.name}</span>
                             <span className="text-white/30 text-xs ml-2">{r.program.nameEn}</span>
                           </div>
-                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${cfg.color} ${cfg.bg}`}>{cfg.label}</span>
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className={`text-xs font-semibold px-2 py-0.5 rounded ${cfg.color} ${cfg.bg}`}>{cfg.label}</span>
+                            <button
+                              type="button"
+                              onClick={() => favorites.toggle(school.schoolId, r.program.id)}
+                              aria-label={favorites.has(r.program.id) ? "取消收藏" : "加入收藏"}
+                              className="w-7 h-7 rounded-full flex items-center justify-center text-sm active:scale-90 transition-all hover:bg-white/[0.06]"
+                            >
+                              <span className={favorites.has(r.program.id) ? "" : "grayscale opacity-50"}>
+                                {favorites.has(r.program.id) ? "❤️" : "🤍"}
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/40 mt-1">
                           <span>A-Level: {r.program.alpiLevel}</span>
@@ -1007,7 +1130,15 @@ export default function Home() {
                           <div className="text-xs text-white/30 mt-1">必修: {r.program.requiredSubjects.join(", ")}</div>
                         )}
                         {r.program.notes && <div className="text-xs text-[#e8be64]/50 mt-1">{r.program.notes}</div>}
-                        <div className="text-xs text-white/25 mt-1">{r.reason}</div>
+                        <div className="flex items-center justify-between mt-1">
+                          <div className="text-xs text-white/25">{r.reason}</div>
+                          {r.program.source && (
+                            <a href={r.program.source} target="_blank" rel="noopener noreferrer"
+                              className="text-xs text-[#e8be64]/50 hover:text-[#e8be64] transition-colors shrink-0 ml-2">
+                              查看官网 →
+                            </a>
+                          )}
+                        </div>
                       </div>
                     );
                   })}
@@ -1104,6 +1235,9 @@ export default function Home() {
                 rawLangScore={rawLangScore}
                 defaultExpanded={index === 0}
                 userTier={tier || ""}
+                isFavoritedProgram={favorites.has}
+                onToggleProgramFavorite={(programId) => favorites.toggle(school.id, programId)}
+                onApply={() => openReferral(buildPgPayload([school.id], progs.map(p => p.program.id)))}
               />
             ))}
 
@@ -1268,6 +1402,37 @@ export default function Home() {
             </svg>
           </button>
         </main>
+      )}
+
+      {/* Favorites floating bar — visible when cart has items on results step */}
+      {step === "results" && favorites.hydrated && favorites.count > 0 && (
+        <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-40 sm:max-w-sm">
+          <div className="bg-[#12131a] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 px-4 py-3 flex items-center gap-3 backdrop-blur-sm">
+            <div className="flex-1 min-w-0">
+              <div className="text-[11px] text-white/40 uppercase tracking-wider">收藏夹</div>
+              <div className="text-sm font-semibold text-[#f0ede6]">{favorites.count} / {MAX_FAVORITES} 个专业 · {favorites.schoolIds.length} 所学校</div>
+            </div>
+            <button
+              type="button"
+              onClick={favorites.clear}
+              className="text-xs text-white/40 hover:text-white/60 transition-colors shrink-0 px-2 py-1"
+            >
+              清空
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const payload = studyLevel === "undergraduate"
+                  ? buildUgPayload(favorites.schoolIds, favorites.programIds)
+                  : buildPgPayload(favorites.schoolIds, favorites.programIds);
+                openReferral(payload);
+              }}
+              className="px-3 py-2 rounded-xl text-xs font-semibold bg-[#e8be64] text-[#0a0b0f] hover:bg-[#f0ca7a] active:scale-95 transition-all whitespace-nowrap shrink-0"
+            >
+              批量申请 {favorites.count} 个 →
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
