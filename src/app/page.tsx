@@ -216,6 +216,7 @@ function SchoolCard({
 
 export default function Home() {
   const [step, setStep] = useState<"form" | "loading" | "results">("form");
+  const [studyLevel, setStudyLevel] = useState<"postgraduate" | "undergraduate">("postgraduate");
 
   const [isOverseasUndergrad, setIsOverseasUndergrad] = useState(false);
   const [isJointUniversity, setIsJointUniversity] = useState(false);
@@ -435,9 +436,34 @@ export default function Home() {
             <p className="text-white/50 text-base sm:text-lg">
               精确到专业级别，每个项目独立匹配。
             </p>
+
+            {/* Study level toggle */}
+            <div className="flex justify-center mt-5 sm:mt-6">
+              <div className="inline-flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
+                <button type="button" onClick={() => setStudyLevel("postgraduate")}
+                  className={`px-5 sm:px-6 py-2.5 text-sm font-medium transition-all ${studyLevel === "postgraduate" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>
+                  硕士申请
+                </button>
+                <button type="button" onClick={() => setStudyLevel("undergraduate")}
+                  className={`px-5 sm:px-6 py-2.5 text-sm font-medium transition-all ${studyLevel === "undergraduate" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>
+                  本科申请
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden">
+          {/* ═══ Undergraduate coming soon ═══ */}
+          {studyLevel === "undergraduate" && (
+            <div className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden p-8 sm:p-12 text-center">
+              <div className="text-4xl mb-4">🎓</div>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#e8be64] mb-3">本科申请功能即将上线</h2>
+              <p className="text-white/50 text-sm sm:text-base mb-2">支持 A-Level、高考直申、IB 等主流申请路径</p>
+              <p className="text-white/30 text-xs">敬请期待，硕士申请功能可正常使用</p>
+            </div>
+          )}
+
+          {/* ═══ Postgraduate form ═══ */}
+          {studyLevel === "postgraduate" && <div className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden">
             <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-white/[0.06] flex items-center gap-3">
               <div className="flex gap-1.5">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -756,7 +782,7 @@ export default function Home() {
                     : "bg-[#e8be64]/20 text-[#e8be64]/40 cursor-not-allowed"
                 }`}>开始匹配 →</button>
             </div>
-          </div>
+          </div>}
           <p className="text-center text-white/20 text-xs sm:text-sm mt-6 sm:mt-8">数据来源：各校官网公开录取标准</p>
 
           {/* WeChat Group + BBnotes Ad */}
