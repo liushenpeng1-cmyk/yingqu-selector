@@ -5,6 +5,7 @@ import { schools, regionLabels, getLanguageCourseSuggestion, type Region } from 
 import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china-universities";
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
 import { matchPrograms, schoolsWithPrograms, totalProgramCount, HOLISTIC_REVIEW_SCHOOLS, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
+import { undergradSubjectAreas, alevelSubjects, matchUndergradPrograms, totalUndergradProgramCount, type UndergradSchoolResult, type UndergradMatchLevel } from "@/data/undergrad-programs";
 
 const levelConfig: Record<ProgramMatchLevel | "excluded", { label: string; color: string; bg: string; border: string }> = {
   high: { label: "很有可能", color: "text-green-400", bg: "bg-green-400/10", border: "border-l-green-400" },
@@ -218,6 +219,19 @@ export default function Home() {
   const [step, setStep] = useState<"form" | "loading" | "results">("form");
   const [studyLevel, setStudyLevel] = useState<"postgraduate" | "undergraduate">("postgraduate");
 
+  // ── Undergraduate state ──
+  const [ugCurriculum, setUgCurriculum] = useState<"alevel" | "ib" | "gaokao">("alevel");
+  const [ugAlevelGrades, setUgAlevelGrades] = useState<{ subject: string; grade: string }[]>([
+    { subject: "", grade: "" }, { subject: "", grade: "" }, { subject: "", grade: "" },
+  ]);
+  const [ugIbScore, setUgIbScore] = useState("");
+  const [ugGaokaoScore, setUgGaokaoScore] = useState("");
+  const [ugGaokaoTotal, setUgGaokaoTotal] = useState("750");
+  const [ugLangTest, setUgLangTest] = useState<"IELTS" | "TOEFL">("IELTS");
+  const [ugLangScore, setUgLangScore] = useState("");
+  const [ugSubjectArea, setUgSubjectArea] = useState("economics");
+  const [ugResults, setUgResults] = useState<UndergradSchoolResult[]>([]);
+
   const [isOverseasUndergrad, setIsOverseasUndergrad] = useState(false);
   const [isJointUniversity, setIsJointUniversity] = useState(false);
   const [jointUniType, setJointUniType] = useState<"uk-partner" | "us-partner" | "hk-partner" | "">(""); // XJTLU/UNNC=uk, NYU Shanghai/DKU=us, CUHK-SZ=hk
@@ -415,7 +429,7 @@ export default function Home() {
             <div className="absolute inset-3 rounded-full border-2 border-transparent border-t-[#e8be64]/60 animate-spin" style={{ animationDirection: "reverse", animationDuration: "0.8s" }} />
           </div>
           <div className="text-lg font-semibold text-[#e8be64] mb-2 animate-pulse">正在匹配项目...</div>
-          <div className="text-sm text-white/30">分析 {schoolResults.length} 所学校的录取标准</div>
+          <div className="text-sm text-white/30">{studyLevel === "undergraduate" ? `匹配 ${ugResults.length} 所学校的录取标准` : `分析 ${schoolResults.length} 所学校的录取标准`}</div>
         </main>
       )}
 
@@ -425,7 +439,7 @@ export default function Home() {
           <div className="text-center mb-6 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#e8be64]/30 bg-[#e8be64]/10 text-[#e8be64] text-xs sm:text-sm mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#e8be64] animate-pulse" />
-              覆盖 {schools.length} 所学校 · {totalProgramCount} 个具体项目
+              覆盖 {studyLevel === "undergraduate" ? `${totalUndergradProgramCount} 个本科项目` : `${schools.length} 所学校 · ${totalProgramCount} 个具体项目`}
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-3 sm:mb-4">
               你的成绩<br />
@@ -452,13 +466,152 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ═══ Undergraduate coming soon ═══ */}
-          {studyLevel === "undergraduate" && (
-            <div className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden p-8 sm:p-12 text-center">
-              <div className="text-4xl mb-4">🎓</div>
-              <h2 className="text-xl sm:text-2xl font-bold text-[#e8be64] mb-3">本科申请功能即将上线</h2>
-              <p className="text-white/50 text-sm sm:text-base mb-2">支持 A-Level、高考直申、IB 等主流申请路径</p>
-              <p className="text-white/30 text-xs">敬请期待，硕士申请功能可正常使用</p>
+          {/* ═══ Undergraduate form ═══ */}
+          {studyLevel === "undergraduate" && step === "form" && (
+            <div className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden">
+              <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-white/[0.06] flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                </div>
+                <span className="text-white/30 text-sm ml-2">填写你的背景信息（本科申请）</span>
+              </div>
+              <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
+
+                {/* Curriculum selector */}
+                <div>
+                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">课程体系 <span className="text-[#e8be64] text-xs">●</span></label>
+                  <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
+                    <button type="button" onClick={() => setUgCurriculum("alevel")}
+                      className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "alevel" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>A-Level</button>
+                    <button type="button" onClick={() => setUgCurriculum("ib")}
+                      className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "ib" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>IB</button>
+                    <button type="button" onClick={() => setUgCurriculum("gaokao")}
+                      className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "gaokao" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>高考直申</button>
+                  </div>
+                </div>
+
+                {/* A-Level subjects & grades */}
+                {ugCurriculum === "alevel" && (
+                  <div>
+                    <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">A-Level 科目与成绩 <span className="text-[#e8be64] text-xs">●</span></label>
+                    <div className="space-y-2">
+                      {ugAlevelGrades.map((g, i) => (
+                        <div key={i} className="flex gap-2">
+                          <select value={g.subject} onChange={(e) => { const next = [...ugAlevelGrades]; next[i] = { ...next[i], subject: e.target.value }; setUgAlevelGrades(next); }}
+                            className="flex-1 bg-[#181920] border border-white/[0.06] rounded-xl px-3 py-2.5 text-sm text-[#f0ede6] outline-none focus:border-[#e8be64] appearance-none">
+                            <option value="">选择科目</option>
+                            {alevelSubjects.map(s => <option key={s} value={s}>{s}</option>)}
+                          </select>
+                          <select value={g.grade} onChange={(e) => { const next = [...ugAlevelGrades]; next[i] = { ...next[i], grade: e.target.value }; setUgAlevelGrades(next); }}
+                            className="w-20 bg-[#181920] border border-white/[0.06] rounded-xl px-3 py-2.5 text-sm text-[#f0ede6] outline-none focus:border-[#e8be64] appearance-none">
+                            <option value="">等级</option>
+                            {["A*", "A", "B", "C", "D", "E"].map(g => <option key={g} value={g}>{g}</option>)}
+                          </select>
+                          {i >= 3 && (
+                            <button type="button" onClick={() => { const next = [...ugAlevelGrades]; next.splice(i, 1); setUgAlevelGrades(next); }}
+                              className="px-2 text-white/30 hover:text-red-400 text-sm">✕</button>
+                          )}
+                        </div>
+                      ))}
+                      {ugAlevelGrades.length < 4 && (
+                        <button type="button" onClick={() => setUgAlevelGrades([...ugAlevelGrades, { subject: "", grade: "" }])}
+                          className="text-sm text-[#e8be64]/60 hover:text-[#e8be64] transition-colors">+ 添加第四门科目</button>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* IB score */}
+                {ugCurriculum === "ib" && (
+                  <div>
+                    <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">IB 预估/实际总分 <span className="text-[#e8be64] text-xs">●</span></label>
+                    <input type="number" value={ugIbScore} onChange={(e) => setUgIbScore(e.target.value)} placeholder="例：38（满分45）" min="1" max="45"
+                      className="w-full bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 text-[#f0ede6] placeholder:text-white/20 outline-none focus:border-[#e8be64] text-base" />
+                  </div>
+                )}
+
+                {/* Gaokao score */}
+                {ugCurriculum === "gaokao" && (
+                  <div className="space-y-3">
+                    <div>
+                      <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">高考总分 <span className="text-[#e8be64] text-xs">●</span></label>
+                      <div className="flex gap-2">
+                        <input type="number" value={ugGaokaoScore} onChange={(e) => setUgGaokaoScore(e.target.value)} placeholder="你的分数"
+                          className="flex-1 bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 text-[#f0ede6] placeholder:text-white/20 outline-none focus:border-[#e8be64] text-base" />
+                        <span className="flex items-center text-white/30 text-sm">/</span>
+                        <select value={ugGaokaoTotal} onChange={(e) => setUgGaokaoTotal(e.target.value)}
+                          className="w-24 bg-[#181920] border border-white/[0.06] rounded-xl px-3 py-3 text-sm text-[#f0ede6] outline-none focus:border-[#e8be64] appearance-none">
+                          <option value="750">750</option>
+                          <option value="660">660</option>
+                          <option value="810">810</option>
+                          <option value="900">900</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p className="text-xs text-white/30">目前英国接受高考直申的学校包括：伯明翰、格拉斯哥、利兹、南安、埃克塞特等</p>
+                  </div>
+                )}
+
+                {/* Language */}
+                <div>
+                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">语言成绩</label>
+                  <div className="flex gap-2">
+                    <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
+                      <button type="button" onClick={() => setUgLangTest("IELTS")}
+                        className={`px-3 py-2.5 text-xs font-medium transition-all ${ugLangTest === "IELTS" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>IELTS</button>
+                      <button type="button" onClick={() => setUgLangTest("TOEFL")}
+                        className={`px-3 py-2.5 text-xs font-medium transition-all ${ugLangTest === "TOEFL" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>TOEFL</button>
+                    </div>
+                    <input type="number" value={ugLangScore} onChange={(e) => setUgLangScore(e.target.value)}
+                      placeholder={ugLangTest === "IELTS" ? "例：6.5" : "例：90"} step={ugLangTest === "IELTS" ? "0.5" : "1"}
+                      className="flex-1 bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 text-[#f0ede6] placeholder:text-white/20 outline-none focus:border-[#e8be64] text-base" />
+                  </div>
+                </div>
+
+                {/* Target subject area */}
+                <div>
+                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">目标专业方向 <span className="text-[#e8be64] text-xs">●</span></label>
+                  <div className="flex flex-wrap gap-1.5">
+                    {undergradSubjectAreas.map(area => (
+                      <button key={area.id} type="button" onClick={() => setUgSubjectArea(area.id)}
+                        className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${ugSubjectArea === area.id ? "bg-[#e8be64] text-[#0a0b0f]" : "bg-[#181920] border border-white/[0.06] text-white/50 hover:text-white"}`}>
+                        {area.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Submit */}
+                <button onClick={() => {
+                  const results = matchUndergradPrograms({
+                    curriculum: ugCurriculum,
+                    alevelGrades: ugCurriculum === "alevel" ? ugAlevelGrades.filter(g => g.subject && g.grade) : undefined,
+                    ibScore: ugCurriculum === "ib" ? parseFloat(ugIbScore) : undefined,
+                    gaokaoScore: ugCurriculum === "gaokao" ? parseFloat(ugGaokaoScore) : undefined,
+                    gaokaoTotal: ugCurriculum === "gaokao" ? parseFloat(ugGaokaoTotal) : undefined,
+                    langScore: parseFloat(ugLangScore) || 0,
+                    langTest: ugLangTest,
+                    subjectArea: ugSubjectArea,
+                  });
+                  setUgResults(results);
+                  setStep("loading");
+                  setTimeout(() => setStep("results"), 1200);
+                }}
+                  disabled={
+                    (ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length < 3) ||
+                    (ugCurriculum === "ib" && !ugIbScore) ||
+                    (ugCurriculum === "gaokao" && !ugGaokaoScore)
+                  }
+                  className={`w-full py-3.5 sm:py-4 rounded-xl font-bold text-base transition-all ${
+                    ((ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length >= 3) ||
+                     (ugCurriculum === "ib" && ugIbScore) ||
+                     (ugCurriculum === "gaokao" && ugGaokaoScore))
+                      ? "bg-[#e8be64] text-[#0a0b0f] hover:shadow-[0_8px_30px_rgba(232,190,100,0.25)] active:scale-[0.98] cursor-pointer"
+                      : "bg-[#e8be64]/20 text-[#e8be64]/40 cursor-not-allowed"
+                  }`}>开始匹配 →</button>
+              </div>
             </div>
           )}
 
@@ -812,8 +965,67 @@ export default function Home() {
         </main>
       )}
 
-      {/* ═══════════════ RESULTS ═══════════════ */}
-      {step === "results" && (selectedSchool || isOverseasUndergrad || isJointUniversity) && (
+      {/* ═══════════════ UNDERGRADUATE RESULTS ═══════════════ */}
+      {step === "results" && studyLevel === "undergraduate" && (
+        <main className="pt-20 sm:pt-24 pb-20 px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
+          <div ref={resultsTopRef} />
+          <div className="flex flex-wrap gap-3 mb-4">
+            {(["high", "medium", "low", "excluded"] as const).map(level => {
+              const count = ugResults.filter(r => r.bestLevel === level).length;
+              const cfg = { high: { label: "很有可能", color: "text-green-400" }, medium: { label: "有机会", color: "text-yellow-400" }, low: { label: "较难", color: "text-red-400" }, excluded: { label: "不匹配", color: "text-white/25" } }[level];
+              return count > 0 && <span key={level} className={`text-sm ${cfg.color}`}>{cfg.label} {count} 所</span>;
+            })}
+          </div>
+          <div className="space-y-4">
+            {ugResults.filter(r => r.bestLevel !== "excluded").map(school => (
+              <div key={school.schoolId} className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden">
+                <div className="px-4 sm:px-5 py-3 sm:py-4 border-b border-white/[0.06]">
+                  <h3 className="font-semibold text-[#f0ede6]">{school.schoolName}</h3>
+                  <p className="text-xs text-white/30">{school.schoolNameEn}</p>
+                </div>
+                <div className="divide-y divide-white/[0.04]">
+                  {school.programs.filter(r => r.level !== "excluded").map(r => {
+                    const cfg = { high: { label: "很有可能", color: "text-green-400", bg: "bg-green-400/10", border: "border-l-green-400" }, medium: { label: "有机会", color: "text-yellow-400", bg: "bg-yellow-400/10", border: "border-l-yellow-400" }, low: { label: "较难", color: "text-red-400", bg: "bg-red-400/10", border: "border-l-red-400" }, excluded: { label: "不匹配", color: "text-white/25", bg: "bg-white/5", border: "border-l-white/20" } }[r.level];
+                    return (
+                      <div key={r.program.id} className={`px-4 sm:px-5 py-3 sm:py-4 border-l-[3px] ${cfg.border} ${cfg.bg}`}>
+                        <div className="flex items-start justify-between gap-2 mb-1">
+                          <div>
+                            <span className="font-medium text-[#f0ede6] text-sm">{r.program.name}</span>
+                            <span className="text-white/30 text-xs ml-2">{r.program.nameEn}</span>
+                          </div>
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded ${cfg.color} ${cfg.bg}`}>{cfg.label}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/40 mt-1">
+                          <span>A-Level: {r.program.alpiLevel}</span>
+                          {r.program.ibScore && <span>IB: {r.program.ibScore}</span>}
+                          {r.program.gaokaoPercent && <span>高考: {r.program.gaokaoPercent}%+</span>}
+                          <span>IELTS: {r.program.ieltsOverall}</span>
+                          <span>{r.program.duration}</span>
+                          {r.program.tuitionFee && <span>{r.program.tuitionFee}/年</span>}
+                        </div>
+                        {r.program.requiredSubjects && (
+                          <div className="text-xs text-white/30 mt-1">必修: {r.program.requiredSubjects.join(", ")}</div>
+                        )}
+                        {r.program.notes && <div className="text-xs text-[#e8be64]/50 mt-1">{r.program.notes}</div>}
+                        <div className="text-xs text-white/25 mt-1">{r.reason}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+            {ugResults.filter(r => r.bestLevel !== "excluded").length === 0 && (
+              <div className="text-center py-12 text-white/40">
+                <p className="text-lg mb-2">暂无匹配结果</p>
+                <p className="text-sm">请检查输入信息或尝试其他专业方向</p>
+              </div>
+            )}
+          </div>
+        </main>
+      )}
+
+      {/* ═══════════════ POSTGRADUATE RESULTS ═══════════════ */}
+      {step === "results" && studyLevel === "postgraduate" && (selectedSchool || isOverseasUndergrad || isJointUniversity) && (
         <main className="pt-20 sm:pt-24 pb-20 px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
           <div ref={resultsTopRef} />
 
