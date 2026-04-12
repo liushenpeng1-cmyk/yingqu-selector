@@ -207,6 +207,457 @@ export const australianPrograms: UniversityPrograms[] = [
         duration: "2 years (96 units)",
         url: "https://programsandcourses.anu.edu.au/program/madan",
       },
+      // --- Engineering ---
+      {
+        programName: "Master of Engineering in Electrical Engineering",
+        faculty:
+          "School of Engineering, ANU College of Systems and Society",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "Requires a 4-year Bachelor of Engineering (Honours) or international equivalent " +
+            "in a cognate discipline. ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a 4-year Bachelor of Engineering (Honours) or equivalent in a cognate discipline. " +
+          "Accepted cognate disciplines: Electrical and/or Electronics, Telecommunications/Communication, " +
+          "Power, Information Engineering, Automation, Control, Microelectronics, Internet of Things, " +
+          "Optical/Optoelectronics, Photovoltaics, Biomedical Engineering, Mechatronics, " +
+          "Intelligent Engineering Systems.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/neleng",
+      },
+      // --- Education / TESOL (Linguistics covers TESOL at ANU) ---
+      {
+        programName: "Master of General and Applied Linguistics",
+        faculty:
+          "School of Literature, Languages and Linguistics, " +
+          "ANU College of Arts and Social Sciences",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Applicants with a cognate bachelor's or graduate certificate may receive " +
+            "up to 24 units (one semester) of credit.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No specific degree discipline required. Cognate backgrounds eligible for credit include: " +
+          "Applied Linguistics, Audiology, Communication Studies, International Communication Studies, " +
+          "Languages, Language Teaching, Lexicography, Linguistics, Speech Pathology, TESOL, " +
+          "Translating/Interpreting. Covers TESOL-related coursework within the program.",
+        tuitionFeeAUD: 53110,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (72 units)",
+        url: "https://programsandcourses.anu.edu.au/program/mgal",
+      },
+      // --- Media / Communication ---
+      {
+        programName: "Master of Science Communication",
+        faculty:
+          "Centre for the Public Awareness of Science, " +
+          "ANU College of Systems and Society",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Requires at least 8 courses in a cognate area OR 10 years related work experience.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: true,
+        relatedDegreeNotes:
+          "Requires a bachelor's degree with at least 8 courses in a cognate area, " +
+          "or at least 10 years' work experience in a related field. " +
+          "Cognate disciplines include: Mathematical Sciences, Physics, Chemistry, Earth Sciences, " +
+          "Biology, Environmental Studies, IT, Engineering, Health, Education, Communication/Media.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/MSCOM",
+      },
+      // --- Social Science ---
+      {
+        programName: "Master of International Relations",
+        faculty:
+          "Coral Bell School of Asia Pacific Affairs, " +
+          "ANU College of Asia and the Pacific",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Alternative pathway: GPA 4.0/7.0 + 3 years relevant work experience at ANZSCO Skill Level 1.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No specific degree discipline required. " +
+          "Cognate disciplines for credit include: International Relations and World Politics, " +
+          "Political Science with a Global Focus, Strategic and Security Studies, International History. " +
+          "Alternative pathways for applicants with lower GPA include work experience or additional qualifications.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/mintr",
+      },
+      // --- Social Science / Policy ---
+      {
+        programName: "Master of Public Policy",
+        faculty:
+          "Crawford School of Public Policy, " +
+          "ANU College of Law, Governance and Policy",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Alternative pathway: GPA 4.0/7.0 + 3 years relevant work experience, " +
+            "or GRE (155V/155Q/4.0AW) + 3 years experience, or 10 years professional experience.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No specific degree discipline required. " +
+          "Cognate disciplines for credit include: Anthropology, Demography, Development Studies, " +
+          "Economics, Geography, International Relations, Law, Policy Studies, Political Science, " +
+          "Public Administration, Sociology. " +
+          "Cognate bachelor's holders may receive up to 24 units credit; " +
+          "cognate Honours/Graduate Diploma holders may receive up to 48 units credit.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/mpupp",
+      },
+      // --- Law ---
+      {
+        programName: "Juris Doctor",
+        faculty: "ANU Law School, ANU College of Law, Governance and Policy",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "If multiple tertiary qualifications held, the highest GPA of all completed " +
+            "qualifications is used for assessment.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "A distinctive program for graduates of non-law disciplines (or non-Australian law degrees). " +
+          "Any bachelor's degree discipline is accepted. " +
+          "This qualification does NOT lead to admission as a legal practitioner in Australia " +
+          "without further study/assessment.",
+        tuitionFeeAUD: 62440,
+        tuitionFeeYear: 2026,
+        duration: "3 years (144 units)",
+        url: "https://programsandcourses.anu.edu.au/program/mjd",
+      },
+      // --- Law ---
+      {
+        programName: "Master of Laws (LLM)",
+        faculty: "ANU Law School, ANU College of Law, Governance and Policy",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Alternative pathway: GPA 4.0/7.0 + 3 years relevant professional experience.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "Open to both law and non-law graduates. " +
+          "Accepted backgrounds include: Bachelor of Laws, Juris Doctor, or bachelor's degree " +
+          "in cognate disciplines (Accounting, Business, Political Science, Philosophy, Economics, etc.). " +
+          "Five specialisations available: Public Law, International Law, Human Security Law, " +
+          "New Technologies Law, Private and Commercial Law. " +
+          "This qualification does NOT lead to admission as a legal practitioner.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "1 year (48 units)",
+        url: "https://programsandcourses.anu.edu.au/program/mllm",
+      },
+      // --- Science (Statistics / Actuarial) ---
+      {
+        programName: "Master of Statistics",
+        faculty:
+          "Research School of Finance, Actuarial Studies and Statistics, " +
+          "ANU College of Business and Economics",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Requires at least one university-level mathematics course covering calculus and linear algebra.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No specific degree discipline required, but must have completed at least one course " +
+          "in mathematics covering calculus and linear algebra. " +
+          "Cognate disciplines for credit include: Finance, Accounting, Actuarial Studies, Business, " +
+          "Economics, Engineering, Mathematics, Physics, Science, Statistics.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/mstat",
+      },
+      // --- Science (Environment) ---
+      {
+        programName: "Master of Environment",
+        faculty:
+          "Fenner School of Environment and Society, " +
+          "ANU College of Systems and Society",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No specific degree discipline required. Students without environmental studies " +
+          "background are advised to include enabling courses. " +
+          "Cognate disciplines for credit include: Anthropology, Biology, Climate Change, " +
+          "Conservation Biology, Development Studies, Ecology, Environmental Science, Forestry, " +
+          "Geography, and related fields. " +
+          "Specialisations available: Biodiversity Conservation, Climate Science and Policy, " +
+          "Disaster Studies, Environmental Policy, Environmental Studies and Human Ecology, " +
+          "Geography, Natural Resource Management, Sustainability Science, Water Science and Management.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/menvi",
+      },
+      // --- Accounting ---
+      {
+        programName: "Master of Professional Accounting",
+        faculty:
+          "Research School of Accounting, " +
+          "ANU College of Business and Economics",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Alternative pathway: ANU Graduate Certificate of Accounting with GPA 4.5/7.0, " +
+            "or 10+ years relevant work experience at ANZSCO Skill Level 1.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No prior accounting degree required. Designed for students with limited or no prior " +
+          "accounting background. Any bachelor's degree accepted. " +
+          "Cognate disciplines for credit include: Accounting, Actuarial Studies, Business, " +
+          "Business Information Systems, Computing Science, Economics, Finance, International Business, " +
+          "Management, Marketing, Mathematics, Statistics.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "1.5 years (72 units)",
+        url: "https://programsandcourses.anu.edu.au/program/7413xmpacc",
+      },
+      // --- Actuarial Studies ---
+      {
+        programName: "Master of Actuarial Studies",
+        faculty:
+          "Research School of Finance, Actuarial Studies and Statistics, " +
+          "ANU College of Business and Economics",
+        gpaRequirement: {
+          scale: "ANU 7-point GPA (minimum 5.0/7.0)",
+          tier211: "75%",
+          nonTier211: "85%",
+          notes:
+            "ANU converts Chinese percentage scores to its 7-point scale. " +
+            "5.0/7.0 ≈ 211: 75%, non-211: 85%. " +
+            "Requires at least one university-level mathematics course covering calculus and linear algebra. " +
+            "Entry is available for Semester 1 only. " +
+            "Students must achieve minimum 60% weighted average in first 48 units to remain enrolled.",
+        },
+        ielts: {
+          overall: 6.5,
+          listening: 6.0,
+          reading: 6.0,
+          writing: 6.0,
+          speaking: 6.0,
+        },
+        toefl: {
+          overall: 80,
+          listening: 18,
+          reading: 20,
+          writing: 20,
+          speaking: 18,
+        },
+        relatedDegreeRequired: false,
+        relatedDegreeNotes:
+          "No specific degree discipline required, but must have completed at least one course " +
+          "in mathematics covering calculus and linear algebra. " +
+          "Cognate disciplines for credit include: Finance, Accounting, Actuarial Studies, Business, " +
+          "Business Information Systems, Economics, Engineering, International Business, " +
+          "Management, Marketing, Mathematics, Physics, Science, Statistics.",
+        tuitionFeeAUD: 56120,
+        tuitionFeeYear: 2026,
+        duration: "2 years (96 units)",
+        url: "https://programsandcourses.anu.edu.au/program/7410xmacts",
+      },
     ],
   },
 
