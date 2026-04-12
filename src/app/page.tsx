@@ -440,13 +440,13 @@ export default function Home() {
             {/* Study level toggle */}
             <div className="flex justify-center mt-5 sm:mt-6">
               <div className="inline-flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
-                <button type="button" onClick={() => setStudyLevel("postgraduate")}
-                  className={`px-5 sm:px-6 py-2.5 text-sm font-medium transition-all ${studyLevel === "postgraduate" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>
-                  硕士申请
-                </button>
                 <button type="button" onClick={() => setStudyLevel("undergraduate")}
                   className={`px-5 sm:px-6 py-2.5 text-sm font-medium transition-all ${studyLevel === "undergraduate" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>
                   本科申请
+                </button>
+                <button type="button" onClick={() => setStudyLevel("postgraduate")}
+                  className={`px-5 sm:px-6 py-2.5 text-sm font-medium transition-all ${studyLevel === "postgraduate" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>
+                  硕士申请
                 </button>
               </div>
             </div>
