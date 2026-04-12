@@ -20,6 +20,19 @@ import type { Region } from "@/data/schools";
 export const PARTNER_BASE_URL: string =
   process.env.NEXT_PUBLIC_PARTNER_URL ?? "https://partner.example.com/apply";
 
+/**
+ * 跳转模式:
+ *  - "simple"(默认): 只跳转到 PARTNER_BASE_URL + ref/utm 归因参数,
+ *    合作方未完成 /apply 接入时用,先让按钮可点击引流。
+ *  - "full": 发送完整筛选 payload,合作方 /apply 端就绪后切换到此模式。
+ * 通过 NEXT_PUBLIC_PARTNER_MODE 环境变量控制,无需改代码。
+ */
+export type PartnerMode = "simple" | "full";
+export const PARTNER_MODE: PartnerMode =
+  (process.env.NEXT_PUBLIC_PARTNER_MODE as PartnerMode) === "full"
+    ? "full"
+    : "simple";
+
 export type ReferralPayload = {
   /** 归因标识，固定 yingqu */
   ref: "yingqu";
@@ -66,8 +79,21 @@ const ARRAY_KEYS = new Set<keyof ReferralPayload>([
   "alevelGrades",
 ]);
 
+/** 只带归因参数的精简 URL(simple 模式用) */
+export function buildSimpleReferralUrl(): string {
+  const params = new URLSearchParams({
+    ref: "yingqu",
+    utm_source: "yingqu",
+    utm_medium: "referral",
+  });
+  return `${PARTNER_BASE_URL}?${params.toString()}`;
+}
+
+/** 完整 payload URL(full 模式用,合作方 /apply 接入后启用) */
 export function buildReferralUrl(payload: ReferralPayload): string {
   const params = new URLSearchParams();
+  params.set("utm_source", "yingqu");
+  params.set("utm_medium", "referral");
   (Object.keys(payload) as (keyof ReferralPayload)[]).forEach((key) => {
     const value = payload[key];
     if (value === undefined || value === null || value === "") return;
@@ -86,6 +112,8 @@ export function buildReferralUrl(payload: ReferralPayload): string {
 
 export function openReferral(payload: ReferralPayload): void {
   if (typeof window === "undefined") return;
-  const url = buildReferralUrl(payload);
+  const url = PARTNER_MODE === "full"
+    ? buildReferralUrl(payload)
+    : buildSimpleReferralUrl();
   window.open(url, "_blank", "noopener,noreferrer");
 }

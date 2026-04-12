@@ -17,6 +17,17 @@ yingqu-selector is a Chinese study-abroad school matcher. When a user finishes f
 
 No backend integration. No API keys. No webhooks needed for MVP.
 
+### Two-phase rollout
+
+We support two traffic modes controlled by a single env var on our side (`NEXT_PUBLIC_PARTNER_MODE`):
+
+| Mode | Query sent | When to use |
+|---|---|---|
+| **`simple`** (current default) | `ref=yingqu&utm_source=yingqu&utm_medium=referral` only | Launch day. We start sending you users immediately. You only need a homepage that records `ref=yingqu` in analytics — no `/apply` endpoint required. |
+| **`full`** | Full payload per §3 schema | After you finish the `/apply` endpoint and pass the §6 test matrix. We flip the env var; all future button clicks send the full prefill payload. |
+
+You do not need to block your own launch on the full mode — simple mode already attributes revenue correctly via `ref=yingqu`. Full mode is a UX upgrade (prefill saves the user ~30 seconds of typing) that goes live when you're ready.
+
 ---
 
 ## 2. Landing URL
