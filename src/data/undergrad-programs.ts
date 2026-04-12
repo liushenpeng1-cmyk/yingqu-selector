@@ -82,7 +82,15 @@ function parseRequirement(req: string): number[] {
 // ── School info for display (only schools not in main schools.ts) ──
 export const undergradOnlySchools: Record<string, { name: string; nameEn: string }> = {
   "exeter": { name: "埃克塞特大学", nameEn: "University of Exeter" },
-  "st-andrews": { name: "圣安德鲁斯大学", nameEn: "University of St Andrews" },
+  "standrews": { name: "圣安德鲁斯大学", nameEn: "University of St Andrews" },
+  "york": { name: "约克大学", nameEn: "University of York" },
+  "liverpool": { name: "利物浦大学", nameEn: "University of Liverpool" },
+  "cardiff": { name: "卡迪夫大学", nameEn: "Cardiff University" },
+  "loughborough": { name: "拉夫堡大学", nameEn: "Loughborough University" },
+  "sussex": { name: "萨塞克斯大学", nameEn: "University of Sussex" },
+  "queens-belfast": { name: "贝尔法斯特女王大学", nameEn: "Queen's University Belfast" },
+  "aberdeen": { name: "阿伯丁大学", nameEn: "University of Aberdeen" },
+  "dundee": { name: "邓迪大学", nameEn: "University of Dundee" },
 };
 
 // ═══════════════ PROGRAMS DATA ═══════════════
@@ -303,12 +311,128 @@ export const undergradPrograms: UndergradProgram[] = [
   { id: "ex-ug-acc-fin", schoolId: "exeter", name: "会计与金融", nameEn: "Accounting and Finance BSc", subjectArea: "accounting-finance", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,000" },
 
   // ── St Andrews ──
-  { id: "sta-ug-maths", schoolId: "st-andrews", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960", notes: "苏格兰4年制" },
-  { id: "sta-ug-cs", schoolId: "st-andrews", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
-  { id: "sta-ug-physics", schoolId: "st-andrews", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
-  { id: "sta-ug-chemistry", schoolId: "st-andrews", name: "化学", nameEn: "Chemistry BSc", subjectArea: "chemistry", alpiLevel: "AAA", requiredSubjects: ["Chemistry"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
-  { id: "sta-ug-economics", schoolId: "st-andrews", name: "经济学", nameEn: "Economics MA", subjectArea: "economics", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
-  { id: "sta-ug-psychology", schoolId: "st-andrews", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
+  { id: "sta-ug-maths", schoolId: "standrews", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960", notes: "苏格兰4年制" },
+  { id: "sta-ug-cs", schoolId: "standrews", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
+  { id: "sta-ug-physics", schoolId: "standrews", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
+  { id: "sta-ug-chemistry", schoolId: "standrews", name: "化学", nameEn: "Chemistry BSc", subjectArea: "chemistry", alpiLevel: "AAA", requiredSubjects: ["Chemistry"], ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
+  { id: "sta-ug-economics", schoolId: "standrews", name: "经济学", nameEn: "Economics MA", subjectArea: "economics", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
+  { id: "sta-ug-psychology", schoolId: "standrews", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAA", ibScore: 36, ieltsOverall: 7.0, duration: "4 years", tuitionFee: "£28,960" },
+
+  // ── Lancaster ──
+  { id: "lan-ug-maths", schoolId: "lancaster", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£26,640" },
+  { id: "lan-ug-cs", schoolId: "lancaster", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,450" },
+  { id: "lan-ug-engineering", schoolId: "lancaster", name: "机械工程", nameEn: "Mechanical Engineering MEng", subjectArea: "engineering", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 35, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£28,450" },
+  { id: "lan-ug-physics", schoolId: "lancaster", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,450" },
+  { id: "lan-ug-economics", schoolId: "lancaster", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,450" },
+  { id: "lan-ug-law", schoolId: "lancaster", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,450" },
+  { id: "lan-ug-psychology", schoolId: "lancaster", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£26,640" },
+  { id: "lan-ug-business", schoolId: "lancaster", name: "商业管理", nameEn: "Management and Leadership BSc", subjectArea: "business", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,450", notes: "兰卡斯特管理学院全英Top 10" },
+  { id: "lan-ug-acc-fin", schoolId: "lancaster", name: "会计与金融", nameEn: "Accounting and Finance BSc", subjectArea: "accounting-finance", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,450" },
+
+  // ── Newcastle ──
+  { id: "ncl-ug-maths", schoolId: "newcastle", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,800" },
+  { id: "ncl-ug-cs", schoolId: "newcastle", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "ncl-ug-engineering", schoolId: "newcastle", name: "机械工程", nameEn: "Mechanical Engineering BEng", subjectArea: "engineering", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "ncl-ug-physics", schoolId: "newcastle", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "ncl-ug-economics", schoolId: "newcastle", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,800" },
+  { id: "ncl-ug-law", schoolId: "newcastle", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,800" },
+  { id: "ncl-ug-psychology", schoolId: "newcastle", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,800" },
+  { id: "ncl-ug-business", schoolId: "newcastle", name: "商业管理", nameEn: "Business Management BSc", subjectArea: "business", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,800" },
+  { id: "ncl-ug-acc-fin", schoolId: "newcastle", name: "会计与金融", nameEn: "Accounting and Finance BSc", subjectArea: "accounting-finance", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,800" },
+  { id: "ncl-ug-architecture", schoolId: "newcastle", name: "建筑", nameEn: "Architecture BA", subjectArea: "architecture", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,800", notes: "需作品集" },
+  { id: "ncl-ug-medicine", schoolId: "newcastle", name: "医学", nameEn: "Medicine MBBS", subjectArea: "medicine", alpiLevel: "AAA", requiredSubjects: ["Chemistry", "Biology"], ibScore: 36, ieltsOverall: 7.5, duration: "5 years", tuitionFee: "£42,100", notes: "需 UCAT + 面试" },
+
+  // ── QMUL (accepts 高考) ──
+  { id: "qm-ug-maths", schoolId: "qmul", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,950" },
+  { id: "qm-ug-cs", schoolId: "qmul", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£27,650" },
+  { id: "qm-ug-engineering", schoolId: "qmul", name: "工程", nameEn: "Electronic Engineering BEng", subjectArea: "engineering", alpiLevel: "AAB", requiredSubjects: ["Mathematics", "Physics"], ibScore: 32, gaokaoPercent: 78, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£27,650" },
+  { id: "qm-ug-economics", schoolId: "qmul", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, gaokaoPercent: 80, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,750" },
+  { id: "qm-ug-law", schoolId: "qmul", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 34, gaokaoPercent: 82, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,750", notes: "QMUL法学全英Top 10" },
+  { id: "qm-ug-psychology", schoolId: "qmul", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAB", ibScore: 32, gaokaoPercent: 78, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,950" },
+  { id: "qm-ug-business", schoolId: "qmul", name: "商业管理", nameEn: "Business Management BSc", subjectArea: "business", alpiLevel: "AAB", ibScore: 32, gaokaoPercent: 78, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,750" },
+  { id: "qm-ug-medicine", schoolId: "qmul", name: "医学", nameEn: "Medicine MBBS", subjectArea: "medicine", alpiLevel: "AAA", requiredSubjects: ["Chemistry", "Biology"], ibScore: 36, ieltsOverall: 7.0, duration: "5 years", tuitionFee: "£43,500", notes: "需 UCAT + 面试。不接受高考直申" },
+
+  // ── York ──
+  { id: "yk-ug-maths", schoolId: "york", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,600" },
+  { id: "yk-ug-cs", schoolId: "york", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "yk-ug-engineering", schoolId: "york", name: "电子工程", nameEn: "Electronic Engineering BEng", subjectArea: "engineering", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 35, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "yk-ug-physics", schoolId: "york", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 35, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "yk-ug-chemistry", schoolId: "york", name: "化学", nameEn: "Chemistry BSc", subjectArea: "chemistry", alpiLevel: "AAA", requiredSubjects: ["Chemistry"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,800" },
+  { id: "yk-ug-economics", schoolId: "york", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "yk-ug-law", schoolId: "york", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 7.0, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "yk-ug-psychology", schoolId: "york", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAA", ibScore: 35, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,600", notes: "约克心理学全英Top 5" },
+  { id: "yk-ug-business", schoolId: "york", name: "商业管理", nameEn: "Management BSc", subjectArea: "business", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,250" },
+  { id: "yk-ug-biology", schoolId: "york", name: "生物", nameEn: "Biology BSc", subjectArea: "biology", alpiLevel: "AAB", requiredSubjects: ["Biology"], ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,800" },
+
+  // ── Liverpool ──
+  { id: "liv-ug-maths", schoolId: "liverpool", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 33, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£24,000" },
+  { id: "liv-ug-cs", schoolId: "liverpool", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 33, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£26,600" },
+  { id: "liv-ug-engineering", schoolId: "liverpool", name: "机械工程", nameEn: "Mechanical Engineering BEng", subjectArea: "engineering", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 33, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£26,600" },
+  { id: "liv-ug-economics", schoolId: "liverpool", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,400" },
+  { id: "liv-ug-law", schoolId: "liverpool", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,400" },
+  { id: "liv-ug-psychology", schoolId: "liverpool", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAB", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,000" },
+  { id: "liv-ug-business", schoolId: "liverpool", name: "商业管理", nameEn: "Business Management BA", subjectArea: "business", alpiLevel: "ABB", ibScore: 31, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,400" },
+  { id: "liv-ug-architecture", schoolId: "liverpool", name: "建筑", nameEn: "Architecture BA", subjectArea: "architecture", alpiLevel: "AAA", ibScore: 33, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,000", notes: "需作品集。利物浦建筑学院全英知名" },
+
+  // ── Cardiff ──
+  { id: "car-ug-maths", schoolId: "cardiff", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,450" },
+  { id: "car-ug-cs", schoolId: "cardiff", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,200" },
+  { id: "car-ug-engineering", schoolId: "cardiff", name: "土木工程", nameEn: "Civil Engineering BEng", subjectArea: "engineering", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£28,200" },
+  { id: "car-ug-physics", schoolId: "cardiff", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAB", requiredSubjects: ["Mathematics", "Physics"], ibScore: 32, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£25,450" },
+  { id: "car-ug-chemistry", schoolId: "cardiff", name: "化学", nameEn: "Chemistry BSc", subjectArea: "chemistry", alpiLevel: "AAB", requiredSubjects: ["Chemistry"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,450" },
+  { id: "car-ug-economics", schoolId: "cardiff", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,950" },
+  { id: "car-ug-law", schoolId: "cardiff", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,950" },
+  { id: "car-ug-psychology", schoolId: "cardiff", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,450" },
+  { id: "car-ug-business", schoolId: "cardiff", name: "商业管理", nameEn: "Business Management BSc", subjectArea: "business", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,950" },
+  { id: "car-ug-architecture", schoolId: "cardiff", name: "建筑", nameEn: "Architecture BSc", subjectArea: "architecture", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,450", notes: "需作品集。威尔士建筑学院(WSA)" },
+  { id: "car-ug-medicine", schoolId: "cardiff", name: "医学", nameEn: "Medicine MBBCh", subjectArea: "medicine", alpiLevel: "AAA", requiredSubjects: ["Chemistry", "Biology"], ibScore: 36, ieltsOverall: 7.0, duration: "5 years", tuitionFee: "£40,950", notes: "需 UCAT + 面试" },
+
+  // ── Loughborough ──
+  { id: "lboro-ug-maths", schoolId: "loughborough", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,700" },
+  { id: "lboro-ug-cs", schoolId: "loughborough", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£27,250" },
+  { id: "lboro-ug-engineering", schoolId: "loughborough", name: "机械工程", nameEn: "Mechanical Engineering MEng", subjectArea: "engineering", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 34, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£27,250", notes: "拉夫堡工程全英顶尖" },
+  { id: "lboro-ug-physics", schoolId: "loughborough", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAB", requiredSubjects: ["Mathematics", "Physics"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£27,250" },
+  { id: "lboro-ug-economics", schoolId: "loughborough", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAA", requiredSubjects: ["Mathematics"], ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,900" },
+  { id: "lboro-ug-business", schoolId: "loughborough", name: "商业管理", nameEn: "Business and Management BSc", subjectArea: "business", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£21,900" },
+  { id: "lboro-ug-architecture", schoolId: "loughborough", name: "建筑", nameEn: "Architecture BArch", subjectArea: "architecture", alpiLevel: "AAA", ibScore: 34, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£25,700", notes: "需作品集" },
+
+  // ── Sussex ──
+  { id: "sus-ug-cs", schoolId: "sussex", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,500" },
+  { id: "sus-ug-economics", schoolId: "sussex", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£20,000" },
+  { id: "sus-ug-law", schoolId: "sussex", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£20,000" },
+  { id: "sus-ug-psychology", schoolId: "sussex", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAB", ibScore: 32, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£24,500", notes: "萨塞克斯心理学全英前列" },
+  { id: "sus-ug-business", schoolId: "sussex", name: "商业管理", nameEn: "Business and Management Studies BSc", subjectArea: "business", alpiLevel: "ABB", ibScore: 30, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£20,000" },
+  { id: "sus-ug-physics", schoolId: "sussex", name: "物理", nameEn: "Physics BSc", subjectArea: "physics", alpiLevel: "AAB", requiredSubjects: ["Mathematics", "Physics"], ibScore: 32, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£24,500" },
+
+  // ── Queen's Belfast (accepts 高考) ──
+  { id: "qub-ug-maths", schoolId: "queens-belfast", name: "数学", nameEn: "Mathematics BSc", subjectArea: "mathematics", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 33, gaokaoPercent: 75, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£22,700" },
+  { id: "qub-ug-cs", schoolId: "queens-belfast", name: "计算机科学", nameEn: "Computer Science BSc", subjectArea: "computer-science", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 33, gaokaoPercent: 75, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£24,900" },
+  { id: "qub-ug-engineering", schoolId: "queens-belfast", name: "机械工程", nameEn: "Mechanical Engineering MEng", subjectArea: "engineering", alpiLevel: "AAA", requiredSubjects: ["Mathematics", "Physics"], ibScore: 33, gaokaoPercent: 75, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£24,900" },
+  { id: "qub-ug-economics", schoolId: "queens-belfast", name: "经济学", nameEn: "Economics BSc", subjectArea: "economics", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 33, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£19,800" },
+  { id: "qub-ug-law", schoolId: "queens-belfast", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAA", ibScore: 34, gaokaoPercent: 78, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£19,800" },
+  { id: "qub-ug-psychology", schoolId: "queens-belfast", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "AAB", ibScore: 33, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£22,700" },
+  { id: "qub-ug-business", schoolId: "queens-belfast", name: "商业管理", nameEn: "Business Management BSc", subjectArea: "business", alpiLevel: "ABB", ibScore: 31, gaokaoPercent: 73, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£19,800" },
+  { id: "qub-ug-acc-fin", schoolId: "queens-belfast", name: "会计", nameEn: "Accounting BSc", subjectArea: "accounting-finance", alpiLevel: "AAB", requiredSubjects: ["Mathematics"], ibScore: 33, gaokaoPercent: 75, ieltsOverall: 6.5, duration: "3 years", tuitionFee: "£19,800" },
+  { id: "qub-ug-medicine", schoolId: "queens-belfast", name: "医学", nameEn: "Medicine MB", subjectArea: "medicine", alpiLevel: "AAA", requiredSubjects: ["Chemistry", "Biology"], ibScore: 36, ieltsOverall: 7.0, duration: "5 years", tuitionFee: "£38,000", notes: "需 UCAT + 面试。不接受高考直申" },
+
+  // ── Aberdeen (accepts 高考) ──
+  { id: "abd-ug-cs", schoolId: "aberdeen", name: "计算机科学", nameEn: "Computing Science BSc", subjectArea: "computer-science", alpiLevel: "ABB", requiredSubjects: ["Mathematics"], ibScore: 32, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£24,000", notes: "苏格兰4年制" },
+  { id: "abd-ug-engineering", schoolId: "aberdeen", name: "工程", nameEn: "Engineering MEng", subjectArea: "engineering", alpiLevel: "ABB", requiredSubjects: ["Mathematics", "Physics"], ibScore: 32, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "5 years", tuitionFee: "£26,100" },
+  { id: "abd-ug-economics", schoolId: "aberdeen", name: "经济学", nameEn: "Economics MA", subjectArea: "economics", alpiLevel: "ABB", ibScore: 32, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£19,800" },
+  { id: "abd-ug-law", schoolId: "aberdeen", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "AAB", ibScore: 33, gaokaoPercent: 73, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£19,800" },
+  { id: "abd-ug-psychology", schoolId: "aberdeen", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "ABB", ibScore: 32, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£24,000" },
+  { id: "abd-ug-business", schoolId: "aberdeen", name: "商业管理", nameEn: "Business Management MA", subjectArea: "business", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£19,800" },
+  { id: "abd-ug-medicine", schoolId: "aberdeen", name: "医学", nameEn: "Medicine MBChB", subjectArea: "medicine", alpiLevel: "AAA", requiredSubjects: ["Chemistry"], ibScore: 36, ieltsOverall: 7.0, duration: "5 years", tuitionFee: "£43,000", notes: "需 UCAT + 面试。不接受高考直申" },
+
+  // ── Dundee (accepts 高考, low barrier) ──
+  { id: "dun-ug-cs", schoolId: "dundee", name: "计算机科学", nameEn: "Computing BSc", subjectArea: "computer-science", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£22,950", notes: "苏格兰4年制" },
+  { id: "dun-ug-engineering", schoolId: "dundee", name: "土木工程", nameEn: "Civil Engineering BEng", subjectArea: "engineering", alpiLevel: "ABB", requiredSubjects: ["Mathematics"], ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£24,950" },
+  { id: "dun-ug-economics", schoolId: "dundee", name: "经济学", nameEn: "Economics MA", subjectArea: "economics", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£19,500" },
+  { id: "dun-ug-law", schoolId: "dundee", name: "法律", nameEn: "Law LLB", subjectArea: "law", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 72, ieltsOverall: 6.5, duration: "4 years", tuitionFee: "£19,500" },
+  { id: "dun-ug-psychology", schoolId: "dundee", name: "心理学", nameEn: "Psychology BSc", subjectArea: "psychology", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£22,950" },
+  { id: "dun-ug-business", schoolId: "dundee", name: "商业管理", nameEn: "Business Management BSc", subjectArea: "business", alpiLevel: "BBC", ibScore: 28, gaokaoPercent: 68, ieltsOverall: 6.0, duration: "4 years", tuitionFee: "£19,500" },
+  { id: "dun-ug-architecture", schoolId: "dundee", name: "建筑", nameEn: "Architecture BSc", subjectArea: "architecture", alpiLevel: "ABB", ibScore: 30, gaokaoPercent: 70, ieltsOverall: 6.0, duration: "3 years", tuitionFee: "£22,950", notes: "需作品集" },
+  { id: "dun-ug-medicine", schoolId: "dundee", name: "医学", nameEn: "Medicine MBChB", subjectArea: "medicine", alpiLevel: "AAA", requiredSubjects: ["Chemistry", "Biology"], ibScore: 37, ieltsOverall: 7.0, duration: "5 years", tuitionFee: "£42,000", notes: "需 UCAT + 面试。邓迪医学口碑极好。不接受高考直申" },
 ];
 
 export const totalUndergradProgramCount = undergradPrograms.length;
