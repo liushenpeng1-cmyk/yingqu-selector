@@ -1,125 +1,130 @@
-# yingqu-selector → Partner Integration Spec
+# yingqu-selector ⇄ i-offer.ai 对接规范
 
-**Version**: 1.0
+**Version**: 1.1
 **Last Updated**: 2026-04-13
-**Source Implementation**: `src/lib/referral.ts`
-**Demo URL**: https://yingqu-selector.vercel.app
+**Live Source**: `src/lib/referral.ts`
+**yingqu 线上**: https://yingqu-selector.vercel.app
+**ioffer 接收端**: https://student.i-offer.ai/
 
 ---
 
-## 1. What This Document Is
+## 0. 一张图看懂
 
-yingqu-selector is a Chinese study-abroad school matcher. When a user finishes filtering and decides to apply, we package their inputs + chosen school(s)/program(s) into URL query parameters and open your landing page in a new tab.
+```
+┌─────────────────────────┐        ┌──────────────────────────┐
+│ yingqu-selector         │  jump  │ student.i-offer.ai       │
+│ 抖音/小红书自然流量      │ ─────▶ │ 接住 ref=yingqu 归因       │
+│ 用户填完表单选好学校/专业 │        │ (Phase 2: 预填申请表单)    │
+└─────────────────────────┘        └──────────────────────────┘
+        已上线 ✅                         Phase 1 立即可用 ✅
+```
 
-**Your job**: Receive these params on `/apply` (or similar), prefill your application form, and attribute the session to `ref=yingqu` for revenue tracking.
+**零 API · 零 Webhook · 零共享数据库** — 整个协议只是一次 URL 跳转。
 
-**Our job**: Route the user to you with all fields populated. Nothing else.
+---
 
-No backend integration. No API keys. No webhooks needed for MVP.
+## 1. 合作分工
 
-### Two-phase rollout
-
-We support two traffic modes controlled by a single env var on our side (`NEXT_PUBLIC_PARTNER_MODE`):
-
-| Mode | Query sent | When to use |
+| | yingqu | i-offer |
 |---|---|---|
-| **`simple`** (current default) | `ref=yingqu&utm_source=yingqu&utm_medium=referral` only | Launch day. We start sending you users immediately. You only need a homepage that records `ref=yingqu` in analytics — no `/apply` endpoint required. |
-| **`full`** | Full payload per §3 schema | After you finish the `/apply` endpoint and pass the §6 test matrix. We flip the env var; all future button clicks send the full prefill payload. |
-
-You do not need to block your own launch on the full mode — simple mode already attributes revenue correctly via `ref=yingqu`. Full mode is a UX upgrade (prefill saves the user ~30 seconds of typing) that goes live when you're ready.
-
----
-
-## 2. Landing URL
-
-```
-{YOUR_BASE_URL}?<query-params>
-```
-
-We will configure `YOUR_BASE_URL` in our Vercel environment once you confirm the path. Recommended: `https://ioffer.ai/apply`.
-
-**Opened via** `window.open(url, "_blank", "noopener,noreferrer")`.
+| 流量来源 | ✅ 抖音/小红书/SEO | — |
+| 用户选校/选专业 | ✅ 已上线 | ❌ 不做 |
+| 收藏 + 批量意向 | ✅ 已上线 (localStorage) | ❌ 不做 |
+| 归因接收 | ❌ | ✅ 识别 `ref=yingqu` |
+| AI 文书/申请服务 | ❌ 不做 | ✅ 主营业务 |
+| 收款 + 服务交付 | ❌ 不做 | ✅ 主营业务 |
+| 转化数据报表 | ❌ | ✅ 每月给 yingqu 出漏斗 |
 
 ---
 
-## 3. Query Parameter Schema
+## 2. 落地 URL
 
-### 3.1 Always Present
+```
+https://student.i-offer.ai/?<query-params>
+```
 
-| Key | Type | Example | Notes |
+- 打开方式：`window.open(url, "_blank", "noopener,noreferrer")`
+- yingqu 通过 `NEXT_PUBLIC_PARTNER_URL` 环境变量配置,如需调整只改 env,无需发版。
+- **不要用 `dev.i-offer.ai`** — 那个会 302 跳到 `student.i-offer.ai`,多一跳会丢 referrer 且 Safari 可能拦 cookie。
+
+---
+
+## 3. 两阶段上线
+
+yingqu 侧有个 `NEXT_PUBLIC_PARTNER_MODE` 开关,控制发送信息的详细程度:
+
+| 模式 | 发送的 query 参数 | 启用时机 | 是否当前启用 |
 |---|---|---|---|
-| `ref` | string | `"yingqu"` | **Attribution key.** Verify its presence before prefill. |
-| `target` | enum | `"ug"` \| `"pg"` | Undergrad vs postgrad |
-| `schoolIds` | JSON array | `%5B%22oxford%22%2C%22cambridge%22%5D` | School IDs (stable, lowercase) |
-| `regions` | JSON array | `%5B%22UK%22%2C%22US%22%5D` | ISO-like region codes |
+| **`simple`** | `ref=yingqu&utm_source=yingqu&utm_medium=referral` | 现在。只归因,不预填 | ✅ **当前生产** |
+| **`full`** | 完整 payload（见 §4） | ioffer 端 `/apply` 或预填逻辑就绪后 | ⏳ 待 ioffer 通知 |
 
-**All array values are `JSON.stringify`'d then `encodeURIComponent`'d.** Example raw value:
+**关键点**：Phase 1 你们什么都不用改代码就能开始收流量 + 做归因统计。Phase 2 是 UX 升级（省用户 30 秒填表）,你们好了通知 yingqu,我们翻一下 env var 就切,不需要你们重新部署。
 
-```
-schoolIds=%5B%22oxford%22%2C%22cambridge%22%5D
-```
+---
 
-After `decodeURIComponent` + `JSON.parse` you get `["oxford", "cambridge"]`.
+## 4. Full 模式完整参数表（Phase 2 用）
 
-### 3.2 Conditionally Present
+### 4.1 必带字段
 
-#### Specific programs (when user favorited individual programs)
+| Key | Type | 示例 | 说明 |
+|---|---|---|---|
+| `ref` | string | `"yingqu"` | **归因 key,首要校验** |
+| `utm_source` | string | `"yingqu"` | 标准 UTM,GA/Posthog 等自动识别 |
+| `utm_medium` | string | `"referral"` | 同上 |
+| `target` | enum | `"ug"` \| `"pg"` | 本科 or 硕士 |
+| `schoolIds` | JSON[] | `%5B%22oxford%22%5D` | 学校 ID 列表（用户选中/收藏的） |
+| `regions` | JSON[] | `%5B%22UK%22%5D` | 目标地区代码 |
 
-| Key | Type | Example |
+### 4.2 按需带字段
+
+| 场景 | 字段 | 说明 |
 |---|---|---|
-| `programIds` | JSON array | `["ox-ug-cs", "cam-ug-maths"]` |
+| 用户收藏到专业级 | `programIds` (JSON[]) | 如 `["ox-ug-cs","cam-ug-maths"]` |
+| 用户填了语言成绩 | `lang` / `langScore` | `"IELTS"` / `"7.0"` |
+| 英语国家豁免 | `langExempt` | `"1"` / `"0"` |
+| 硕士 tab | `gpa` / `gpaScale` / `userTier` / `currentCategoryId` / `targetSubMajorId` / `ukClassification` / `auClassification` / `isOverseasUndergrad` / `isJointUniversity` / `jointUniType` | 详见 4.3 |
+| 本科 tab | `curriculum` / `alevelGrades` / `ibScore` / `gaokaoScore` / `gaokaoTotal` / `subjectArea` | 详见 4.4 |
 
-If user clicks "Apply to this school" (not a specific program), we send the full list of matched programs at that school.
+### 4.3 硕士（`target=pg`）
 
-#### Language test (always present if user filled in)
-
-| Key | Type | Example |
-|---|---|---|
-| `lang` | enum | `"IELTS"` \| `"TOEFL"` |
-| `langScore` | string | `"7.0"` |
-| `langExempt` | `"1"` \| `"0"` | Bool encoded as 1/0 |
-
-#### Postgrad only (`target=pg`)
-
-| Key | Type | Example |
+| Key | Type | 示例 |
 |---|---|---|
 | `gpa` | string | `"3.8"` or `"85"` |
 | `gpaScale` | enum | `"gpa4"` \| `"percentage"` |
 | `userTier` | string | `"985"` \| `"211"` \| `"双一流"` \| `"双非"` \| `"overseas"` |
-| `currentCategoryId` | string | `"business"` (student's undergrad field) |
-| `targetSubMajorId` | string | `"management"` (desired postgrad program) |
+| `currentCategoryId` | string | `"business"` (学生本科专业类别) |
+| `targetSubMajorId` | string | `"management"` (目标硕士专业) |
 | `ukClassification` | enum | `"first"` \| `"2:1"` \| `"2:2"` |
 | `auClassification` | enum | `"hd"` \| `"d"` \| `"c"` \| `"p"` |
-| `isOverseasUndergrad` | `"1"` \| `"0"` | |
-| `isJointUniversity` | `"1"` \| `"0"` | Student from XJTLU/UNNC/NYU Shanghai etc. |
+| `isOverseasUndergrad` | bool | `"1"` \| `"0"` |
+| `isJointUniversity` | bool | `"1"` \| `"0"` (XJTLU/UNNC/NYU Shanghai/DKU 等) |
 | `jointUniType` | enum | `"uk-partner"` \| `"us-partner"` \| `"hk-partner"` |
 
-#### Undergrad only (`target=ug`)
+### 4.4 本科（`target=ug`）
 
-| Key | Type | Example |
+| Key | Type | 示例 |
 |---|---|---|
 | `curriculum` | enum | `"alevel"` \| `"ib"` \| `"gaokao"` |
-| `alevelGrades` | JSON array | `[{"subject":"Mathematics","grade":"A*"},{"subject":"Physics","grade":"A"}]` |
-| `ibScore` | string | `"42"` (out of 45) |
+| `alevelGrades` | JSON[] | `[{"subject":"Math","grade":"A*"},{"subject":"Physics","grade":"A"}]` |
+| `ibScore` | string | `"42"` (满分 45) |
 | `gaokaoScore` | string | `"650"` |
 | `gaokaoTotal` | string | `"750"` |
-| `subjectArea` | string | `"economics"` (target subject) |
+| `subjectArea` | string | `"economics"` |
 
-### 3.3 Encoding Rules Summary
+### 4.5 编码规则（重要）
 
-- **Scalar strings / numbers**: `encodeURIComponent(value)` only
-- **Booleans**: `"1"` or `"0"` (not `"true"`/`"false"`)
-- **Arrays & nested objects**: `encodeURIComponent(JSON.stringify(value))`
-- **Empty / undefined**: key omitted entirely (do not expect empty-string values)
+- 标量字符串/数字 → `encodeURIComponent(value)`
+- 布尔 → `"1"` / `"0"`（**不是** `"true"`/`"false"`）
+- 数组和嵌套对象 → `encodeURIComponent(JSON.stringify(value))`
+- 空值 / undefined → 该 key 完全不出现（不会以空字符串形式出现）
 
 ---
 
-## 4. Reference Parser (TypeScript)
+## 5. 参考解析代码（TypeScript）
 
-Drop this into your `/apply` page. It handles all encoding edge cases.
+直接 drop 进 `/apply` 或任意页面的初始化逻辑:
 
 ```ts
-// app/apply/parse-yingqu.ts
 export type YingquPayload = {
   ref: string;
   target?: "ug" | "pg";
@@ -154,13 +159,13 @@ const BOOL_KEYS = new Set([
   "langExempt", "isOverseasUndergrad", "isJointUniversity",
 ]);
 
-export function parseYingquParams(search: string): YingquPayload | null {
+export function parseYingqu(search: string): YingquPayload | null {
   const p = new URLSearchParams(search);
-  const ref = p.get("ref");
-  if (ref !== "yingqu") return null;              // attribution guard
+  if (p.get("ref") !== "yingqu") return null;   // 归因守卫
 
-  const out: Record<string, unknown> = { ref };
+  const out: Record<string, unknown> = { ref: "yingqu" };
   for (const [k, v] of p.entries()) {
+    if (k === "ref") continue;
     if (ARRAY_KEYS.has(k)) {
       try { out[k] = JSON.parse(v); } catch { /* skip malformed */ }
     } else if (BOOL_KEYS.has(k)) {
@@ -172,74 +177,83 @@ export function parseYingquParams(search: string): YingquPayload | null {
   return out as YingquPayload;
 }
 
-// Usage (Next.js client component):
-// const payload = parseYingquParams(window.location.search);
+// 使用示例(React client component / Next.js app router):
+// const payload = parseYingqu(window.location.search);
 // if (payload) prefillForm(payload);
 ```
 
 ---
 
-## 5. Attribution & Analytics
+## 6. 归因 & 分析（Phase 1 就需要）
 
-### What we need from you
+### 6.1 必做
 
-1. **Persist `ref=yingqu`** the moment the user lands. Store in `sessionStorage` + a 30-day cookie. Do not drop it on page navigation.
-2. **Tag every downstream event** (signup, payment, subscription) with `source: "yingqu"` in your analytics pipeline.
-3. **Monthly report to us**: count of sessions, signups, paid conversions broken down by `ref=yingqu`. Required for revenue share reconciliation.
+1. 用户落地时把 `ref=yingqu` 写入 `sessionStorage` + 30 天 cookie,页面跳转不丢。
+2. 下游事件（注册/付费/开通订阅）打点时带 `source: "yingqu"` 或等价字段到你们的分析管道。
+3. 每月给 yingqu 一份 **`ref=yingqu` 的漏斗**（曝光 → 注册 → 付费）,用于分成结算。
 
-### Fraud guard (lightweight)
+### 6.2 防作弊
 
-Verify the `Referer` header contains `yingqu-selector.vercel.app` (or the domain we eventually use). If it's missing or from another origin, still accept the params but flag the session as `unverified_referer`. Pure client-side, no need for us to sign anything for MVP.
+- 校验 HTTP `Referer` header 包含 `yingqu-selector.vercel.app`
+- 不匹配的流量仍然接收,但打 `unverified_referer` 标签,结算时过滤
+
+### 6.3 UTM 集成
+
+`utm_source=yingqu&utm_medium=referral` 是标准 UTM,GA4 / Posthog / Mixpanel / Plausible **全部自动识别**,不用写代码就能看到来源仪表盘。
 
 ---
 
-## 6. End-to-End Test Matrix
+## 7. E2E 联调清单（Phase 2 启用前跑一遍）
 
-Both teams walk through these 4 scenarios before marking integration "done":
-
-| # | Scenario | Expected query keys present | Expected prefill |
+| # | 场景 | 预期看到的 query key | 预期 UI |
 |---|---|---|---|
-| 1 | PG, single school | `ref`, `target=pg`, `schoolIds=["oxford"]`, `gpa`, `lang`, `langScore`, `regions` | Oxford preselected + GPA/IELTS filled |
-| 2 | UG, single program | `ref`, `target=ug`, `schoolIds=["ucl"]`, `programIds=["ucl-ug-cs"]`, `curriculum`, `alevelGrades` | UCL + CS program preselected + A-Levels filled |
-| 3 | Batch (favorites) | `programIds` with ≥2 entries from ≥2 different schools | All programs visible in a multi-apply flow |
-| 4 | Malformed | Remove `ref=yingqu` manually | Your page should NOT prefill and should NOT count toward attribution |
+| 1 | 硕士 · 单校申请 | `ref`, `target=pg`, `schoolIds=["oxford"]`, `gpa`, `lang`, `langScore`, `regions`, 学生背景 | Oxford 预选 + GPA/IELTS 已填 |
+| 2 | 本科 · 单专业申请 | `ref`, `target=ug`, `schoolIds=["ucl"]`, `programIds=["ucl-ug-cs"]`, `curriculum`, `alevelGrades` | UCL CS 预选 + A-Level 成绩已填 |
+| 3 | 批量收藏（跨学校） | `programIds` ≥ 2 条,覆盖 ≥ 2 所学校 | 多项申请流程一次填完 |
+| 4 | 伪造/删掉 `ref` | 无 `ref=yingqu` | **不预填、不计归因、不影响正常访问** |
 
-We will share our staging URL and coordinate a 30-minute joint smoke test before production cutover.
-
----
-
-## 7. Versioning
-
-- Current version: **1.0** (implicit — no `v` param sent)
-- Breaking schema changes will add `v=2` etc. Parse `v` first; if unknown, show a generic landing page asking the user to refresh.
-- Backward-compatible additions (new optional keys) do not require version bump.
+ioffer 端 `/apply`（或其他指定入口）写好后通知 yingqu,约 30 分钟联调跑完这 4 条。
 
 ---
 
-## 8. What NOT to Expect
+## 8. 版本管理
 
-- **No webhooks from us.** We do not track your conversions; you report them to us.
-- **No API calls.** The entire handshake is a single URL.
-- **No PII beyond what the user explicitly filled.** We never send phone numbers, emails, or names (we don't collect them).
-- **No persistent session.** Each click is a fresh URL; if the user bounces back to yingqu and re-clicks, they get a new payload.
-
----
-
-## 9. Contact
-
-- **Technical questions**: @caleb (yingqu-selector maintainer) — replies within 1 business day.
-- **Implementation PRs / examples**: share your test endpoint and we'll validate from our side.
-- **Commercial terms**: separate track, not in this document.
+- 当前 v1.1（无 `v` 参数,即视为 ≤ v1）
+- 破坏性变更会引入 `v=2` 等,解析时先读 `v`,未知版本仅显示基础归因页
+- 新增可选字段不视为破坏性变更,不会升版本号
 
 ---
 
-## Appendix A — Full URL Example
+## 9. 不做的事（明确边界）
 
-Decoded for readability:
+- ❌ yingqu 不发 webhook
+- ❌ yingqu 不调用 ioffer 的 API
+- ❌ yingqu **不传** 用户 PII（邮箱/手机/姓名） — 这些我们没收集
+- ❌ 不共享数据库 / session
+- ❌ 每次点击都是新 URL,用户返回再点等价于全新跳转
+
+---
+
+## 10. 商业/结算（技术对齐的关键点）
+
+1. 结算基于 **`ref=yingqu` 的付费转化**,不按点击付费
+2. ioffer 每月提供漏斗报表,双方各自在自己侧也留数据对账
+3. yingqu 侧可观察「跳转点击数」,ioffer 侧观察「落地 session 数」,差异应 >90% 吻合
+4. yingqu 保留**随时切流量/切合作方**的能力（只是改一个 env var）
+
+具体分成比例单独聊,不在本技术文档范围。
+
+---
+
+## 附录 A — 完整 Full 模式 URL 示例
+
+**可读版（decoded）**:
 
 ```
-https://ioffer.ai/apply
+https://student.i-offer.ai/
   ?ref=yingqu
+  &utm_source=yingqu
+  &utm_medium=referral
   &target=pg
   &schoolIds=["oxford","cambridge","ucl"]
   &programIds=["ox-ug-cs","cam-ug-maths","ucl-ug-economics"]
@@ -253,14 +267,51 @@ https://ioffer.ai/apply
   &targetSubMajorId=cs-ai
 ```
 
-Actual wire format (array values encoded):
+**实际传输格式（encoded）**:
 
 ```
-https://ioffer.ai/apply?ref=yingqu&target=pg&schoolIds=%5B%22oxford%22%2C%22cambridge%22%2C%22ucl%22%5D&programIds=%5B%22ox-ug-cs%22%2C%22cam-ug-maths%22%2C%22ucl-ug-economics%22%5D&regions=%5B%22UK%22%5D&lang=IELTS&langScore=7.5&gpa=3.85&gpaScale=gpa4&userTier=211&currentCategoryId=engineering&targetSubMajorId=cs-ai
+https://student.i-offer.ai/?ref=yingqu&utm_source=yingqu&utm_medium=referral&target=pg&schoolIds=%5B%22oxford%22%2C%22cambridge%22%2C%22ucl%22%5D&programIds=%5B%22ox-ug-cs%22%2C%22cam-ug-maths%22%2C%22ucl-ug-economics%22%5D&regions=%5B%22UK%22%5D&lang=IELTS&langScore=7.5&gpa=3.85&gpaScale=gpa4&userTier=211&currentCategoryId=engineering&targetSubMajorId=cs-ai
 ```
 
-## Appendix B — Stable ID References
+---
 
-- **Full school list** (151 schools): https://yingqu-selector.vercel.app + inspect `schoolIds` in any referral URL
-- **Program list** (~4,300 programs across UG/PG): same source
-- IDs are stable. We commit to not renaming without 30 days notice.
+## 附录 B — Simple 模式 URL（当前 Phase 1）
+
+这是**现在线上每次点击都在发的**格式,最精简:
+
+```
+https://student.i-offer.ai/?ref=yingqu&utm_source=yingqu&utm_medium=referral
+```
+
+就三个参数。你们现在只需要保证：
+1. 这个 URL 能正常打开（已验证 HTTP 200 ✅）
+2. 分析工具里能按 `utm_source=yingqu` 过滤出来
+
+---
+
+## 附录 C — ID 参考
+
+- **学校列表**（~145 所，覆盖 UK/US/AU/CA/NZ/HK/SG/IE/NL/JP/KR 等）
+- **项目列表**（~2100 本科 + ~2200 硕士）
+- ID 稳定,变更提前 30 天通知
+- 源代码: https://github.com/liushenpeng1-cmyk/yingqu-selector/blob/main/src/data/schools.ts
+
+---
+
+## 11. 联系
+
+- yingqu 技术对接：[caleb] — 1 个工作日内响应
+- 文档 / 代码实现参考：https://github.com/liushenpeng1-cmyk/yingqu-selector
+  - 打包逻辑：`src/lib/referral.ts`
+  - 收藏夹逻辑：`src/lib/favorites.ts`
+  - 前端挂载点：`src/app/page.tsx`
+
+---
+
+**快速启动清单（给 ioffer 工程师 5 分钟自查）**
+
+- [ ] 打开 https://student.i-offer.ai/?ref=yingqu&utm_source=yingqu&utm_medium=referral,确认 HTTP 200 ✅
+- [ ] 在分析工具建立 `utm_source=yingqu` 仪表盘（Phase 1 收归因流量够用）
+- [ ] （可选,Phase 2 再做）实现 `parseYingqu()` 函数和表单预填
+- [ ] （可选,Phase 2 再做）联调 §7 的 4 个 E2E 场景
+- [ ] 通知 yingqu：Phase 2 何时切换
