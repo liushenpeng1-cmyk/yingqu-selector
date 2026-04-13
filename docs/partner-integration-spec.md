@@ -1,6 +1,6 @@
 # yingqu-selector ⇄ i-offer.ai 对接规范
 
-**Version**: 1.2
+**Version**: 1.3
 **Last Updated**: 2026-04-13
 **yingqu 线上**: https://yingqu-selector.vercel.app
 **ioffer 接收端**: https://student.i-offer.ai/
@@ -282,9 +282,85 @@ JSON.parse(decodeURIComponent(new URL(location.href).searchParams.get("payload")
 
 ---
 
+## 7.5 学校/专业目录对齐（重要）
+
+你们那边如果想先把 yingqu 的学校/专业列表导入自己的库,做 ID 映射 —— yingqu 暴露两个只读 API,CORS 开放,直接 fetch 即可。
+
+### 7.5.1 学校目录
+
+```
+GET https://yingqu-selector.vercel.app/api/catalog/schools
+```
+
+返回示例:
+```json
+{
+  "version": 1,
+  "generatedAt": "2026-04-13T01:30:00.000Z",
+  "count": 194,
+  "schools": [
+    {
+      "id": "mit",
+      "name": "麻省理工学院",
+      "nameEn": "MIT",
+      "country": "US",
+      "qsRank": 1,
+      "ieltsMin": 7.0,
+      "toeflMin": 100,
+      "supports": ["pg", "ug"]
+    },
+    ...
+  ]
+}
+```
+
+共 194 所学校,覆盖 UK/US/AU/CA/NZ/HK/SG/IE/NL/JP/KR 等 11 个地区。
+`supports` 表示该学校在 yingqu 这边有 `pg` / `ug` 哪种数据(或两者都有)。
+字段 `id` 是 yingqu 稳定 ID,就是 Phase 2 JSON payload 里 `schools[i].id` 的来源 —— 你们按这个 id 做映射表即可。
+
+### 7.5.2 专业目录
+
+```
+GET https://yingqu-selector.vercel.app/api/catalog/programs           # 全部
+GET https://yingqu-selector.vercel.app/api/catalog/programs?target=pg  # 仅硕士
+GET https://yingqu-selector.vercel.app/api/catalog/programs?target=ug  # 仅本科
+```
+
+全部约 5461 条(硕士 3344 + 本科 2117)。返回示例:
+```json
+{
+  "version": 1,
+  "count": 5461,
+  "programs": [
+    {
+      "id": "ucl-management",
+      "schoolId": "ucl",
+      "target": "pg",
+      "name": "MSc Management",
+      "nameEn": "MSc Management",
+      "department": "UCL School of Management",
+      "category": "business",
+      "source": "https://www.ucl.ac.uk/..."
+    }
+  ]
+}
+```
+
+### 7.5.3 建议接入方式
+
+1. **一次性 import**:你们启动脚本拉两个 endpoint,按 `id` 建映射表(yingqu_id → 你们内部 id),写进 DB
+2. **定期同步**(推荐每周):设个 cron 拉最新版,diff 出新增/修改的学校和专业
+3. **实时 fallback**:用户 payload 里出现你们 DB 没有的 `school.id`,直接用 payload 里的 `name`/`nameEn`/`country` 等元数据兜底显示(Phase 2 JSON 已经包含这些字段)
+
+### 7.5.4 CDN 缓存
+
+两个 endpoint 响应头都带 `Cache-Control: s-maxage=600`,10 分钟 CDN 缓存。yingqu 侧数据更新会在 10 分钟内全球生效。
+
+---
+
 ## 8. 版本管理
 
-- 当前 **v1.2**(JSON schema 首版)
+- 当前 **v1.3**(JSON schema + catalog API)
 - 破坏性变更 → `v: 2` + 文档升版
 - 追加字段 → 不升版本,对方旧代码仍能 `JSON.parse`
 
@@ -314,6 +390,8 @@ JSON.parse(decodeURIComponent(new URL(location.href).searchParams.get("payload")
 
 - [ ] 打开 `https://student.i-offer.ai/?ref=yingqu&utm_source=yingqu&utm_medium=referral` HTTP 200 ✅
 - [ ] 分析工具新增 `utm_source=yingqu` 仪表盘(Phase 1 就用得上)
+- [ ] 拉一次 `https://yingqu-selector.vercel.app/api/catalog/schools` 存进你们 DB(§7.5)
+- [ ] 拉一次 `https://yingqu-selector.vercel.app/api/catalog/programs?target=pg` 和 `?target=ug`(§7.5)
 - [ ] 实现 §4.1 的 payload 捕获 + sessionStorage
 - [ ] 实现 §4.2 的注册回调 import
 - [ ] 按 §4.4 实现 My Schools 去重
