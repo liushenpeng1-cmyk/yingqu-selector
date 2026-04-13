@@ -6,7 +6,7 @@ import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
 import { matchPrograms, schoolsWithPrograms, totalProgramCount, HOLISTIC_REVIEW_SCHOOLS, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
 import { undergradSubjectAreas, alevelSubjects, matchUndergradPrograms, totalUndergradProgramCount, type UndergradSchoolResult, type UndergradMatchLevel } from "@/data/undergrad-programs";
-import { openReferral, type ReferralPayload } from "@/lib/referral";
+import { openReferral, type JsonPayload, type JsonSchoolEntry, type JsonMatchLevel } from "@/lib/referral";
 import { useFavorites, MAX_FAVORITES } from "@/lib/favorites";
 
 const levelConfig: Record<ProgramMatchLevel | "excluded", { label: string; color: string; bg: string; border: string }> = {
@@ -416,45 +416,119 @@ export default function Home() {
     setShowDropdown(value.length > 0);
   }
 
-  // ── Referral payload builders ──
-  const buildPgPayload = useCallback((schoolIds: string[], programIds?: string[]): ReferralPayload => ({
-    ref: "yingqu",
-    target: "pg",
-    schoolIds,
-    programIds: programIds && programIds.length > 0 ? programIds : undefined,
-    regions: Array.from(regions),
-    lang: langTest,
-    langScore: langScore || undefined,
-    langExempt: langExempt || undefined,
-    gpa: gpa || undefined,
-    gpaScale,
-    userTier: tier || undefined,
-    currentCategoryId,
-    targetSubMajorId,
-    ukClassification: ukClassification || undefined,
-    auClassification: auClassification || undefined,
-    isOverseasUndergrad: isOverseasUndergrad || undefined,
-    isJointUniversity: isJointUniversity || undefined,
-    jointUniType: jointUniType || undefined,
-  }), [regions, langTest, langScore, langExempt, gpa, gpaScale, tier, currentCategoryId, targetSubMajorId, ukClassification, auClassification, isOverseasUndergrad, isJointUniversity, jointUniType]);
+  // ── Referral JSON payload builders ──
+  // 构造完整 JSON 包,由 openReferral() 视模式决定是否真发送到 URL。
+  const buildPgPayload = useCallback(
+    (schoolIds: string[], programIds?: string[]): JsonPayload => {
+      const programFilter = programIds && programIds.length > 0 ? new Set(programIds) : null;
+      const jsonSchools: JsonSchoolEntry[] = schoolIds
+        .map((sid) => {
+          const group = schoolResults.find((g) => g.school.id === sid);
+          if (!group) return null;
+          const progs = (programFilter
+            ? group.programs.filter((p) => programFilter.has(p.program.id))
+            : group.programs
+          ).map((p) => ({
+            id: p.program.id,
+            name: p.program.name,
+            nameEn: p.program.nameEn,
+            department: p.program.department,
+            matchLevel: p.level as JsonMatchLevel,
+            duration: p.program.duration,
+            tuitionFee: p.program.tuitionFee,
+            source: p.program.source,
+          }));
+          return {
+            id: group.school.id,
+            name: group.school.name,
+            nameEn: group.school.nameEn,
+            country: group.school.country,
+            qsRank: group.school.qsRank,
+            programs: progs,
+          } as JsonSchoolEntry;
+        })
+        .filter((x): x is JsonSchoolEntry => x !== null);
 
-  const buildUgPayload = useCallback((schoolIds: string[], programIds?: string[]): ReferralPayload => ({
-    ref: "yingqu",
-    target: "ug",
-    schoolIds,
-    programIds: programIds && programIds.length > 0 ? programIds : undefined,
-    regions: Array.from(regions),
-    lang: ugLangTest,
-    langScore: ugLangScore || undefined,
-    curriculum: ugCurriculum,
-    alevelGrades: ugCurriculum === "alevel"
-      ? ugAlevelGrades.filter(g => g.subject && g.grade)
-      : undefined,
-    ibScore: ugCurriculum === "ib" ? (ugIbScore || undefined) : undefined,
-    gaokaoScore: ugCurriculum === "gaokao" ? (ugGaokaoScore || undefined) : undefined,
-    gaokaoTotal: ugCurriculum === "gaokao" ? (ugGaokaoTotal || undefined) : undefined,
-    subjectArea: ugSubjectArea,
-  }), [regions, ugLangTest, ugLangScore, ugCurriculum, ugAlevelGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]);
+      return {
+        v: 1,
+        ref: "yingqu",
+        generatedAt: new Date().toISOString(),
+        target: "pg",
+        user: {
+          lang: langTest,
+          langScore: langScore || undefined,
+          langExempt: langExempt || undefined,
+          regions: Array.from(regions),
+          gpa: gpa || undefined,
+          gpaScale,
+          tier: tier || undefined,
+          currentCategoryId,
+          targetSubMajorId,
+          ukClassification: ukClassification || undefined,
+          auClassification: auClassification || undefined,
+          isOverseasUndergrad: isOverseasUndergrad || undefined,
+          isJointUniversity: isJointUniversity || undefined,
+          jointUniType: jointUniType || undefined,
+        },
+        schools: jsonSchools,
+      };
+    },
+    [schoolResults, regions, langTest, langScore, langExempt, gpa, gpaScale, tier, currentCategoryId, targetSubMajorId, ukClassification, auClassification, isOverseasUndergrad, isJointUniversity, jointUniType]
+  );
+
+  const buildUgPayload = useCallback(
+    (schoolIds: string[], programIds?: string[]): JsonPayload => {
+      const programFilter = programIds && programIds.length > 0 ? new Set(programIds) : null;
+      const jsonSchools: JsonSchoolEntry[] = schoolIds
+        .map((sid) => {
+          const group = ugResults.find((g) => g.schoolId === sid);
+          if (!group) return null;
+          const progs = (programFilter
+            ? group.programs.filter((p) => programFilter.has(p.program.id))
+            : group.programs
+          ).map((p) => ({
+            id: p.program.id,
+            name: p.program.name,
+            nameEn: p.program.nameEn,
+            matchLevel: p.level as JsonMatchLevel,
+            duration: p.program.duration,
+            tuitionFee: p.program.tuitionFee,
+            source: p.program.source,
+          }));
+          return {
+            id: group.schoolId,
+            name: group.schoolName,
+            nameEn: group.schoolNameEn,
+            country: group.country,
+            programs: progs,
+          } as JsonSchoolEntry;
+        })
+        .filter((x): x is JsonSchoolEntry => x !== null);
+
+      return {
+        v: 1,
+        ref: "yingqu",
+        generatedAt: new Date().toISOString(),
+        target: "ug",
+        user: {
+          lang: ugLangTest,
+          langScore: ugLangScore || undefined,
+          regions: Array.from(regions),
+          curriculum: ugCurriculum,
+          alevelGrades:
+            ugCurriculum === "alevel"
+              ? ugAlevelGrades.filter((g) => g.subject && g.grade)
+              : undefined,
+          ibScore: ugCurriculum === "ib" ? ugIbScore || undefined : undefined,
+          gaokaoScore: ugCurriculum === "gaokao" ? ugGaokaoScore || undefined : undefined,
+          gaokaoTotal: ugCurriculum === "gaokao" ? ugGaokaoTotal || undefined : undefined,
+          subjectArea: ugSubjectArea,
+        },
+        schools: jsonSchools,
+      };
+    },
+    [ugResults, regions, ugLangTest, ugLangScore, ugCurriculum, ugAlevelGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]
+  );
 
   const handleSubmit = useCallback(() => {
     if (!canSubmit) return;
