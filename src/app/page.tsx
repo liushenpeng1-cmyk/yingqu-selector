@@ -5,7 +5,7 @@ import { schools, regionLabels, getLanguageCourseSuggestion, type Region } from 
 import { findUniversity, getTierLabel, type ChinaUniversity } from "@/data/china-universities";
 import { majorCategories as majorCats, allSubMajors, categoryIdToName, checkCrossMajor } from "@/data/majors";
 import { matchPrograms, schoolsWithPrograms, totalProgramCount, HOLISTIC_REVIEW_SCHOOLS, type ProgramMatchResult, type ProgramMatchLevel } from "@/data/programs";
-import { undergradSubjectAreas, alevelSubjects, matchUndergradPrograms, totalUndergradProgramCount, type UndergradSchoolResult, type UndergradMatchLevel } from "@/data/undergrad-programs";
+import { undergradSubjectAreas, alevelSubjects, apSubjects, matchUndergradPrograms, totalUndergradProgramCount, type UndergradSchoolResult, type UndergradMatchLevel } from "@/data/undergrad-programs";
 import { openReferral, type JsonPayload, type JsonSchoolEntry, type JsonMatchLevel } from "@/lib/referral";
 import { useFavorites, MAX_FAVORITES } from "@/lib/favorites";
 
@@ -252,9 +252,12 @@ export default function Home() {
   const [studyLevel, setStudyLevel] = useState<"postgraduate" | "undergraduate">("postgraduate");
 
   // ── Undergraduate state ──
-  const [ugCurriculum, setUgCurriculum] = useState<"alevel" | "ib" | "gaokao">("alevel");
+  const [ugCurriculum, setUgCurriculum] = useState<"alevel" | "ib" | "gaokao" | "ap">("alevel");
   const [ugAlevelGrades, setUgAlevelGrades] = useState<{ subject: string; grade: string }[]>([
     { subject: "", grade: "" }, { subject: "", grade: "" }, { subject: "", grade: "" },
+  ]);
+  const [ugApGrades, setUgApGrades] = useState<{ subject: string; score: string }[]>([
+    { subject: "", score: "" }, { subject: "", score: "" }, { subject: "", score: "" },
   ]);
   const [ugIbScore, setUgIbScore] = useState("");
   const [ugGaokaoScore, setUgGaokaoScore] = useState("");
@@ -519,6 +522,10 @@ export default function Home() {
             ugCurriculum === "alevel"
               ? ugAlevelGrades.filter((g) => g.subject && g.grade)
               : undefined,
+          apGrades:
+            ugCurriculum === "ap"
+              ? ugApGrades.filter((g) => g.subject && g.score)
+              : undefined,
           ibScore: ugCurriculum === "ib" ? ugIbScore || undefined : undefined,
           gaokaoScore: ugCurriculum === "gaokao" ? ugGaokaoScore || undefined : undefined,
           gaokaoTotal: ugCurriculum === "gaokao" ? ugGaokaoTotal || undefined : undefined,
@@ -527,7 +534,7 @@ export default function Home() {
         schools: jsonSchools,
       };
     },
-    [ugResults, regions, ugLangTest, ugLangScore, ugCurriculum, ugAlevelGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]
+    [ugResults, regions, ugLangTest, ugLangScore, ugCurriculum, ugAlevelGrades, ugApGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]
   );
 
   const handleSubmit = useCallback(() => {
@@ -636,6 +643,8 @@ export default function Home() {
                       className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "alevel" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>A-Level</button>
                     <button type="button" onClick={() => setUgCurriculum("ib")}
                       className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "ib" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>IB</button>
+                    <button type="button" onClick={() => setUgCurriculum("ap")}
+                      className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "ap" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>AP</button>
                     <button type="button" onClick={() => setUgCurriculum("gaokao")}
                       className={`flex-1 px-3 py-2.5 text-xs sm:text-sm font-medium transition-all ${ugCurriculum === "gaokao" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>高考直申</button>
                   </div>
@@ -667,6 +676,37 @@ export default function Home() {
                       {ugAlevelGrades.length < 4 && (
                         <button type="button" onClick={() => setUgAlevelGrades([...ugAlevelGrades, { subject: "", grade: "" }])}
                           className="text-sm text-[#e8be64]/60 hover:text-[#e8be64] transition-colors">+ 添加第四门科目</button>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* AP subjects & scores */}
+                {ugCurriculum === "ap" && (
+                  <div>
+                    <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">AP 科目与成绩 <span className="text-[#e8be64] text-xs">●</span></label>
+                    <div className="space-y-2">
+                      {ugApGrades.map((g, i) => (
+                        <div key={i} className="flex gap-2">
+                          <select value={g.subject} onChange={(e) => { const next = [...ugApGrades]; next[i] = { ...next[i], subject: e.target.value }; setUgApGrades(next); }}
+                            className="flex-1 bg-[#181920] border border-white/[0.06] rounded-xl px-3 py-2.5 text-sm text-[#f0ede6] outline-none focus:border-[#e8be64] appearance-none">
+                            <option value="">选择科目</option>
+                            {apSubjects.map(s => <option key={s} value={s}>{s}</option>)}
+                          </select>
+                          <select value={g.score} onChange={(e) => { const next = [...ugApGrades]; next[i] = { ...next[i], score: e.target.value }; setUgApGrades(next); }}
+                            className="w-20 bg-[#181920] border border-white/[0.06] rounded-xl px-3 py-2.5 text-sm text-[#f0ede6] outline-none focus:border-[#e8be64] appearance-none">
+                            <option value="">分数</option>
+                            {["5", "4", "3", "2", "1"].map(s => <option key={s} value={s}>{s}</option>)}
+                          </select>
+                          {i >= 3 && (
+                            <button type="button" onClick={() => { const next = [...ugApGrades]; next.splice(i, 1); setUgApGrades(next); }}
+                              className="px-2 text-white/30 hover:text-red-400 text-sm">✕</button>
+                          )}
+                        </div>
+                      ))}
+                      {ugApGrades.length < 5 && (
+                        <button type="button" onClick={() => setUgApGrades([...ugApGrades, { subject: "", score: "" }])}
+                          className="text-sm text-[#e8be64]/60 hover:text-[#e8be64] transition-colors">+ 添加更多科目</button>
                       )}
                     </div>
                   </div>
@@ -755,6 +795,7 @@ export default function Home() {
                   const results = matchUndergradPrograms({
                     curriculum: ugCurriculum,
                     alevelGrades: ugCurriculum === "alevel" ? ugAlevelGrades.filter(g => g.subject && g.grade) : undefined,
+                    apGrades: ugCurriculum === "ap" ? ugApGrades.filter(g => g.subject && g.score) : undefined,
                     ibScore: ugCurriculum === "ib" ? parseFloat(ugIbScore) : undefined,
                     gaokaoScore: ugCurriculum === "gaokao" ? parseFloat(ugGaokaoScore) : undefined,
                     gaokaoTotal: ugCurriculum === "gaokao" ? parseFloat(ugGaokaoTotal) : undefined,
@@ -770,12 +811,14 @@ export default function Home() {
                   disabled={
                     regions.size === 0 ||
                     (ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length < 3) ||
+                    (ugCurriculum === "ap" && ugApGrades.filter(g => g.subject && g.score).length < 3) ||
                     (ugCurriculum === "ib" && !ugIbScore) ||
                     (ugCurriculum === "gaokao" && !ugGaokaoScore)
                   }
                   className={`w-full py-3.5 sm:py-4 rounded-xl font-bold text-base transition-all ${
                     (regions.size > 0 &&
                       ((ugCurriculum === "alevel" && ugAlevelGrades.filter(g => g.subject && g.grade).length >= 3) ||
+                       (ugCurriculum === "ap" && ugApGrades.filter(g => g.subject && g.score).length >= 3) ||
                        (ugCurriculum === "ib" && ugIbScore) ||
                        (ugCurriculum === "gaokao" && ugGaokaoScore)))
                       ? "bg-[#e8be64] text-[#0a0b0f] hover:shadow-[0_8px_30px_rgba(232,190,100,0.25)] active:scale-[0.98] cursor-pointer"

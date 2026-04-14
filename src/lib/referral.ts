@@ -73,8 +73,9 @@ export type JsonUserProfile = {
   jointUniType?: string;
 
   // undergrad
-  curriculum?: "alevel" | "ib" | "gaokao";
+  curriculum?: "alevel" | "ib" | "gaokao" | "ap";
   alevelGrades?: { subject: string; grade: string }[];
+  apGrades?: { subject: string; score: string }[];
   ibScore?: string;
   gaokaoScore?: string;
   gaokaoTotal?: string;
