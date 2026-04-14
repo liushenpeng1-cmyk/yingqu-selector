@@ -57,7 +57,8 @@ export type JsonUserProfile = {
   // shared
   lang?: "IELTS" | "TOEFL";
   langScore?: string;
-  langExempt?: boolean;
+  langExempt?: boolean;       // 英语国家本科免试
+  langNoScore?: boolean;      // 暂无语言成绩(test-optional 学校仍需展示)
   regions?: Region[];
 
   // postgrad

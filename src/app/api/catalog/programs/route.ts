@@ -70,16 +70,17 @@ export async function GET(req: Request) {
       }
     }
 
-    return Response.json(
-      {
+    return new Response(
+      JSON.stringify({
         version: 1,
         generatedAt: new Date().toISOString(),
         target: target ?? "all",
         count: items.length,
         programs: items,
-      },
+      }),
       {
         headers: {
+          "Content-Type": "application/json; charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           "Cache-Control": "public, s-maxage=600, stale-while-revalidate=86400",
         },
@@ -87,9 +88,12 @@ export async function GET(req: Request) {
     );
   } catch (err) {
     console.error("[api/catalog/programs] failed", err);
-    return Response.json(
-      { error: "catalog_unavailable" },
-      { status: 500, headers: { "Access-Control-Allow-Origin": "*" } }
-    );
+    return new Response(JSON.stringify({ error: "catalog_unavailable" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   }
 }

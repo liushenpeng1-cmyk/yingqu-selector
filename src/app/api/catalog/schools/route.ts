@@ -68,17 +68,21 @@ export async function GET() {
       ),
     };
 
-    return Response.json(payload, {
+    return new Response(JSON.stringify(payload), {
       headers: {
+        "Content-Type": "application/json; charset=utf-8",
         "Access-Control-Allow-Origin": "*",
         "Cache-Control": "public, s-maxage=600, stale-while-revalidate=86400",
       },
     });
   } catch (err) {
     console.error("[api/catalog/schools] failed", err);
-    return Response.json(
-      { error: "catalog_unavailable" },
-      { status: 500, headers: { "Access-Control-Allow-Origin": "*" } }
-    );
+    return new Response(JSON.stringify({ error: "catalog_unavailable" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   }
 }

@@ -1,7 +1,7 @@
 # yingqu-selector ⇄ i-offer.ai 对接规范
 
-**Version**: 1.3
-**Last Updated**: 2026-04-13
+**Version**: 1.4
+**Last Updated**: 2026-04-14
 **yingqu 线上**: https://yingqu-selector.vercel.app
 **ioffer 接收端**: https://student.i-offer.ai/
 **源码**: https://github.com/liushenpeng1-cmyk/yingqu-selector/blob/main/src/lib/referral.ts
@@ -74,8 +74,9 @@ type JsonUserProfile = {
   jointUniType?: "uk-partner" | "us-partner" | "hk-partner";
 
   // 本科独有
-  curriculum?: "alevel" | "ib" | "gaokao";
+  curriculum?: "alevel" | "ib" | "gaokao" | "ap";   // v1.4 新增 "ap"
   alevelGrades?: { subject: string; grade: string }[];
+  apGrades?: { subject: string; score: string }[];  // v1.4 新增,AP 科目 + 1–5 分
   ibScore?: string;             // "42"
   gaokaoScore?: string;
   gaokaoTotal?: string;         // "750"

@@ -264,6 +264,7 @@ export default function Home() {
   const [ugGaokaoTotal, setUgGaokaoTotal] = useState("750");
   const [ugLangTest, setUgLangTest] = useState<"IELTS" | "TOEFL">("IELTS");
   const [ugLangScore, setUgLangScore] = useState("");
+  const [ugLangNoScore, setUgLangNoScore] = useState(false); // 暂无语言成绩
   const [ugSubjectArea, setUgSubjectArea] = useState("economics");
   const [ugResults, setUgResults] = useState<UndergradSchoolResult[]>([]);
 
@@ -280,6 +281,7 @@ export default function Home() {
   const [langTest, setLangTest] = useState<"IELTS" | "TOEFL">("IELTS");
   const [langScore, setLangScore] = useState("");
   const [langExempt, setLangExempt] = useState(false); // English-speaking country exemption
+  const [langNoScore, setLangNoScore] = useState(false); // 暂无语言成绩,test-optional 学校仍需展示
   const [currentCategoryId, setCurrentCategoryId] = useState("business");
   const [targetSubMajorId, setTargetSubMajorId] = useState("management");
   const [majorQuery, setMajorQuery] = useState("");
@@ -327,7 +329,7 @@ export default function Home() {
   }, [step]);
 
   const tier = isOverseasUndergrad || isJointUniversity ? "overseas" : selectedSchool?.tier;
-  const rawLangScore = langExempt ? 99 : (parseFloat(langScore) || 0); // 99 = always passes
+  const rawLangScore = (langExempt || langNoScore) ? 99 : (parseFloat(langScore) || 0); // 99 = always passes
   // Degree classification → equivalent percentage for matching
   // UK: First=nearly all, 2:1=most top-50, 2:2=borderline
   // AU: HD=nearly all, D=most top-50, C=borderline, P=difficult
@@ -403,7 +405,7 @@ export default function Home() {
   const hasGpa = (isOverseasUndergrad || isJointUniversity)
     ? (hasClassification || (gpa && parseFloat(gpa) > 0))
     : (gpa && parseFloat(gpa) > 0);
-  const hasLang = langExempt || (langScore && rawLangScore > 0);
+  const hasLang = langExempt || langNoScore || (langScore && rawLangScore > 0);
   const hasSchool = isOverseasUndergrad || isJointUniversity || selectedSchool;
   const canSubmit = hasSchool && hasGpa && hasLang && regions.size > 0;
 
@@ -461,6 +463,7 @@ export default function Home() {
           lang: langTest,
           langScore: langScore || undefined,
           langExempt: langExempt || undefined,
+          langNoScore: langNoScore || undefined,
           regions: Array.from(regions),
           gpa: gpa || undefined,
           gpaScale,
@@ -476,7 +479,7 @@ export default function Home() {
         schools: jsonSchools,
       };
     },
-    [schoolResults, regions, langTest, langScore, langExempt, gpa, gpaScale, tier, currentCategoryId, targetSubMajorId, ukClassification, auClassification, isOverseasUndergrad, isJointUniversity, jointUniType]
+    [schoolResults, regions, langTest, langScore, langExempt, langNoScore, gpa, gpaScale, tier, currentCategoryId, targetSubMajorId, ukClassification, auClassification, isOverseasUndergrad, isJointUniversity, jointUniType]
   );
 
   const buildUgPayload = useCallback(
@@ -516,6 +519,7 @@ export default function Home() {
         user: {
           lang: ugLangTest,
           langScore: ugLangScore || undefined,
+          langNoScore: ugLangNoScore || undefined,
           regions: Array.from(regions),
           curriculum: ugCurriculum,
           alevelGrades:
@@ -534,7 +538,7 @@ export default function Home() {
         schools: jsonSchools,
       };
     },
-    [ugResults, regions, ugLangTest, ugLangScore, ugCurriculum, ugAlevelGrades, ugApGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]
+    [ugResults, regions, ugLangTest, ugLangScore, ugLangNoScore, ugCurriculum, ugAlevelGrades, ugApGrades, ugIbScore, ugGaokaoScore, ugGaokaoTotal, ugSubjectArea]
   );
 
   const handleSubmit = useCallback(() => {
@@ -746,17 +750,27 @@ export default function Home() {
                 {/* Language */}
                 <div>
                   <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">语言成绩</label>
-                  <div className="flex gap-2">
-                    <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
-                      <button type="button" onClick={() => setUgLangTest("IELTS")}
-                        className={`px-3 py-2.5 text-xs font-medium transition-all ${ugLangTest === "IELTS" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>IELTS</button>
-                      <button type="button" onClick={() => setUgLangTest("TOEFL")}
-                        className={`px-3 py-2.5 text-xs font-medium transition-all ${ugLangTest === "TOEFL" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>TOEFL</button>
+                  {!ugLangNoScore && (
+                    <div className="flex gap-2">
+                      <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden">
+                        <button type="button" onClick={() => setUgLangTest("IELTS")}
+                          className={`px-3 py-2.5 text-xs font-medium transition-all ${ugLangTest === "IELTS" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>IELTS</button>
+                        <button type="button" onClick={() => setUgLangTest("TOEFL")}
+                          className={`px-3 py-2.5 text-xs font-medium transition-all ${ugLangTest === "TOEFL" ? "bg-[#e8be64] text-[#0a0b0f]" : "text-white/40 hover:text-white"}`}>TOEFL</button>
+                      </div>
+                      <input type="number" value={ugLangScore} onChange={(e) => setUgLangScore(e.target.value)}
+                        placeholder={ugLangTest === "IELTS" ? "例：6.5" : "例：90"} step={ugLangTest === "IELTS" ? "0.5" : "1"}
+                        className="flex-1 bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 text-[#f0ede6] placeholder:text-white/20 outline-none focus:border-[#e8be64] text-base" />
                     </div>
-                    <input type="number" value={ugLangScore} onChange={(e) => setUgLangScore(e.target.value)}
-                      placeholder={ugLangTest === "IELTS" ? "例：6.5" : "例：90"} step={ugLangTest === "IELTS" ? "0.5" : "1"}
-                      className="flex-1 bg-[#181920] border border-white/[0.06] rounded-xl px-4 py-3 text-[#f0ede6] placeholder:text-white/20 outline-none focus:border-[#e8be64] text-base" />
-                  </div>
+                  )}
+                  {ugLangNoScore && (
+                    <div className="bg-blue-400/10 text-blue-300 border border-blue-400/20 rounded-xl px-4 py-3 text-xs font-medium leading-relaxed">暂无语言成绩 · 将展示全部学校，语言要求在卡片内标注</div>
+                  )}
+                  <label className="mt-2 flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" checked={ugLangNoScore} onChange={(e) => { setUgLangNoScore(e.target.checked); if (e.target.checked) setUgLangScore(""); }}
+                      className="w-4 h-4 rounded accent-[#e8be64]" />
+                    <span className="text-xs text-white/50">暂无语言成绩（展示所有学校，含美国 test-optional）</span>
+                  </label>
                 </div>
 
                 {/* Target subject area */}
@@ -799,7 +813,7 @@ export default function Home() {
                     ibScore: ugCurriculum === "ib" ? parseFloat(ugIbScore) : undefined,
                     gaokaoScore: ugCurriculum === "gaokao" ? parseFloat(ugGaokaoScore) : undefined,
                     gaokaoTotal: ugCurriculum === "gaokao" ? parseFloat(ugGaokaoTotal) : undefined,
-                    langScore: parseFloat(ugLangScore) || 0,
+                    langScore: ugLangNoScore ? 99 : (parseFloat(ugLangScore) || 0),
                     langTest: ugLangTest,
                     subjectArea: ugSubjectArea,
                     regions,
@@ -964,12 +978,19 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="text-[11px] text-white/25">美本/港本/加本直接用下方 GPA 4.0 制输入即可</div>
-                  {/* Language exemption */}
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={langExempt} onChange={(e) => { setLangExempt(e.target.checked); if (e.target.checked) setLangScore(""); }}
-                      className="w-4 h-4 rounded accent-[#e8be64]" />
-                    <span className="text-xs text-white/50">英语国家本科，免语言成绩</span>
-                  </label>
+                  {/* Language exemption / no-score */}
+                  <div className="flex flex-col gap-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" checked={langExempt} onChange={(e) => { setLangExempt(e.target.checked); if (e.target.checked) { setLangScore(""); setLangNoScore(false); } }}
+                        className="w-4 h-4 rounded accent-[#e8be64]" />
+                      <span className="text-xs text-white/50">英语国家本科，免语言成绩</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" checked={langNoScore} onChange={(e) => { setLangNoScore(e.target.checked); if (e.target.checked) { setLangScore(""); setLangExempt(false); } }}
+                        className="w-4 h-4 rounded accent-[#e8be64]" />
+                      <span className="text-xs text-white/50">暂无语言成绩（展示所有学校，含美国 test-optional）</span>
+                    </label>
+                  </div>
                 </div>
               )}
 
@@ -994,9 +1015,9 @@ export default function Home() {
                   </div>
                 </div>}
 
-                {/* Language — show unless exempt */}
-                {!langExempt && <div>
-                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">语言成绩 {!langExempt && <span className="text-[#e8be64] text-xs">●</span>}</label>
+                {/* Language — show unless exempt or no-score */}
+                {!langExempt && !langNoScore && <div>
+                  <label className="block text-sm text-white/50 mb-1.5 sm:mb-2">语言成绩 <span className="text-[#e8be64] text-xs">●</span></label>
                   <div className="flex gap-2 items-start">
                     <div className="flex bg-[#181920] border border-white/[0.06] rounded-xl overflow-hidden shrink-0">
                       {(["IELTS", "TOEFL"] as const).map((t) => (
@@ -1017,6 +1038,12 @@ export default function Home() {
                 {langExempt && (
                   <div className="flex items-center justify-center">
                     <div className="bg-green-400/10 text-green-400 border border-green-400/20 rounded-xl px-4 py-3 text-sm font-medium text-center w-full">✓ 英语国家本科免试</div>
+                  </div>
+                )}
+                {/* Show no-score badge */}
+                {langNoScore && (
+                  <div className="flex items-center justify-center">
+                    <div className="bg-blue-400/10 text-blue-300 border border-blue-400/20 rounded-xl px-4 py-3 text-xs font-medium text-center w-full leading-relaxed">暂无语言成绩 · 将展示全部学校，语言要求在卡片内标注</div>
                   </div>
                 )}
                 {/* Show UK class badge when selected */}
