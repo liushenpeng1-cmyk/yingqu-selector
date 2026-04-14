@@ -1211,6 +1211,21 @@ export default function Home() {
               return count > 0 && <span key={level} className={`text-sm ${cfg.color}`}>{cfg.label} {count} 所</span>;
             })}
           </div>
+
+          {/* Law subject area hints */}
+          {ugSubjectArea === "law" && regions.has("US") && (
+            <div className="mb-4 px-4 py-3 bg-amber-400/10 border border-amber-400/20 rounded-xl text-xs sm:text-sm text-amber-300/90 leading-relaxed">
+              <strong className="text-amber-300">📌 关于美国法律</strong>
+              <p className="mt-1">美国本科 <strong>没有「法律」专业</strong>。Law (JD) 是 3 年制研究生学位,本科读任何专业都能申,最常见的准 JD 本科方向是 <span className="text-amber-200">Political Science (政治)、Philosophy (哲学)、History (历史)、Economics (经济)</span>。建议切到对应方向看匹配。</p>
+            </div>
+          )}
+          {ugSubjectArea === "law" && ugCurriculum === "gaokao" && (
+            <div className="mb-4 px-4 py-3 bg-amber-400/10 border border-amber-400/20 rounded-xl text-xs sm:text-sm text-amber-300/90 leading-relaxed">
+              <strong className="text-amber-300">📌 关于高考直申法律</strong>
+              <p className="mt-1">英国顶校法律专业 <strong>仅 Aberdeen、Dundee 等少数学校接受高考直申</strong>,多数法律专业要求 A-Level / IB / AP 或 Foundation。如果你想读更好的法学院,推荐:①先读 1 年 Foundation Year;②选 A-Level 冲 A*AA;③或改申 Politics &amp; IR、History 等邻近文科方向。</p>
+            </div>
+          )}
+
           <div className="space-y-4">
             {ugResults.filter(r => r.bestLevel !== "excluded").map(school => (
               <div key={school.schoolId} className="bg-[#12131a] border border-white/[0.06] rounded-2xl overflow-hidden">
