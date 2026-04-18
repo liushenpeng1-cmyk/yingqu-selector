@@ -375,7 +375,8 @@ export default function Home() {
       .filter((s) => schoolsWithPrograms.has(s.id))
       .map((school) => {
         const progs = matchPrograms(
-          school.id, tier || "overseas", rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, effectiveGpaScale
+          school.id, tier || "overseas", rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, effectiveGpaScale,
+          ukClassification || undefined, auClassification || undefined
         );
         const bestLevel: ProgramMatchLevel | "excluded" = progs.length === 0
           ? "excluded"
@@ -386,7 +387,7 @@ export default function Home() {
         const order = { high: 0, medium: 1, low: 2, excluded: 3 };
         return order[a.bestLevel] - order[b.bestLevel] || a.school.qsRank - b.school.qsRank;
       });
-  }, [tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, effectiveGpaScale, regions]);
+  }, [tier, rawGpaInput, rawLangScore, langTest, targetCategoryId, currentCategoryName, targetSubMajorId, effectiveGpaScale, regions, ukClassification, auClassification]);
 
   const counts = {
     high: schoolResults.filter((r) => r.bestLevel === "high").length,

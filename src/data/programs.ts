@@ -13101,6 +13101,19 @@ export const HOLISTIC_REVIEW_SCHOOLS = new Set([
   "oxford", "cambridge", "imperial", "lse",
 ]);
 
+// ── UK/AU degree classification rank ──
+// 4=First/HD, 3=2:1/D, 2=2:2/C, 1=Third/P
+function getClassificationRank(uk?: string, au?: string): number | null {
+  if (uk === "first") return 4;
+  if (uk === "2:1") return 3;
+  if (uk === "2:2") return 2;
+  if (au === "hd") return 4;
+  if (au === "d") return 3;
+  if (au === "c") return 2;
+  if (au === "p") return 1;
+  return null;
+}
+
 export function matchPrograms(
   schoolId: string,
   userTier: string,
@@ -13111,6 +13124,8 @@ export function matchPrograms(
   currentCategory: string,
   targetSubMajorId?: string,
   userGpaScale: "percentage" | "gpa4" = "percentage",
+  ukClassification?: string,
+  auClassification?: string,
 ): ProgramMatchResult[] {
   // Match by category OR by subMajorId — because the same subject
   // can be categorized differently at different schools
@@ -13121,6 +13136,9 @@ export function matchPrograms(
       (targetSubMajorId && p.subMajorId === targetSubMajorId)
     )
   );
+
+  // Does this user have a UK/AU degree classification?
+  const userClassRank = getClassificationRank(ukClassification, auClassification);
 
   return schoolPrograms.map(program => {
     // Overseas undergrads use preferred (same as 985/211 — no list restriction)
@@ -13140,12 +13158,44 @@ export function matchPrograms(
       }
     }
 
-    const gpaGap = Math.round((requiredGpa - userGpaConverted) * 10) / 10;
+    // ── UK/AU Classification direct matching ──
+    // When user holds a UK/AU degree, universities evaluate by classification
+    // (First/2:1/2:2/HD/D/C/P), not by Chinese percentage. We derive the
+    // program's effective classification requirement from its preferred GPA
+    // threshold and compare directly. This fixes XJTLU/UNNC students being
+    // incorrectly downgraded when their 2:1 is equivalent to the 85% threshold.
+    let gpaPassed: boolean;
+    let gpaGap: number;
+
+    if (userClassRank !== null && program.gpaScale === "percentage") {
+      // Derive program's required classification from its preferred threshold
+      // ≥90% → effectively requires First/HD (very few: ~24 programs)
+      // ≥75% → effectively requires 2:1/D (vast majority of UK/AU programs)
+      // <75% → 2:2/C sufficient
+      const requiredRank = requiredGpa >= 90 ? 4 : requiredGpa >= 75 ? 3 : 2;
+      const classificationPasses = userClassRank >= requiredRank;
+
+      if (classificationPasses) {
+        // Classification meets requirement → override GPA pass
+        gpaPassed = true;
+        gpaGap = 0;
+        userGpaConverted = requiredGpa; // UI will show "✓"
+      } else {
+        // Classification insufficient (e.g. 2:2 for a First-required program)
+        // Fall through to percentage comparison for gap display
+        gpaPassed = userGpaConverted >= requiredGpa;
+        gpaGap = Math.round((requiredGpa - userGpaConverted) * 10) / 10;
+      }
+    } else {
+      // Standard percentage/GPA comparison (no classification or 4.0-scale program)
+      gpaPassed = userGpaConverted >= requiredGpa;
+      gpaGap = Math.round((requiredGpa - userGpaConverted) * 10) / 10;
+    }
+
     const langGap = langTest === "TOEFL"
       ? Math.round(requiredLang - langScore)
       : Math.round((requiredLang - langScore) * 10) / 10;
 
-    const gpaPassed = userGpaConverted >= requiredGpa;
     const langPassed = langScore >= requiredLang;
 
     const gpaClose = gpaGap > 0 && gpaGap <= (program.gpaScale === "gpa4" ? 0.3 : 5);
