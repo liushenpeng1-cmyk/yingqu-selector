@@ -140,7 +140,6 @@ export const majorCategories: MajorCategory[] = [
       { id: "biology", name: "生物学", nameEn: "Biology", crossMajorFriendly: false },
       { id: "statistics", name: "统计学", nameEn: "Statistics", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
       { id: "environmental-science", name: "环境科学", nameEn: "Environmental Science", crossMajorFriendly: false, keywords: ["气候", "气候变化", "climate change", "大气", "atmospheric"] },
-      { id: "earth-science", name: "地质/地球科学", nameEn: "Earth Sciences / Geology", crossMajorFriendly: false, typicalBackgrounds: ["理学", "工程", "地质学", "计算机"], keywords: ["地质", "geology", "地球科学", "geosciences", "geophysics", "地球物理", "行星科学", "planetary"] },
       { id: "food-science", name: "食品科学", nameEn: "Food Science", crossMajorFriendly: false },
       { id: "actuarial-science", name: "精算科学", nameEn: "Actuarial Science", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
     ],
@@ -224,11 +223,7 @@ export const majorCategories: MajorCategory[] = [
     id: "geology",
     name: "地质学",
     subMajors: [
-      { id: "geology-ug", name: "地质学", nameEn: "Geology", crossMajorFriendly: false, typicalBackgrounds: ["地质学", "理学", "工程"] },
-      { id: "geophysics-ug", name: "地球物理学", nameEn: "Geophysics", crossMajorFriendly: false, typicalBackgrounds: ["地质学", "理学"] },
-      { id: "geochemistry-ug", name: "地球化学", nameEn: "Geochemistry", crossMajorFriendly: false, typicalBackgrounds: ["地质学", "理学"] },
-      { id: "resources-ug", name: "资源勘查/矿产", nameEn: "Resources / Mineral Exploration", crossMajorFriendly: false, typicalBackgrounds: ["地质学", "工程"] },
-      { id: "hydro-ug", name: "水文与水资源", nameEn: "Hydrology / Water Resources", crossMajorFriendly: false, typicalBackgrounds: ["地质学", "理学", "工程"] },
+      { id: "earth-science", name: "地质/地球科学", nameEn: "Earth Sciences / Geology", crossMajorFriendly: false, typicalBackgrounds: ["理学", "工程", "地质学", "计算机"], keywords: ["地质", "geology", "地球科学", "geosciences", "geophysics", "地球物理", "行星科学", "planetary"] },
     ],
   },
 ];
