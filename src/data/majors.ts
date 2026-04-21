@@ -140,6 +140,7 @@ export const majorCategories: MajorCategory[] = [
       { id: "biology", name: "生物学", nameEn: "Biology", crossMajorFriendly: false },
       { id: "statistics", name: "统计学", nameEn: "Statistics", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
       { id: "environmental-science", name: "环境科学", nameEn: "Environmental Science", crossMajorFriendly: false, keywords: ["气候", "气候变化", "climate change", "大气", "atmospheric"] },
+      { id: "earth-science", name: "地质/地球科学", nameEn: "Earth Sciences / Geology", crossMajorFriendly: false, keywords: ["地质", "geology", "地球科学", "geosciences", "geophysics", "地球物理", "行星科学", "planetary"] },
       { id: "food-science", name: "食品科学", nameEn: "Food Science", crossMajorFriendly: false },
       { id: "actuarial-science", name: "精算科学", nameEn: "Actuarial Science", crossMajorFriendly: false, typicalBackgrounds: ["理学", "商科"] },
     ],
